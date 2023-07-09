@@ -1,0 +1,57 @@
+export const FooterStyles = {
+  wrapper: {
+    height: '280px',
+    backgroundColor: 'black',
+  },
+  footerSection: {
+    width: '92%',
+    margin: '0px auto',
+    height: 'inherit',
+    display: 'flex',
+  },
+  footerInfo: {
+    width: '100%',
+    listStyleType: 'none',
+    color: '#808080',
+    display: 'flex',
+    margin: 0,
+    height: '100%',
+    alignItems: 'center',
+    fontFamily: 'Bitter',
+    fontSize: '20px',
+    justifyContent: 'space-evenly',
+    padding: 0,
+  },
+  logoPart: {
+    width: '20%',
+    display: 'flex',
+    flexDirection: 'column' as 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+  },
+  infoItem: {
+    height: '50%',
+    display: 'flex',
+    flexDirection: 'column' as 'column',
+    justifyContent: 'space-between',
+  },
+  currency: {
+    display: 'flex',
+    width: '80%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  language: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '80%',
+  },
+  socialNetworks: {
+    display: 'flex',
+    flexDirection: 'column' as 'column',
+    height: '130px',
+    justifyContent: 'space-between',
+  },
+};

@@ -61,7 +61,7 @@ export const NavBar = () => {
   };
 
   return (
-    <AppBar position='static' sx={NavBarStyles.background}>
+    <AppBar position='fixed' sx={NavBarStyles.background}>
       <Container sx={{ maxWidth: { md: 1, xl: 1 } }}>
         <Toolbar
           disableGutters
@@ -156,12 +156,12 @@ export const NavBar = () => {
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: 'top',
-                horizontal: 'left',
+                horizontal: 'right',
               }}
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'left',
+                horizontal: 'right',
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
