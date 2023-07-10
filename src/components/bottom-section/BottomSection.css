@@ -1,0 +1,4 @@
+.view-all-btn:hover {
+  transform: scale(1.04);
+  transition-duration: 300ms;
+}
