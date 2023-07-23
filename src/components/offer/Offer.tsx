@@ -36,7 +36,7 @@ export const Offer = (props: { flexDirection: any }) => {
             <button className='buy-btn' style={offerStyles.buyBtn}>
               <img src={buyNowbtn} alt='btn' width={'100%'} height={'100%'} />
             </button>
-            <span style={offerStyles.price}>12 $</span>
+            <span style={offerStyles.price}>12000 $</span>
           </div>
         </div>
       </div>
