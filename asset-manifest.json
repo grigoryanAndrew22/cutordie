@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.3d9d7278.css",
-    "main.js": "/cutordie/static/js/main.5841da24.js",
+    "main.css": "/cutordie/static/css/main.981a6787.css",
+    "main.js": "/cutordie/static/js/main.6fb1ebe2.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
     "static/media/topSectionBG.png": "/cutordie/static/media/topSectionBG.40bdc97f69640bf6d67d.png",
     "static/media/woodenPlate.png": "/cutordie/static/media/woodenPlate.518617f16bfbe4c45546.png",
+    "static/media/woodenPlateUA.png": "/cutordie/static/media/woodenPlateUA.422a923c12bdf72aa34f.png",
     "static/media/dividerLeft.svg": "/cutordie/static/media/dividerLeft.52821dfedced4115fe9fb1547bd37096.svg",
     "static/media/dividerRight.svg": "/cutordie/static/media/dividerRight.c4226e3c0fcb9fef4f628d31fd99f313.svg",
     "static/media/blot2.png": "/cutordie/static/media/blot2.60a8569eebd4e22f0e6d.png",
@@ -14,24 +15,30 @@
     "static/media/cardBG.png": "/cutordie/static/media/cardBG.88e2240b26651f562e24.png",
     "static/media/haircut.png": "/cutordie/static/media/haircut.506f9393f9a37cd4db19.png",
     "static/media/buyNowbtn.svg": "/cutordie/static/media/buyNowbtn.4fe00c1d9ae6d60af5d23f50e10f48e9.svg",
+    "static/media/buyNowbtnUA.svg": "/cutordie/static/media/buyNowbtnUA.2fbc419162773335f6c6aa50c4310093.svg",
     "static/media/coin.svg": "/cutordie/static/media/coin.336db10377a3b47552060907ded508df.svg",
+    "static/media/button1UA.svg": "/cutordie/static/media/button1UA.b3a5508cd85d2795e60f8597fb7735c8.svg",
     "static/media/button2.svg": "/cutordie/static/media/button2.663a600803cd4c2be31215e40e5f7cd5.svg",
+    "static/media/viewAllBtnUA.svg": "/cutordie/static/media/viewAllBtnUA.6ec097f90fabf327d442600478d3ffbb.svg",
     "static/media/button1.svg": "/cutordie/static/media/button1.74fee99638f8560d12d3a7f6c46a8d6d.svg",
     "static/media/euro.svg": "/cutordie/static/media/euro.2cc092411302310dcad1f263cc4b3e54.svg",
     "static/media/dollar.svg": "/cutordie/static/media/dollar.047586015ccb2c4acc75a900b51d652b.svg",
+    "static/media/button3UA.svg": "/cutordie/static/media/button3UA.541bd0ab0f4ee46118c9decbecebaefc.svg",
+    "static/media/button2UA.svg": "/cutordie/static/media/button2UA.ca75d8b5998ca4e731bcf74a584e9a67.svg",
     "static/media/hryvnia.svg": "/cutordie/static/media/hryvnia.173a40f4ee146ef42558185ab7e81cfe.svg",
     "static/media/footerLogo.png": "/cutordie/static/media/footerLogo.aa1e3ad484d17b15447e.png",
     "static/media/button3.svg": "/cutordie/static/media/button3.17350da538e0d5d0de3fadb990b6ebe8.svg",
     "static/media/group.svg": "/cutordie/static/media/group.e31aedd3f137cfebb79629eb21197d4c.svg",
     "static/media/skull_logo.svg": "/cutordie/static/media/skull_logo.a0a2d1ac0b1d854b46f086a575b34569.svg",
+    "static/media/hr.svg": "/cutordie/static/media/hr.4e9d9ec5a2499ead4dfc94698b2024db.svg",
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
-    "main.3d9d7278.css.map": "/cutordie/static/css/main.3d9d7278.css.map",
-    "main.5841da24.js.map": "/cutordie/static/js/main.5841da24.js.map",
+    "main.981a6787.css.map": "/cutordie/static/css/main.981a6787.css.map",
+    "main.6fb1ebe2.js.map": "/cutordie/static/js/main.6fb1ebe2.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d9d7278.css",
-    "static/js/main.5841da24.js"
+    "static/css/main.981a6787.css",
+    "static/js/main.6fb1ebe2.js"
   ]
 }
