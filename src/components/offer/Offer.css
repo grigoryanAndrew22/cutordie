@@ -1,3 +1,7 @@
+.buy-btn {
+  transition: all 0.3s ease;
+}
+
 .buy-btn:hover {
   transform: scale(1.1);
   transition-duration: 300ms;

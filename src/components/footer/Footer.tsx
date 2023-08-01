@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { FooterStyles } from './Footer.styles';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -9,7 +8,34 @@ import hryvnia from '../../assets/images/hryvnia.svg';
 import euro from '../../assets/images/euro.svg';
 import dollar from '../../assets/images/dollar.svg';
 
-export const Footer = () => {
+const footerLangs = {
+  en: {
+    contacts: 'Contacts',
+    about: 'About me',
+    termsofUse: 'Terms of Use',
+    refund: 'Refund policy',
+    privacy: 'Privacy policy',
+  },
+  ua: {
+    contacts: 'Контакти',
+    about: 'Про мене',
+    termsofUse: 'Умови користування',
+    refund: 'Політика повернень',
+    privacy: 'Політика конфідеційності',
+  },
+};
+
+export const Footer = (props: any) => {
+  const footerInfoGenerator = (lang: string) => {
+    if (lang === 'en') {
+      return footerLangs.en;
+    } else {
+      return footerLangs.ua;
+    }
+  };
+
+  const footerTranslated = footerInfoGenerator(props.language);
+
   return (
     <div className='footer-section' style={FooterStyles.wrapper}>
       <div style={FooterStyles.footerSection}>
@@ -27,15 +53,15 @@ export const Footer = () => {
         <div className='info_part' style={{ width: '80%' }}>
           <ul style={FooterStyles.footerInfo}>
             <li className='contacts' style={FooterStyles.infoItem}>
-              <p style={{ margin: 0 }}>Contacts</p>
-              <p style={{ margin: 0 }}>About Me</p>
+              <p style={{ margin: 0 }}>{footerTranslated.contacts}</p>
+              <p style={{ margin: 0 }}>{footerTranslated.about}</p>
               <p style={{ margin: 0 }}>FAQ</p>
             </li>
             <img src={vertical} alt='line' height={190} />
             <li className='policy' style={FooterStyles.infoItem}>
-              <p style={{ margin: 0 }}>Terms of Use</p>
-              <p style={{ margin: 0 }}>Refund policy</p>
-              <p style={{ margin: 0 }}>Privacy policy</p>
+              <p style={{ margin: 0 }}>{footerTranslated.termsofUse}</p>
+              <p style={{ margin: 0 }}>{footerTranslated.refund}</p>
+              <p style={{ margin: 0 }}>{footerTranslated.privacy}</p>
             </li>
             <img src={vertical} alt='line' height={190} />
             <li className='social_networks' style={FooterStyles.socialNetworks}>
@@ -52,8 +78,38 @@ export const Footer = () => {
               </div>
               <div style={FooterStyles.language}>
                 <LanguageIcon sx={{ fontSize: '37px' }} />
-                <p style={{ fontSize: '23px', color: 'white' }}>UA</p>
-                <p style={{ fontSize: '23px' }}>EN</p>
+                <button
+                  onClick={() => {
+                    props.changeLangHandler('ua');
+                  }}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    fontSize: '23px',
+                    color: props.language === 'ua' ? 'white' : '#808080',
+                  }}
+                >
+                  UA
+                </button>
+                <button
+                  onClick={() => {
+                    props.changeLangHandler('en');
+                  }}
+                  style={{
+                    marginBlockStart: '1em',
+                    marginBlockEnd: '1em',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    fontSize: '23px',
+                    color: props.language === 'en' ? 'white' : '#808080',
+                  }}
+                >
+                  EN
+                </button>
               </div>
             </li>
           </ul>

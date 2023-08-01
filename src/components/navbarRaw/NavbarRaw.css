@@ -1,0 +1,14 @@
+@media (max-width: 910px) {
+  .title-logo {
+    display: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .account-btn {
+    display: block !important;
+  }
+  .signin-btn {
+    display: none !important;
+  }
+}

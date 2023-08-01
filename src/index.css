@@ -2,6 +2,7 @@ html {
   /* width: fit-content; */
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./assets/images/bodyBG.png');
+  width: -webkit-fill-available;
 }
 
 body::-webkit-scrollbar {
