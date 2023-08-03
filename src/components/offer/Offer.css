@@ -6,3 +6,66 @@
   transform: scale(1.1);
   transition-duration: 300ms;
 }
+
+@font-face {
+  font-family: Drum;
+  src: url(../../assets/fonts/Drum.otf);
+}
+
+@font-face {
+  font-family: Besom;
+  src: url(../../assets/fonts/Besom.ttf);
+}
+
+@font-face {
+  font-family: Hey October;
+  src: url(../../assets/fonts/HeyOctober.ttf);
+}
+
+.price {
+  font-family: Hey October;
+}
+
+.title {
+  font-family: Besom;
+}
+
+.description-wrapper {
+  font-family: Drum;
+}
+
+@media (max-width: 1070px) {
+  .description-wrapper {
+    margin-left: 60px;
+  }
+  .descr-2 {
+    margin-left: 0px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .description-wrapper {
+    margin-left: 90px;
+  }
+  .descr-2 {
+    margin-left: 0px !important;
+  }
+}
+
+@media (max-width: 961px) {
+  .description-wrapper {
+    margin-left: 110px;
+  }
+  .descr-2 {
+    margin-left: 0px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .offer-wrapper {
+    display: none !important;
+  }
+  .divider {
+    display: none !important;
+  }
+}

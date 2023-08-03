@@ -1,0 +1,15 @@
+.offer-wrapper-mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .offer-wrapper-mobile {
+    display: flex;
+  }
+}
+
+@media (min-width: 901px) {
+  .divider-mobile {
+    display: none !important;
+  }
+}

@@ -1,0 +1,17 @@
+@media (min-width: 595px) {
+  .logo_part {
+    justify-content: space-evenly !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-section-mobile {
+    display: block !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .info_part > ul {
+    font-size: 15px !important;
+  }
+}

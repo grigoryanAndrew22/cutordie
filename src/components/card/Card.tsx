@@ -1,4 +1,5 @@
 import { cardStyles } from './Card.styles';
+import '../card/Card.css';
 
 const cardLangs = {
   en: {
@@ -19,11 +20,15 @@ export const Card = (props: {
   top: any;
   left: any;
   language: any;
+  index: any;
 }) => {
   const cardGenerated = props.language === 'en' ? cardLangs.en : cardLangs.ua;
 
   return (
-    <div className='card-wrapper' style={cardStyles.cardWrapper(props)}>
+    <div
+      className={`card-wrapper card-${props.index}`}
+      style={cardStyles.cardWrapper(props)}
+    >
       <div className='img' style={cardStyles.image}>
         <img
           src={require('../../assets/images/haircut.png')}

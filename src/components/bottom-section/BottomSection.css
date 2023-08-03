@@ -6,3 +6,9 @@
   transform: scale(1.04);
   transition-duration: 300ms;
 }
+
+@media (max-width: 1006px) {
+  .view-all-btn {
+    width: 700px;
+  }
+}

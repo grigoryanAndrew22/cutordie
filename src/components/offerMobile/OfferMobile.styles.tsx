@@ -1,16 +1,13 @@
-const generateStylesObj = (props: any) => {
+const generateStylesObj = () => {
   return {
     width: '80%',
     margin: '0px auto',
-    display: 'flex',
-    justifyContent: 'space-around',
-    height: '500px',
     alignItems: 'center',
-    flexDirection: props.flexDirection,
+    flexDirection: 'column' as 'column',
   };
 };
 
-export const offerStyles = {
+export const offerMobileStyles = {
   price: {
     paddingLeft: 25,
     fontSize: '50px',

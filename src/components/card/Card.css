@@ -1,0 +1,26 @@
+@media (max-width: 1335px) {
+  .card-wrapper {
+    height: 300px !important;
+    width: 290px !important;
+  }
+}
+
+@media (max-width: 1245px) {
+  .card-wrapper {
+    height: 260px !important;
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 1145px) {
+  .card-wrapper {
+    height: 270px !important;
+    width: 220px !important;
+  }
+  .card-1 {
+    left: -60px !important;
+  }
+  .card-3 {
+    left: 70px !important;
+  }
+}

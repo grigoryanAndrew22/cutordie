@@ -1,6 +1,10 @@
 import skull_logo from '../../assets/images/skull_logo.svg';
 import group from '../../assets/images/group.svg';
 import hr from '../../assets/images/hr.svg';
+import profileIcon from '../../assets/images/profileIcon.svg';
+import libraryIcon from '../../assets/images/libraryIcon.svg';
+import settingsIcon from '../../assets/images/settingsIcon.svg';
+import logoutIcon from '../../assets/images/logoutIcon.svg';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -84,7 +88,7 @@ export const NavbarRaw = (props: any) => {
                 cursor: 'pointer',
               }}
             >
-              <AccountCircleIcon />
+              <img src={profileIcon} alt='profile' width={27} />
             </button>
             <button
               onClick={dropdownControl}
@@ -98,26 +102,26 @@ export const NavbarRaw = (props: any) => {
               style={navbarRawStyles.dropdown(dropdownActive)}
             >
               <li style={navbarRawStyles.li}>
-                <AccountCircleIcon />
+                <img src={profileIcon} alt='profile' width={25} />
                 <a href='#' style={navbarRawStyles.a}>
                   {navbarRawGenerated.myprof}
                 </a>
               </li>
               <li style={navbarRawStyles.li}>
-                <VideoLibraryIcon />
+                <img src={libraryIcon} alt='profile' width={25} />
                 <a href='#' style={navbarRawStyles.a}>
                   {navbarRawGenerated.lib}
                 </a>
               </li>
               <li style={navbarRawStyles.li}>
-                <SettingsIcon />
+                <img src={settingsIcon} alt='profile' width={25} />
                 <a href='#' style={navbarRawStyles.a}>
                   {navbarRawGenerated.settings}
                 </a>
               </li>
               <img src={hr} />
               <li style={navbarRawStyles.li}>
-                <LogoutIcon />
+                <img src={logoutIcon} alt='profile' width={25} />
                 <a href='#' style={navbarRawStyles.a}>
                   {navbarRawGenerated.logout}
                 </a>

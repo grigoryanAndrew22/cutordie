@@ -28,9 +28,23 @@ const offerTextLangs = {
   },
 };
 
-export const Offer = (props: { flexDirection: any; language: any }) => {
+const offerCurrencies = {
+  usd: '30 $',
+  uah: '1099 ₴',
+  eur: '27 €',
+};
+
+export const Offer = (props: {
+  flexDirection: any;
+  language: any;
+  currency: any;
+  index: any;
+}) => {
   const offerGenerated =
     props.language === 'en' ? offerTextLangs.en : offerTextLangs.ua;
+
+  const currencyGenerated =
+    props.currency === 'usd' ? offerCurrencies.usd : offerCurrencies.uah;
 
   return (
     <Fragment>
@@ -42,6 +56,7 @@ export const Offer = (props: { flexDirection: any; language: any }) => {
             top={0}
             left={-100}
             language={props.language}
+            index={1}
           />
           <Card
             position={'relative'}
@@ -49,6 +64,7 @@ export const Offer = (props: { flexDirection: any; language: any }) => {
             top={0}
             left={0}
             language={props.language}
+            index={2}
           />
           <Card
             position={'absolute'}
@@ -56,11 +72,14 @@ export const Offer = (props: { flexDirection: any; language: any }) => {
             top={30}
             left={100}
             language={props.language}
+            index={3}
           />
         </div>
-        <div className='description'>
-          <h3 style={offerStyles.title}>{offerGenerated.title}</h3>
-          <div style={offerStyles.description}>
+        <div className={`description-wrapper descr-${props.index}`}>
+          <h3 style={offerStyles.title} className='title'>
+            {offerGenerated.title}
+          </h3>
+          <div style={offerStyles.description} className='description'>
             <p style={{ margin: 0 }}>- {offerGenerated.features[0]}</p>
             <p style={{ margin: 0 }}>- {offerGenerated.features[1]}</p>
             <p style={{ margin: 0 }}>- {offerGenerated.features[2]}</p>
@@ -74,7 +93,9 @@ export const Offer = (props: { flexDirection: any; language: any }) => {
                 height={'100%'}
               />
             </button>
-            <span style={offerStyles.price}>12000 $</span>
+            <span style={offerStyles.price} className='price'>
+              {currencyGenerated}
+            </span>
           </div>
         </div>
       </div>

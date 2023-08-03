@@ -1,0 +1,5 @@
+@media (max-width: 900px) {
+  .footer-section {
+    display: none !important;
+  }
+}

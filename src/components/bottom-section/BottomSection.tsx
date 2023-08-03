@@ -13,7 +13,7 @@ export const BottomSection = (props: any) => {
         style={bottomSectionStyles.viewAllCourses}
       >
         <button className='view-all-btn' style={bottomSectionStyles.viewAllBtn}>
-          <img src={btnGenerated} alt='btn' />
+          <img src={btnGenerated} alt='btn' width={'100%'} />
         </button>
       </div>
       <div className='blot' style={{ width: '100%', display: 'flex' }}>
