@@ -1,12 +1,19 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.981a6787.css",
-    "main.js": "/cutordie/static/js/main.6fb1ebe2.js",
+    "main.css": "/cutordie/static/css/main.d0c79b46.css",
+    "main.js": "/cutordie/static/js/main.78916fa8.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
+    "static/media/Drum.otf": "/cutordie/static/media/Drum.62a33cd2a1afe13c219f.otf",
     "static/media/topSectionBG.png": "/cutordie/static/media/topSectionBG.40bdc97f69640bf6d67d.png",
+    "static/media/settingsIcon.svg": "/cutordie/static/media/settingsIcon.0dfd695fa73b536e32cba705226c0cc9.svg",
+    "static/media/libraryIcon.svg": "/cutordie/static/media/libraryIcon.d39465ef8426dedd783e9cfd05f7e7e6.svg",
+    "static/media/HeyOctober.ttf": "/cutordie/static/media/HeyOctober.86288c99f0b263b522f1.ttf",
+    "static/media/logoutIcon.svg": "/cutordie/static/media/logoutIcon.d355eb5af979a1d799769ca79078809d.svg",
     "static/media/woodenPlate.png": "/cutordie/static/media/woodenPlate.518617f16bfbe4c45546.png",
     "static/media/woodenPlateUA.png": "/cutordie/static/media/woodenPlateUA.422a923c12bdf72aa34f.png",
+    "static/media/Besom.ttf": "/cutordie/static/media/Besom.094592c87eb346549ab7.ttf",
+    "static/media/profileIcon.svg": "/cutordie/static/media/profileIcon.2917a68fd4df713b8c9c3a7f86875d74.svg",
     "static/media/dividerLeft.svg": "/cutordie/static/media/dividerLeft.52821dfedced4115fe9fb1547bd37096.svg",
     "static/media/dividerRight.svg": "/cutordie/static/media/dividerRight.c4226e3c0fcb9fef4f628d31fd99f313.svg",
     "static/media/blot2.png": "/cutordie/static/media/blot2.60a8569eebd4e22f0e6d.png",
@@ -33,12 +40,12 @@
     "static/media/hr.svg": "/cutordie/static/media/hr.4e9d9ec5a2499ead4dfc94698b2024db.svg",
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
-    "main.981a6787.css.map": "/cutordie/static/css/main.981a6787.css.map",
-    "main.6fb1ebe2.js.map": "/cutordie/static/js/main.6fb1ebe2.js.map",
+    "main.d0c79b46.css.map": "/cutordie/static/css/main.d0c79b46.css.map",
+    "main.78916fa8.js.map": "/cutordie/static/js/main.78916fa8.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.981a6787.css",
-    "static/js/main.6fb1ebe2.js"
+    "static/css/main.d0c79b46.css",
+    "static/js/main.78916fa8.js"
   ]
 }
