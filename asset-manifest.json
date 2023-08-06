@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.d0c79b46.css",
-    "main.js": "/cutordie/static/js/main.78916fa8.js",
+    "main.css": "/cutordie/static/css/main.cdba1605.css",
+    "main.js": "/cutordie/static/js/main.d43406b8.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
     "static/media/Drum.otf": "/cutordie/static/media/Drum.62a33cd2a1afe13c219f.otf",
@@ -9,15 +9,17 @@
     "static/media/settingsIcon.svg": "/cutordie/static/media/settingsIcon.0dfd695fa73b536e32cba705226c0cc9.svg",
     "static/media/libraryIcon.svg": "/cutordie/static/media/libraryIcon.d39465ef8426dedd783e9cfd05f7e7e6.svg",
     "static/media/HeyOctober.ttf": "/cutordie/static/media/HeyOctober.86288c99f0b263b522f1.ttf",
-    "static/media/logoutIcon.svg": "/cutordie/static/media/logoutIcon.d355eb5af979a1d799769ca79078809d.svg",
     "static/media/woodenPlate.png": "/cutordie/static/media/woodenPlate.518617f16bfbe4c45546.png",
     "static/media/woodenPlateUA.png": "/cutordie/static/media/woodenPlateUA.422a923c12bdf72aa34f.png",
+    "static/media/logoutIcon.svg": "/cutordie/static/media/logoutIcon.37946467a8df9b0ed6a7cea480714cb7.svg",
     "static/media/Besom.ttf": "/cutordie/static/media/Besom.094592c87eb346549ab7.ttf",
     "static/media/profileIcon.svg": "/cutordie/static/media/profileIcon.2917a68fd4df713b8c9c3a7f86875d74.svg",
     "static/media/dividerLeft.svg": "/cutordie/static/media/dividerLeft.52821dfedced4115fe9fb1547bd37096.svg",
     "static/media/dividerRight.svg": "/cutordie/static/media/dividerRight.c4226e3c0fcb9fef4f628d31fd99f313.svg",
     "static/media/blot2.png": "/cutordie/static/media/blot2.60a8569eebd4e22f0e6d.png",
+    "static/media/facebookIcon.svg": "/cutordie/static/media/facebookIcon.7945933541c75cc5b2aa9947e2aaefb3.svg",
     "static/media/blot.png": "/cutordie/static/media/blot.7a7477e892061523ec89.png",
+    "static/media/twitterIcon.svg": "/cutordie/static/media/twitterIcon.3892bec4656505dd3c4a59284194cd59.svg",
     "static/media/viewAllBtn.svg": "/cutordie/static/media/viewAllBtn.34f366a540c97925b7929b778524719b.svg",
     "static/media/cardBG.png": "/cutordie/static/media/cardBG.88e2240b26651f562e24.png",
     "static/media/haircut.png": "/cutordie/static/media/haircut.506f9393f9a37cd4db19.png",
@@ -35,17 +37,19 @@
     "static/media/hryvnia.svg": "/cutordie/static/media/hryvnia.173a40f4ee146ef42558185ab7e81cfe.svg",
     "static/media/footerLogo.png": "/cutordie/static/media/footerLogo.aa1e3ad484d17b15447e.png",
     "static/media/button3.svg": "/cutordie/static/media/button3.17350da538e0d5d0de3fadb990b6ebe8.svg",
+    "static/media/googleIcon.svg": "/cutordie/static/media/googleIcon.3167e76ab896cc7cc890e969476eb885.svg",
     "static/media/group.svg": "/cutordie/static/media/group.e31aedd3f137cfebb79629eb21197d4c.svg",
     "static/media/skull_logo.svg": "/cutordie/static/media/skull_logo.a0a2d1ac0b1d854b46f086a575b34569.svg",
+    "static/media/orDivider.svg": "/cutordie/static/media/orDivider.12c07ca4f3428ff35eb7dafd414b9f49.svg",
     "static/media/hr.svg": "/cutordie/static/media/hr.4e9d9ec5a2499ead4dfc94698b2024db.svg",
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
-    "main.d0c79b46.css.map": "/cutordie/static/css/main.d0c79b46.css.map",
-    "main.78916fa8.js.map": "/cutordie/static/js/main.78916fa8.js.map",
+    "main.cdba1605.css.map": "/cutordie/static/css/main.cdba1605.css.map",
+    "main.d43406b8.js.map": "/cutordie/static/js/main.d43406b8.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0c79b46.css",
-    "static/js/main.78916fa8.js"
+    "static/css/main.cdba1605.css",
+    "static/js/main.d43406b8.js"
   ]
 }
