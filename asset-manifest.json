@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.fcdba8e9.css",
-    "main.js": "/cutordie/static/js/main.80c390e4.js",
+    "main.css": "/cutordie/static/css/main.f4e193e9.css",
+    "main.js": "/cutordie/static/js/main.7366a83a.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
     "static/media/Drum.otf": "/cutordie/static/media/Drum.62a33cd2a1afe13c219f.otf",
@@ -20,6 +20,7 @@
     "static/media/facebookIcon.svg": "/cutordie/static/media/facebookIcon.7945933541c75cc5b2aa9947e2aaefb3.svg",
     "static/media/blot.png": "/cutordie/static/media/blot.7a7477e892061523ec89.png",
     "static/media/twitterIcon.svg": "/cutordie/static/media/twitterIcon.3892bec4656505dd3c4a59284194cd59.svg",
+    "static/media/langIcon.svg": "/cutordie/static/media/langIcon.5e0c3f475f0def4ab287c4cbe5beafc9.svg",
     "static/media/viewAllBtn.svg": "/cutordie/static/media/viewAllBtn.34f366a540c97925b7929b778524719b.svg",
     "static/media/cardBG.png": "/cutordie/static/media/cardBG.88e2240b26651f562e24.png",
     "static/media/haircut.png": "/cutordie/static/media/haircut.506f9393f9a37cd4db19.png",
@@ -45,12 +46,12 @@
     "static/media/hr.svg": "/cutordie/static/media/hr.4e9d9ec5a2499ead4dfc94698b2024db.svg",
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
-    "main.fcdba8e9.css.map": "/cutordie/static/css/main.fcdba8e9.css.map",
-    "main.80c390e4.js.map": "/cutordie/static/js/main.80c390e4.js.map",
+    "main.f4e193e9.css.map": "/cutordie/static/css/main.f4e193e9.css.map",
+    "main.7366a83a.js.map": "/cutordie/static/js/main.7366a83a.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcdba8e9.css",
-    "static/js/main.80c390e4.js"
+    "static/css/main.f4e193e9.css",
+    "static/js/main.7366a83a.js"
   ]
 }
