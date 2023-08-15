@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.6ca2820b.css",
-    "main.js": "/cutordie/static/js/main.ccf6b00b.js",
+    "main.css": "/cutordie/static/css/main.0457de82.css",
+    "main.js": "/cutordie/static/js/main.c436157e.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
     "static/media/Drum.otf": "/cutordie/static/media/Drum.62a33cd2a1afe13c219f.otf",
@@ -28,6 +28,7 @@
     "static/media/haircut.png": "/cutordie/static/media/haircut.506f9393f9a37cd4db19.png",
     "static/media/buyNowbtn.svg": "/cutordie/static/media/buyNowbtn.4fe00c1d9ae6d60af5d23f50e10f48e9.svg",
     "static/media/buyNowbtnUA.svg": "/cutordie/static/media/buyNowbtnUA.2fbc419162773335f6c6aa50c4310093.svg",
+    "static/media/signUpBtn.svg": "/cutordie/static/media/signUpBtn.978bacf7153daa67ffe3df0a62b68638.svg",
     "static/media/coin.svg": "/cutordie/static/media/coin.336db10377a3b47552060907ded508df.svg",
     "static/media/button1UA.svg": "/cutordie/static/media/button1UA.b3a5508cd85d2795e60f8597fb7735c8.svg",
     "static/media/button2.svg": "/cutordie/static/media/button2.663a600803cd4c2be31215e40e5f7cd5.svg",
@@ -54,12 +55,12 @@
     "static/media/hr.svg": "/cutordie/static/media/hr.4e9d9ec5a2499ead4dfc94698b2024db.svg",
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
-    "main.6ca2820b.css.map": "/cutordie/static/css/main.6ca2820b.css.map",
-    "main.ccf6b00b.js.map": "/cutordie/static/js/main.ccf6b00b.js.map",
+    "main.0457de82.css.map": "/cutordie/static/css/main.0457de82.css.map",
+    "main.c436157e.js.map": "/cutordie/static/js/main.c436157e.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ca2820b.css",
-    "static/js/main.ccf6b00b.js"
+    "static/css/main.0457de82.css",
+    "static/js/main.c436157e.js"
   ]
 }
