@@ -3,6 +3,9 @@
 }
 
 @media (max-width: 900px) {
+  .prev-price-mobile {
+    left: 50px !important;
+  }
   .offer-wrapper-mobile {
     display: flex;
   }
@@ -11,5 +14,32 @@
 @media (min-width: 901px) {
   .divider-mobile {
     display: none !important;
+  }
+}
+
+@media (max-width: 460px) {
+  .price {
+    margin-left: -13px !important;
+    font-size: 66px !important;
+  }
+}
+
+.prev-price-mobile {
+  font-family: Hey October;
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  color: #979797 !important;
+  position: absolute;
+  left: 51%;
+  top: -25px;
+  font-size: 35px !important;
+}
+
+@media (max-width: 520px) {
+  .card-1 {
+    left: -58px !important;
+  }
+  .card-3 {
+    left: 62px !important;
   }
 }

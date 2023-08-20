@@ -31,7 +31,7 @@ export const FooterMobileStyles = {
     height: '100%',
   },
   infoItem: {
-    height: '50%',
+    height: '70%',
     display: 'flex',
     flexDirection: 'column' as 'column',
     justifyContent: 'space-between',
@@ -52,7 +52,7 @@ export const FooterMobileStyles = {
   socialNetworks: {
     display: 'flex',
     flexDirection: 'column' as 'column',
-    height: '130px',
+    height: '100px',
     justifyContent: 'space-between',
   },
 };

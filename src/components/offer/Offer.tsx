@@ -3,6 +3,8 @@ import buyNowbtn from '../../assets/images/buyNowbtn.svg';
 import buyNowbtnUA from '../../assets/images/buyNowbtnUA.svg';
 import dividerLeft from '../../assets/images/dividerLeft.svg';
 import dividerRight from '../../assets/images/dividerRight.svg';
+import uahSymbol from '../../assets/images/uahSymbol.svg';
+import uahSymbolGray from '../../assets/images/uahSymbolGray.svg';
 import { Fragment } from 'react';
 import { offerStyles } from './Offer.styles';
 import './Offer.css';
@@ -29,9 +31,9 @@ const offerTextLangs = {
 };
 
 const offerCurrencies = {
-  usd: '30 $',
-  uah: '1099 ₴',
-  eur: '27 €',
+  usd: ['30$', '60$'],
+  uah: [`1099`, `2199`],
+  eur: ['27€', '54€'],
 };
 
 export const Offer = (props: {
@@ -43,18 +45,32 @@ export const Offer = (props: {
   const offerGenerated =
     props.language === 'en' ? offerTextLangs.en : offerTextLangs.ua;
 
-  const currencyGenerated =
-    props.currency === 'usd' ? offerCurrencies.usd : offerCurrencies.uah;
+  let currencyGenerated;
+  if (props.currency === 'usd') {
+    currencyGenerated = offerCurrencies.usd;
+  } else if (props.currency === 'uah') {
+    currencyGenerated = offerCurrencies.uah;
+  } else {
+    currencyGenerated = offerCurrencies.eur;
+  }
 
   return (
     <Fragment>
       <div className='offer-wrapper' style={offerStyles.wrapper(props)}>
-        <div className='cards' style={{ position: 'relative' }}>
+        <div
+          className='cards'
+          style={{
+            position: 'relative',
+            marginTop: '-104px',
+            marginLeft: props.flexDirection === 'row-reverse' ? '0px' : '40px',
+            marginRight: props.flexDirection === 'row-reverse' ? '40px' : '0px',
+          }}
+        >
           <Card
             position={'absolute'}
-            transform={'rotate(-25deg)'}
-            top={0}
-            left={-100}
+            transform={'rotate(-21deg)'}
+            top={27}
+            left={-160}
             language={props.language}
             index={1}
           />
@@ -68,21 +84,43 @@ export const Offer = (props: {
           />
           <Card
             position={'absolute'}
-            transform={'rotate(25deg)'}
-            top={30}
-            left={100}
+            transform={'rotate(21deg)'}
+            top={41}
+            left={167}
             language={props.language}
             index={3}
           />
         </div>
-        <div className={`description-wrapper descr-${props.index}`}>
+        <div
+          className={`description-wrapper descr-${props.index}`}
+          style={{ position: 'relative', marginRight: '-100px' }}
+        >
+          <p
+            style={{
+              position: 'absolute',
+              fontFamily: 'Hey October',
+              fontSize: '43px',
+              color: '#900000',
+              top: '-35px',
+              right: '26%',
+              margin: '0px',
+            }}
+          >
+            -50%
+          </p>
           <h3 style={offerStyles.title} className='title'>
             {offerGenerated.title}
           </h3>
           <div style={offerStyles.description} className='description'>
-            <p style={{ margin: 0 }}>- {offerGenerated.features[0]}</p>
-            <p style={{ margin: 0 }}>- {offerGenerated.features[1]}</p>
-            <p style={{ margin: 0 }}>- {offerGenerated.features[2]}</p>
+            <p style={{ margin: 0, height: '56px' }}>
+              - {offerGenerated.features[0]}
+            </p>
+            <p style={{ margin: 0, height: '56px' }}>
+              - {offerGenerated.features[1]}
+            </p>
+            <p style={{ margin: 0, height: '56px' }}>
+              - {offerGenerated.features[2]}
+            </p>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: 40 }}>
             <button className='buy-btn' style={offerStyles.buyBtn}>
@@ -94,12 +132,29 @@ export const Offer = (props: {
               />
             </button>
             <span style={offerStyles.price} className='price'>
-              {currencyGenerated}
+              {currencyGenerated[0]}
+              {currencyGenerated === offerCurrencies.uah && (
+                <img
+                  width={72}
+                  src={uahSymbol}
+                  style={{ paddingLeft: '2px' }}
+                />
+              )}
+            </span>
+            <span style={offerStyles.price} className='prev-price'>
+              {currencyGenerated[1]}
+              {currencyGenerated === offerCurrencies.uah && (
+                <img
+                  width={43}
+                  src={uahSymbolGray}
+                  style={{ paddingLeft: '2px' }}
+                />
+              )}
             </span>
           </div>
         </div>
       </div>
-      <div className='divider'>
+      <div className='divider' style={{ margin: '60px 0px' }}>
         <img
           src={props.flexDirection === 'row' ? dividerLeft : dividerRight}
           alt='d'

@@ -5,13 +5,12 @@ import profileIcon from '../../assets/images/profileIcon.svg';
 import libraryIcon from '../../assets/images/libraryIcon.svg';
 import settingsIcon from '../../assets/images/settingsIcon.svg';
 import logoutIcon from '../../assets/images/logoutIcon.svg';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
-import SettingsIcon from '@mui/icons-material/Settings';
-import LogoutIcon from '@mui/icons-material/Logout';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { navbarRawStyles } from './NavbarRaw.styles';
 import './NavbarRaw.css';
+import { SignInForm } from '../signin-form/SignInForm';
+import { SignInFormMobile } from '../signin-formMobile/SignInFormMobile';
+import { SignUpForm } from '../signupForm/SignUpForm';
 
 const navbarRawLangs = {
   en: {
@@ -35,7 +34,13 @@ const navbarRawLangs = {
 };
 
 export const NavbarRaw = (props: any) => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [formVisible, switchForm] = useState(false);
   const [dropdownActive, switchDropdown] = useState(false);
+
+  const openForm = () => {
+    switchForm(true);
+  };
 
   const dropdownControl = () => {
     if (dropdownActive) {
@@ -52,84 +57,106 @@ export const NavbarRaw = (props: any) => {
   const navbarRawGenerated = navbarRawLangGenerator(props.language);
 
   return (
-    <div className='navbar-wrapper' style={navbarRawStyles.navbarWrapper}>
-      <div className='navbar' style={navbarRawStyles.navbar}>
-        <div className='skull' style={{ width: '30%', display: 'flex' }}>
-          <a href='#' style={{ display: 'flex' }}>
-            <img src={skull_logo} alt='logo' height={60} width={110} />
-          </a>
-        </div>
-        <div
-          className='title-logo'
-          style={{ width: '40%', display: 'flex', justifyContent: 'center' }}
-        >
-          <a href='#' style={{ display: 'flex' }}>
-            <img src={group} alt='logo' height={51} width={190} />
-          </a>
-        </div>
-        <div className='tabs' style={navbarRawStyles.tabs}>
-          <div style={{ padding: '0px 20px' }}>
-            <p style={navbarRawStyles.aboutMe}>{navbarRawGenerated.aboutMe}</p>
+    <Fragment>
+      <SignInForm
+        visible={formVisible}
+        switch={switchForm}
+        language={props.language}
+      />
+
+      <div className='navbar-wrapper' style={navbarRawStyles.navbarWrapper}>
+        <div className='navbar' style={navbarRawStyles.navbar}>
+          <div className='skull' style={{ width: '30%', display: 'flex' }}>
+            <a href='#' style={{ display: 'flex' }}>
+              <img src={skull_logo} alt='logo' height={60} width={110} />
+            </a>
           </div>
-          <div style={{ padding: '0px 20px' }}>
-            <p style={{ fontSize: '17px', letterSpacing: '0.02857em' }}>
-              {navbarRawGenerated.courses}
-            </p>
+          <div
+            className='title-logo'
+            style={{ width: '40%', display: 'flex', justifyContent: 'center' }}
+          >
+            <a href='#' style={{ display: 'flex' }}>
+              <img src={group} alt='logo' height={51} width={190} />
+            </a>
           </div>
-          <div style={{ position: 'relative', padding: '0px 20px' }}>
-            <button
-              onClick={dropdownControl}
-              className='account-btn'
-              style={{
-                display: 'none',
-                border: 'none',
-                background: 'transparent',
-                color: 'inherit',
-                cursor: 'pointer',
-              }}
+          <div className='tabs' style={navbarRawStyles.tabs}>
+            <div style={{ padding: '0px 20px' }} className='aboutme-wrapper'>
+              <p style={navbarRawStyles.aboutMe} className='aboutme'>
+                {navbarRawGenerated.aboutMe}
+              </p>
+            </div>
+            <div style={{ padding: '0px 20px' }} className='courses-wrapper'>
+              <p
+                style={{ fontSize: '17px', letterSpacing: '0.02857em' }}
+                className='courses'
+              >
+                {navbarRawGenerated.courses}
+              </p>
+            </div>
+            <div
+              style={{ position: 'relative', padding: '0px 20px' }}
+              className='signin-navbar-wrapper'
             >
-              <img src={profileIcon} alt='profile' width={27} />
-            </button>
-            <button
-              onClick={dropdownControl}
-              style={navbarRawStyles.signinBTN}
-              className='signin-btn'
-            >
-              {navbarRawGenerated.signIn}
-            </button>
-            <ul
-              className='dropdown'
-              style={navbarRawStyles.dropdown(dropdownActive)}
-            >
-              <li style={navbarRawStyles.li}>
-                <img src={profileIcon} alt='profile' width={25} />
-                <a href='#' style={navbarRawStyles.a}>
-                  {navbarRawGenerated.myprof}
-                </a>
-              </li>
-              <li style={navbarRawStyles.li}>
-                <img src={libraryIcon} alt='profile' width={25} />
-                <a href='#' style={navbarRawStyles.a}>
-                  {navbarRawGenerated.lib}
-                </a>
-              </li>
-              <li style={navbarRawStyles.li}>
-                <img src={settingsIcon} alt='profile' width={25} />
-                <a href='#' style={navbarRawStyles.a}>
-                  {navbarRawGenerated.settings}
-                </a>
-              </li>
-              <img src={hr} />
-              <li style={navbarRawStyles.li}>
-                <img src={logoutIcon} alt='profile' width={25} />
-                <a href='#' style={navbarRawStyles.a}>
-                  {navbarRawGenerated.logout}
-                </a>
-              </li>
-            </ul>
+              <button
+                onClick={loggedIn ? dropdownControl : openForm}
+                // onClick={dropdownControl}
+                style={navbarRawStyles.signinBTN}
+                className='signin-btn'
+              >
+                {navbarRawGenerated.signIn}
+              </button>
+              <button
+                onClick={openForm}
+                className='account-btn'
+                style={{
+                  display: 'none',
+                  border: 'none',
+                  background: 'transparent',
+                  color: 'inherit',
+                  cursor: 'pointer',
+                }}
+              >
+                <img src={profileIcon} alt='profile' width={27} />
+              </button>
+              <ul
+                className='dropdown'
+                style={navbarRawStyles.dropdown(dropdownActive)}
+              >
+                <li style={navbarRawStyles.li}>
+                  <img src={profileIcon} alt='profile' width={25} />
+                  <a href='#' style={navbarRawStyles.a}>
+                    {navbarRawGenerated.myprof}
+                  </a>
+                </li>
+                <li style={navbarRawStyles.li}>
+                  <img src={libraryIcon} alt='profile' width={25} />
+                  <a href='#' style={navbarRawStyles.a}>
+                    {navbarRawGenerated.lib}
+                  </a>
+                </li>
+                <li style={navbarRawStyles.li}>
+                  <img src={settingsIcon} alt='profile' width={25} />
+                  <a href='#' style={navbarRawStyles.a}>
+                    {navbarRawGenerated.settings}
+                  </a>
+                </li>
+                <img src={hr} />
+                <li style={navbarRawStyles.li}>
+                  <img
+                    src={logoutIcon}
+                    alt='profile'
+                    width={25}
+                    style={{ marginLeft: '-2px' }}
+                  />
+                  <a href='#' style={navbarRawStyles.a}>
+                    {navbarRawGenerated.logout}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };

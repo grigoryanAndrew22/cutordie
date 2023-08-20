@@ -4,9 +4,24 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 460px) {
+  .aboutme,
+  .courses,
+  .signin-btn {
+    font-size: 14px !important;
+  }
+
+  .aboutme-wrapper,
+  .courses-wrapper,
+  .signin-navbar-wrapper {
+    padding: 0px 15px !important;
+    white-space: 'nowrap';
+  }
+}
+
+@media (max-width: 500px) {
   .account-btn {
-    display: block !important;
+    display: flex !important;
   }
   .signin-btn {
     display: none !important;

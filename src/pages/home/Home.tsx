@@ -14,10 +14,6 @@ export const Home = () => {
   const [currency, changeCurrency] = useState('usd');
   const [language, changeLanguage] = useState('en');
 
-  const changeCurr = (currency: any) => {
-    changeCurrency(currency);
-  };
-
   const changeLang = (lang: string) => {
     changeLanguage(lang);
   };
@@ -45,16 +41,34 @@ export const Home = () => {
         currency={currency}
         index={3}
       />
-      <OfferMobile divider={dividerLeft} language={language} />
-      <OfferMobile divider={dividerRight} language={language} />
-      <OfferMobile divider={dividerLeft} language={language} />
+      <OfferMobile
+        divider={dividerLeft}
+        language={language}
+        currency={currency}
+      />
+      <OfferMobile
+        divider={dividerRight}
+        language={language}
+        currency={currency}
+      />
+      <OfferMobile
+        divider={dividerLeft}
+        language={language}
+        currency={currency}
+      />
       <BottomSection language={language} />
       <Footer
-        changeLangHandler={changeLang}
-        changeCurrencyHandler={changeCurr}
         language={language}
+        changeLangHandler={changeLang}
+        currency={currency}
+        changeCurr={changeCurrency}
       />
-      <FooterMobile language={language} changeLangHandler={changeLang} />
+      <FooterMobile
+        language={language}
+        changeLangHandler={changeLang}
+        currency={currency}
+        changeCurr={changeCurrency}
+      />
     </Fragment>
   );
 };

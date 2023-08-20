@@ -11,7 +11,7 @@ const generateDropdownStyles = (dropdownActive: boolean) => {
     display: dropdownActive ? 'flex' : 'none',
     flexDirection: 'column' as 'column',
     height: '132px',
-    width: 'calc(100% + 10px)',
+    width: '130px',
     justifyContent: 'space-between',
     paddingTop: '10px',
     paddingBottom: '10px',
@@ -47,6 +47,7 @@ export const navbarRawStyles = {
     color: 'white',
     fontFamily: 'Bitter',
     alignItems: 'center',
+    whiteSpace: 'nowrap' as 'nowrap',
   },
   aboutMe: {
     fontSize: '17px',

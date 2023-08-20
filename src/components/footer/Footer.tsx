@@ -2,12 +2,16 @@ import { FooterStyles } from './Footer.styles';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import vertical from '../../assets/images/vertical.svg';
-import LanguageIcon from '@mui/icons-material/Language';
+import langIcon from '../../assets/images/langIcon.svg';
 import coin from '../../assets/images/coin.svg';
-import hryvnia from '../../assets/images/hryvnia.svg';
-import euro from '../../assets/images/euro.svg';
-import dollar from '../../assets/images/dollar.svg';
+import hryvniaWhite from '../../assets/images/hryvniaWhite.svg';
+import euroWhite from '../../assets/images/euroWhite.svg';
+import dollarWhite from '../../assets/images/dollarWhite.svg';
+import hryvniaGray from '../../assets/images/hryvniaGray.svg';
+import euroGray from '../../assets/images/euroGray.svg';
+import dollarGray from '../../assets/images/dollarGray.svg';
 import './Footer.css';
+import GooglePayBtn from './GooglePayBtn';
 
 const footerLangs = {
   en: {
@@ -27,6 +31,16 @@ const footerLangs = {
 };
 
 export const Footer = (props: any) => {
+  const changeCurrencyUAH = () => {
+    props.changeCurr('uah');
+  };
+  const changeCurrencyUSD = () => {
+    props.changeCurr('usd');
+  };
+  const changeCurrencyEUR = () => {
+    props.changeCurr('eur');
+  };
+
   const footerTranslated =
     props.language === 'en' ? footerLangs.en : footerLangs.ua;
 
@@ -66,39 +80,73 @@ export const Footer = (props: any) => {
             <li className='currency_language' style={{ width: '15%' }}>
               <div style={FooterStyles.currency}>
                 <img src={coin} alt='coin' width={35} />
-                <button
+                <div
                   style={{
-                    border: 'none',
-                    color: props.currency === 'uah' ? 'inherit' : '#808080',
-                    background: 'transparent',
-                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    width: '70%',
                   }}
                 >
-                  <img src={hryvnia} alt='hryvnia' height={28} width={28} />
-                </button>
-                <button
-                  style={{
-                    border: 'none',
-                    color: 'inherit',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <img src={euro} alt='euro' height={25} width={25} />
-                </button>
-                <button
-                  style={{
-                    border: 'none',
-                    color: 'inherit',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <img src={dollar} alt='dollar' height={30} width={30} />
-                </button>
+                  <button
+                    onClick={changeCurrencyUAH}
+                    style={{
+                      border: 'none',
+                      color: props.currency === 'uah' ? 'white' : '#808080',
+                      background: 'transparent',
+                      cursor: 'pointer',
+                      fontSize: '30px',
+                      padding: '1px 8px',
+                    }}
+                  >
+                    <img
+                      width={20}
+                      src={
+                        props.currency === 'uah' ? hryvniaWhite : hryvniaGray
+                      }
+                    />
+                  </button>
+                  <button
+                    onClick={changeCurrencyEUR}
+                    style={{
+                      border: 'none',
+                      color: props.currency === 'eur' ? 'white' : '#808080',
+                      background: 'transparent',
+                      cursor: 'pointer',
+                      fontSize: '30px',
+                      padding: '1px 8px',
+                    }}
+                  >
+                    <img
+                      width={29}
+                      src={props.currency === 'eur' ? euroWhite : euroGray}
+                    />
+                  </button>
+                  <button
+                    onClick={changeCurrencyUSD}
+                    style={{
+                      border: 'none',
+                      color: props.currency === 'usd' ? 'white' : '#808080',
+                      background: 'transparent',
+                      cursor: 'pointer',
+                      fontSize: '30px',
+                      padding: '1px 8px',
+                    }}
+                  >
+                    <img
+                      width={20}
+                      src={props.currency === 'usd' ? dollarWhite : dollarGray}
+                    />
+                  </button>
+                </div>
               </div>
               <div style={FooterStyles.language}>
-                <LanguageIcon sx={{ fontSize: '37px' }} />
+                <img
+                  src={langIcon}
+                  width={33}
+                  height={33}
+                  style={{ paddingLeft: '1.3px' }}
+                />
                 <button
                   onClick={() => {
                     props.changeLangHandler('ua');
@@ -136,6 +184,7 @@ export const Footer = (props: any) => {
           </ul>
         </div>
       </div>
+      <GooglePayBtn />
     </div>
   );
 };

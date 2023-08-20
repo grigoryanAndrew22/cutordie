@@ -4,9 +4,12 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LanguageIcon from '@mui/icons-material/Language';
 import coin from '../../assets/images/coin.svg';
-import hryvnia from '../../assets/images/hryvnia.svg';
-import euro from '../../assets/images/euro.svg';
-import dollar from '../../assets/images/dollar.svg';
+import hryvniaWhite from '../../assets/images/hryvniaWhite.svg';
+import euroWhite from '../../assets/images/euroWhite.svg';
+import dollarWhite from '../../assets/images/dollarWhite.svg';
+import hryvniaGray from '../../assets/images/hryvniaGray.svg';
+import euroGray from '../../assets/images/euroGray.svg';
+import dollarGray from '../../assets/images/dollarGray.svg';
 import '../footerMobile/FooterMobile.css';
 
 const footerLangs = {
@@ -27,6 +30,16 @@ const footerLangs = {
 };
 
 export const FooterMobile = (props: any) => {
+  const changeCurrencyUAH = () => {
+    props.changeCurr('uah');
+  };
+  const changeCurrencyUSD = () => {
+    props.changeCurr('usd');
+  };
+  const changeCurrencyEUR = () => {
+    props.changeCurr('eur');
+  };
+
   const footerTranslated =
     props.language === 'en' ? footerLangs.en : footerLangs.ua;
 
@@ -38,42 +51,63 @@ export const FooterMobile = (props: any) => {
             <img
               src={require('../../assets/images/footerLogo.png')}
               alt='logo'
-              width={250}
+              width={240}
               height={183}
+              style={{ marginLeft: '-7px' }}
             />
           </div>
-          <div className='currency_language'>
+          <div className='currency_language' style={{ marginTop: '45px' }}>
             <div style={FooterMobileStyles.currency}>
               <img src={coin} alt='coin' width={35} />
               <button
+                onClick={changeCurrencyUAH}
                 style={{
                   border: 'none',
-                  color: props.currency === 'uah' ? 'inherit' : '#808080',
+                  color: props.currency === 'uah' ? 'white' : '#808080',
                   background: 'transparent',
                   cursor: 'pointer',
+                  fontSize: '30px',
+                  marginLeft: '7px',
+                  padding: '0px 5px',
                 }}
               >
-                <img src={hryvnia} alt='hryvnia' height={28} width={28} />
+                <img
+                  width={15}
+                  src={props.currency === 'uah' ? hryvniaWhite : hryvniaGray}
+                />
               </button>
               <button
+                onClick={changeCurrencyEUR}
                 style={{
                   border: 'none',
-                  color: 'inherit',
+                  color: props.currency === 'eur' ? 'white' : '#808080',
                   background: 'transparent',
                   cursor: 'pointer',
+                  fontSize: '30px',
+                  padding: '0px 5px',
                 }}
               >
-                <img src={euro} alt='euro' height={25} width={25} />
+                <img
+                  width={21}
+                  src={props.currency === 'eur' ? euroWhite : euroGray}
+                />
               </button>
               <button
+                onClick={changeCurrencyUSD}
                 style={{
                   border: 'none',
-                  color: 'inherit',
+                  color: props.currency === 'usd' ? 'white' : '#808080',
                   background: 'transparent',
                   cursor: 'pointer',
+                  fontSize: '30px',
+                  marginTop: '4px',
+                  padding: '0px 5px',
                 }}
               >
-                <img src={dollar} alt='dollar' height={30} width={30} />
+                <img
+                  width={15}
+                  src={props.currency === 'usd' ? dollarWhite : dollarGray}
+                />
               </button>
             </div>
             <div style={FooterMobileStyles.language}>
@@ -96,6 +130,8 @@ export const FooterMobile = (props: any) => {
                   fontFamily: 'inherit',
                   fontSize: '23px',
                   color: props.language === 'ua' ? 'white' : '#808080',
+                  paddingLeft: '4px',
+                  paddingRight: '5px',
                 }}
               >
                 UA
@@ -113,6 +149,7 @@ export const FooterMobile = (props: any) => {
                   fontFamily: 'inherit',
                   fontSize: '23px',
                   color: props.language === 'en' ? 'white' : '#808080',
+                  paddingLeft: '5px',
                 }}
               >
                 EN
@@ -127,13 +164,13 @@ export const FooterMobile = (props: any) => {
               <p style={{ margin: 0 }}>{footerTranslated.about}</p>
               <p style={{ margin: 0 }}>FAQ</p>
             </li>
-            <img src={vertical} alt='line' height={190} />
+            <img src={vertical} alt='line' height={120} />
             <li className='policy' style={FooterMobileStyles.infoItem}>
               <p style={{ margin: 0 }}>{footerTranslated.termsofUse}</p>
               <p style={{ margin: 0 }}>{footerTranslated.refund}</p>
               <p style={{ margin: 0 }}>{footerTranslated.privacy}</p>
             </li>
-            <img src={vertical} alt='line' height={190} />
+            <img src={vertical} alt='line' height={120} />
             <li
               className='social_networks'
               style={FooterMobileStyles.socialNetworks}

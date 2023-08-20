@@ -9,8 +9,8 @@ const generateStylesObj = () => {
 
 export const offerMobileStyles = {
   price: {
-    paddingLeft: 25,
-    fontSize: '50px',
+    paddingLeft: 10,
+    fontSize: '65px',
     fontWeight: 100,
     color: '#363636',
   },
@@ -19,8 +19,9 @@ export const offerMobileStyles = {
     border: 'none',
     cursor: 'pointer',
     height: 110,
-    width: 260,
+    width: 220,
     padding: 0,
+    textAlign: 'start' as 'start',
   },
   title: {
     fontSize: '49px',
@@ -31,6 +32,6 @@ export const offerMobileStyles = {
   },
   wrapper: generateStylesObj,
   description: {
-    fontSize: '30px',
+    fontSize: '25px',
   },
 };

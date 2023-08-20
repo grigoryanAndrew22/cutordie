@@ -3,13 +3,13 @@
 }
 
 .buy-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition-duration: 300ms;
 }
 
 @font-face {
   font-family: Drum;
-  src: url(../../assets/fonts/Drum.otf);
+  src: url(../../assets/fonts/Drum.ttf);
 }
 
 @font-face {
@@ -24,6 +24,22 @@
 
 .price {
   font-family: Hey October;
+}
+
+.prev-price {
+  font-family: Hey October;
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  color: #979797 !important;
+  position: absolute;
+  right: 54px;
+  bottom: 88px;
+  font-size: 51px !important;
+}
+
+.descr-2 {
+  margin-right: 0 !important;
+  margin-left: -100px !important;
 }
 
 .title {
@@ -67,5 +83,14 @@
   }
   .divider {
     display: none !important;
+  }
+}
+
+@media (max-width: 1071px) {
+  .card-1 {
+    left: -107px !important;
+  }
+  .card-3 {
+    left: 114px !important;
   }
 }

@@ -5,7 +5,7 @@ export const BlotSection = (props: any) => {
       : require('../../assets/images/woodenPlateUA.png');
 
   return (
-    <div className='blot-wrapper'>
+    <div className='blot-wrapper' style={{ marginBottom: '90px' }}>
       <img
         src={require('../../assets/images/blot.png')}
         alt='blot'

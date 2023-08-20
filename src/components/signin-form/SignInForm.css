@@ -1,0 +1,28 @@
+.signin-wrapper {
+  background-image: url('../../assets/images/bodyBG.png');
+}
+
+.email-input,
+.password-input {
+  background-image: url('../../assets/images/inputBorder.png');
+  background-position: right;
+  background-size: cover;
+  outline: 0;
+  padding-left: 10px;
+  margin-left: -1px;
+}
+
+.submit-btn {
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  transition-duration: 300ms;
+}
+
+@media (max-width: 520px) {
+  .signin-wrapper {
+    display: none !important;
+  }
+}

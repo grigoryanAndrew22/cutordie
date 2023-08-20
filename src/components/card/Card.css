@@ -18,9 +18,40 @@
     width: 220px !important;
   }
   .card-1 {
-    left: -60px !important;
+    left: -46px !important;
   }
   .card-3 {
-    left: 70px !important;
+    left: 49px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-wrapper {
+    height: 300px !important;
+    width: 290px !important;
+  }
+  .card-1 {
+    top: 7px !important;
+    left: -100px !important;
+    transform: rotate(-19deg) !important;
+  }
+  .card-3 {
+    left: 100px !important;
+    transform: rotate(19deg) !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .card-wrapper {
+    height: 270px !important;
+    width: 220px !important;
+  }
+  .card-1 {
+    left: -46px !important;
+    transform: rotate(-19deg) !important;
+  }
+  .card-3 {
+    left: 49px !important;
+    transform: rotate(19deg) !important;
   }
 }

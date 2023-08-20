@@ -13,7 +13,7 @@ const generateStylesObj = (props: any) => {
 export const offerStyles = {
   price: {
     paddingLeft: 25,
-    fontSize: '50px',
+    fontSize: '90px',
     fontWeight: 100,
     color: '#363636',
   },
@@ -26,7 +26,7 @@ export const offerStyles = {
     padding: 0,
   },
   title: {
-    fontSize: '49px',
+    fontSize: '65px',
     fontWeight: 100,
     color: '#383838',
     margin: 0,
@@ -34,6 +34,6 @@ export const offerStyles = {
   },
   wrapper: generateStylesObj,
   description: {
-    fontSize: '30px',
+    fontSize: '37px',
   },
 };
