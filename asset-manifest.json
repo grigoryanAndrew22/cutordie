@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.4a7e869a.css",
-    "main.js": "/cutordie/static/js/main.452b498c.js",
+    "main.css": "/cutordie/static/css/main.784902ff.css",
+    "main.js": "/cutordie/static/js/main.062a9742.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
     "static/media/topSectionBG.png": "/cutordie/static/media/topSectionBG.40bdc97f69640bf6d67d.png",
@@ -55,12 +55,12 @@
     "static/media/hr.svg": "/cutordie/static/media/hr.4e9d9ec5a2499ead4dfc94698b2024db.svg",
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
-    "main.4a7e869a.css.map": "/cutordie/static/css/main.4a7e869a.css.map",
-    "main.452b498c.js.map": "/cutordie/static/js/main.452b498c.js.map",
+    "main.784902ff.css.map": "/cutordie/static/css/main.784902ff.css.map",
+    "main.062a9742.js.map": "/cutordie/static/js/main.062a9742.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a7e869a.css",
-    "static/js/main.452b498c.js"
+    "static/css/main.784902ff.css",
+    "static/js/main.062a9742.js"
   ]
 }
