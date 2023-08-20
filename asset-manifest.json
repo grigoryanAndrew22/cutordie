@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cutordie/static/css/main.fa0ae7a3.css",
-    "main.js": "/cutordie/static/js/main.1bb194c5.js",
+    "main.js": "/cutordie/static/js/main.5722eaaf.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
     "static/media/topSectionBG.png": "/cutordie/static/media/topSectionBG.40bdc97f69640bf6d67d.png",
@@ -56,11 +56,11 @@
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
     "main.fa0ae7a3.css.map": "/cutordie/static/css/main.fa0ae7a3.css.map",
-    "main.1bb194c5.js.map": "/cutordie/static/js/main.1bb194c5.js.map",
+    "main.5722eaaf.js.map": "/cutordie/static/js/main.5722eaaf.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa0ae7a3.css",
-    "static/js/main.1bb194c5.js"
+    "static/js/main.5722eaaf.js"
   ]
 }
