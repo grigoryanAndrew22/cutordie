@@ -94,7 +94,7 @@ export const NavbarRaw = (props: any) => {
               </p>
             </div>
             <div
-              style={{ position: 'relative', padding: '0px 20px' }}
+              style={{ padding: '0px 20px' }}
               className='signin-navbar-wrapper'
             >
               <button
@@ -106,7 +106,7 @@ export const NavbarRaw = (props: any) => {
                 {navbarRawGenerated.signIn}
               </button>
               <button
-                onClick={openForm}
+                onClick={loggedIn ? dropdownControl : openForm}
                 className='account-btn'
                 style={{
                   display: 'none',

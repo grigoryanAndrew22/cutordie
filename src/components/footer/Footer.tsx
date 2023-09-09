@@ -184,7 +184,6 @@ export const Footer = (props: any) => {
           </ul>
         </div>
       </div>
-      <GooglePayBtn />
     </div>
   );
 };

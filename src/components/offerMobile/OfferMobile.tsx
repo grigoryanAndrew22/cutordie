@@ -159,7 +159,7 @@ export const OfferMobile = (props: any) => {
       </div>
       <div
         className='divider-mobile'
-        style={{ width: '100%', margin: '45px 0px' }}
+        style={{ width: '100%', margin: '55px 0px' }}
       >
         <img
           src={props.divider}

@@ -38,6 +38,12 @@ export const SignInFormMobile = (props: any) => {
     props.switch(false);
   };
 
+  // const switchToSignUp = (e: any) => {
+  //   e.preventDefault();
+  //   props.switch(false);
+  //   props.switch(true);
+  // };
+
   const signinBtn =
     props.language === 'en'
       ? require('../../assets/images/signInBtn.png')
@@ -242,17 +248,22 @@ export const SignInFormMobile = (props: any) => {
                 >
                   {generatedForm.dontHaveAcc[0]}
                 </p>
-                <p
+                <button
+                  onClick={props.switch2}
                   style={{
                     margin: 0,
                     fontSize: '22px',
                     fontWeight: 600,
                     color: '#555555',
-                    whiteSpace: 'nowrap',
+                    border: 'none',
+                    background: 'transparent',
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    padding: '0px',
                   }}
                 >
                   {generatedForm.dontHaveAcc[1]}
-                </p>
+                </button>
               </div>
             </div>
           </form>

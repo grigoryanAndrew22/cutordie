@@ -23,10 +23,10 @@ export const signInFormMobileStyles = {
     color: '#444444',
     border: 'none',
     position: 'absolute' as 'absolute',
-    right: '9px',
-    top: '13px',
+    right: '-9px',
+    top: '7px',
     fontFamily: 'Drum',
-    fontSize: '31px',
+    fontSize: '40px',
     cursor: 'pointer',
   },
 };

@@ -68,6 +68,7 @@ export const SignInForm = (props: any) => {
         visible={props.visible}
         switch={props.switch}
         language={props.language}
+        switch2={switchToSignUp}
       />
       <SignUpForm
         visible={signUpFormVisible}

@@ -4,7 +4,7 @@ const generateDropdownStyles = (dropdownActive: boolean) => {
     position: 'absolute' as 'absolute',
     background: 'black',
     opacity: '83%',
-    right: '-10px',
+    right: '0px',
     top: '47px',
     margin: 0,
     padding: 0,
@@ -16,7 +16,8 @@ const generateDropdownStyles = (dropdownActive: boolean) => {
     paddingTop: '10px',
     paddingBottom: '10px',
     paddingLeft: '10px',
-    paddingRight: '10px',
+    paddingRight: '13px',
+    marginTop: '25px',
   };
 };
 

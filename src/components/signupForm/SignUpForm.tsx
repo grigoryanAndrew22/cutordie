@@ -62,6 +62,7 @@ export const SignUpForm = (props: any) => {
         switch={props.switch}
         switchSignin={props.switch}
         language={props.language}
+        switchBack={switchBack}
       />
       <div
         className='overlay'

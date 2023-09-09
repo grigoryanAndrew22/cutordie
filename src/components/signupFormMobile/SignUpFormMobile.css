@@ -2,6 +2,35 @@
   background-image: url('../../assets/images/bodyBG.png');
 }
 
+.name-input-mobile {
+  background-image: url('../../assets/images/nameinputMobile.png');
+}
+
+.surname-input-mobile,
+.email-input-mobile,
+.password-input-mobile {
+  background-image: url('../../assets/images/surnameinputMobile.png');
+}
+
+.surname-input-mobile,
+.name-input-mobile {
+  background-size: cover;
+  background-position: center;
+  outline: 0;
+  padding-left: 11px;
+  margin-left: 3px;
+}
+
+.email-input-mobile {
+  margin-left: 6px;
+  margin-right: -2px;
+}
+
+.password-input-mobile {
+  margin-left: 6px;
+  margin-right: -1.9px;
+}
+
 .name-input,
 .surname-input {
   background-image: url('../../assets/images/nameInputBorder.png');

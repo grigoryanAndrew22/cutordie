@@ -23,6 +23,7 @@ export const FooterMobileStyles = {
     fontSize: '20px',
     justifyContent: 'space-evenly',
     padding: 0,
+    fontWeight: '600',
   },
   logoPart: {
     display: 'flex',
@@ -31,7 +32,7 @@ export const FooterMobileStyles = {
     height: '100%',
   },
   infoItem: {
-    height: '70%',
+    height: '75%',
     display: 'flex',
     flexDirection: 'column' as 'column',
     justifyContent: 'space-between',

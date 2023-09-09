@@ -23,7 +23,7 @@ export const signUpFormStyles = {
     color: '#444444',
     border: 'none',
     position: 'absolute' as 'absolute',
-    right: '25px',
+    right: '-9px',
     top: '7px',
     fontFamily: 'Drum',
     fontSize: '40px',

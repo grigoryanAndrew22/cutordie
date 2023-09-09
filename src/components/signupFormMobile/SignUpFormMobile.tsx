@@ -41,11 +41,11 @@ export const SignUpFormMobile = (props: any) => {
     props.switch(false);
   };
 
-  const switchBack = (e: any) => {
-    e.preventDefault();
-    props.switch(false);
-    props.switchSignin(true);
-  };
+  // const switchBack = (e: any) => {
+  //   e.preventDefault();
+  //   props.switch(false);
+  //   props.switchSignin(true);
+  // };
 
   const signinBtn =
     props.language === 'en'
@@ -121,26 +121,32 @@ export const SignUpFormMobile = (props: any) => {
               className='name-surname-wrapper'
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
                 width: '100%',
-                marginBottom: '15px',
+                flexDirection: 'column',
               }}
             >
-              <div className='name' style={{ display: 'flex' }}>
+              <div
+                className='name'
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '20px',
+                }}
+              >
                 <label
                   htmlFor='name'
                   style={{
                     fontFamily: 'Bitter',
-                    fontSize: '22px',
-                    paddingBottom: '9px',
+                    fontSize: '19px',
+                    color: '#444444',
                   }}
                 >
-                  {generatedForm.name}
+                  {generatedForm.name}:
                 </label>
                 <input
                   placeholder={generatedForm.name}
                   type='text'
-                  className='name-input'
+                  className='name-input-mobile'
                   style={{
                     backgroundColor: 'transparent',
                     border: 'none',
@@ -149,24 +155,32 @@ export const SignUpFormMobile = (props: any) => {
                     color: '#444444',
                     fontSize: '16px',
                     fontWeight: '600',
+                    width: '100%',
                   }}
                 />
               </div>
-              <div className='surname' style={{ display: 'flex' }}>
+              <div
+                className='surname'
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '20px',
+                }}
+              >
                 <label
                   htmlFor='surname'
                   style={{
                     fontFamily: 'Bitter',
-                    fontSize: '22px',
-                    paddingBottom: '9px',
+                    fontSize: '19px',
+                    color: '#444444',
                   }}
                 >
-                  {generatedForm.surname}
+                  {generatedForm.surname}:
                 </label>
                 <input
                   placeholder={generatedForm.surname}
                   type='text'
-                  className='surname-input'
+                  className='surname-input-mobile'
                   style={{
                     backgroundColor: 'transparent',
                     border: 'none',
@@ -180,21 +194,27 @@ export const SignUpFormMobile = (props: any) => {
                 />
               </div>
             </div>
-            <div style={{ display: 'flex' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '20px',
+              }}
+            >
               <label
                 htmlFor='email'
                 style={{
                   display: 'block',
                   fontFamily: 'Bitter',
-                  fontSize: '22px',
-                  paddingBottom: '9px',
+                  fontSize: '19px',
+                  color: '#444444',
                 }}
               >
-                {generatedForm.email}
+                {generatedForm.email}:
               </label>
 
               <input
-                className='email-input'
+                className='email-input-mobile'
                 placeholder={generatedForm.email}
                 type='email'
                 style={{
@@ -206,6 +226,7 @@ export const SignUpFormMobile = (props: any) => {
                   color: '#444444',
                   fontSize: '16px',
                   fontWeight: '600',
+                  paddingLeft: '12px',
                 }}
               />
             </div>
@@ -214,22 +235,22 @@ export const SignUpFormMobile = (props: any) => {
               className='password-label'
               style={{
                 display: 'flex',
-                marginTop: '20px',
                 justifyContent: 'space-between',
+                alignItems: 'center',
               }}
             >
               <label
                 htmlFor='password'
                 style={{
                   fontFamily: 'Bitter',
-                  fontSize: '22px',
-                  paddingBottom: '9px',
+                  fontSize: '19px',
+                  color: '#444444',
                 }}
               >
-                {generatedForm.password}
+                {generatedForm.password}:
               </label>
               <input
-                className='password-input'
+                className='password-input-mobile'
                 type='password'
                 placeholder={generatedForm.password}
                 style={{
@@ -241,6 +262,7 @@ export const SignUpFormMobile = (props: any) => {
                   color: '#444444',
                   fontSize: '16px',
                   fontWeight: '600',
+                  paddingLeft: '7px',
                 }}
               />
             </div>
@@ -275,13 +297,15 @@ export const SignUpFormMobile = (props: any) => {
                     display: 'flex',
                     alignItems: 'center',
                     fontFamily: 'Bitter',
+                    marginTop: '20px',
+                    marginBottom: '7px',
                   }}
                 >
                   <p style={{ margin: 0, paddingRight: '6px' }}>
                     {generatedForm.dontHaveAcc[0]}
                   </p>
                   <button
-                    onClick={switchBack}
+                    onClick={props.switchBack}
                     style={{
                       margin: 0,
                       fontSize: '22px',

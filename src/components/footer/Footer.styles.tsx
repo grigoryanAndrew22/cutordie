@@ -18,9 +18,10 @@ export const FooterStyles = {
     height: '100%',
     alignItems: 'center',
     fontFamily: 'Bitter',
-    fontSize: '20px',
+    fontSize: '22px',
     justifyContent: 'space-evenly',
     padding: 0,
+    fontWeight: '600',
   },
   logoPart: {
     width: '20%',
