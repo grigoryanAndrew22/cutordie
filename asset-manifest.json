@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.9dfbb68c.css",
-    "main.js": "/cutordie/static/js/main.83406527.js",
+    "main.css": "/cutordie/static/css/main.3b3a4c67.css",
+    "main.js": "/cutordie/static/js/main.0b4d60e1.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/coursesBG.png": "/cutordie/static/media/coursesBG.c5364ef4d4a279c1f982.png",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
+    "static/media/tiktokIcon.svg": "/cutordie/static/media/tiktokIcon.3f581dfaad1565c020d946bdaa58e4d8.svg",
+    "static/media/instaIcon.svg": "/cutordie/static/media/instaIcon.000e3b1ba618f66af73343d9c47afc4a.svg",
     "static/media/cornerIconRB.svg": "/cutordie/static/media/cornerIconRB.1bbde42a7a2428fe7597d78ff308e49c.svg",
     "static/media/scissorsGray.svg": "/cutordie/static/media/scissorsGray.a410e275961e67b0d0760a962cfd9bd9.svg",
     "static/media/settingsIcon.svg": "/cutordie/static/media/settingsIcon.0dfd695fa73b536e32cba705226c0cc9.svg",
@@ -42,12 +44,12 @@
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
     "static/media/scissorsWhite.svg": "/cutordie/static/media/scissorsWhite.9e7772eacd4ce6f1a9378e1e38473fe2.svg",
-    "main.9dfbb68c.css.map": "/cutordie/static/css/main.9dfbb68c.css.map",
-    "main.83406527.js.map": "/cutordie/static/js/main.83406527.js.map",
+    "main.3b3a4c67.css.map": "/cutordie/static/css/main.3b3a4c67.css.map",
+    "main.0b4d60e1.js.map": "/cutordie/static/js/main.0b4d60e1.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dfbb68c.css",
-    "static/js/main.83406527.js"
+    "static/css/main.3b3a4c67.css",
+    "static/js/main.0b4d60e1.js"
   ]
 }
