@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.cd414791.css",
-    "main.js": "/cutordie/static/js/main.6b58aa24.js",
+    "main.css": "/cutordie/static/css/main.f4e31301.css",
+    "main.js": "/cutordie/static/js/main.26ba193e.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/coursesBG.png": "/cutordie/static/media/coursesBG.c5364ef4d4a279c1f982.png",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
@@ -44,12 +44,12 @@
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
     "static/media/scissorsWhite.svg": "/cutordie/static/media/scissorsWhite.9e7772eacd4ce6f1a9378e1e38473fe2.svg",
-    "main.cd414791.css.map": "/cutordie/static/css/main.cd414791.css.map",
-    "main.6b58aa24.js.map": "/cutordie/static/js/main.6b58aa24.js.map",
+    "main.f4e31301.css.map": "/cutordie/static/css/main.f4e31301.css.map",
+    "main.26ba193e.js.map": "/cutordie/static/js/main.26ba193e.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd414791.css",
-    "static/js/main.6b58aa24.js"
+    "static/css/main.f4e31301.css",
+    "static/js/main.26ba193e.js"
   ]
 }
