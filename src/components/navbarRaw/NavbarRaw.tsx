@@ -67,7 +67,7 @@ export const NavbarRaw = (props: any) => {
       <div className='navbar-wrapper' style={navbarRawStyles.navbarWrapper}>
         <div className='navbar' style={navbarRawStyles.navbar}>
           <div className='skull' style={{ width: '30%', display: 'flex' }}>
-            <a href='#' style={{ display: 'flex' }}>
+            <a href='/cutordie' style={{ display: 'flex' }}>
               <img src={skull_logo} alt='logo' height={60} width={110} />
             </a>
           </div>
@@ -75,7 +75,7 @@ export const NavbarRaw = (props: any) => {
             className='title-logo'
             style={{ width: '40%', display: 'flex', justifyContent: 'center' }}
           >
-            <a href='#' style={{ display: 'flex' }}>
+            <a href='/cutordie' style={{ display: 'flex' }}>
               <img src={group} alt='logo' height={51} width={190} />
             </a>
           </div>
@@ -86,12 +86,17 @@ export const NavbarRaw = (props: any) => {
               </p>
             </div>
             <div style={{ padding: '0px 20px' }} className='courses-wrapper'>
-              <p
-                style={{ fontSize: '17px', letterSpacing: '0.02857em' }}
-                className='courses'
+              <a
+                href='/cutordie/courses'
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                {navbarRawGenerated.courses}
-              </p>
+                <p
+                  style={{ fontSize: '17px', letterSpacing: '0.02857em' }}
+                  className='courses'
+                >
+                  {navbarRawGenerated.courses}
+                </p>
+              </a>
             </div>
             <div
               style={{ padding: '0px 20px' }}

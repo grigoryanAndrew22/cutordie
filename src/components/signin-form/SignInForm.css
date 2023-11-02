@@ -1,5 +1,6 @@
 .signin-wrapper {
   background-image: url('../../assets/images/bodyBG.png');
+  background-size: contain;
 }
 
 .email-input,

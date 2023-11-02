@@ -1,5 +1,6 @@
 .signin-wrapper-mobile {
   background-image: url('../../assets/images/bodyBG.png');
+  background-size: contain;
   display: none;
 }
 

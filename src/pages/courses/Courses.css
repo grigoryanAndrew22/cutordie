@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Drum;
+  src: url(../../assets/fonts/Drum.ttf);
+}
+
+@font-face {
+  font-family: Besom;
+  src: url(../../assets/fonts/Besom.ttf);
+}
+
+@font-face {
+  font-family: Hey October;
+  src: url(../../assets/fonts/HeyOctober.ttf);
+}
+
+.title {
+  font-family: Drum;
+}

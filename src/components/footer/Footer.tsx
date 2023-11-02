@@ -11,7 +11,8 @@ import hryvniaGray from '../../assets/images/hryvniaGray.svg';
 import euroGray from '../../assets/images/euroGray.svg';
 import dollarGray from '../../assets/images/dollarGray.svg';
 import './Footer.css';
-import GooglePayBtn from './GooglePayBtn';
+import instaIcon from '../../assets/images/instaIcon.svg';
+import tiktokIcon from '../../assets/images/tiktokIcon.svg';
 
 const footerLangs = {
   en: {
@@ -47,39 +48,56 @@ export const Footer = (props: any) => {
   return (
     <div className='footer-section' style={FooterStyles.wrapper}>
       <div style={FooterStyles.footerSection}>
-        <div className='logo_part' style={FooterStyles.logoPart}>
+        <div className='logo_par' style={FooterStyles.logoPart}>
           <img
             src={require('../../assets/images/footerLogo.png')}
             alt='logo'
-            width={250}
-            height={183}
+            width={383}
+            height={283}
           />
-          <p style={{ color: '#808080', fontSize: '15px' }}>
+          <p
+            style={{
+              color: 'rgb(85,85,83)',
+              fontSize: '20px',
+              marginTop: '0.4rem',
+            }}
+          >
             &copy; 2023 Cut or die. All rights reserved.
           </p>
         </div>
-        <div className='info_part' style={{ width: '80%' }}>
+        <div className='info_part' style={{ width: '75%' }}>
           <ul style={FooterStyles.footerInfo}>
             <li className='contacts' style={FooterStyles.infoItem}>
               <p style={{ margin: 0 }}>{footerTranslated.contacts}</p>
               <p style={{ margin: 0 }}>{footerTranslated.about}</p>
               <p style={{ margin: 0 }}>FAQ</p>
             </li>
-            <img src={vertical} alt='line' height={190} />
+            <img src={vertical} alt='line' height={220} />
             <li className='policy' style={FooterStyles.infoItem}>
               <p style={{ margin: 0 }}>{footerTranslated.termsofUse}</p>
               <p style={{ margin: 0 }}>{footerTranslated.refund}</p>
               <p style={{ margin: 0 }}>{footerTranslated.privacy}</p>
             </li>
-            <img src={vertical} alt='line' height={190} />
+            <img src={vertical} alt='line' height={220} />
             <li className='social_networks' style={FooterStyles.socialNetworks}>
-              <InstagramIcon sx={{ fontSize: '41px' }} />
-              <YouTubeIcon sx={{ fontSize: '41px' }} />
+              <img
+                src={instaIcon}
+                style={{ alignSelf: 'center', width: '76px' }}
+              />
+              <img
+                src={tiktokIcon}
+                style={{ alignSelf: 'center', width: '69px' }}
+              />
             </li>
-            <img src={vertical} alt='line' height={190} />
-            <li className='currency_language' style={{ width: '15%' }}>
+            <img src={vertical} alt='line' height={220} />
+            <li className='currency_language'>
               <div style={FooterStyles.currency}>
-                <img src={coin} alt='coin' width={35} />
+                <img
+                  src={coin}
+                  alt='coin'
+                  width={54}
+                  style={{ paddingBottom: '0.36rem' }}
+                />
                 <div
                   style={{
                     display: 'flex',
@@ -96,11 +114,10 @@ export const Footer = (props: any) => {
                       background: 'transparent',
                       cursor: 'pointer',
                       fontSize: '30px',
-                      padding: '1px 8px',
                     }}
                   >
                     <img
-                      width={20}
+                      width={32}
                       src={
                         props.currency === 'uah' ? hryvniaWhite : hryvniaGray
                       }
@@ -114,11 +131,10 @@ export const Footer = (props: any) => {
                       background: 'transparent',
                       cursor: 'pointer',
                       fontSize: '30px',
-                      padding: '1px 8px',
                     }}
                   >
                     <img
-                      width={29}
+                      width={44}
                       src={props.currency === 'eur' ? euroWhite : euroGray}
                     />
                   </button>
@@ -130,11 +146,10 @@ export const Footer = (props: any) => {
                       background: 'transparent',
                       cursor: 'pointer',
                       fontSize: '30px',
-                      padding: '1px 8px',
                     }}
                   >
                     <img
-                      width={20}
+                      width={32}
                       src={props.currency === 'usd' ? dollarWhite : dollarGray}
                     />
                   </button>
@@ -143,8 +158,7 @@ export const Footer = (props: any) => {
               <div style={FooterStyles.language}>
                 <img
                   src={langIcon}
-                  width={33}
-                  height={33}
+                  width={54}
                   style={{ paddingLeft: '1.3px' }}
                 />
                 <button
@@ -156,7 +170,7 @@ export const Footer = (props: any) => {
                     border: 'none',
                     cursor: 'pointer',
                     fontFamily: 'inherit',
-                    fontSize: '23px',
+                    fontSize: '42px',
                     color: props.language === 'ua' ? 'white' : '#808080',
                   }}
                 >
@@ -173,7 +187,7 @@ export const Footer = (props: any) => {
                     border: 'none',
                     cursor: 'pointer',
                     fontFamily: 'inherit',
-                    fontSize: '23px',
+                    fontSize: '42px',
                     color: props.language === 'en' ? 'white' : '#808080',
                   }}
                 >

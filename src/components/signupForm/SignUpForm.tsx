@@ -9,8 +9,9 @@ import rightTopCorner from '../../assets/images/rightTopCorner.svg';
 import rightBotCorner from '../../assets/images/rightBotCorner.svg';
 import signUpBtn from '../../assets/images/signUpBtn.svg';
 import './SignUpForm.css';
-import { Fragment, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import { SignUpFormMobile } from '../signupFormMobile/SignUpFormMobile';
+import axios from 'axios';
 
 const formLangs = {
   en: {
@@ -38,6 +39,48 @@ const formLangs = {
 };
 
 export const SignUpForm = (props: any) => {
+  const [inputName, setInputName] = useState('');
+  const [inputSurname, setInputSurname] = useState('');
+  const [inputEmail, setInputEmail] = useState('');
+  const [inputPassword, setInputPassword] = useState('');
+
+  const nameField: any = useRef(null);
+  const surnameField: any = useRef(null);
+  const emailField: any = useRef(null);
+  const passwordField: any = useRef(null);
+
+  const handleName = (e: any) => {
+    setInputName(e.target.value);
+  };
+  const handleSurname = (e: any) => {
+    setInputSurname(e.target.value);
+  };
+  const handleEmail = (e: any) => {
+    setInputEmail(e.target.value);
+  };
+  const handlePassword = (e: any) => {
+    setInputPassword(e.target.value);
+  };
+
+  const submitForm = (e: any) => {
+    e.preventDefault();
+    closeForm();
+    nameField.current.value = '';
+    surnameField.current.value = '';
+    emailField.current.value = '';
+    passwordField.current.value = '';
+
+    axios
+      .post('https://cut-or-die-api.onrender.com/api/v1/users/signup', {
+        userName: inputName + inputSurname,
+        email: inputEmail,
+        password: inputPassword,
+        passwordConfirm: inputPassword,
+      })
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  };
+
   const closeForm = () => {
     props.switch(false);
   };
@@ -133,7 +176,11 @@ export const SignUpForm = (props: any) => {
               X
             </button>
           </div>
-          <form className='signin-form' style={{ width: '90%' }}>
+          <form
+            className='signin-form'
+            style={{ width: '90%' }}
+            onSubmit={submitForm}
+          >
             <div
               className='name-surname-wrapper'
               style={{
@@ -167,6 +214,8 @@ export const SignUpForm = (props: any) => {
                     fontSize: '16px',
                     fontWeight: '600',
                   }}
+                  onChange={handleName}
+                  ref={nameField}
                 />
               </div>
               <div className='surname' style={{ width: '46%' }}>
@@ -194,6 +243,8 @@ export const SignUpForm = (props: any) => {
                     fontWeight: '600',
                     width: '98%',
                   }}
+                  onChange={handleSurname}
+                  ref={surnameField}
                 />
               </div>
             </div>
@@ -223,6 +274,8 @@ export const SignUpForm = (props: any) => {
                 fontSize: '16px',
                 fontWeight: '600',
               }}
+              onChange={handleEmail}
+              ref={emailField}
             />
 
             <div
@@ -258,6 +311,8 @@ export const SignUpForm = (props: any) => {
                 fontSize: '16px',
                 fontWeight: '600',
               }}
+              onChange={handlePassword}
+              ref={passwordField}
             />
             <div
               className='submit-section'

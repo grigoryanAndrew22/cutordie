@@ -12,10 +12,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./assets/images/bodyBG.png');
+  background-image: url('./assets/images/coursesBG.png');
   width: -webkit-fill-available;
   position: relative;
   overflow-x: hidden;
+  background-size: cover;
+  box-shadow: inset 0px 110px 50px #000;
 }
 
 body::-webkit-scrollbar {
