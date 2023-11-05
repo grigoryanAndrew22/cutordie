@@ -9,6 +9,7 @@ import { OfferMobile } from '../../components/offerMobile/OfferMobile';
 import dividerRight from '../../assets/images/dividerRight.svg';
 import dividerLeft from '../../assets/images/dividerLeft.svg';
 import { FooterMobile } from '../../components/footerMobile/FooterMobile';
+import './Home.css';
 
 export const Home = () => {
   const [currency, changeCurrency] = useState('usd');
@@ -19,7 +20,7 @@ export const Home = () => {
   };
 
   return (
-    <Fragment>
+    <div className='home-wrapper'>
       <NavbarRaw language={language} />
       <TopSection language={language} />
       <BlotSection language={language} />
@@ -62,6 +63,7 @@ export const Home = () => {
         changeLangHandler={changeLang}
         currency={currency}
         changeCurr={changeCurrency}
+        bottomShadow={false}
       />
       <FooterMobile
         language={language}
@@ -69,7 +71,7 @@ export const Home = () => {
         currency={currency}
         changeCurr={changeCurrency}
       />
-    </Fragment>
+    </div>
   );
 };
 

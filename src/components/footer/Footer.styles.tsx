@@ -1,11 +1,15 @@
-export const FooterStyles = {
-  wrapper: {
+const generateWrapperStyle = (bottomShadow: boolean) => {
+  return {
     height: '340px',
     backgroundColor: 'black',
-    boxShadow: '0px -100px 110px black',
-    marginTop: '4rem',
+    boxShadow: bottomShadow ? '0px -100px 110px black' : '',
+    // marginTop: '4rem',
     display: 'flex',
-  },
+  };
+};
+
+export const FooterStyles = {
+  wrapper: generateWrapperStyle,
   footerSection: {
     width: '93%',
     margin: '0px auto',

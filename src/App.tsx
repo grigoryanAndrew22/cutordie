@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Home } from './pages/home/Home';
 import { Courses } from './pages/courses/Courses';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 
 const ROUTES = [
   {
@@ -18,6 +19,15 @@ const ROUTES = [
 ];
 
 function App() {
+  useEffect(() => {
+    axios
+      .get('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
+        withCredentials: true,
+      })
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className='App'>
       <BrowserRouter>

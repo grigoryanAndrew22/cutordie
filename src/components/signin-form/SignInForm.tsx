@@ -14,6 +14,7 @@ import { SignInFormMobile } from '../signin-formMobile/SignInFormMobile';
 import { SignUpForm } from '../signupForm/SignUpForm';
 import { SignUpFormMobile } from '../signupFormMobile/SignUpFormMobile';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const formLangs = {
   en: {
@@ -37,6 +38,7 @@ const formLangs = {
 };
 
 export const SignInForm = (props: any) => {
+  const [incorrect, setIncorrect] = useState(false);
   const emailField: any = useRef(null);
   const passwordField: any = useRef(null);
 
@@ -51,18 +53,24 @@ export const SignInForm = (props: any) => {
 
   const login = (e: any) => {
     e.preventDefault();
-    closeForm();
 
     axios
       .post('https://cut-or-die-api.onrender.com/api/v1/users/signin', {
         email: emailField.current.value,
         password: passwordField.current.value,
       })
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
-
-    emailField.current.value = '';
-    passwordField.current.value = '';
+      .then((response) => {
+        setIncorrect(false);
+        Cookies.set('token', response.data.token, { secure: true });
+        console.log(response);
+        emailField.current.value = '';
+        passwordField.current.value = '';
+        closeForm();
+      })
+      .catch((error) => {
+        setIncorrect(true);
+        console.log(error);
+      });
   };
 
   const closeForm = () => {
@@ -221,7 +229,6 @@ export const SignInForm = (props: any) => {
                 style={{
                   margin: 0,
                   fontFamily: 'Bitter',
-
                   alignSelf: 'center',
                 }}
               >
@@ -244,11 +251,26 @@ export const SignInForm = (props: any) => {
                 fontWeight: '600',
               }}
             />
+            <div style={{ marginTop: '0.8em', height: '16.8px' }}>
+              <p
+                style={{
+                  fontFamily: 'Bitter',
+                  color: '#900000',
+                  fontWeight: '600',
+                  fontSize: '14px',
+                  paddingLeft: '0.29em',
+                  margin: 0,
+                  display: incorrect ? 'block' : 'none',
+                }}
+              >
+                Incorrect email or password
+              </p>
+            </div>
             <div
               className='submit-section'
               style={{
                 display: 'flex',
-                marginTop: '30px',
+                marginTop: '20px',
                 justifyContent: 'space-between',
               }}
             >

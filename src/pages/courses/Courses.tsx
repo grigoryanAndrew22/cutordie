@@ -83,6 +83,7 @@ export const Courses = () => {
         changeLangHandler={changeLang}
         currency={currency}
         changeCurr={changeCurrency}
+        bottomShadow={true}
       />
       <FooterMobile
         language={language}

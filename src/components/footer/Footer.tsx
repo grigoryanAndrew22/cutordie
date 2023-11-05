@@ -46,7 +46,10 @@ export const Footer = (props: any) => {
     props.language === 'en' ? footerLangs.en : footerLangs.ua;
 
   return (
-    <div className='footer-section' style={FooterStyles.wrapper}>
+    <div
+      className='footer-section'
+      style={FooterStyles.wrapper(props.bottomShadow)}
+    >
       <div style={FooterStyles.footerSection}>
         <div className='logo_par' style={FooterStyles.logoPart}>
           <img
