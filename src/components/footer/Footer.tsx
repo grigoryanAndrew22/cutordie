@@ -15,7 +15,7 @@ import instaIcon from "../../assets/images/instaIcon.svg";
 import tiktokIcon from "../../assets/images/tiktokIcon.svg";
 
 const footerLangs = {
-  //TEST
+  //TEST//bred
   en: {
     contacts: "Contacts",
     about: "About me",
