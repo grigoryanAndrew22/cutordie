@@ -18,7 +18,6 @@ export const FooterStyles = {
     alignSelf: "flex-end",
   },
   footerInfo: {
-    width: "100%",
     listStyleType: "none",
     color: "#CFCFCF",
     display: "flex",
@@ -26,9 +25,8 @@ export const FooterStyles = {
     height: "100%",
     alignItems: "center",
     fontFamily: "Bitter",
-    fontSize: "34px",
-    justifyContent: "space-evenly",
-    padding: 0,
+    fontSize: "30px",
+    justifyContent: "space-between",
   },
   logoPart: {
     display: "flex",
