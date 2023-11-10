@@ -81,9 +81,14 @@ export const NavbarRaw = (props: any) => {
           </div>
           <div className='tabs' style={navbarRawStyles.tabs}>
             <div style={{ padding: '0px 20px' }} className='aboutme-wrapper'>
-              <p style={navbarRawStyles.aboutMe} className='aboutme'>
-                {navbarRawGenerated.aboutMe}
-              </p>
+              <a
+                href='/cutordie/aboutme'
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <p style={navbarRawStyles.aboutMe} className='aboutme'>
+                  {navbarRawGenerated.aboutMe}
+                </p>
+              </a>
             </div>
             <div style={{ padding: '0px 20px' }} className='courses-wrapper'>
               <a

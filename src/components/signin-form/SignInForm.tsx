@@ -54,15 +54,22 @@ export const SignInForm = (props: any) => {
   const login = (e: any) => {
     e.preventDefault();
 
-    axios
-      .post('https://cut-or-die-api.onrender.com/api/v1/users/signin', {
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         email: emailField.current.value,
         password: passwordField.current.value,
-      })
-      .then((response) => {
+      }),
+      credentials: 'include',
+    })
+      .then((response) => response.json())
+      .then((data) => {
         setIncorrect(false);
-        Cookies.set('token', response.data.token, { secure: true });
-        console.log(response);
+        Cookies.set('jwt', data.token, { secure: true });
+        console.log(data);
         emailField.current.value = '';
         passwordField.current.value = '';
         closeForm();
@@ -71,6 +78,24 @@ export const SignInForm = (props: any) => {
         setIncorrect(true);
         console.log(error);
       });
+
+    // axios
+    //   .post('https://cut-or-die-api.onrender.com/api/v1/users/signin', {
+    //     email: emailField.current.value,
+    //     password: passwordField.current.value,
+    //   })
+    //   .then((response) => {
+    //     setIncorrect(false);
+    //     Cookies.set('token', response.data.token, { secure: true });
+    //     console.log(response);
+    //     emailField.current.value = '';
+    //     passwordField.current.value = '';
+    //     closeForm();
+    //   })
+    //   .catch((error) => {
+    //     setIncorrect(true);
+    //     console.log(error);
+    //   });
   };
 
   const closeForm = () => {
