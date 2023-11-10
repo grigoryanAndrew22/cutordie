@@ -15,7 +15,7 @@ import instaIcon from "../../assets/images/instaIcon.svg";
 import tiktokIcon from "../../assets/images/tiktokIcon.svg";
 
 const footerLangs = {
-  //TEST
+  //TEST//bred
   en: {
     contacts: "Contacts",
     about: "About me",
@@ -52,13 +52,13 @@ export const Footer = (props: any) => {
           <img
             src={require("../../assets/images/footerLogo.png")}
             alt="logo"
-            width={383}
-            height={283}
+            width={344}
+            height={254}
           />
           <p
             style={{
               color: "rgb(85,85,83)",
-              fontSize: "20px",
+              fontSize: "15px",
               marginTop: "0.4rem",
             }}
           >
