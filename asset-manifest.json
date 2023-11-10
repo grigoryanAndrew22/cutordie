@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cutordie/static/css/main.f5c57b13.css",
-    "main.js": "/cutordie/static/js/main.c55f5b62.js",
+    "main.js": "/cutordie/static/js/main.dd13987e.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/coursesBG.png": "/cutordie/static/media/coursesBG.c5364ef4d4a279c1f982.png",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
@@ -10,6 +10,7 @@
     "static/media/cornerIconRB.svg": "/cutordie/static/media/cornerIconRB.1bbde42a7a2428fe7597d78ff308e49c.svg",
     "static/media/scissorsGray.svg": "/cutordie/static/media/scissorsGray.a410e275961e67b0d0760a962cfd9bd9.svg",
     "static/media/topSectionBG.png": "/cutordie/static/media/topSectionBG.40bdc97f69640bf6d67d.png",
+    "static/media/barberpfp.png": "/cutordie/static/media/barberpfp.cf045e369b229a41747e.png",
     "static/media/settingsIcon.svg": "/cutordie/static/media/settingsIcon.0dfd695fa73b536e32cba705226c0cc9.svg",
     "static/media/libraryIcon.svg": "/cutordie/static/media/libraryIcon.d39465ef8426dedd783e9cfd05f7e7e6.svg",
     "static/media/HeyOctober.ttf": "/cutordie/static/media/HeyOctober.86288c99f0b263b522f1.ttf",
@@ -65,11 +66,11 @@
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
     "static/media/scissorsWhite.svg": "/cutordie/static/media/scissorsWhite.9e7772eacd4ce6f1a9378e1e38473fe2.svg",
     "main.f5c57b13.css.map": "/cutordie/static/css/main.f5c57b13.css.map",
-    "main.c55f5b62.js.map": "/cutordie/static/js/main.c55f5b62.js.map",
+    "main.dd13987e.js.map": "/cutordie/static/js/main.dd13987e.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f5c57b13.css",
-    "static/js/main.c55f5b62.js"
+    "static/js/main.dd13987e.js"
   ]
 }
