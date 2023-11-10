@@ -8,3 +8,5 @@ export const HaircutPhoto = (props: any) => {
     </div>
   );
 };
+
+// update
