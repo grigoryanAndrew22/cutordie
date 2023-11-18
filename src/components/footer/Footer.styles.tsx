@@ -16,6 +16,8 @@ export const FooterStyles = {
     display: "flex",
     justifyContent: "space-between",
     alignSelf: "flex-end",
+    letterSpacing: "1px",
+    marginLeft: "10px",
   },
   footerInfo: {
     listStyleType: "none",
