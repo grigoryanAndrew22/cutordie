@@ -72,6 +72,7 @@ export const SignInForm = (props: any) => {
         console.log(data);
         emailField.current.value = '';
         passwordField.current.value = '';
+        props.setLogin(true);
         closeForm();
       })
       .catch((error) => {

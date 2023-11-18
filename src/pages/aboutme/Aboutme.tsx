@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import { NavbarRaw } from '../../components/navbarRaw/NavbarRaw';
 import { Footer } from '../../components/footer/Footer';
 import { FooterMobile } from '../../components/footerMobile/FooterMobile';
+import { aboutmeStyles } from './Aboutme.styles';
 
 export const Aboutme = () => {
   const [currency, changeCurrency] = useState('usd');
@@ -18,48 +19,14 @@ export const Aboutme = () => {
       <NavbarRaw language={language} />
       <div
         className='barber-profile-wrapper'
-        style={{
-          background: '#000',
-          boxShadow: 'black 0px 305px 90px',
-        }}
+        style={aboutmeStyles.barderProfileWrapper}
       >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            width: '88%',
-            margin: 'auto',
-            paddingTop: '173px',
-          }}
-        >
-          <div
-            className='whyme'
-            style={{
-              fontSize: '65px',
-              color: 'white',
-              height: '550px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              paddingTop: '20px',
-              zIndex: 1,
-            }}
-          >
-            <p
-              style={{
-                margin: 0,
-                fontFamily: 'Drum',
-                fontSize: '115px',
-                paddingBottom: '20px',
-              }}
-            >
-              WHY ME?
-            </p>
-            <p style={{ margin: 0, fontFamily: 'Drum' }}>-BECAUSE,</p>
-            <p style={{ margin: 0, fontFamily: 'Drum' }}>
-              -MAMA SAID IM THЕ BEST,
-            </p>
-            <p style={{ margin: 0, fontFamily: 'Drum' }}>-BECAUSE.</p>
+        <div style={aboutmeStyles.firstSection}>
+          <div className='whyme' style={aboutmeStyles.whyme}>
+            <p style={aboutmeStyles.whymeP}>WHY ME?</p>
+            <p style={aboutmeStyles.pStyle}>-BECAUSE,</p>
+            <p style={aboutmeStyles.pStyle}>-MAMA SAID IM THЕ BEST,</p>
+            <p style={aboutmeStyles.pStyle}>-BECAUSE.</p>
           </div>
           <div className='pfp' style={{ height: '600px' }}>
             <img
@@ -71,24 +38,8 @@ export const Aboutme = () => {
         </div>
       </div>
 
-      <div
-        style={{
-          width: '88%',
-          margin: 'auto',
-          opacity: '0.85',
-          paddingTop: '130px',
-          paddingBottom: '50px',
-          boxShadow: 'black 0px -125px 90px',
-        }}
-      >
-        <p
-          style={{
-            color: '#fff',
-            fontSize: '29px',
-            fontFamily: 'Bitter',
-            fontWeight: '100',
-          }}
-        >
+      <div style={aboutmeStyles.inscription}>
+        <p style={aboutmeStyles.inscrText}>
           Building a rapport with clients can be crucial. People often choose
           barbers they feel comfortable with and with whom they can have a
           friendly relationship. If you're personable and make your clients feel
@@ -96,20 +47,9 @@ export const Aboutme = () => {
         </p>
       </div>
 
-      <div className='portfolio' style={{ width: '88%', margin: 'auto' }}>
-        <p style={{ color: '#fff', fontFamily: 'Drum', fontSize: '80px' }}>
-          MY PORTFOLIO
-        </p>
-        <div
-          className='photos_row1'
-          style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            width: '100%',
-            marginBottom: '90px',
-            flexWrap: 'wrap',
-          }}
-        >
+      <div className='portfolio' style={aboutmeStyles.portfolioWrap}>
+        <p style={aboutmeStyles.portfolioTitle}>MY PORTFOLIO</p>
+        <div className='photos_row1' style={aboutmeStyles.photosRow}>
           {row.map((i: any) => (
             <img
               src={require(`../../assets/images/haircutpic${i}.png`)}

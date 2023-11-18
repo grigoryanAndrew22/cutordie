@@ -5,18 +5,12 @@ import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import './Courses.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
 import axios from 'axios';
+import { coursesStyles } from './Courses.styles';
 
 export const Courses = () => {
   const [coursesObj, setCourses] = useState([]);
 
   useEffect(() => {
-    // axios
-    //   .get('https://cut-or-die-api.onrender.com/api/v1/courses/')
-    //   .then((response) => {
-    //     setCourses(response.data.data.courses);
-    //     console.log(response.data.data.courses);
-    //   });
-
     fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
       .then((response) => response.json())
       .then((data) => {
@@ -37,53 +31,16 @@ export const Courses = () => {
     <Fragment>
       <NavbarRaw language={language} />
 
-      <div
-        className='haircuts-section'
-        style={{
-          paddingTop: '140px',
-          width: '88%',
-          margin: '0 auto',
-          paddingBottom: '100px',
-        }}
-      >
+      <div className='haircuts-section' style={coursesStyles.haircutsSection}>
         <div className='title'>
-          <h1
-            style={{
-              margin: 0,
-              color: '#fff',
-              fontWeight: '100',
-              fontSize: '70px',
-              marginTop: '-24px',
-            }}
-          >
-            HAIRCUTS FOR STARTER
-          </h1>
+          <h1 style={coursesStyles.title}>HAIRCUTS FOR STARTER</h1>
         </div>
 
-        <div
-          className='cards'
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '3rem',
-          }}
-        >
+        <div className='cards' style={coursesStyles.cards}>
           {coursesObj.map((course: any, i: any) => (
             <MovieCard key={course._id} index={i} course={course} />
           ))}
         </div>
-        {/* <div
-          className='cards'
-          style={{
-            display: 'flex',
-            width: '100%',
-            justifyContent: 'space-between',
-          }}
-        >
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-        </div> */}
       </div>
 
       <Footer

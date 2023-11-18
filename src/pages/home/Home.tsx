@@ -11,7 +11,7 @@ import dividerLeft from '../../assets/images/dividerLeft.svg';
 import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import './Home.css';
 
-export const Home = () => {
+export const Home = (props: any) => {
   const [currency, changeCurrency] = useState('usd');
   const [language, changeLanguage] = useState('en');
 
@@ -21,7 +21,11 @@ export const Home = () => {
 
   return (
     <div className='home-wrapper'>
-      <NavbarRaw language={language} />
+      <NavbarRaw
+        language={language}
+        loggedIn={props.loggedIn}
+        changeLogin={props.changeLogin}
+      />
       <TopSection language={language} />
       <BlotSection language={language} />
       <Offer

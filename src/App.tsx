@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Home } from './pages/home/Home';
 import { Courses } from './pages/courses/Courses';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { Aboutme } from './pages/aboutme/Aboutme';
+import { NavbarRaw } from './components/navbarRaw/NavbarRaw';
+import { Profile } from './pages/profile/Profile';
 
 const ROUTES = [
   {
@@ -20,6 +22,8 @@ const ROUTES = [
 ];
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(true);
+
   // useEffect(() => {
   //   axios
   //     .get('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
@@ -36,6 +40,11 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
+        if (data.status === 'fail') {
+          setLoggedIn(false);
+        } else {
+          setLoggedIn(true);
+        }
         console.log(data);
       })
       .catch((error) => {
@@ -54,9 +63,13 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
-          <Route path='/cutordie' Component={Aboutme}></Route>
-          {/* <Route path='/cutordie/courses' Component={Courses}></Route>
-          <Route path='/cutordie/aboutme' Component={Aboutme}></Route> */}
+          <Route
+            path='/cutordie'
+            element={<Home loggedIn={loggedIn} changeLogin={setLoggedIn} />}
+          ></Route>
+          <Route path='/cutordie/courses' Component={Courses}></Route>
+          <Route path='/cutordie/aboutme' Component={Aboutme}></Route>
+          <Route path='/cutordie/profile' Component={Profile}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -21,6 +21,20 @@ const generateDropdownStyles = (dropdownActive: boolean) => {
   };
 };
 
+const generateSignInBTNStyles = (loggedIn: boolean) => {
+  return {
+    border: 'none',
+    background: 'transparent',
+    color: 'inherit',
+    fontSize: '17px',
+    letterSpacing: '0.02857em',
+    cursor: 'pointer',
+    fontFamily: 'inherit',
+    textWrap: 'nowrap',
+    display: loggedIn ? 'none' : 'inline',
+  };
+};
+
 export const navbarRawStyles = {
   navbarWrapper: {
     background: '#000',
@@ -30,6 +44,7 @@ export const navbarRawStyles = {
     boxSizing: 'border-box' as 'border-box',
     height: '73px',
     width: '-webkit-fill-available',
+    // width: '98%',
   },
   navbar: {
     display: 'flex',
@@ -53,16 +68,7 @@ export const navbarRawStyles = {
     letterSpacing: '0.02857em',
     textWrap: 'nowrap',
   },
-  signinBTN: {
-    border: 'none',
-    background: 'transparent',
-    color: 'inherit',
-    fontSize: '17px',
-    letterSpacing: '0.02857em',
-    cursor: 'pointer',
-    fontFamily: 'inherit',
-    textWrap: 'nowrap',
-  },
+  signinBTN: generateSignInBTNStyles,
   li: {
     display: 'flex',
     alignItems: 'center',

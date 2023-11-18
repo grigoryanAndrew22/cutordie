@@ -34,7 +34,6 @@ const navbarRawLangs = {
 };
 
 export const NavbarRaw = (props: any) => {
-  const [loggedIn, setLoggedIn] = useState(false);
   const [formVisible, switchForm] = useState(false);
   const [dropdownActive, switchDropdown] = useState(false);
 
@@ -62,6 +61,7 @@ export const NavbarRaw = (props: any) => {
         visible={formVisible}
         switch={switchForm}
         language={props.language}
+        setLogin={props.changeLogin}
       />
 
       <div className='navbar-wrapper' style={navbarRawStyles.navbarWrapper}>
@@ -108,18 +108,18 @@ export const NavbarRaw = (props: any) => {
               className='signin-navbar-wrapper'
             >
               <button
-                onClick={loggedIn ? dropdownControl : openForm}
-                // onClick={dropdownControl}
-                style={navbarRawStyles.signinBTN}
+                onClick={openForm}
+                style={navbarRawStyles.signinBTN(props.loggedIn)}
                 className='signin-btn'
               >
                 {navbarRawGenerated.signIn}
               </button>
+
               <button
-                onClick={loggedIn ? dropdownControl : openForm}
+                onClick={dropdownControl}
                 className='account-btn'
                 style={{
-                  display: 'none',
+                  display: props.loggedIn ? 'inline' : 'none',
                   border: 'none',
                   background: 'transparent',
                   color: 'inherit',
@@ -128,25 +128,26 @@ export const NavbarRaw = (props: any) => {
               >
                 <img src={profileIcon} alt='profile' width={27} />
               </button>
+
               <ul
                 className='dropdown'
                 style={navbarRawStyles.dropdown(dropdownActive)}
               >
                 <li style={navbarRawStyles.li}>
                   <img src={profileIcon} alt='profile' width={25} />
-                  <a href='#' style={navbarRawStyles.a}>
+                  <a href='/cutordie/profile' style={navbarRawStyles.a}>
                     {navbarRawGenerated.myprof}
                   </a>
                 </li>
                 <li style={navbarRawStyles.li}>
                   <img src={libraryIcon} alt='profile' width={25} />
-                  <a href='#' style={navbarRawStyles.a}>
+                  <a href='/cutordie/profile' style={navbarRawStyles.a}>
                     {navbarRawGenerated.lib}
                   </a>
                 </li>
                 <li style={navbarRawStyles.li}>
                   <img src={settingsIcon} alt='profile' width={25} />
-                  <a href='#' style={navbarRawStyles.a}>
+                  <a href='/cutordie/profile' style={navbarRawStyles.a}>
                     {navbarRawGenerated.settings}
                   </a>
                 </li>
