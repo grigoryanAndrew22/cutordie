@@ -70,14 +70,30 @@ export const SignUpForm = (props: any) => {
     emailField.current.value = '';
     passwordField.current.value = '';
 
-    axios
-      .post('https://cut-or-die-api.onrender.com/api/v1/users/signup', {
+    // axios
+    //   .post('https://cut-or-die-api.onrender.com/api/v1/users/signup', {
+    //     userName: inputName + inputSurname,
+    //     email: inputEmail,
+    //     password: inputPassword,
+    //     passwordConfirm: inputPassword,
+    //   })
+    //   .then((response) => console.log(response))
+    //   .catch((error) => console.log(error));
+
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         userName: inputName + inputSurname,
         email: inputEmail,
         password: inputPassword,
         passwordConfirm: inputPassword,
-      })
-      .then((response) => console.log(response))
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
       .catch((error) => console.log(error));
   };
 

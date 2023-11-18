@@ -10,12 +10,20 @@ export const Courses = () => {
   const [coursesObj, setCourses] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('https://cut-or-die-api.onrender.com/api/v1/courses/')
-      .then((response) => {
-        setCourses(response.data.data.courses);
-        console.log(response.data.data.courses);
-      });
+    // axios
+    //   .get('https://cut-or-die-api.onrender.com/api/v1/courses/')
+    //   .then((response) => {
+    //     setCourses(response.data.data.courses);
+    //     console.log(response.data.data.courses);
+    //   });
+
+    fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
+      .then((response) => response.json())
+      .then((data) => {
+        setCourses(data.data.courses);
+        console.log(data.data.courses);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   const [currency, changeCurrency] = useState('usd');
