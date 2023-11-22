@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cutordie/static/css/main.ea19f3c1.css",
-    "main.js": "/cutordie/static/js/main.a6728760.js",
+    "main.css": "/cutordie/static/css/main.ead869ec.css",
+    "main.js": "/cutordie/static/js/main.1cfd60ff.js",
     "static/js/787.0338b5c1.chunk.js": "/cutordie/static/js/787.0338b5c1.chunk.js",
     "static/media/coursesBG.png": "/cutordie/static/media/coursesBG.c5364ef4d4a279c1f982.png",
     "static/media/bodyBG.png": "/cutordie/static/media/bodyBG.ffd6f7991f0fde1aba7d.png",
@@ -10,6 +10,7 @@
     "static/media/cornerIconRB.svg": "/cutordie/static/media/cornerIconRB.1bbde42a7a2428fe7597d78ff308e49c.svg",
     "static/media/scissorsGray.svg": "/cutordie/static/media/scissorsGray.a410e275961e67b0d0760a962cfd9bd9.svg",
     "static/media/topSectionBG.png": "/cutordie/static/media/topSectionBG.40bdc97f69640bf6d67d.png",
+    "static/media/logoutGray.svg": "/cutordie/static/media/logoutGray.bf8b114233b91ffa31c2ed6766ccae28.svg",
     "static/media/barberpfp.png": "/cutordie/static/media/barberpfp.cf045e369b229a41747e.png",
     "static/media/settingsIcon.svg": "/cutordie/static/media/settingsIcon.0dfd695fa73b536e32cba705226c0cc9.svg",
     "static/media/libraryIcon.svg": "/cutordie/static/media/libraryIcon.d39465ef8426dedd783e9cfd05f7e7e6.svg",
@@ -27,9 +28,11 @@
     "static/media/blot.png": "/cutordie/static/media/blot.7a7477e892061523ec89.png",
     "static/media/twitterIcon.svg": "/cutordie/static/media/twitterIcon.3892bec4656505dd3c4a59284194cd59.svg",
     "static/media/langIcon.svg": "/cutordie/static/media/langIcon.5e0c3f475f0def4ab287c4cbe5beafc9.svg",
+    "static/media/langIconGray.svg": "/cutordie/static/media/langIconGray.fa3d103a0ffb1399a443921ac94fc544.svg",
     "static/media/haircutpic7.png": "/cutordie/static/media/haircutpic7.cd8c73ab622941a4702a.png",
     "static/media/haircutpic1.png": "/cutordie/static/media/haircutpic1.beaf03ffc092ded8af24.png",
     "static/media/haircutpic5.png": "/cutordie/static/media/haircutpic5.86405b9b499766525966.png",
+    "static/media/pencil.svg": "/cutordie/static/media/pencil.08eaf6a665cf050e4c9651ed65ea952e.svg",
     "static/media/haircutpic6.png": "/cutordie/static/media/haircutpic6.ac8139fc4710b9c8b178.png",
     "static/media/haircutpic2.png": "/cutordie/static/media/haircutpic2.c67df734ecaf3186d211.png",
     "static/media/haircutCardBG.png": "/cutordie/static/media/haircutCardBG.ec24e1ff5e4dc8155a76.png",
@@ -46,6 +49,7 @@
     "static/media/buyNowbtnUA.svg": "/cutordie/static/media/buyNowbtnUA.2fbc419162773335f6c6aa50c4310093.svg",
     "static/media/signUpBtn.svg": "/cutordie/static/media/signUpBtn.978bacf7153daa67ffe3df0a62b68638.svg",
     "static/media/coin.svg": "/cutordie/static/media/coin.336db10377a3b47552060907ded508df.svg",
+    "static/media/coinGray.svg": "/cutordie/static/media/coinGray.12a1e2aae9f3da61713bbb600238eacb.svg",
     "static/media/button1UA.svg": "/cutordie/static/media/button1UA.b3a5508cd85d2795e60f8597fb7735c8.svg",
     "static/media/button2.svg": "/cutordie/static/media/button2.663a600803cd4c2be31215e40e5f7cd5.svg",
     "static/media/viewAllBtnUA.svg": "/cutordie/static/media/viewAllBtnUA.6ec097f90fabf327d442600478d3ffbb.svg",
@@ -72,12 +76,12 @@
     "index.html": "/cutordie/index.html",
     "static/media/vertical.svg": "/cutordie/static/media/vertical.85e81c6740fa62c7e0ee88e4ac48bcb0.svg",
     "static/media/scissorsWhite.svg": "/cutordie/static/media/scissorsWhite.9e7772eacd4ce6f1a9378e1e38473fe2.svg",
-    "main.ea19f3c1.css.map": "/cutordie/static/css/main.ea19f3c1.css.map",
-    "main.a6728760.js.map": "/cutordie/static/js/main.a6728760.js.map",
+    "main.ead869ec.css.map": "/cutordie/static/css/main.ead869ec.css.map",
+    "main.1cfd60ff.js.map": "/cutordie/static/js/main.1cfd60ff.js.map",
     "787.0338b5c1.chunk.js.map": "/cutordie/static/js/787.0338b5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea19f3c1.css",
-    "static/js/main.a6728760.js"
+    "static/css/main.ead869ec.css",
+    "static/js/main.1cfd60ff.js"
   ]
 }
