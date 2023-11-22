@@ -1,12 +1,12 @@
 import { signInStyles } from './SignInForm.styles';
 import orDivider from '../../assets/images/orDivider.svg';
-import googleIcon from '../../assets/images/googleIcon.svg';
-import twitterIcon from '../../assets/images/twitterIcon.svg';
-import facebookIcon from '../../assets/images/facebookIcon.svg';
-import leftTopCorner from '../../assets/images/leftTopCorner.svg';
-import leftBotCorner from '../../assets/images/leftBotCorner.svg';
-import rightTopCorner from '../../assets/images/rightTopCorner.svg';
-import rightBotCorner from '../../assets/images/rightBotCorner.svg';
+import googleIcon from '../../assets/images/googleIcon.png';
+import twitterIcon from '../../assets/images/twitterIcon.png';
+import facebookIcon from '../../assets/images/facebookIcon.png';
+import leftTopCorner from '../../assets/images/leftTopCorner.png';
+import leftBotCorner from '../../assets/images/leftBotCorner.png';
+import rightTopCorner from '../../assets/images/rightTopCorner.png';
+import rightBotCorner from '../../assets/images/rightBotCorner.png';
 import signInBtnUA from '../../assets/images/button3UA.svg';
 import './SignInForm.css';
 import { Fragment, useRef, useState } from 'react';
@@ -110,9 +110,7 @@ export const SignInForm = (props: any) => {
   };
 
   const signinBtn =
-    props.language === 'en'
-      ? require('../../assets/images/signInBtn.png')
-      : signInBtnUA;
+    props.language === 'en' ? require('../../assets/images/signInBtn.png') : signInBtnUA;
 
   const generatedForm = props.language === 'en' ? formLangs.en : formLangs.ua;
 
@@ -131,7 +129,7 @@ export const SignInForm = (props: any) => {
         language={props.language}
       />
       <div
-        className='overlay'
+        className="overlay"
         style={{
           width: '100%',
           height: '100%',
@@ -150,7 +148,7 @@ export const SignInForm = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div className='signin-wrapper' style={signInStyles.signinWrapper}>
+        <div className="signin-wrapper" style={signInStyles.signinWrapper}>
           <img
             src={leftTopCorner}
             style={{
@@ -187,25 +185,15 @@ export const SignInForm = (props: any) => {
               width: '42px',
             }}
           />
-          <div className='signin-title' style={signInStyles.signInTitle}>
-            <p style={{ display: 'inline', fontSize: '49px' }}>
-              {generatedForm.title}
-            </p>
-            <button
-              className='close'
-              style={signInStyles.closeButton}
-              onClick={closeForm}
-            >
+          <div className="signin-title" style={signInStyles.signInTitle}>
+            <p style={{ display: 'inline', fontSize: '49px' }}>{generatedForm.title}</p>
+            <button className="close" style={signInStyles.closeButton} onClick={closeForm}>
               X
             </button>
           </div>
-          <form
-            className='signin-form'
-            style={{ width: '90%' }}
-            onSubmit={login}
-          >
+          <form className="signin-form" style={{ width: '90%' }} onSubmit={login}>
             <label
-              htmlFor='email'
+              htmlFor="email"
               style={{
                 display: 'block',
                 fontFamily: 'Bitter',
@@ -218,9 +206,9 @@ export const SignInForm = (props: any) => {
 
             <input
               ref={emailField}
-              className='email-input'
+              className="email-input"
               placeholder={generatedForm.email}
-              type='email'
+              type="email"
               style={{
                 width: '100%',
                 backgroundColor: 'transparent',
@@ -234,7 +222,7 @@ export const SignInForm = (props: any) => {
             />
 
             <div
-              className='password-label'
+              className="password-label"
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -242,7 +230,7 @@ export const SignInForm = (props: any) => {
               }}
             >
               <label
-                htmlFor='password'
+                htmlFor="password"
                 style={{
                   fontFamily: 'Bitter',
                   fontSize: '22px',
@@ -263,8 +251,8 @@ export const SignInForm = (props: any) => {
             </div>
             <input
               ref={passwordField}
-              className='password-input'
-              type='password'
+              className="password-input"
+              type="password"
               placeholder={generatedForm.password}
               style={{
                 width: '100%',
@@ -293,7 +281,7 @@ export const SignInForm = (props: any) => {
               </p>
             </div>
             <div
-              className='submit-section'
+              className="submit-section"
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -301,8 +289,8 @@ export const SignInForm = (props: any) => {
               }}
             >
               <button
-                className='submit-btn'
-                type='submit'
+                className="submit-btn"
+                type="submit"
                 style={{
                   border: 'none',
                   background: 'transparent',
@@ -310,22 +298,17 @@ export const SignInForm = (props: any) => {
                   padding: 0,
                 }}
               >
-                <img
-                  src={require('../../assets/images/signInBtn.png')}
-                  width={125}
-                />
+                <img src={require('../../assets/images/signInBtn.png')} width={125} />
               </button>
               <div
-                className='signup-offer'
+                className="signup-offer"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   fontFamily: 'Bitter',
                 }}
               >
-                <p style={{ margin: 0, paddingRight: '5px' }}>
-                  {generatedForm.dontHaveAcc[0]}
-                </p>
+                <p style={{ margin: 0, paddingRight: '5px' }}>{generatedForm.dontHaveAcc[0]}</p>
                 <button
                   onClick={switchToSignUp}
                   style={{
@@ -346,7 +329,7 @@ export const SignInForm = (props: any) => {
             </div>
           </form>
           <div
-            className='divider-bottom'
+            className="divider-bottom"
             style={{ display: 'flex', width: '90%', margin: '0 auto' }}
           >
             <img src={orDivider} width={'43%'} />
@@ -366,7 +349,7 @@ export const SignInForm = (props: any) => {
             <img src={orDivider} width={'43%'} />
           </div>
           <div
-            className='signin-with'
+            className="signin-with"
             style={{
               display: 'flex',
               width: '90%',
@@ -388,7 +371,7 @@ export const SignInForm = (props: any) => {
               {generatedForm.signinWith}
             </h4>
             <div
-              className='icons'
+              className="icons"
               style={{
                 display: 'flex',
                 width: '60%',
@@ -401,11 +384,7 @@ export const SignInForm = (props: any) => {
                 height={50}
                 style={{ marginRight: '20px', paddingTop: '4px' }}
               />
-              <img
-                src={twitterIcon}
-                width={45}
-                style={{ marginRight: '20px' }}
-              />
+              <img src={twitterIcon} width={45} style={{ marginRight: '20px' }} />
               <img src={facebookIcon} width={45} />
             </div>
           </div>

@@ -48,6 +48,7 @@ export const FooterStyles = {
     width: '88%',
     gap: '30px',
     paddingBottom: '20px',
+    alignItems: 'center',
   },
   language: {
     display: 'flex',

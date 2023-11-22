@@ -2,14 +2,14 @@ import { FooterStyles } from './Footer.styles';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import vertical from '../../assets/images/vertical.svg';
-import langIcon from '../../assets/images/langIcon.svg';
-import coin from '../../assets/images/coin.svg';
-import hryvniaWhite from '../../assets/images/hryvniaWhite.svg';
-import euroWhite from '../../assets/images/euroWhite.svg';
-import dollarWhite from '../../assets/images/dollarWhite.svg';
-import hryvniaGray from '../../assets/images/hryvniaGray.svg';
-import euroGray from '../../assets/images/euroGray.svg';
-import dollarGray from '../../assets/images/dollarGray.svg';
+import langIcon from '../../assets/images/langIcon.png';
+import coin from '../../assets/images/coin.png';
+import hryvniaWhite from '../../assets/images/hryvniaWhite.png';
+import euroWhite from '../../assets/images/euroWhite.png';
+import dollarWhite from '../../assets/images/dollarWhite.png';
+import hryvniaGray from '../../assets/images/hryvniaGray.png';
+import euroGray from '../../assets/images/euroGray.png';
+import dollarGray from '../../assets/images/dollarGray.png';
 import './Footer.css';
 import instaIcon from '../../assets/images/instaIcon.png';
 import tiktokIcon from '../../assets/images/tiktokIcon.png';
@@ -86,7 +86,7 @@ export const Footer = (props: any) => {
             <img src={vertical} alt="line" height={220} />
             <li className="currency_language">
               <div style={FooterStyles.currency}>
-                <img src={coin} alt="coin" width={54} style={{}} />
+                <img src={coin} alt="coin" width={54} height={38} style={{}} />
                 <div
                   style={{
                     display: 'flex',

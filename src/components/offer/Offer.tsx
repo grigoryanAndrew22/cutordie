@@ -1,10 +1,10 @@
 import { Card } from '../card/Card';
 import buyNowbtn from '../../assets/images/buyNowbtn.svg';
 import buyNowbtnUA from '../../assets/images/buyNowbtnUA.svg';
-import dividerLeft from '../../assets/images/dividerLeft.svg';
-import dividerRight from '../../assets/images/dividerRight.svg';
-import uahSymbol from '../../assets/images/uahSymbol.svg';
-import uahSymbolGray from '../../assets/images/uahSymbolGray.svg';
+import dividerLeft from '../../assets/images/dividerLeft.png';
+import dividerRight from '../../assets/images/dividerRight.png';
+import uahSymbol from '../../assets/images/uahSymbol.png';
+import uahSymbolGray from '../../assets/images/uahSymbolGray.png';
 import { Fragment } from 'react';
 import { offerStyles } from './Offer.styles';
 import './Offer.css';
