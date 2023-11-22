@@ -49,6 +49,22 @@ export const NavbarRaw = (props: any) => {
     }
   };
 
+  const logout = () => {
+    switchDropdown(false);
+    props.changeLogin(false);
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/logout', {
+      method: 'DELETE', // or 'POST', 'PUT', etc.
+      credentials: 'include', // this will include cookies
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   const navbarRawLangGenerator = (lang: any) => {
     return lang === 'en' ? navbarRawLangs.en : navbarRawLangs.ua;
   };
@@ -159,9 +175,9 @@ export const NavbarRaw = (props: any) => {
                     width={25}
                     style={{ marginLeft: '-2px' }}
                   />
-                  <a href='#' style={navbarRawStyles.a}>
+                  <button onClick={logout} style={navbarRawStyles.button}>
                     {navbarRawGenerated.logout}
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>

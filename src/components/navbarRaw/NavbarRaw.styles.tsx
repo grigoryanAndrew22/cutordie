@@ -80,4 +80,13 @@ export const navbarRawStyles = {
     textDecoration: 'none',
   },
   dropdown: generateDropdownStyles,
+  button: {
+    textDecoration: 'none',
+    fontFamily: 'inherit',
+    background: 'transparent',
+    color: 'inherit',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: 'inherit',
+  },
 };
