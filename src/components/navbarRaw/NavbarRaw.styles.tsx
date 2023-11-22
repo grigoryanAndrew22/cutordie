@@ -43,8 +43,7 @@ export const navbarRawStyles = {
     zIndex: '1',
     boxSizing: 'border-box' as 'border-box',
     height: '73px',
-    width: '-webkit-fill-available',
-    // width: '98%',
+    width: '100%',
   },
   navbar: {
     display: 'flex',
