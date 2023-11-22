@@ -11,8 +11,8 @@ import hryvniaGray from '../../assets/images/hryvniaGray.svg';
 import euroGray from '../../assets/images/euroGray.svg';
 import dollarGray from '../../assets/images/dollarGray.svg';
 import './Footer.css';
-import instaIcon from '../../assets/images/instaIcon.svg';
-import tiktokIcon from '../../assets/images/tiktokIcon.svg';
+import instaIcon from '../../assets/images/instaIcon.png';
+import tiktokIcon from '../../assets/images/tiktokIcon.png';
 
 const footerLangs = {
   //TEST//bred
@@ -43,19 +43,15 @@ export const Footer = (props: any) => {
     props.changeCurr('eur');
   };
 
-  const footerTranslated =
-    props.language === 'en' ? footerLangs.en : footerLangs.ua;
+  const footerTranslated = props.language === 'en' ? footerLangs.en : footerLangs.ua;
 
   return (
-    <div
-      className='footer-section'
-      style={FooterStyles.wrapper(props.bottomShadow)}
-    >
+    <div className="footer-section" style={FooterStyles.wrapper(props.bottomShadow)}>
       <div style={FooterStyles.footerSection}>
-        <div className='logo_par' style={FooterStyles.logoPart}>
+        <div className="logo_par" style={FooterStyles.logoPart}>
           <img
             src={require('../../assets/images/footerLogo.png')}
-            alt='logo'
+            alt="logo"
             width={344}
             height={254}
           />
@@ -69,34 +65,28 @@ export const Footer = (props: any) => {
             &copy; 2023 Cut or die. All rights reserved.
           </p>
         </div>
-        <div className='info_part' style={{ width: '75%' }}>
+        <div className="info_part" style={{ width: '75%' }}>
           <ul style={FooterStyles.footerInfo}>
-            <li className='contacts' style={FooterStyles.infoItem}>
+            <li className="contacts" style={FooterStyles.infoItem}>
               <p style={{ margin: 0 }}>{footerTranslated.contacts}</p>
               <p style={{ margin: 0 }}>{footerTranslated.about}</p>
               <p style={{ margin: 0 }}>FAQ</p>
             </li>
-            <img src={vertical} alt='line' height={220} />
-            <li className='policy' style={FooterStyles.infoItem}>
+            <img src={vertical} alt="line" height={220} />
+            <li className="policy" style={FooterStyles.infoItem}>
               <p style={{ margin: 0 }}>{footerTranslated.termsofUse}</p>
               <p style={{ margin: 0 }}>{footerTranslated.refund}</p>
               <p style={{ margin: 0 }}>{footerTranslated.privacy}</p>
             </li>
-            <img src={vertical} alt='line' height={220} />
-            <li className='social_networks' style={FooterStyles.socialNetworks}>
-              <img
-                src={instaIcon}
-                style={{ alignSelf: 'center', width: '76px' }}
-              />
-              <img
-                src={tiktokIcon}
-                style={{ alignSelf: 'center', width: '69px' }}
-              />
+            <img src={vertical} alt="line" height={220} />
+            <li className="social_networks" style={FooterStyles.socialNetworks}>
+              <img src={instaIcon} style={{ alignSelf: 'center', width: '76px' }} />
+              <img src={tiktokIcon} style={{ alignSelf: 'center', width: '69px' }} />
             </li>
-            <img src={vertical} alt='line' height={220} />
-            <li className='currency_language'>
+            <img src={vertical} alt="line" height={220} />
+            <li className="currency_language">
               <div style={FooterStyles.currency}>
-                <img src={coin} alt='coin' width={54} style={{}} />
+                <img src={coin} alt="coin" width={54} style={{}} />
                 <div
                   style={{
                     display: 'flex',
@@ -113,12 +103,7 @@ export const Footer = (props: any) => {
                       fontSize: '30px',
                     }}
                   >
-                    <img
-                      width={32}
-                      src={
-                        props.currency === 'uah' ? hryvniaWhite : hryvniaGray
-                      }
-                    />
+                    <img width={32} src={props.currency === 'uah' ? hryvniaWhite : hryvniaGray} />
                   </button>
                   <button
                     onClick={changeCurrencyEUR}
@@ -130,10 +115,7 @@ export const Footer = (props: any) => {
                       fontSize: '30px',
                     }}
                   >
-                    <img
-                      width={44}
-                      src={props.currency === 'eur' ? euroWhite : euroGray}
-                    />
+                    <img width={44} src={props.currency === 'eur' ? euroWhite : euroGray} />
                   </button>
                   <button
                     onClick={changeCurrencyUSD}
@@ -145,10 +127,7 @@ export const Footer = (props: any) => {
                       fontSize: '30px',
                     }}
                   >
-                    <img
-                      width={32}
-                      src={props.currency === 'usd' ? dollarWhite : dollarGray}
-                    />
+                    <img width={32} src={props.currency === 'usd' ? dollarWhite : dollarGray} />
                   </button>
                 </div>
               </div>
