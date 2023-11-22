@@ -54,9 +54,12 @@
     ]
   },
   "homepage": "https://grigoryanandrew22.github.io/cutordie/",
-  "devDependencies": {
+  "dencies": {
     "@types/js-cookie": "^3.0.5",
     "@types/react-router-dom": "^5.3.3",
     "gh-pages": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
