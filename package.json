@@ -53,7 +53,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://grigoryanandrew22.github.io/cutordie/",
+  "homepage": "https://cut-or-die.onrender.com/",
   "dencies": {
     "@types/js-cookie": "^3.0.5",
     "@types/react-router-dom": "^5.3.3",
