@@ -1,12 +1,12 @@
 import { signInFormMobileStyles } from './SignInFormMobile.styles';
 import orDivider from '../../assets/images/orDivider.svg';
-import googleIcon from '../../assets/images/googleIcon.svg';
-import twitterIcon from '../../assets/images/twitterIcon.svg';
-import facebookIcon from '../../assets/images/facebookIcon.svg';
-import leftTopCorner from '../../assets/images/leftTopCorner.svg';
-import leftBotCorner from '../../assets/images/leftBotCorner.svg';
-import rightTopCorner from '../../assets/images/rightTopCorner.svg';
-import rightBotCorner from '../../assets/images/rightBotCorner.svg';
+import googleIcon from '../../assets/images/googleIcon.png';
+import twitterIcon from '../../assets/images/twitterIcon.png';
+import facebookIcon from '../../assets/images/facebookIcon.png';
+import leftTopCorner from '../../assets/images/leftTopCorner.png';
+import leftBotCorner from '../../assets/images/leftBotCorner.png';
+import rightTopCorner from '../../assets/images/rightTopCorner.png';
+import rightBotCorner from '../../assets/images/rightBotCorner.png';
 import signInBtnUA from '../../assets/images/button3UA.svg';
 import './SignInFormMobile.css';
 import { Fragment } from 'react';
@@ -45,9 +45,7 @@ export const SignInFormMobile = (props: any) => {
   // };
 
   const signinBtn =
-    props.language === 'en'
-      ? require('../../assets/images/signInBtn.png')
-      : signInBtnUA;
+    props.language === 'en' ? require('../../assets/images/signInBtn.png') : signInBtnUA;
 
   const generatedForm = props.language === 'en' ? formLangs.en : formLangs.ua;
 
@@ -61,10 +59,7 @@ export const SignInFormMobile = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div
-          className='signin-wrapper-mobile'
-          style={signInFormMobileStyles.signinWrapper}
-        >
+        <div className="signin-wrapper-mobile" style={signInFormMobileStyles.signinWrapper}>
           <img
             src={leftTopCorner}
             style={{
@@ -101,25 +96,20 @@ export const SignInFormMobile = (props: any) => {
               width: '42px',
             }}
           />
-          <div
-            className='signin-title'
-            style={signInFormMobileStyles.signInTitle}
-          >
-            <p style={{ display: 'inline', fontSize: '49px' }}>
-              {generatedForm.title}
-            </p>
+          <div className="signin-title" style={signInFormMobileStyles.signInTitle}>
+            <p style={{ display: 'inline', fontSize: '49px' }}>{generatedForm.title}</p>
             <button
-              className='close'
+              className="close"
               style={signInFormMobileStyles.closeButton}
               onClick={closeForm}
             >
               X
             </button>
           </div>
-          <form className='signin-form' style={{ width: '94%' }}>
+          <form className="signin-form" style={{ width: '94%' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <label
-                htmlFor='email'
+                htmlFor="email"
                 style={{
                   display: 'block',
                   fontFamily: 'Bitter',
@@ -130,9 +120,9 @@ export const SignInFormMobile = (props: any) => {
                 {generatedForm.email}:
               </label>
               <input
-                className='email-input-mobile'
+                className="email-input-mobile"
                 placeholder={generatedForm.email}
-                type='email'
+                type="email"
                 style={{
                   width: '100%',
                   backgroundColor: 'transparent',
@@ -148,7 +138,7 @@ export const SignInFormMobile = (props: any) => {
             </div>
 
             <div
-              className='password-label'
+              className="password-label"
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -157,7 +147,7 @@ export const SignInFormMobile = (props: any) => {
               }}
             >
               <label
-                htmlFor='password'
+                htmlFor="password"
                 style={{
                   fontFamily: 'Bitter',
                   fontSize: '18px',
@@ -167,8 +157,8 @@ export const SignInFormMobile = (props: any) => {
                 {generatedForm.password}:
               </label>
               <input
-                className='password-input-mobile'
-                type='password'
+                className="password-input-mobile"
+                type="password"
                 placeholder={generatedForm.password}
                 style={{
                   width: '100%',
@@ -192,8 +182,8 @@ export const SignInFormMobile = (props: any) => {
               }}
             >
               <button
-                className='submit-btn-mobile'
-                type='submit'
+                className="submit-btn-mobile"
+                type="submit"
                 style={{
                   border: 'none',
                   background: 'transparent',
@@ -201,14 +191,11 @@ export const SignInFormMobile = (props: any) => {
                   padding: 0,
                 }}
               >
-                <img
-                  src={require('../../assets/images/signInBtn.png')}
-                  width={125}
-                />
+                <img src={require('../../assets/images/signInBtn.png')} width={125} />
               </button>
             </div>
             <div
-              className='submit-section'
+              className="submit-section"
               style={{
                 display: 'flex',
                 marginTop: '30px',
@@ -216,7 +203,7 @@ export const SignInFormMobile = (props: any) => {
               }}
             >
               <div
-                className='signup-offer'
+                className="signup-offer"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -268,7 +255,7 @@ export const SignInFormMobile = (props: any) => {
             </div>
           </form>
           <div
-            className='divider-bottom'
+            className="divider-bottom"
             style={{ display: 'flex', width: '90%', margin: '0 auto' }}
           >
             <img src={orDivider} width={'43%'} />
@@ -288,7 +275,7 @@ export const SignInFormMobile = (props: any) => {
             <img src={orDivider} width={'43%'} />
           </div>
           <div
-            className='signin-with'
+            className="signin-with"
             style={{
               display: 'flex',
               width: '90%',
@@ -311,19 +298,14 @@ export const SignInFormMobile = (props: any) => {
               {generatedForm.signinWith}
             </h4>
             <div
-              className='icons'
+              className="icons"
               style={{
                 display: 'flex',
                 width: '63%',
                 justifyContent: 'space-around',
               }}
             >
-              <img
-                src={googleIcon}
-                width={100}
-                height={50}
-                style={{ paddingTop: '4px' }}
-              />
+              <img src={googleIcon} width={100} height={50} style={{ paddingTop: '4px' }} />
               <img src={twitterIcon} width={40} style={{ margin: '0px 6px' }} />
               <img src={facebookIcon} width={40} />
             </div>

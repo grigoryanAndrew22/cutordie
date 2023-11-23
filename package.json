@@ -53,10 +53,16 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://grigoryanandrew22.github.io/cutordie/",
-  "devDependencies": {
+  "homepage": "https://cut-or-die.onrender.com/",
+  "dencies": {
     "@types/js-cookie": "^3.0.5",
     "@types/react-router-dom": "^5.3.3",
     "gh-pages": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6"
   }
 }
