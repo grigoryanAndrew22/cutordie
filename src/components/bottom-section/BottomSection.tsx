@@ -15,7 +15,7 @@ export const BottomSection = (props: any) => {
       </div>
       <div className="blot" style={{ width: '100%', display: 'flex' }}>
         <img
-          src={require('../../assets/images/blot2.png')}
+          src={require('../../assets/images/blot2.webp')}
           alt="blot"
           style={{ width: '-webkit-fill-available' }}
         />

@@ -17,39 +17,31 @@ export const Aboutme = () => {
   return (
     <Fragment>
       <NavbarRaw language={language} />
-      <div
-        className='barber-profile-wrapper'
-        style={aboutmeStyles.barderProfileWrapper}
-      >
+      <div className="barber-profile-wrapper" style={aboutmeStyles.barderProfileWrapper}>
         <div style={aboutmeStyles.firstSection}>
-          <div className='whyme' style={aboutmeStyles.whyme}>
+          <div className="whyme" style={aboutmeStyles.whyme}>
             <p style={aboutmeStyles.whymeP}>WHY ME?</p>
             <p style={aboutmeStyles.pStyle}>-BECAUSE,</p>
             <p style={aboutmeStyles.pStyle}>-MAMA SAID IM THЕ BEST,</p>
             <p style={aboutmeStyles.pStyle}>-BECAUSE.</p>
           </div>
-          <div className='pfp' style={{ height: '600px' }}>
-            <img
-              src={require('../../assets/images/barberpfp.png')}
-              height={600}
-              width={550}
-            />
+          <div className="pfp" style={{ height: '600px' }}>
+            <img src={require('../../assets/images/barberpfp.webp')} height={600} width={550} />
           </div>
         </div>
       </div>
 
       <div style={aboutmeStyles.inscription}>
         <p style={aboutmeStyles.inscrText}>
-          Building a rapport with clients can be crucial. People often choose
-          barbers they feel comfortable with and with whom they can have a
-          friendly relationship. If you're personable and make your clients feel
-          at ease, they may prefer you as their barber.
+          Building a rapport with clients can be crucial. People often choose barbers they feel
+          comfortable with and with whom they can have a friendly relationship. If you're personable
+          and make your clients feel at ease, they may prefer you as their barber.
         </p>
       </div>
 
-      <div className='portfolio' style={aboutmeStyles.portfolioWrap}>
+      <div className="portfolio" style={aboutmeStyles.portfolioWrap}>
         <p style={aboutmeStyles.portfolioTitle}>MY PORTFOLIO</p>
-        <div className='photos_row1' style={aboutmeStyles.photosRow}>
+        <div className="photos_row1" style={aboutmeStyles.photosRow}>
           {row.map((i: any) => (
             <img
               src={require(`../../assets/images/haircutpic${i}.png`)}

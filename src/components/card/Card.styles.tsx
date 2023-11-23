@@ -1,4 +1,4 @@
-import cardBG from '../../assets/images/cardBG.png';
+import cardBG from '../../assets/images/cardBG.webp';
 
 const createStyleObj = (props: any) => {
   return {

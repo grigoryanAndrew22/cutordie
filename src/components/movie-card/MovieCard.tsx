@@ -10,7 +10,7 @@ export const MovieCard = (props: any) => {
       <div
         className="card"
         style={{
-          backgroundImage: `url(${require('../../assets/images/haircutCardBG.png')})`,
+          backgroundImage: `url(${require('../../assets/images/haircutCardBG.webp')})`,
           display: 'flex',
           flexDirection: 'column',
           width: '430px',
