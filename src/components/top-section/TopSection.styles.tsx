@@ -1,4 +1,4 @@
-import background from '../../assets/images/topSectionBG.png';
+import background from '../../assets/images/topSectionBG.jpg';
 
 export const TopSectionStyles = {
   topSection: {
