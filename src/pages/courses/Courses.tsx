@@ -7,7 +7,7 @@ import { MovieCard } from '../../components/movie-card/MovieCard';
 import axios from 'axios';
 import { coursesStyles } from './Courses.styles';
 
-export const Courses = () => {
+export const Courses = (props: any) => {
   const [coursesObj, setCourses] = useState([]);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export const Courses = () => {
 
   return (
     <Fragment>
-      <NavbarRaw language={language} />
+      <NavbarRaw language={language} changeLogin={props.changeLogin} />
 
       <div className='haircuts-section' style={coursesStyles.haircutsSection}>
         <div className='title'>
