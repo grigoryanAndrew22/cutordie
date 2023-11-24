@@ -13,7 +13,7 @@ export const MovieCard = (props: any) => {
           backgroundImage: `url(${require('../../assets/images/haircutCardBG.webp')})`,
           display: 'flex',
           flexDirection: 'column',
-          width: '430px',
+          width: '400px',
           position: 'relative',
           marginTop: '80px',
         }}
@@ -22,12 +22,12 @@ export const MovieCard = (props: any) => {
           src={cornerIconRB}
           style={{
             position: 'absolute',
-            left: '-7px',
-            top: '-7px',
+            left: '-8px',
+            top: '-8px',
             transform: 'rotate(180deg)',
           }}
         />
-        <img src={cornerIconRB} style={{ position: 'absolute', right: '-7px', bottom: '-7px' }} />
+        <img src={cornerIconRB} style={{ position: 'absolute', right: '-8px', bottom: '-8px' }} />
         <div
           className="preview"
           style={{
@@ -46,9 +46,9 @@ export const MovieCard = (props: any) => {
           <img
             src={props.course.difficulty === 3 ? scissorsWhite : scissorsGray}
           /> */}
-            <img src={scissorsWhite} />
-            <img src={scissorsWhite} />
-            <img src={scissorsWhite} />
+            <img src={scissorsWhite} width={'30px'} />
+            <img src={scissorsWhite} width={'30px'} />
+            <img src={scissorsWhite} width={'30px'} />
           </div>
           <p
             className="price"
@@ -57,7 +57,7 @@ export const MovieCard = (props: any) => {
               top: '28px',
               right: '34px',
               color: '#fff',
-              fontSize: '29px',
+              fontSize: '40px',
               margin: 0,
               fontWeight: '600',
             }}
@@ -66,7 +66,7 @@ export const MovieCard = (props: any) => {
           </p>
           <img
             src={require('../../assets/images/haircutCardPreview.png')}
-            width={'390px'}
+            width={'360px'}
             style={{ paddingTop: '20px' }}
           />
 
