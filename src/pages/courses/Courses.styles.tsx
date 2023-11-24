@@ -1,7 +1,7 @@
 export const coursesStyles = {
   haircutsSection: {
     paddingTop: '140px',
-    width: '88%',
+    width: '90%',
     margin: '0 auto',
     paddingBottom: '100px',
   },

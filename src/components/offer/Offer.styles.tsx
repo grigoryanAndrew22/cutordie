@@ -4,7 +4,7 @@ const generateStylesObj = (props: any) => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '20%',
+    gap: '16%',
     flexDirection: props.flexDirection,
   };
 };

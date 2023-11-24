@@ -306,6 +306,7 @@ export const SignInForm = (props: any) => {
                   display: 'flex',
                   alignItems: 'center',
                   fontFamily: 'Bitter',
+                  gap: '15px',
                 }}
               >
                 <p style={{ margin: 0, paddingRight: '5px' }}>{generatedForm.dontHaveAcc[0]}</p>
@@ -313,7 +314,7 @@ export const SignInForm = (props: any) => {
                   onClick={switchToSignUp}
                   style={{
                     margin: 0,
-                    fontSize: '22px',
+                    fontSize: '24px',
                     fontWeight: 600,
                     color: '#555555',
                     border: 'none',
@@ -353,9 +354,10 @@ export const SignInForm = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
               alignItems: 'center',
               marginBottom: '25px',
+              gap: '40px',
             }}
           >
             <h4
@@ -370,23 +372,7 @@ export const SignInForm = (props: any) => {
             >
               {generatedForm.signinWith}
             </h4>
-            <div
-              className="icons"
-              style={{
-                display: 'flex',
-                width: '60%',
-                justifyContent: 'space-between',
-              }}
-            >
-              <img
-                src={googleIcon}
-                width={120}
-                height={50}
-                style={{ marginRight: '20px', paddingTop: '4px' }}
-              />
-              <img src={twitterIcon} width={45} style={{ marginRight: '20px' }} />
-              <img src={facebookIcon} width={45} />
-            </div>
+            <img src={googleIcon} height={50} style={{ marginRight: '20px', paddingTop: '4px' }} />
           </div>
         </div>
       </div>
