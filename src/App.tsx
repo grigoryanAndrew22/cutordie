@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Aboutme } from './pages/aboutme/Aboutme';
 import { NavbarRaw } from './components/navbarRaw/NavbarRaw';
 import { Profile } from './pages/profile/Profile';
+import { Course } from './pages/course/Course';
 
 const ROUTES = [
   {
@@ -73,6 +74,7 @@ function App() {
           ></Route>
           <Route path='/cutordie/aboutme' Component={Aboutme}></Route>
           <Route path='/cutordie/profile' Component={Profile}></Route>
+          <Route path='/cutordie/courses/course' Component={Course}></Route>
         </Routes>
       </BrowserRouter>
     </div>
