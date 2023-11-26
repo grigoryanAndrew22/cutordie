@@ -10,7 +10,7 @@
 .strokeBtnText {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 37%;
+  top: 39%;
   left: 48%;
 
   font-size: 50px;
@@ -40,16 +40,16 @@
 }
 
 .btnContainer:hover #t {
-  transform: translateY(-15%);
+  transform: translateY(-10%);
 }
 .btnContainer:hover #b {
-  transform: translateY(15%);
+  transform: translateY(10%);
 }
 .btnContainer:hover #l {
-  transform: translateX(-11%);
+  transform: translateX(-10%);
 }
 .btnContainer:hover #r {
-  transform: translateX(11%);
+  transform: translateX(10%);
 }
 .btnContainer:active .strokeBtnText {
   font-size: 60px;
