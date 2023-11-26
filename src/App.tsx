@@ -67,7 +67,10 @@ function App() {
             path='/cutordie'
             element={<Home loggedIn={loggedIn} changeLogin={setLoggedIn} />}
           ></Route>
-          <Route path='/cutordie/courses' Component={Courses}></Route>
+          <Route
+            path='/cutordie/courses'
+            element={<Courses changeLogin={setLoggedIn} />}
+          ></Route>
           <Route path='/cutordie/aboutme' Component={Aboutme}></Route>
           <Route path='/cutordie/profile' Component={Profile}></Route>
         </Routes>

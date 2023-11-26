@@ -10,6 +10,7 @@ import dollarGray from '../../assets/images/dollarGray.png';
 import langIconGray from '../../assets/images/langIconGray.png';
 import logoutGray from '../../assets/images/logoutGray.png';
 import './Profile.css';
+import { MovieCard } from '../../components/movie-card/MovieCard';
 
 export const Profile = () => {
   const [currency, changeCurrency] = useState('usd');
@@ -22,34 +23,42 @@ export const Profile = () => {
   return (
     <Fragment>
       <NavbarRaw language={language} />
-      <div className="prof-sett-wrapper" style={{ height: '600px' }}>
+      <div
+        className='prof-sett-wrapper'
+        style={{ height: '980px', boxShadow: 'black 0px 110px 120px' }}
+      >
         <div
           style={{
             paddingTop: '150px',
             display: 'flex',
-            width: '88%',
+            width: '80%',
             margin: 'auto',
             justifyContent: 'space-between',
           }}
         >
-          <div className="myprofile" style={{ width: '36%' }}>
+          <div className='myprofile' style={{ width: '37%' }}>
             <p
-              className="prof-title"
+              className='prof-title'
               style={{
                 margin: 0,
                 color: '#444444',
                 fontSize: '83px',
                 fontFamily: 'Drum',
+                whiteSpace: 'nowrap',
               }}
             >
               MY PROFILE
             </p>
-            <div className="prof-info">
+            <div className='prof-info' style={{ marginTop: '45px' }}>
               <div
-                className="name_surname"
-                style={{ display: 'flex', justifyContent: 'space-between' }}
+                className='name_surname'
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  marginBottom: '25px',
+                }}
               >
-                <div className="name">
+                <div className='name'>
                   <div
                     style={{
                       display: 'flex',
@@ -59,7 +68,7 @@ export const Profile = () => {
                   >
                     <img src={pencil} width={29} height={33} />
                     <label
-                      htmlFor="name"
+                      htmlFor='name'
                       style={{
                         fontFamily: 'Bitter',
                         fontSize: '25px',
@@ -71,8 +80,8 @@ export const Profile = () => {
                   </div>
                   <input
                     value={'Vasya'}
-                    type="text"
-                    className="name-input"
+                    type='text'
+                    className='name-input'
                     style={{
                       backgroundColor: 'transparent',
                       border: 'none',
@@ -84,24 +93,29 @@ export const Profile = () => {
                     }}
                   />
                 </div>
-                <div className="surname">
-                  <div>
-                    <img src={pencil} width={27} height={55} />
+                <div className='surname'>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      paddingBottom: '7px',
+                    }}
+                  >
+                    <img src={pencil} width={29} height={33} />
                     <label
-                      htmlFor="surname"
+                      htmlFor='surname'
                       style={{
                         fontFamily: 'Bitter',
                         fontSize: '22px',
-                        paddingBottom: '9px',
                       }}
                     >
                       Surname:
                     </label>
                   </div>
                   <input
-                    value="Vasin"
-                    type="text"
-                    className="surname-input"
+                    value='Vasin'
+                    type='text'
+                    className='surname-input'
                     style={{
                       backgroundColor: 'transparent',
                       border: 'none',
@@ -114,16 +128,110 @@ export const Profile = () => {
                   />
                 </div>
               </div>
-              <div className="email_password"></div>
+              <div className='email_password'>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    paddingBottom: '7px',
+                  }}
+                >
+                  <img src={pencil} width={29} height={33} />
+                  <label
+                    htmlFor='email'
+                    style={{
+                      fontFamily: 'Bitter',
+                      fontSize: '22px',
+                    }}
+                  >
+                    Email:
+                  </label>
+                </div>
+                <input
+                  className='email-input'
+                  value={'alexey10.arsentyev@gmail.com'}
+                  type='email'
+                  style={{
+                    width: '100%',
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    height: '39px',
+                    fontFamily: 'Bitter',
+                    color: '#444444',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                  }}
+                />
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    paddingBottom: '7px',
+                    marginTop: '25px',
+                  }}
+                >
+                  <img src={pencil} width={29} height={33} />
+                  <label
+                    htmlFor='email'
+                    style={{
+                      fontFamily: 'Bitter',
+                      fontSize: '22px',
+                    }}
+                  >
+                    Password:
+                  </label>
+                </div>
+                <input
+                  className='password-input'
+                  value={'password123'}
+                  type='password'
+                  style={{
+                    width: '100%',
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    height: '39px',
+                    fontFamily: 'Bitter',
+                    color: '#444444',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                  }}
+                />
+              </div>
             </div>
           </div>
-          <div className="settings">
-            <p className="sett-title" style={{ margin: 0 }}>
+          <div className='settings'>
+            <p
+              className='sett-title'
+              style={{
+                margin: 0,
+                color: 'rgb(68, 68, 68)',
+                fontSize: '83px',
+                fontFamily: 'Drum',
+              }}
+            >
               SETTINGS
             </p>
-            <div className="currency-section">
-              <img src={coinGray} />
-              <div>
+            <div
+              className='currency-section'
+              style={{ display: 'flex', marginTop: '45px' }}
+            >
+              <div
+                style={{
+                  width: '39%',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <img src={coinGray} width={55} />
+              </div>
+              <div
+                style={{
+                  width: '61%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
                 <button
                   // onClick={changeCurrencyUAH}
                   style={{
@@ -159,53 +267,125 @@ export const Profile = () => {
                 </button>
               </div>
             </div>
-            <div className="language-section">
-              <img src={langIconGray} />
-              <button
-                // onClick={() => {
-                //   props.changeLangHandler("ua");
-                // }}
+            <div
+              className='language-section'
+              style={{ display: 'flex', width: '98%', marginTop: '30px' }}
+            >
+              <div style={{ width: '39%', display: 'flex' }}>
+                <img src={langIconGray} width={53} height={53} />
+              </div>
+              <div
                 style={{
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontFamily: 'inherit',
-                  fontSize: '42px',
-                  color: '#505050',
+                  width: '61%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
                 }}
               >
-                UA
-              </button>
-              <button
-                // onClick={() => {
-                //   props.changeLangHandler("en");
-                // }}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontFamily: 'inherit',
-                  fontSize: '42px',
-                  color: '#505050',
-                }}
-              >
-                EN
-              </button>
+                <button
+                  // onClick={() => {
+                  //   props.changeLangHandler("ua");
+                  // }}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontFamily: 'Bitter',
+                    fontSize: '42px',
+                    color: '#505050',
+                  }}
+                >
+                  UA
+                </button>
+                <button
+                  // onClick={() => {
+                  //   props.changeLangHandler("en");
+                  // }}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontFamily: 'Bitter',
+                    fontSize: '42px',
+                    color: '#505050',
+                  }}
+                >
+                  EN
+                </button>
+              </div>
             </div>
-            <div className="logout-section">
-              <img src={logoutGray} />
-              <button
-                style={{
-                  border: 'none',
-                  background: 'transparent',
-                  color: '#505050',
-                  cursor: 'pointer',
-                }}
-              >
-                Log out
-              </button>
+            <div
+              className='logout-section'
+              style={{
+                marginTop: '32px',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <img src={logoutGray} width={50} />
+              <div style={{ paddingLeft: '70px' }}>
+                <button
+                  style={{
+                    border: 'none',
+                    background: 'transparent',
+                    color: '#505050',
+                    cursor: 'pointer',
+                    fontFamily: 'Bitter',
+                    fontSize: '30px',
+                    fontWeight: '600',
+                  }}
+                >
+                  Log out
+                </button>
+              </div>
             </div>
           </div>
+        </div>
+        <img
+          src={require('../../assets/images/blot-profile.png')}
+          style={{ marginTop: '100px' }}
+        />
+      </div>
+
+      <div className='purchasedCourses' style={{ marginBottom: '100px' }}>
+        <div>
+          <p
+            style={{
+              margin: 0,
+              color: '#D4D4D4',
+              fontSize: '83px',
+              fontFamily: 'Drum',
+              textAlign: 'center',
+              paddingTop: '40px',
+            }}
+          >
+            PURCHASED COURSES
+          </p>
+        </div>
+
+        <div
+          className='cards'
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            // gap: '3rem',
+            justifyContent: 'space-between',
+            width: '80%',
+            margin: 'auto',
+          }}
+        >
+          {[0, 1, 2, 3, 4, 5].map((el: any, i: number) => (
+            <MovieCard
+              key={i}
+              index={i}
+              course={{
+                price: '99',
+                name: 'Course 1',
+                duration: '3',
+                description:
+                  'Artistic Elements in Haircutting: Discover the artistic side of haircutting and learn how to integrate visual elements, such as line, shape, and form, into your designs...',
+              }}
+            />
+          ))}
         </div>
       </div>
 
