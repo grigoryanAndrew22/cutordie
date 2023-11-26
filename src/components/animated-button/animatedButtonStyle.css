@@ -1,0 +1,56 @@
+.btnContainer {
+  position: relative;
+  display: block;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.strokeBtnText {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 37%;
+  left: 48%;
+
+  font-size: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: rgb(200, 200, 200);
+  font-family: 'Drum';
+}
+
+.btnStrokes {
+  position: absolute;
+  overflow: visible;
+}
+
+#t,
+#l,
+#r,
+#b,
+.strokeBtnText {
+  transition: all 0.2s ease;
+}
+
+.btnContainer {
+  overflow: visible;
+}
+
+.btnContainer:hover #t {
+  transform: translateY(-15%);
+}
+.btnContainer:hover #b {
+  transform: translateY(15%);
+}
+.btnContainer:hover #l {
+  transform: translateX(-11%);
+}
+.btnContainer:hover #r {
+  transform: translateX(11%);
+}
+.btnContainer:active .strokeBtnText {
+  font-size: 60px;
+}

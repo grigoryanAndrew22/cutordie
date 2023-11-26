@@ -1,4 +1,4 @@
-import background from '../../assets/images/topSectionBG.jpg';
+import background from '../../assets/images/topSectionBG.webp';
 
 export const TopSectionStyles = {
   topSection: {
@@ -15,6 +15,7 @@ export const TopSectionStyles = {
     justifyContent: 'center',
     width: '90%',
     margin: '0px auto',
+    gap: '20px',
   },
   button1: {
     width: 260,
