@@ -35,6 +35,8 @@ export const TopSection = (props: any) => {
           text={'About me'}
           width={296}
           height={113}
+          top={39}
+          left={48}
         />
         <AnimatedButton
           url={'/cutordie/courses'}
@@ -42,6 +44,8 @@ export const TopSection = (props: any) => {
           text={'Courses'}
           width={265}
           height={108}
+          top={39}
+          left={48}
         />
         <AnimatedButton
           url={'/cutordie'}
@@ -49,6 +53,8 @@ export const TopSection = (props: any) => {
           text={'Sign in'}
           width={213}
           height={103}
+          top={39}
+          left={50}
         />
       </div>
     </div>

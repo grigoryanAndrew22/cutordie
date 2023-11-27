@@ -1,6 +1,6 @@
 import './animatedButtonStyle.css';
 
-export const AnimatedButton = ({ url, buttonType, width, height, text }) => {
+export const AnimatedButton = ({ url, buttonType, width, height, text, top, left }) => {
   const buttonTypes = {
     'aboutme': (
       <svg
@@ -101,7 +101,9 @@ export const AnimatedButton = ({ url, buttonType, width, height, text }) => {
   return (
     <a className="btnContainer" href={url} style={{ width: `${width}px`, height: `${height}px` }}>
       <div className="btnStrokes">{buttonTypes[buttonType]}</div>
-      <div className="strokeBtnText">{text}</div>
+      <div className="strokeBtnText" style={{ top: `${top}%`, left: `${left}%` }}>
+        {text}
+      </div>
     </a>
   );
 };
