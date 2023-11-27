@@ -11,6 +11,7 @@ import langIconGray from '../../assets/images/langIconGray.png';
 import logoutGray from '../../assets/images/logoutGray.png';
 import './Profile.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
+import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 
 export const Profile = () => {
   const [currency, changeCurrency] = useState('usd');
@@ -23,6 +24,7 @@ export const Profile = () => {
   return (
     <Fragment>
       <NavbarRaw language={language} />
+      <PaymentCard />
       <div
         className='prof-sett-wrapper'
         style={{ height: '980px', boxShadow: 'black 0px 110px 120px' }}

@@ -8,6 +8,7 @@ import { Aboutme } from './pages/aboutme/Aboutme';
 import { NavbarRaw } from './components/navbarRaw/NavbarRaw';
 import { Profile } from './pages/profile/Profile';
 import { Course } from './pages/course/Course';
+import { PaymentCard } from './components/paymentCard/PaymentCard';
 
 const ROUTES = [
   {

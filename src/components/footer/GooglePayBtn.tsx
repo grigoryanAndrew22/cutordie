@@ -4,6 +4,8 @@ export const GooglePayBtn = () => {
   const price = 1.35;
   return (
     <GooglePayButton
+      style={{ width: '260px' }}
+      buttonSizeMode='fill'
       environment='TEST'
       paymentRequest={{
         apiVersion: 2,
