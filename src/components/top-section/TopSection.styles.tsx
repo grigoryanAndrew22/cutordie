@@ -15,6 +15,7 @@ export const TopSectionStyles = {
     justifyContent: 'center',
     width: '90%',
     margin: '0px auto',
+    gap: '30px',
   },
   button1: {
     width: 260,

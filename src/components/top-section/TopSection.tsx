@@ -5,6 +5,8 @@ import button1UA from '../../assets/images/button1UA.svg';
 import button2UA from '../../assets/images/button2UA.svg';
 import button3UA from '../../assets/images/button3UA.svg';
 
+import AnimatedButton from '../animated-button/AnimatedButton';
+
 import './TopSection.css';
 import { TopSectionStyles } from './TopSection.styles';
 
@@ -22,21 +24,38 @@ const topSectionLangs = {
 };
 
 export const TopSection = (props: any) => {
-  const topSectionLangGenerated =
-    props.language === 'en' ? topSectionLangs.en : topSectionLangs.ua;
+  const topSectionLangGenerated = props.language === 'en' ? topSectionLangs.en : topSectionLangs.ua;
 
   return (
-    <div className='top-section' style={TopSectionStyles.topSection}>
+    <div className="top-section" style={TopSectionStyles.topSection}>
       <div style={TopSectionStyles.buttonsWrapper}>
-        <button className='btn' style={TopSectionStyles.button1}>
-          <img src={topSectionLangGenerated.button1} alt='btn' width={'100%'} />
-        </button>
-        <button className='btn' style={TopSectionStyles.button2}>
-          <img src={topSectionLangGenerated.button2} alt='btn' width={'100%'} />
-        </button>
-        <button className='btn' style={TopSectionStyles.button3}>
-          <img src={topSectionLangGenerated.button3} alt='btn' width={'100%'} />
-        </button>
+        <AnimatedButton
+          url={'/cutordie/aboutme'}
+          buttonType={'aboutme'}
+          text={'About me'}
+          width={296}
+          height={113}
+          top={39}
+          left={48}
+        />
+        <AnimatedButton
+          url={'/cutordie/courses'}
+          buttonType={'courses'}
+          text={'Courses'}
+          width={265}
+          height={108}
+          top={39}
+          left={48}
+        />
+        <AnimatedButton
+          url={'/cutordie'}
+          buttonType={'signin'}
+          text={'Sign in'}
+          width={213}
+          height={103}
+          top={39}
+          left={50}
+        />
       </div>
     </div>
   );
