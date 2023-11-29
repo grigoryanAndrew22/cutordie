@@ -31,12 +31,12 @@ export const Courses = (props: any) => {
     <Fragment>
       <NavbarRaw language={language} changeLogin={props.changeLogin} />
 
-      <div className='haircuts-section' style={coursesStyles.haircutsSection}>
-        <div className='title'>
+      <div className="haircuts-section" style={coursesStyles.haircutsSection}>
+        <div className="title">
           <h1 style={coursesStyles.title}>HAIRCUTS FOR STARTER</h1>
         </div>
 
-        <div className='cards' style={coursesStyles.cards}>
+        <div className="cards" style={coursesStyles.cards}>
           {coursesObj.map((course: any, i: any) => (
             <MovieCard key={course._id} index={i} course={course} />
           ))}

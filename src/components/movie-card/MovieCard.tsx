@@ -3,12 +3,19 @@ import scissorsGray from '../../assets/images/scissorsGray.png';
 import timerIcon from '../../assets/images/timerIcon.png';
 import cornerIconRB from '../../assets/images/cornerIconRB.png';
 import '../movie-card/MovieCard.css';
+import { useState } from 'react';
 
 export const MovieCard = (props: any) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className='haircutWrap' style={{ display: 'flex' }}>
-      <div
-        className='card'
+    <div
+      className="haircutWrap"
+      style={{ display: 'flex', scale: isHovered ? '1.05' : '1', transition: 'all 0.1s ease' }}
+    >
+      <a
+        href="/cutordie/courses/course"
+        className="card"
         style={{
           backgroundImage: `url(${require('../../assets/images/haircutCardBG.webp')})`,
           display: 'flex',
@@ -16,23 +23,34 @@ export const MovieCard = (props: any) => {
           width: '400px',
           position: 'relative',
           marginTop: '80px',
+          textDecoration: 'none',
         }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         <img
           src={cornerIconRB}
           style={{
             position: 'absolute',
-            left: '-8px',
-            top: '-8px',
+            top: isHovered ? '-18px' : '-8px',
+            left: isHovered ? '-18px' : '-8px',
             transform: 'rotate(180deg)',
+            transition: 'all 0.2s ease',
           }}
+          alt="corner"
         />
         <img
           src={cornerIconRB}
-          style={{ position: 'absolute', right: '-8px', bottom: '-8px' }}
+          style={{
+            position: 'absolute',
+            bottom: isHovered ? '-18px' : '-8px',
+            right: isHovered ? '-18px' : '-8px',
+            transition: 'all 0.2s ease',
+          }}
+          alt="corner"
         />
         <div
-          className='preview'
+          className="preview"
           style={{
             display: 'flex',
             position: 'relative',
@@ -54,7 +72,7 @@ export const MovieCard = (props: any) => {
             <img src={scissorsWhite} width={'30px'} />
           </div>
           <p
-            className='price'
+            className="price"
             style={{
               position: 'absolute',
               top: '28px',
@@ -67,16 +85,14 @@ export const MovieCard = (props: any) => {
           >
             {props.course.price}$
           </p>
-          <a href='/cutordie/courses/course'>
-            <img
-              src={require('../../assets/images/haircutCardPreview.png')}
-              width={'360px'}
-              style={{ paddingTop: '20px' }}
-            />
-          </a>
+          <img
+            src={require('../../assets/images/haircutCardPreview.png')}
+            width={'360px'}
+            style={{ paddingTop: '20px' }}
+          />
 
           <h1
-            className='course-title'
+            className="course-title"
             style={{
               position: 'absolute',
               bottom: 0,
@@ -91,7 +107,7 @@ export const MovieCard = (props: any) => {
           </h1>
         </div>
         <div
-          className='diff-duration'
+          className="diff-duration"
           style={{
             display: 'flex',
             width: '90%',
@@ -99,10 +115,7 @@ export const MovieCard = (props: any) => {
             margin: '0 auto',
           }}
         >
-          <div
-            className='diff'
-            style={{ display: 'flex', alignItems: 'center' }}
-          >
+          <div className="diff" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={scissorsGray} width={25} />
             <p
               style={{
@@ -116,10 +129,7 @@ export const MovieCard = (props: any) => {
               Hard
             </p>
           </div>
-          <div
-            className='duration'
-            style={{ display: 'flex', alignItems: 'center' }}
-          >
+          <div className="duration" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={timerIcon} width={25} />
             <p
               style={{
@@ -136,7 +146,7 @@ export const MovieCard = (props: any) => {
           </div>
         </div>
         <div
-          className='description'
+          className="description"
           style={{
             width: '90%',
             margin: '10px auto',
@@ -156,7 +166,7 @@ export const MovieCard = (props: any) => {
             {props.course.description}
           </p>
         </div>
-      </div>
+      </a>
     </div>
   );
 };
