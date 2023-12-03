@@ -71,11 +71,14 @@ function App() {
           ></Route>
           <Route
             path='/cutordie/courses'
-            element={<Courses changeLogin={setLoggedIn} />}
+            element={<Courses loggedIn={loggedIn} changeLogin={setLoggedIn} />}
           ></Route>
           <Route path='/cutordie/aboutme' Component={Aboutme}></Route>
           <Route path='/cutordie/profile' Component={Profile}></Route>
-          <Route path='/cutordie/courses/course' Component={Course}></Route>
+          <Route
+            path='/cutordie/courses/course'
+            element={<Course loggedIn={loggedIn} changeLogin={setLoggedIn} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>
