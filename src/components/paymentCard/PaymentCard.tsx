@@ -19,16 +19,16 @@ export const PaymentCard = (props: any) => {
           background: '#000',
           opacity: '83%',
           zIndex: 2,
-          // display: props.visible ? 'block' : 'none',
-          display: 'block',
+          display: props.visible ? 'block' : 'none',
+          // display: 'block',
         }}
       ></div>
       <div
         style={{
           width: '100%',
           height: '100%',
-          // display: props.visible ? 'flex' : 'none',
-          display: 'flex',
+          display: props.visible ? 'flex' : 'none',
+          // display: 'flex',
           justifyContent: 'center',
         }}
       >

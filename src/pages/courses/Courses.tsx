@@ -29,7 +29,11 @@ export const Courses = (props: any) => {
 
   return (
     <Fragment>
-      <NavbarRaw language={language} changeLogin={props.changeLogin} />
+      <NavbarRaw
+        language={language}
+        changeLogin={props.changeLogin}
+        loggedIn={props.loggedIn}
+      />
 
       <div className="haircuts-section" style={coursesStyles.haircutsSection}>
         <div className="title">

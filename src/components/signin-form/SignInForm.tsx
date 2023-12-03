@@ -100,7 +100,11 @@ export const SignInForm = (props: any) => {
   };
 
   const closeForm = () => {
-    props.switch(false);
+    if (props.switch == undefined) {
+      return props.closeForm(false);
+    } else {
+      return props.switch(false);
+    }
   };
 
   const switchToSignUp = (e: any) => {
@@ -389,7 +393,11 @@ export const SignInForm = (props: any) => {
             >
               {generatedForm.signinWith}
             </h4>
-            <img src={googleIcon} height={50} style={{ marginRight: '20px', paddingTop: '4px' }} />
+            <img
+              src={googleIcon}
+              height={50}
+              style={{ marginRight: '20px', paddingTop: '4px' }}
+            />
           </div>
         </div>
       </div>

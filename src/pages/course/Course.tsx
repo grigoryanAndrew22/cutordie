@@ -5,10 +5,23 @@ import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import buyNowbtn from '../../assets/images/buyNowbtn.svg';
 import { courseStyles } from './Course.styles';
 import '../course/Course.css';
+import { SignInForm } from '../../components/signin-form/SignInForm';
+import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 
-export const Course = () => {
+export const Course = (props: any) => {
+  const [courseForm, switchCourseForm] = useState(false);
+  const [coursePayment, switchCoursePay] = useState(false);
+
+  const switchCF = () => {
+    switchCourseForm(true);
+  };
+
   const [currency, changeCurrency] = useState('usd');
   const [language, changeLanguage] = useState('en');
+
+  const openPayment = () => {
+    switchCoursePay(true);
+  };
 
   const changeLang = (lang: string) => {
     changeLanguage(lang);
@@ -16,7 +29,20 @@ export const Course = () => {
 
   return (
     <Fragment>
-      <NavbarRaw language={language} />
+      <NavbarRaw
+        language={language}
+        changeLogin={props.changeLogin}
+        loggedIn={props.loggedIn}
+      />
+      <SignInForm
+        visible={courseForm}
+        // switch={switchForm}
+        language={props.language}
+        setLogin={props.changeLogin}
+        closeForm={switchCourseForm}
+      />
+      <PaymentCard visible={coursePayment} />
+
       <div className='course-wrapper'>
         <div style={{ width: '95%', margin: 'auto' }}>
           <div style={{ paddingTop: '100px' }}>
@@ -113,7 +139,11 @@ export const Course = () => {
                 className='buy-offer'
                 style={{ display: 'flex', alignItems: 'center' }}
               >
-                <button className='buy-btn' style={courseStyles.buyBtn}>
+                <button
+                  className='buy-btn'
+                  style={courseStyles.buyBtn}
+                  onClick={props.loggedIn ? openPayment : switchCF}
+                >
                   <img
                     src={buyNowbtn}
                     alt='btn'
