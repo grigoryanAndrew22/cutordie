@@ -11,7 +11,7 @@ import dividerLeft from '../../assets/images/dividerLeft.png';
 import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import './Home.css';
 import CookiesNotification from '../../components/cookies-notification/CookiesNotificationCookies';
-import CookieBanner from 'react-cookie-banner';
+import CookieConsent from 'react-cookie-consent';
 
 export const Home = (props: any) => {
   const [currency, changeCurrency] = useState('usd');
@@ -46,12 +46,8 @@ export const Home = (props: any) => {
         currency={currency}
         changeCurr={changeCurrency}
       />
-      <CookiesNotification language={language} loggedIn={props.loggedIn} />{' '}
-      <CookieBanner
-        message="Yes, we use cookies. If you don't like it change website, we won't miss you!"
-        onAccept={() => {}}
-        cookie="user-has-accepted-cookies"
-      />
+      <CookiesNotification language={language} />
+      {/* <CookieConsent debug={false}>This site uses cookies.</CookieConsent> */}
     </div>
   );
 };
