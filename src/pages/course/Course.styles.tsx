@@ -6,5 +6,6 @@ export const courseStyles = {
     height: 110,
     width: 260,
     padding: 0,
+    outline: 0,
   },
 };

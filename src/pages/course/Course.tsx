@@ -16,6 +16,14 @@ export const Course = (props: any) => {
     switchCourseForm(true);
   };
 
+  const closePay = () => {
+    switchCoursePay(false);
+  };
+
+  const closeForm = () => {
+    switchCourseForm(false);
+  };
+
   const [currency, changeCurrency] = useState('usd');
   const [language, changeLanguage] = useState('en');
 
@@ -36,12 +44,12 @@ export const Course = (props: any) => {
       />
       <SignInForm
         visible={courseForm}
-        // switch={switchForm}
+        switch={closeForm}
         language={props.language}
         setLogin={props.changeLogin}
         closeForm={switchCourseForm}
       />
-      <PaymentCard visible={coursePayment} />
+      <PaymentCard visible={coursePayment} closePay={closePay} />
 
       <div className='course-wrapper'>
         <div style={{ width: '95%', margin: 'auto' }}>

@@ -25,6 +25,7 @@ const ROUTES = [
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(true);
+  const [userData, setUserData] = useState({});
 
   // useEffect(() => {
   //   axios
@@ -48,6 +49,7 @@ function App() {
           setLoggedIn(true);
         }
         console.log(data);
+        setUserData(data.data.user);
       })
       .catch((error) => {
         console.error(error);
@@ -74,7 +76,16 @@ function App() {
             element={<Courses loggedIn={loggedIn} changeLogin={setLoggedIn} />}
           ></Route>
           <Route path='/cutordie/aboutme' Component={Aboutme}></Route>
-          <Route path='/cutordie/profile' Component={Profile}></Route>
+          <Route
+            path='/cutordie/profile'
+            element={
+              <Profile
+                loggedIn={loggedIn}
+                changeLogin={setLoggedIn}
+                user={userData}
+              />
+            }
+          ></Route>
           <Route
             path='/cutordie/courses/course'
             element={<Course loggedIn={loggedIn} changeLogin={setLoggedIn} />}
