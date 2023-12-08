@@ -10,6 +10,7 @@ import dividerRight from '../../assets/images/dividerRight.png';
 import dividerLeft from '../../assets/images/dividerLeft.png';
 import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import './Home.css';
+import CookiesNotification from '../../components/cookies-notification/CookiesNotificationCookies';
 
 export const Home = (props: any) => {
   const [currency, changeCurrency] = useState('usd');
@@ -18,6 +19,12 @@ export const Home = (props: any) => {
   const changeLang = (lang: string) => {
     changeLanguage(lang);
   };
+
+  let storageEmpty = true;
+  if (localStorage.getItem('cookiesAllowed')) {
+    storageEmpty = false;
+  }
+  const [showCookies, setShowCookies] = useState(storageEmpty);
 
   return (
     <div className="home-wrapper">
@@ -44,6 +51,7 @@ export const Home = (props: any) => {
         currency={currency}
         changeCurr={changeCurrency}
       />
+      {showCookies && <CookiesNotification language={language} setShowCookies={setShowCookies} />}
     </div>
   );
 };

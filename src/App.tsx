@@ -57,7 +57,7 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <div className="App">
       <BrowserRouter>
         <Routes>
           {/* {ROUTES.map((route: any) => (
@@ -68,13 +68,14 @@ function App() {
             ></Route>
           ))} */}
           <Route
-            path='/cutordie'
+            path="/cutordie"
             element={<Home loggedIn={loggedIn} changeLogin={setLoggedIn} />}
           ></Route>
           <Route
-            path='/cutordie/courses'
+            path="/cutordie/courses"
             element={<Courses loggedIn={loggedIn} changeLogin={setLoggedIn} />}
           ></Route>
+
           <Route path='/cutordie/aboutme' Component={Aboutme}></Route>
           <Route
             path='/cutordie/profile'
@@ -86,8 +87,9 @@ function App() {
               />
             }
           ></Route>
+
           <Route
-            path='/cutordie/courses/course'
+            path="/cutordie/courses/course"
             element={<Course loggedIn={loggedIn} changeLogin={setLoggedIn} />}
           ></Route>
         </Routes>

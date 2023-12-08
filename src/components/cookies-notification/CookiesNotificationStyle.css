@@ -1,0 +1,81 @@
+.container {
+  position: fixed;
+  background-image: url('../../assets/images/cookiesNotification.png');
+
+  width: 500px;
+  height: 200px;
+
+  right: -3%;
+  top: 15%;
+  /* bottom: 1.5%; */
+  object-fit: contain;
+  background-repeat: no-repeat;
+}
+
+.buttons {
+  position: absolute;
+  top: 67%;
+  left: 12%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  width: 270px;
+  height: 70px;
+}
+
+.text {
+  font-family: 'Drum';
+  font-size: 18px;
+  color: rgb(34, 34, 34);
+  margin: 0;
+
+  position: relative;
+}
+
+.buttonTrigger {
+  background: none;
+  border-style: none;
+}
+
+.buttonTrigger {
+  position: relative;
+}
+
+#acceptText {
+  top: -44%;
+  left: -1%;
+}
+
+#declineText {
+  top: -44%;
+  left: 0%;
+}
+
+#accept {
+  top: -11%;
+  left: -1%;
+}
+
+#decline {
+  top: -11%;
+  left: 3%;
+}
+
+.text,
+.bg {
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonTrigger:hover .text {
+  color: rgb(230, 230, 230);
+}
+
+.buttonTrigger:hover .bg {
+  opacity: 0.15;
+}
+
+.buttonTrigger:active .text {
+  scale: 0.9;
+  transition: 0.05s ease-in-out;
+}

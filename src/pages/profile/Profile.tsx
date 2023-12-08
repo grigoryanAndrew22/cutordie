@@ -27,7 +27,7 @@ export const Profile = (props: any) => {
       <NavbarRaw language={language} loggedIn={props.loggedIn} />
       <PaymentCard />
       <div
-        className='prof-sett-wrapper'
+        className="prof-sett-wrapper"
         style={{ height: '980px', boxShadow: 'black 0px 110px 120px' }}
       >
         <div
@@ -39,9 +39,9 @@ export const Profile = (props: any) => {
             justifyContent: 'space-between',
           }}
         >
-          <div className='myprofile' style={{ width: '37%' }}>
+          <div className="myprofile" style={{ width: '37%' }}>
             <p
-              className='prof-title'
+              className="prof-title"
               style={{
                 margin: 0,
                 color: '#444444',
@@ -52,20 +52,44 @@ export const Profile = (props: any) => {
             >
               MY PROFILE
             </p>
-            <div className='prof-info' style={{ marginTop: '45px' }}>
-              <div className='email_password'>
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    paddingBottom: '7px',
-                  }}
-                >
-                  <img src={pencil} width={29} height={33} />
-                  <label
-                    htmlFor='name'
+
+            <div className="prof-info" style={{ marginTop: '45px' }}>
+              <div
+                className="name_surname"
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  marginBottom: '25px',
+                }}
+              >
+                <div className="name">
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      paddingBottom: '7px',
+                    }}
+                  >
+                    <img src={pencil} width={29} height={33} />
+                    <label
+                      htmlFor="name"
+                      style={{
+                        fontFamily: 'Bitter',
+                        fontSize: '25px',
+                        paddingLeft: '5px',
+                      }}
+                    >
+                      Name:
+                    </label>
+                  </div>
+                  <input
+                    value={'Vasya'}
+                    type="text"
+                    className="name-input"
+
                     style={{
                       fontFamily: 'Bitter',
+
                       fontSize: '22px',
                     }}
                   >
@@ -87,6 +111,7 @@ export const Profile = (props: any) => {
                     fontWeight: '600',
                   }}
                 />
+
                 <div
                   style={{
                     display: 'flex',
@@ -97,7 +122,7 @@ export const Profile = (props: any) => {
                 >
                   <img src={pencil} width={29} height={33} />
                   <label
-                    htmlFor='email'
+                    htmlFor="email"
                     style={{
                       fontFamily: 'Bitter',
                       fontSize: '22px',
@@ -107,9 +132,11 @@ export const Profile = (props: any) => {
                   </label>
                 </div>
                 <input
+
                   className='email-input'
                   value={props.user.email}
                   type='email'
+
                   style={{
                     width: '100%',
                     backgroundColor: 'transparent',
@@ -131,7 +158,7 @@ export const Profile = (props: any) => {
                 >
                   <img src={pencil} width={29} height={33} />
                   <label
-                    htmlFor='email'
+                    htmlFor="email"
                     style={{
                       fontFamily: 'Bitter',
                       fontSize: '22px',
@@ -141,9 +168,9 @@ export const Profile = (props: any) => {
                   </label>
                 </div>
                 <input
-                  className='password-input'
+                  className="password-input"
                   value={'password123'}
-                  type='password'
+                  type="password"
                   style={{
                     width: '100%',
                     backgroundColor: 'transparent',
@@ -158,9 +185,9 @@ export const Profile = (props: any) => {
               </div>
             </div>
           </div>
-          <div className='settings'>
+          <div className="settings">
             <p
-              className='sett-title'
+              className="sett-title"
               style={{
                 margin: 0,
                 color: 'rgb(68, 68, 68)',
@@ -170,10 +197,7 @@ export const Profile = (props: any) => {
             >
               SETTINGS
             </p>
-            <div
-              className='currency-section'
-              style={{ display: 'flex', marginTop: '45px' }}
-            >
+            <div className="currency-section" style={{ display: 'flex', marginTop: '83px' }}>
               <div
                 style={{
                   width: '39%',
@@ -227,7 +251,7 @@ export const Profile = (props: any) => {
               </div>
             </div>
             <div
-              className='language-section'
+              className="language-section"
               style={{ display: 'flex', width: '98%', marginTop: '30px' }}
             >
               <div style={{ width: '39%', display: 'flex' }}>
@@ -273,7 +297,7 @@ export const Profile = (props: any) => {
               </div>
             </div>
             <div
-              className='logout-section'
+              className="logout-section"
               style={{
                 marginTop: '32px',
                 display: 'flex',
@@ -299,13 +323,10 @@ export const Profile = (props: any) => {
             </div>
           </div>
         </div>
-        <img
-          src={require('../../assets/images/blot-profile.png')}
-          style={{ marginTop: '100px' }}
-        />
+        <img src={require('../../assets/images/blot-profile.png')} style={{ marginTop: '100px' }} />
       </div>
 
-      <div className='purchasedCourses' style={{ marginBottom: '100px' }}>
+      <div className="purchasedCourses" style={{ marginBottom: '100px' }}>
         <div>
           <p
             style={{
@@ -322,7 +343,7 @@ export const Profile = (props: any) => {
         </div>
 
         <div
-          className='cards'
+          className="cards"
           style={{
             display: 'flex',
             flexWrap: 'wrap',

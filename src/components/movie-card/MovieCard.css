@@ -3,3 +3,11 @@
     width: 50% !important;
   }
 } */
+
+.card {
+  color: rgb(18, 18, 18);
+}
+
+.card:visited {
+  color: rgb(18, 18, 18);
+}
