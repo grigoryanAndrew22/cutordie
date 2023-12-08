@@ -8,6 +8,12 @@ import orDivider from '../../assets/images/orDivider.svg';
 import GooglePayBtn from '../footer/GooglePayBtn';
 
 export const PaymentCard = (props: any) => {
+  document.addEventListener('keydown', (e: any) => {
+    if (e.key === 'Escape') {
+      props.closePay(false);
+    }
+  });
+
   return (
     <Fragment>
       <div
@@ -20,7 +26,6 @@ export const PaymentCard = (props: any) => {
           opacity: '83%',
           zIndex: 2,
           display: props.visible ? 'block' : 'none',
-          // display: 'block',
         }}
       ></div>
       <div
@@ -28,7 +33,6 @@ export const PaymentCard = (props: any) => {
           width: '100%',
           height: '100%',
           display: props.visible ? 'flex' : 'none',
-          // display: 'flex',
           justifyContent: 'center',
         }}
       >
@@ -36,6 +40,13 @@ export const PaymentCard = (props: any) => {
           className='signin-wrapper'
           style={paymentCardStyles.paycardWrapper}
         >
+          <button
+            className='close'
+            style={paymentCardStyles.closeButton}
+            onClick={props.closePay}
+          >
+            X
+          </button>
           <img
             src={leftTopCorner}
             style={{
@@ -78,7 +89,7 @@ export const PaymentCard = (props: any) => {
               fontSize: '43px',
               color: '#373737',
               textAlign: 'center',
-              marginTop: '20px',
+              marginTop: '30px',
             }}
           >
             CHOOSE YOUR PAYMENT METHOD

@@ -28,6 +28,7 @@ export const MovieCard = (props: any) => {
           position: 'relative',
           marginTop: '80px',
           textDecoration: 'none',
+          color: 'inherit',
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

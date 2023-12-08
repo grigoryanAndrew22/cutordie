@@ -13,9 +13,10 @@ import './Profile.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
 import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 
-export const Profile = () => {
+export const Profile = (props: any) => {
   const [currency, changeCurrency] = useState('usd');
   const [language, changeLanguage] = useState('en');
+  console.log(props.user.userName);
 
   const changeLang = (lang: string) => {
     changeLanguage(lang);
@@ -23,7 +24,7 @@ export const Profile = () => {
 
   return (
     <Fragment>
-      <NavbarRaw language={language} />
+      <NavbarRaw language={language} loggedIn={props.loggedIn} />
       <PaymentCard />
       <div
         className="prof-sett-wrapper"
@@ -51,6 +52,7 @@ export const Profile = () => {
             >
               MY PROFILE
             </p>
+
             <div className="prof-info" style={{ marginTop: '45px' }}>
               <div
                 className="name_surname"
@@ -84,58 +86,38 @@ export const Profile = () => {
                     value={'Vasya'}
                     type="text"
                     className="name-input"
+
                     style={{
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      height: '35px',
                       fontFamily: 'Bitter',
-                      color: '#444444',
-                      fontSize: '20px',
-                      fontWeight: '600',
-                    }}
-                  />
-                </div>
-                <div className="surname">
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      paddingBottom: '7px',
+
+                      fontSize: '22px',
                     }}
                   >
-                    <img src={pencil} width={29} height={33} />
-                    <label
-                      htmlFor="surname"
-                      style={{
-                        fontFamily: 'Bitter',
-                        fontSize: '22px',
-                      }}
-                    >
-                      Surname:
-                    </label>
-                  </div>
-                  <input
-                    value="Vasin"
-                    type="text"
-                    className="surname-input"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      height: '35px',
-                      fontFamily: 'Bitter',
-                      color: '#444444',
-                      fontSize: '20px',
-                      fontWeight: '600',
-                    }}
-                  />
+                    Name:
+                  </label>
                 </div>
-              </div>
-              <div className="email_password">
+                <input
+                  className='email-input'
+                  value={props.user.userName}
+                  type='email'
+                  style={{
+                    width: '100%',
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    height: '39px',
+                    fontFamily: 'Bitter',
+                    color: '#444444',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                  }}
+                />
+
                 <div
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     paddingBottom: '7px',
+                    marginTop: '25px',
                   }}
                 >
                   <img src={pencil} width={29} height={33} />
@@ -150,9 +132,11 @@ export const Profile = () => {
                   </label>
                 </div>
                 <input
-                  className="email-input"
-                  value={'alexey10.arsentyev@gmail.com'}
-                  type="email"
+
+                  className='email-input'
+                  value={props.user.email}
+                  type='email'
+
                   style={{
                     width: '100%',
                     backgroundColor: 'transparent',
