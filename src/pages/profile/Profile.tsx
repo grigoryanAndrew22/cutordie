@@ -26,7 +26,7 @@ export const Profile = () => {
       <NavbarRaw language={language} />
       <PaymentCard />
       <div
-        className='prof-sett-wrapper'
+        className="prof-sett-wrapper"
         style={{ height: '980px', boxShadow: 'black 0px 110px 120px' }}
       >
         <div
@@ -38,9 +38,9 @@ export const Profile = () => {
             justifyContent: 'space-between',
           }}
         >
-          <div className='myprofile' style={{ width: '37%' }}>
+          <div className="myprofile" style={{ width: '37%' }}>
             <p
-              className='prof-title'
+              className="prof-title"
               style={{
                 margin: 0,
                 color: '#444444',
@@ -51,16 +51,16 @@ export const Profile = () => {
             >
               MY PROFILE
             </p>
-            <div className='prof-info' style={{ marginTop: '45px' }}>
+            <div className="prof-info" style={{ marginTop: '45px' }}>
               <div
-                className='name_surname'
+                className="name_surname"
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   marginBottom: '25px',
                 }}
               >
-                <div className='name'>
+                <div className="name">
                   <div
                     style={{
                       display: 'flex',
@@ -70,7 +70,7 @@ export const Profile = () => {
                   >
                     <img src={pencil} width={29} height={33} />
                     <label
-                      htmlFor='name'
+                      htmlFor="name"
                       style={{
                         fontFamily: 'Bitter',
                         fontSize: '25px',
@@ -82,8 +82,8 @@ export const Profile = () => {
                   </div>
                   <input
                     value={'Vasya'}
-                    type='text'
-                    className='name-input'
+                    type="text"
+                    className="name-input"
                     style={{
                       backgroundColor: 'transparent',
                       border: 'none',
@@ -95,7 +95,7 @@ export const Profile = () => {
                     }}
                   />
                 </div>
-                <div className='surname'>
+                <div className="surname">
                   <div
                     style={{
                       display: 'flex',
@@ -105,7 +105,7 @@ export const Profile = () => {
                   >
                     <img src={pencil} width={29} height={33} />
                     <label
-                      htmlFor='surname'
+                      htmlFor="surname"
                       style={{
                         fontFamily: 'Bitter',
                         fontSize: '22px',
@@ -115,9 +115,9 @@ export const Profile = () => {
                     </label>
                   </div>
                   <input
-                    value='Vasin'
-                    type='text'
-                    className='surname-input'
+                    value="Vasin"
+                    type="text"
+                    className="surname-input"
                     style={{
                       backgroundColor: 'transparent',
                       border: 'none',
@@ -130,7 +130,7 @@ export const Profile = () => {
                   />
                 </div>
               </div>
-              <div className='email_password'>
+              <div className="email_password">
                 <div
                   style={{
                     display: 'flex',
@@ -140,7 +140,7 @@ export const Profile = () => {
                 >
                   <img src={pencil} width={29} height={33} />
                   <label
-                    htmlFor='email'
+                    htmlFor="email"
                     style={{
                       fontFamily: 'Bitter',
                       fontSize: '22px',
@@ -150,9 +150,9 @@ export const Profile = () => {
                   </label>
                 </div>
                 <input
-                  className='email-input'
+                  className="email-input"
                   value={'alexey10.arsentyev@gmail.com'}
-                  type='email'
+                  type="email"
                   style={{
                     width: '100%',
                     backgroundColor: 'transparent',
@@ -174,7 +174,7 @@ export const Profile = () => {
                 >
                   <img src={pencil} width={29} height={33} />
                   <label
-                    htmlFor='email'
+                    htmlFor="email"
                     style={{
                       fontFamily: 'Bitter',
                       fontSize: '22px',
@@ -184,9 +184,9 @@ export const Profile = () => {
                   </label>
                 </div>
                 <input
-                  className='password-input'
+                  className="password-input"
                   value={'password123'}
-                  type='password'
+                  type="password"
                   style={{
                     width: '100%',
                     backgroundColor: 'transparent',
@@ -201,9 +201,9 @@ export const Profile = () => {
               </div>
             </div>
           </div>
-          <div className='settings'>
+          <div className="settings">
             <p
-              className='sett-title'
+              className="sett-title"
               style={{
                 margin: 0,
                 color: 'rgb(68, 68, 68)',
@@ -213,10 +213,7 @@ export const Profile = () => {
             >
               SETTINGS
             </p>
-            <div
-              className='currency-section'
-              style={{ display: 'flex', marginTop: '45px' }}
-            >
+            <div className="currency-section" style={{ display: 'flex', marginTop: '83px' }}>
               <div
                 style={{
                   width: '39%',
@@ -270,7 +267,7 @@ export const Profile = () => {
               </div>
             </div>
             <div
-              className='language-section'
+              className="language-section"
               style={{ display: 'flex', width: '98%', marginTop: '30px' }}
             >
               <div style={{ width: '39%', display: 'flex' }}>
@@ -316,7 +313,7 @@ export const Profile = () => {
               </div>
             </div>
             <div
-              className='logout-section'
+              className="logout-section"
               style={{
                 marginTop: '32px',
                 display: 'flex',
@@ -342,13 +339,10 @@ export const Profile = () => {
             </div>
           </div>
         </div>
-        <img
-          src={require('../../assets/images/blot-profile.png')}
-          style={{ marginTop: '100px' }}
-        />
+        <img src={require('../../assets/images/blot-profile.png')} style={{ marginTop: '100px' }} />
       </div>
 
-      <div className='purchasedCourses' style={{ marginBottom: '100px' }}>
+      <div className="purchasedCourses" style={{ marginBottom: '100px' }}>
         <div>
           <p
             style={{
@@ -365,7 +359,7 @@ export const Profile = () => {
         </div>
 
         <div
-          className='cards'
+          className="cards"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
