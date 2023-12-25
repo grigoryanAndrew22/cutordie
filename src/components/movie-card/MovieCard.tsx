@@ -18,7 +18,7 @@ export const MovieCard = (props: any) => {
       }}
     >
       <a
-        href="/cutordie/courses/course"
+        href="/courses/course"
         className="card"
         style={{
           backgroundImage: `url(${require('../../assets/images/haircutCardBG.webp')})`,
