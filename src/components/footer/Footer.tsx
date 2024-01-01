@@ -76,9 +76,30 @@ export const Footer = (props: any) => {
             </li>
             <img src={vertical} alt='line' height={220} />
             <li className='policy' style={FooterStyles.infoItem}>
-              <p style={{ margin: 0 }}>{footerTranslated.termsofUse}</p>
-              <p style={{ margin: 0 }}>{footerTranslated.refund}</p>
-              <p style={{ margin: 0 }}>{footerTranslated.privacy}</p>
+              <p style={{ margin: 0 }}>
+                <a
+                  href='/policy'
+                  style={{ color: 'inherit', textDecoration: 'none' }}
+                >
+                  {footerTranslated.termsofUse}
+                </a>
+              </p>
+              <p style={{ margin: 0 }}>
+                <a
+                  href='/policy'
+                  style={{ color: 'inherit', textDecoration: 'none' }}
+                >
+                  {footerTranslated.refund}
+                </a>
+              </p>
+              <p style={{ margin: 0 }}>
+                <a
+                  href='/policy'
+                  style={{ color: 'inherit', textDecoration: 'none' }}
+                >
+                  {footerTranslated.privacy}
+                </a>
+              </p>
             </li>
             <img src={vertical} alt='line' height={220} />
             <li className='social_networks' style={FooterStyles.socialNetworks}>

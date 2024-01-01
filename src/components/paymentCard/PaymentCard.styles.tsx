@@ -19,5 +19,6 @@ export const paymentCardStyles = {
     fontFamily: 'Drum',
     fontSize: '40px',
     cursor: 'pointer',
+    zIndex: '10',
   },
 };
