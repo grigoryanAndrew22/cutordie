@@ -1,10 +1,9 @@
 import { Fragment, useEffect, useState } from 'react';
 import { NavbarRaw } from '../../components/navbarRaw/NavbarRaw';
 import { Footer } from '../../components/footer/Footer';
-import { FooterMobile } from '../../components/footerMobile/FooterMobile';
+// import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import './Courses.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
-import axios from 'axios';
 import { coursesStyles } from './Courses.styles';
 
 export const Courses = (props: any) => {
@@ -35,12 +34,12 @@ export const Courses = (props: any) => {
         loggedIn={props.loggedIn}
       />
 
-      <div className="haircuts-section" style={coursesStyles.haircutsSection}>
-        <div className="title">
+      <div className='haircuts-section' style={coursesStyles.haircutsSection}>
+        <div className='title'>
           <h1 style={coursesStyles.title}>HAIRCUTS FOR STARTER</h1>
         </div>
 
-        <div className="cards" style={coursesStyles.cards}>
+        <div className='cards' style={coursesStyles.cards}>
           {coursesObj.map((course: any, i: any) => (
             <MovieCard key={course._id} index={i} course={course} />
           ))}
@@ -53,12 +52,6 @@ export const Courses = (props: any) => {
         currency={currency}
         changeCurr={changeCurrency}
         bottomShadow={true}
-      />
-      <FooterMobile
-        language={language}
-        changeLangHandler={changeLang}
-        currency={currency}
-        changeCurr={changeCurrency}
       />
     </Fragment>
   );

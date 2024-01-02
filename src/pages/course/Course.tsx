@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { NavbarRaw } from '../../components/navbarRaw/NavbarRaw';
 import { Footer } from '../../components/footer/Footer';
-import { FooterMobile } from '../../components/footerMobile/FooterMobile';
+// import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import buyNowbtn from '../../assets/images/buyNowbtn.svg';
 import { courseStyles } from './Course.styles';
 import '../course/Course.css';
@@ -69,6 +69,7 @@ export const Course = (props: any) => {
           <div className='course-description' style={{ display: 'flex' }}>
             <div className='course-preview'>
               <img
+                alt=''
                 src={require('../../assets/images/coursePrev.png')}
                 height={500}
               />
@@ -94,6 +95,7 @@ export const Course = (props: any) => {
                 }}
               >
                 <img
+                  alt=''
                   src={require('../../assets/images/scissorSm.png')}
                   width={36}
                 />
@@ -117,6 +119,7 @@ export const Course = (props: any) => {
                 }}
               >
                 <img
+                  alt=''
                   src={require('../../assets/images/clockSm.png')}
                   width={36}
                 />
@@ -208,6 +211,7 @@ export const Course = (props: any) => {
               take your haircutting abilities to new heights.
             </p>
             <img
+              alt=''
               src={require('../../assets/images/coursePrev.png')}
               height={300}
             />
@@ -243,6 +247,7 @@ export const Course = (props: any) => {
               take your haircutting abilities to new heights.
             </p>
             <img
+              alt=''
               src={require('../../assets/images/coursePrev.png')}
               height={300}
             />
@@ -272,6 +277,7 @@ export const Course = (props: any) => {
               take your haircutting abilities to new heights.
             </p>
             <img
+              alt=''
               src={require('../../assets/images/coursePrev.png')}
               height={300}
             />
@@ -328,12 +334,6 @@ export const Course = (props: any) => {
         currency={currency}
         changeCurr={changeCurrency}
         bottomShadow={false}
-      />
-      <FooterMobile
-        language={language}
-        changeLangHandler={changeLang}
-        currency={currency}
-        changeCurr={changeCurrency}
       />
     </Fragment>
   );
