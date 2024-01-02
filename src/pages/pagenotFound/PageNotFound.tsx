@@ -1,11 +1,10 @@
 import { Fragment } from 'react';
 import '../pagenotFound/pageNotFound.css';
-import { NavbarRaw } from '../../components/navbarRaw/NavbarRaw';
 
-export const PageNotFound = () => {
+export const PageNotFound = (props: any) => {
   return (
     <Fragment>
-      <NavbarRaw />
+      {/* <NavbarRaw /> */}
       <div className='wrapper404' style={{ height: '100vh' }}>
         <div
           style={{
@@ -15,7 +14,6 @@ export const PageNotFound = () => {
             alignItems: 'center',
             paddingTop: '90px',
             color: '#8D0000',
-            height: '100%',
           }}
         >
           <p style={{ fontFamily: 'Drum', fontSize: '190px', margin: 0 }}>

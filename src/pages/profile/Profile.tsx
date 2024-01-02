@@ -1,7 +1,4 @@
-import { Fragment, useState } from 'react';
-import { NavbarRaw } from '../../components/navbarRaw/NavbarRaw';
-import { Footer } from '../../components/footer/Footer';
-// import { FooterMobile } from '../../components/footerMobile/FooterMobile';
+import { Fragment } from 'react';
 import pencil from '../../assets/images/pencil.png';
 import coinGray from '../../assets/images/coinGray.png';
 import hryvniaGray from '../../assets/images/hryvniaGray.png';
@@ -14,17 +11,20 @@ import { MovieCard } from '../../components/movie-card/MovieCard';
 import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 
 export const Profile = (props: any) => {
-  const [currency, changeCurrency] = useState('usd');
-  const [language, changeLanguage] = useState('en');
-  console.log(props.user.userName);
-
-  const changeLang = (lang: string) => {
-    changeLanguage(lang);
+  const changeCurrencyUAH = () => {
+    props.changeCurr('uah');
   };
+  const changeCurrencyUSD = () => {
+    props.changeCurr('usd');
+  };
+  const changeCurrencyEUR = () => {
+    props.changeCurr('eur');
+  };
+
+  console.log(props.user.userName);
 
   return (
     <Fragment>
-      <NavbarRaw language={language} loggedIn={props.loggedIn} />
       <PaymentCard />
       <div
         className='prof-sett-wrapper'
@@ -213,7 +213,7 @@ export const Profile = (props: any) => {
                     top: -13,
                     left: -15,
                     width: 62,
-                    display: 'inline-block',
+                    display: props.currency === 'uah' ? 'inline-block' : 'none',
                   }}
                 />
                 <img
@@ -224,7 +224,7 @@ export const Profile = (props: any) => {
                     top: -13,
                     left: 64,
                     width: 62,
-                    display: 'none',
+                    display: props.currency === 'eur' ? 'inline-block' : 'none',
                   }}
                 />
                 <img
@@ -235,11 +235,11 @@ export const Profile = (props: any) => {
                     top: -13,
                     right: -15,
                     width: 62,
-                    display: 'none',
+                    display: props.currency === 'usd' ? 'inline-block' : 'none',
                   }}
                 />
                 <button
-                  // onClick={changeCurrencyUAH}
+                  onClick={changeCurrencyUAH}
                   style={{
                     border: 'none',
                     background: 'transparent',
@@ -251,7 +251,7 @@ export const Profile = (props: any) => {
                   <img alt='' width={32} src={hryvniaGray} />
                 </button>
                 <button
-                  // onClick={changeCurrencyEUR}
+                  onClick={changeCurrencyEUR}
                   style={{
                     border: 'none',
                     background: 'transparent',
@@ -263,7 +263,7 @@ export const Profile = (props: any) => {
                   <img alt='' width={44} src={euroGray} />
                 </button>
                 <button
-                  // onClick={changeCurrencyUSD}
+                  onClick={changeCurrencyUSD}
                   style={{
                     border: 'none',
                     background: 'transparent',
@@ -299,7 +299,7 @@ export const Profile = (props: any) => {
                     top: -13,
                     left: -15,
                     width: 92,
-                    display: 'inline-block',
+                    display: props.language === 'ua' ? 'inline-block' : 'none',
                   }}
                 />
                 <img
@@ -310,13 +310,13 @@ export const Profile = (props: any) => {
                     top: -13,
                     right: -15,
                     width: 92,
-                    display: 'none',
+                    display: props.language === 'en' ? 'inline-block' : 'none',
                   }}
                 />
                 <button
-                  // onClick={() => {
-                  //   props.changeLangHandler("ua");
-                  // }}
+                  onClick={() => {
+                    props.changeLangHandler('ua');
+                  }}
                   style={{
                     background: 'transparent',
                     border: 'none',
@@ -330,9 +330,9 @@ export const Profile = (props: any) => {
                   UA
                 </button>
                 <button
-                  // onClick={() => {
-                  //   props.changeLangHandler("en");
-                  // }}
+                  onClick={() => {
+                    props.changeLangHandler('en');
+                  }}
                   style={{
                     background: 'transparent',
                     border: 'none',
@@ -423,14 +423,6 @@ export const Profile = (props: any) => {
           ))}
         </div>
       </div>
-
-      <Footer
-        language={language}
-        changeLangHandler={changeLang}
-        currency={currency}
-        changeCurr={changeCurrency}
-        bottomShadow={true}
-      />
     </Fragment>
   );
 };

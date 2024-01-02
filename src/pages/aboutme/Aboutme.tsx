@@ -1,22 +1,11 @@
-import { Fragment, useState } from 'react';
-import { NavbarRaw } from '../../components/navbarRaw/NavbarRaw';
-import { Footer } from '../../components/footer/Footer';
-// import { FooterMobile } from '../../components/footerMobile/FooterMobile';
+import { Fragment } from 'react';
 import { aboutmeStyles } from './Aboutme.styles';
 
-export const Aboutme = () => {
-  const [currency, changeCurrency] = useState('usd');
-  const [language, changeLanguage] = useState('en');
-
+export const Aboutme = (props: any) => {
   const row = [1, 2, 3, 4, 5, 6, 7];
-
-  const changeLang = (lang: string) => {
-    changeLanguage(lang);
-  };
 
   return (
     <Fragment>
-      <NavbarRaw language={language} />
       <div
         className='barber-profile-wrapper'
         style={aboutmeStyles.barderProfileWrapper}
@@ -60,14 +49,6 @@ export const Aboutme = () => {
           ))}
         </div>
       </div>
-
-      <Footer
-        language={language}
-        changeLangHandler={changeLang}
-        currency={currency}
-        changeCurr={changeCurrency}
-        bottomShadow={true}
-      />
     </Fragment>
   );
 };

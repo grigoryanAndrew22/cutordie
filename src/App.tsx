@@ -2,32 +2,39 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Home } from './pages/home/Home';
 import { Courses } from './pages/courses/Courses';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import axios from 'axios';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import axios from 'axios';
 import { Aboutme } from './pages/aboutme/Aboutme';
 import { NavbarRaw } from './components/navbarRaw/NavbarRaw';
 import { Profile } from './pages/profile/Profile';
 import { Course } from './pages/course/Course';
-import { PaymentCard } from './components/paymentCard/PaymentCard';
 import { Policy } from './pages/policy/Policy';
 import { PageNotFound } from './pages/pagenotFound/PageNotFound';
+import { Footer } from './components/footer/Footer';
 
-const ROUTES = [
-  {
-    path: '/',
-    sidebarName: 'Home',
-    component: Home,
-  },
-  {
-    path: '/courses',
-    sidebarName: 'Movies',
-    component: Courses,
-  },
-];
+// const ROUTES = [
+//   {
+//     path: '/',
+//     sidebarName: 'Home',
+//     component: Home,
+//   },
+//   {
+//     path: '/courses',
+//     sidebarName: 'Movies',
+//     component: Courses,
+//   },
+// ];
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(true);
   const [userData, setUserData] = useState({});
+
+  const [currency, changeCurrency] = useState('usd');
+  const [language, changeLanguage] = useState('en');
+
+  const changeLang = (lang: string) => {
+    changeLanguage(lang);
+  };
 
   // useEffect(() => {
   //   axios
@@ -60,6 +67,11 @@ function App() {
 
   return (
     <div className='App'>
+      <NavbarRaw
+        language={language}
+        loggedIn={loggedIn}
+        changeLogin={setLoggedIn}
+      />
       <BrowserRouter>
         <Routes>
           {/* {ROUTES.map((route: any) => (
@@ -71,33 +83,51 @@ function App() {
           ))} */}
           <Route
             path='/'
-            element={<Home loggedIn={loggedIn} changeLogin={setLoggedIn} />}
+            element={<Home language={language} currency={currency} />}
           ></Route>
           <Route
             path='/courses'
-            element={<Courses loggedIn={loggedIn} changeLogin={setLoggedIn} />}
+            element={<Courses language={language} currency={currency} />}
           ></Route>
 
-          <Route path='/aboutme' Component={Aboutme}></Route>
+          <Route
+            path='/aboutme'
+            element={<Aboutme language={language} />}
+          ></Route>
           <Route
             path='/profile'
             element={
               <Profile
-                loggedIn={loggedIn}
                 changeLogin={setLoggedIn}
                 user={userData}
+                language={language}
+                changeLangHandler={changeLang}
+                currency={currency}
+                changeCurr={changeCurrency}
               />
             }
           ></Route>
-
           <Route
             path='/courses/course'
-            element={<Course loggedIn={loggedIn} changeLogin={setLoggedIn} />}
+            element={<Course language={language} />}
           ></Route>
-          <Route path='/policy' element={<Policy />}></Route>
-          <Route path='/404' element={<PageNotFound />}></Route>
+          <Route
+            path='/policy'
+            element={<Policy language={language} />}
+          ></Route>
+          <Route
+            path='/404'
+            element={<PageNotFound language={language} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
+      <Footer
+        language={language}
+        changeLangHandler={changeLang}
+        currency={currency}
+        changeCurr={changeCurrency}
+        bottomShadow={false}
+      />
     </div>
   );
 }

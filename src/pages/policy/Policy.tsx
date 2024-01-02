@@ -1,12 +1,10 @@
 import { Fragment } from 'react';
-import { NavbarRaw } from '../../components/navbarRaw/NavbarRaw';
-import { Footer } from '../../components/footer/Footer';
 import '../policy/Policy.css';
 
-export const Policy = () => {
+export const Policy = (props: any) => {
   return (
     <Fragment>
-      <NavbarRaw />
+      {/* <NavbarRaw /> */}
       <div className='policy-wrapper'>
         <div
           style={{
@@ -230,7 +228,6 @@ export const Policy = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </Fragment>
   );
 };
