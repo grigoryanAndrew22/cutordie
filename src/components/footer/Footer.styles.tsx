@@ -60,4 +60,14 @@ export const FooterStyles = {
     height: '63%',
     justifyContent: 'space-between',
   },
+  copyright: {
+    color: 'rgb(85,85,83)',
+    fontSize: '15px',
+    marginTop: '0.4rem',
+  },
+  copyrightMob: {
+    color: '#808080',
+    fontSize: '15px',
+    textAlign: 'center' as 'center',
+  },
 };

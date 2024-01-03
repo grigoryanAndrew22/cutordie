@@ -26,7 +26,7 @@ import { Footer } from './components/footer/Footer';
 // ];
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
 
   const [currency, changeCurrency] = useState('usd');

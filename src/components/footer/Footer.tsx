@@ -13,8 +13,6 @@ import './FooterMobile.css';
 import instaIcon from '../../assets/images/instaIcon.png';
 import tiktokIcon from '../../assets/images/tiktokIcon.png';
 import { Fragment } from 'react';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import { FooterMobileStyles } from './FooterMobile.styles';
 import LanguageIcon from '@mui/icons-material/Language';
 
@@ -64,13 +62,7 @@ export const Footer = (props: any) => {
               width={344}
               height={254}
             />
-            <p
-              style={{
-                color: 'rgb(85,85,83)',
-                fontSize: '15px',
-                marginTop: '0.4rem',
-              }}
-            >
+            <p style={FooterStyles.copyright}>
               &copy; 2023 Cut or die. All rights reserved.
             </p>
           </div>
@@ -374,14 +366,20 @@ export const Footer = (props: any) => {
                 className='social_networks'
                 style={FooterMobileStyles.socialNetworks}
               >
-                <InstagramIcon sx={{ fontSize: '41px' }} />
-                <YouTubeIcon sx={{ fontSize: '41px' }} />
+                <img
+                  alt=''
+                  src={instaIcon}
+                  style={{ alignSelf: 'center', width: '38px' }}
+                />
+                <img
+                  alt=''
+                  src={tiktokIcon}
+                  style={{ alignSelf: 'center', width: '38px' }}
+                />
               </li>
             </ul>
           </div>
-          <p
-            style={{ color: '#808080', fontSize: '15px', textAlign: 'center' }}
-          >
+          <p style={FooterStyles.copyrightMob}>
             &copy; 2023 Cut or die. All rights reserved.
           </p>
         </div>

@@ -4,13 +4,14 @@ import timerIcon from '../../assets/images/timerIcon.png';
 import cornerIconRB from '../../assets/images/cornerIconRB.png';
 import '../movie-card/MovieCard.css';
 import { useState } from 'react';
+import { MovieCardStyles } from './MovieCard.styles';
 
 export const MovieCard = (props: any) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className="haircutWrap"
+      className='haircutWrap'
       style={{
         display: 'flex',
         scale: isHovered ? '1.05' : '1',
@@ -18,8 +19,8 @@ export const MovieCard = (props: any) => {
       }}
     >
       <a
-        href="/courses/course"
-        className="card"
+        href='/courses/course'
+        className='card'
         style={{
           backgroundImage: `url(${require('../../assets/images/haircutCardBG.webp')})`,
           display: 'flex',
@@ -42,7 +43,7 @@ export const MovieCard = (props: any) => {
             transform: 'rotate(180deg)',
             transition: 'all 0.2s ease',
           }}
-          alt="corner"
+          alt='corner'
         />
         <img
           src={cornerIconRB}
@@ -52,17 +53,10 @@ export const MovieCard = (props: any) => {
             right: isHovered ? '-18px' : '-8px',
             transition: 'all 0.2s ease',
           }}
-          alt="corner"
+          alt='corner'
         />
-        <div
-          className="preview"
-          style={{
-            display: 'flex',
-            position: 'relative',
-            justifyContent: 'center',
-          }}
-        >
-          <div style={{ position: 'absolute', left: '32px', top: '32px' }}>
+        <div className='preview' style={MovieCardStyles.previewWrap}>
+          <div style={MovieCardStyles.preview}>
             {/* <img
             src={props.course.difficulty === 1 ? scissorsWhite : scissorsGray}
           />
@@ -72,96 +66,43 @@ export const MovieCard = (props: any) => {
           <img
             src={props.course.difficulty === 3 ? scissorsWhite : scissorsGray}
           /> */}
-            <img src={scissorsWhite} width={'30px'} />
-            <img src={scissorsWhite} width={'30px'} />
-            <img src={scissorsWhite} width={'30px'} />
+            <img alt='' src={scissorsWhite} width={'30px'} />
+            <img alt='' src={scissorsWhite} width={'30px'} />
+            <img alt='' src={scissorsWhite} width={'30px'} />
           </div>
-          <p
-            className="price"
-            style={{
-              position: 'absolute',
-              top: '28px',
-              right: '34px',
-              color: '#fff',
-              fontSize: '40px',
-              margin: 0,
-              fontWeight: '600',
-            }}
-          >
+          <p className='price' style={MovieCardStyles.price}>
             {props.course.price}$
           </p>
           <img
+            alt=''
             src={require('../../assets/images/haircutCardPreview.png')}
             width={'360px'}
             style={{ paddingTop: '20px' }}
           />
 
-          <h1
-            className="course-title"
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              color: '#fff',
-              left: '35px',
-              fontWeight: '600',
-              fontFamily: 'Bitter',
-              margin: '0px 0px 14px 0px',
-            }}
-          >
+          <h1 className='course-title' style={MovieCardStyles.courseTitle}>
             {props.course.name}
           </h1>
         </div>
-        <div
-          className="diff-duration"
-          style={{
-            display: 'flex',
-            width: '90%',
-            justifyContent: 'space-between',
-            margin: '0 auto',
-          }}
-        >
-          <div className="diff" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={scissorsGray} width={25} />
+        <div className='diff-duration' style={MovieCardStyles.diffDurWrap}>
+          <div
+            className='diff'
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <img alt='' src={scissorsGray} width={25} />
           </div>
-          <div className="duration" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={timerIcon} width={25} />
-            <p
-              style={{
-                color: '#444444',
-                fontFamily: 'Bitter',
-                fontWeight: '600',
-                fontSize: '16px',
-                paddingLeft: '9px',
-                marginRight: '1.5px',
-              }}
-            >
-              {props.course.duration}h 00m
-            </p>
+          <div
+            className='duration'
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <img alt='' src={timerIcon} width={25} />
+            <p style={MovieCardStyles.duration}>{props.course.duration}h 00m</p>
           </div>
         </div>
-        <div
-          className="description"
-          style={{
-            width: '90%',
-            margin: '10px auto',
-            paddingBottom: '30px',
-          }}
-        >
-          <p
-            style={{
-              display: 'flex',
-              width: '90%',
-              justifyContent: 'space-between',
-              margin: '0 auto',
-            }}
-          >
-            {props.course.description}
-          </p>
+        <div className='description' style={MovieCardStyles.descrWrap}>
+          <p style={MovieCardStyles.description}>{props.course.description}</p>
         </div>
       </a>
     </div>
   );
 };
-function includes(index: any) {
-  throw new Error('Function not implemented.');
-}

@@ -9,6 +9,7 @@ import logoutGray from '../../assets/images/logoutGray.png';
 import './Profile.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
 import { PaymentCard } from '../../components/paymentCard/PaymentCard';
+import { profileStyles } from './Profile.styles';
 
 export const Profile = (props: any) => {
   const changeCurrencyUAH = () => {
@@ -30,56 +31,18 @@ export const Profile = (props: any) => {
         className='prof-sett-wrapper'
         style={{ height: '976px', boxShadow: 'black 0px 110px 120px' }}
       >
-        <div
-          style={{
-            paddingTop: '150px',
-            display: 'flex',
-            width: '80%',
-            margin: 'auto',
-            justifyContent: 'space-between',
-          }}
-        >
+        <div style={profileStyles.wrapperChild}>
           <div className='myprofile' style={{ width: '37%' }}>
-            <p
-              className='prof-title'
-              style={{
-                margin: 0,
-                color: '#444444',
-                fontSize: '83px',
-                fontFamily: 'Drum',
-                whiteSpace: 'nowrap',
-              }}
-            >
+            <p className='prof-title' style={profileStyles.profileTitle}>
               MY PROFILE
             </p>
 
             <div className='prof-info' style={{ marginTop: '45px' }}>
-              <div
-                className='name_surname'
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  marginBottom: '25px',
-                  flexDirection: 'column',
-                }}
-              >
+              <div className='name_surname' style={profileStyles.nameSurname}>
                 <div className='name'>
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      paddingBottom: '7px',
-                    }}
-                  >
+                  <div style={profileStyles.nameWrap}>
                     <img alt='' src={pencil} width={29} height={33} />
-                    <label
-                      htmlFor='name'
-                      style={{
-                        fontFamily: 'Bitter',
-                        fontSize: '25px',
-                        paddingLeft: '5px',
-                      }}
-                    >
+                    <label htmlFor='name' style={profileStyles.nameLabel}>
                       Name:
                     </label>
                   </div>
@@ -88,26 +51,10 @@ export const Profile = (props: any) => {
                   className='email-input'
                   value={props.user.userName}
                   type='email'
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    height: '39px',
-                    fontFamily: 'Bitter',
-                    color: '#444444',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                  }}
+                  style={profileStyles.input}
                 />
 
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    paddingBottom: '7px',
-                    marginTop: '25px',
-                  }}
-                >
+                <div style={profileStyles.emailWrap}>
                   <img alt='' src={pencil} width={29} height={33} />
                   <label
                     htmlFor='email'
@@ -123,25 +70,9 @@ export const Profile = (props: any) => {
                   className='email-input'
                   value={props.user.email}
                   type='email'
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    height: '39px',
-                    fontFamily: 'Bitter',
-                    color: '#444444',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                  }}
+                  style={profileStyles.input}
                 />
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    paddingBottom: '7px',
-                    marginTop: '25px',
-                  }}
-                >
+                <div style={profileStyles.emailWrap}>
                   <img alt='' src={pencil} width={29} height={33} />
                   <label
                     htmlFor='email'
@@ -157,54 +88,23 @@ export const Profile = (props: any) => {
                   className='password-input'
                   value={'password123'}
                   type='password'
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    height: '39px',
-                    fontFamily: 'Bitter',
-                    color: '#444444',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                  }}
+                  style={profileStyles.input}
                 />
               </div>
             </div>
           </div>
           <div className='settings'>
-            <p
-              className='sett-title'
-              style={{
-                margin: 0,
-                color: 'rgb(68, 68, 68)',
-                fontSize: '83px',
-                fontFamily: 'Drum',
-              }}
-            >
+            <p className='sett-title' style={profileStyles.settTitle}>
               SETTINGS
             </p>
             <div
               className='currency-section'
               style={{ display: 'flex', marginTop: '83px' }}
             >
-              <div
-                style={{
-                  width: '39%',
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
+              <div style={profileStyles.coinWrap}>
                 <img alt='' src={coinGray} width={55} />
               </div>
-              <div
-                style={{
-                  width: '61%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  position: 'relative',
-                }}
-              >
+              <div style={profileStyles.currencyWrap}>
                 <img
                   alt=''
                   src={require('../../assets/images/circle1.png')}
@@ -240,37 +140,19 @@ export const Profile = (props: any) => {
                 />
                 <button
                   onClick={changeCurrencyUAH}
-                  style={{
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                    fontSize: '30px',
-                    zIndex: 10,
-                  }}
+                  style={profileStyles.currBtn}
                 >
                   <img alt='' width={32} src={hryvniaGray} />
                 </button>
                 <button
                   onClick={changeCurrencyEUR}
-                  style={{
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                    fontSize: '30px',
-                    zIndex: 10,
-                  }}
+                  style={profileStyles.currBtn}
                 >
                   <img alt='' width={44} src={euroGray} />
                 </button>
                 <button
                   onClick={changeCurrencyUSD}
-                  style={{
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                    fontSize: '30px',
-                    zIndex: 10,
-                  }}
+                  style={profileStyles.currBtn}
                 >
                   <img alt='' width={32} src={dollarGray} />
                 </button>
@@ -283,14 +165,7 @@ export const Profile = (props: any) => {
               <div style={{ width: '39%', display: 'flex' }}>
                 <img alt='' src={langIconGray} width={53} height={53} />
               </div>
-              <div
-                style={{
-                  width: '61%',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  position: 'relative',
-                }}
-              >
+              <div style={profileStyles.langBtnsWrap}>
                 <img
                   alt=''
                   src={require('../../assets/images/circle2.png')}
@@ -317,15 +192,7 @@ export const Profile = (props: any) => {
                   onClick={() => {
                     props.changeLangHandler('ua');
                   }}
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontFamily: 'Bitter',
-                    fontSize: '42px',
-                    color: '#505050',
-                    zIndex: 10,
-                  }}
+                  style={profileStyles.langBtn}
                 >
                   UA
                 </button>
@@ -333,15 +200,7 @@ export const Profile = (props: any) => {
                   onClick={() => {
                     props.changeLangHandler('en');
                   }}
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontFamily: 'Bitter',
-                    fontSize: '42px',
-                    color: '#505050',
-                    zIndex: 10,
-                  }}
+                  style={profileStyles.langBtn}
                 >
                   EN
                 </button>
@@ -357,19 +216,7 @@ export const Profile = (props: any) => {
             >
               <img alt='' src={logoutGray} width={50} />
               <div style={{ paddingLeft: '70px' }}>
-                <button
-                  style={{
-                    border: 'none',
-                    background: 'transparent',
-                    color: '#505050',
-                    cursor: 'pointer',
-                    fontFamily: 'Bitter',
-                    fontSize: '30px',
-                    fontWeight: '600',
-                  }}
-                >
-                  Log out
-                </button>
+                <button style={profileStyles.logoutBtn}>Log out</button>
               </div>
             </div>
           </div>
@@ -383,31 +230,10 @@ export const Profile = (props: any) => {
 
       <div className='purchasedCourses' style={{ marginBottom: '100px' }}>
         <div>
-          <p
-            style={{
-              margin: 0,
-              color: '#D4D4D4',
-              fontSize: '83px',
-              fontFamily: 'Drum',
-              textAlign: 'center',
-              paddingTop: '40px',
-            }}
-          >
-            PURCHASED COURSES
-          </p>
+          <p style={profileStyles.purchCourses}>PURCHASED COURSES</p>
         </div>
 
-        <div
-          className='cards'
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            // gap: '3rem',
-            justifyContent: 'space-between',
-            width: '80%',
-            margin: 'auto',
-          }}
-        >
+        <div className='cards' style={profileStyles.cardsWrap}>
           {[0, 1, 2, 3, 4, 5].map((el: any, i: number) => (
             <MovieCard
               key={i}
