@@ -80,54 +80,22 @@ export const Profile = () => {
                       Name:
                     </label>
                   </div>
-                  <input
-                    value={'Vasya'}
-                    type="text"
-                    className="name-input"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      height: '35px',
-                      fontFamily: 'Bitter',
-                      color: '#444444',
-                      fontSize: '20px',
-                      fontWeight: '600',
-                    }}
-                  />
-                </div>
-                <div className="surname">
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      paddingBottom: '7px',
-                    }}
-                  >
-                    <img src={pencil} width={29} height={33} />
-                    <label
-                      htmlFor="surname"
+                  <div className="name-input-bg">
+                    <input
+                      value={'Vasya'}
+                      type="text"
+                      className="name-input"
                       style={{
+                        backgroundColor: 'transparent',
+                        border: 'none',
+                        height: '30px',
                         fontFamily: 'Bitter',
-                        fontSize: '22px',
+                        color: '#444444',
+                        fontSize: '16px',
+                        fontWeight: '600',
                       }}
-                    >
-                      Surname:
-                    </label>
+                    />
                   </div>
-                  <input
-                    value="Vasin"
-                    type="text"
-                    className="surname-input"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      height: '35px',
-                      fontFamily: 'Bitter',
-                      color: '#444444',
-                      fontSize: '20px',
-                      fontWeight: '600',
-                    }}
-                  />
                 </div>
               </div>
               <div className="email_password">
@@ -149,21 +117,23 @@ export const Profile = () => {
                     Email:
                   </label>
                 </div>
-                <input
-                  className="email-input"
-                  value={'alexey10.arsentyev@gmail.com'}
-                  type="email"
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    height: '39px',
-                    fontFamily: 'Bitter',
-                    color: '#444444',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                  }}
-                />
+                <div className="email-input-bg">
+                  <input
+                    className="email-input"
+                    value={'alexey10.arsentyev@gmail.com'}
+                    type="email"
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: 'none',
+
+                      fontFamily: 'Bitter',
+                      color: '#444444',
+                      fontSize: '16px',
+                      fontWeight: '600',
+                    }}
+                  />
+                </div>
+
                 <div
                   style={{
                     display: 'flex',
@@ -183,21 +153,23 @@ export const Profile = () => {
                     Password:
                   </label>
                 </div>
-                <input
-                  className="password-input"
-                  value={'password123'}
-                  type="password"
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    height: '39px',
-                    fontFamily: 'Bitter',
-                    color: '#444444',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                  }}
-                />
+                <div className="password-input-bg">
+                  <input
+                    className="password-input"
+                    value={'password123'}
+                    type="password"
+                    style={{
+                      width: '100%',
+                      backgroundColor: 'transparent',
+                      border: 'none',
+
+                      fontFamily: 'Bitter',
+                      color: '#444444',
+                      fontSize: '16px',
+                      fontWeight: '600',
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -33,19 +33,25 @@ export const TopSection = (props: any) => {
           url={'/cutordie/aboutme'}
           buttonType={'aboutme'}
           text={'About me'}
-          width={296}
+          width={303}
           height={113}
           top={39}
           left={48}
+          color={'e8e8e8'}
+          font={'Drum'}
+          fontSize={'50'}
         />
         <AnimatedButton
           url={'/cutordie/courses'}
           buttonType={'courses'}
           text={'Courses'}
           width={265}
-          height={108}
+          height={105}
           top={39}
           left={48}
+          color={'e8e8e8'}
+          font={'Drum'}
+          fontSize={'50'}
         />
         <AnimatedButton
           url={'/cutordie'}
@@ -55,6 +61,9 @@ export const TopSection = (props: any) => {
           height={103}
           top={39}
           left={50}
+          color={'e8e8e8'}
+          font={'Drum'}
+          fontSize={'50'}
         />
       </div>
     </div>

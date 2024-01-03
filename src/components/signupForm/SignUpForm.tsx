@@ -209,51 +209,24 @@ export const SignUpForm = (props: any) => {
                 >
                   {generatedForm.name}
                 </label>
-                <input
-                  placeholder={generatedForm.name}
-                  type="text"
-                  className="name-input"
-                  style={{
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    height: '30px',
-                    fontFamily: 'Bitter',
-                    color: '#444444',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                  }}
-                  onChange={handleName}
-                  ref={nameField}
-                />
-              </div>
-              <div className="surname" style={{ width: '46%' }}>
-                <label
-                  htmlFor="surname"
-                  style={{
-                    fontFamily: 'Bitter',
-                    fontSize: '22px',
-                    paddingBottom: '9px',
-                  }}
-                >
-                  {generatedForm.surname}
-                </label>
-                <input
-                  placeholder={generatedForm.surname}
-                  type="text"
-                  className="surname-input"
-                  style={{
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    height: '30px',
-                    fontFamily: 'Bitter',
-                    color: '#444444',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    width: '98%',
-                  }}
-                  onChange={handleSurname}
-                  ref={surnameField}
-                />
+                <div className="name-input-bg">
+                  <input
+                    placeholder={generatedForm.name}
+                    type="text"
+                    className="name-input"
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: 'none',
+                      height: '30px',
+                      fontFamily: 'Bitter',
+                      color: '#444444',
+                      fontSize: '16px',
+                      fontWeight: '600',
+                    }}
+                    onChange={handleName}
+                    ref={nameField}
+                  />
+                </div>
               </div>
             </div>
             <label
@@ -267,24 +240,6 @@ export const SignUpForm = (props: any) => {
             >
               {generatedForm.email}
             </label>
-
-            <input
-              className="email-input"
-              placeholder={generatedForm.email}
-              type="email"
-              style={{
-                width: '100%',
-                backgroundColor: 'transparent',
-                border: 'none',
-                height: '30px',
-                fontFamily: 'Bitter',
-                color: '#444444',
-                fontSize: '16px',
-                fontWeight: '600',
-              }}
-              onChange={handleEmail}
-              ref={emailField}
-            />
 
             <div
               className="password-label"
