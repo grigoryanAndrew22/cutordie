@@ -90,6 +90,18 @@ export const MovieCard = (props: any) => {
             style={{ display: 'flex', alignItems: 'center' }}
           >
             <img alt='' src={scissorsGray} width={25} />
+            <p
+              style={{
+                margin: 0,
+                paddingLeft: '7px',
+                fontFamily: 'Bitter',
+                color: '#444444',
+                paddingTop: '3px',
+                fontWeight: '600',
+              }}
+            >
+              Hard
+            </p>
           </div>
           <div
             className='duration'

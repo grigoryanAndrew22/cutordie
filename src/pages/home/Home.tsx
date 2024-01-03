@@ -3,7 +3,6 @@ import { BlotSection } from '../../components/blot-section/blotSection';
 import { BottomSection } from '../../components/bottom-section/BottomSection';
 import { Offer } from '../../components/offer/Offer';
 import { TopSection } from '../../components/top-section/TopSection';
-import { OfferMobile } from '../../components/offerMobile/OfferMobile';
 import dividerRight from '../../assets/images/dividerRight.png';
 import dividerLeft from '../../assets/images/dividerLeft.png';
 import './Home.css';
@@ -25,20 +24,23 @@ export const Home = (props: any) => {
         language={props.language}
         currency={props.currency}
         index={1}
+        divider={dividerLeft}
       />
       <Offer
         flexDirection={'row-reverse'}
         language={props.language}
         currency={props.currency}
         index={2}
+        divider={dividerRight}
       />
       <Offer
         flexDirection={'row'}
         language={props.language}
         currency={props.currency}
         index={3}
+        divider={dividerLeft}
       />
-      <OfferMobile
+      {/* <OfferMobile
         divider={dividerLeft}
         language={props.language}
         currency={props.currency}
@@ -52,7 +54,7 @@ export const Home = (props: any) => {
         divider={dividerLeft}
         language={props.language}
         currency={props.currency}
-      />
+      /> */}
       <BottomSection language={props.language} />
       {showCookies && (
         <CookiesNotification

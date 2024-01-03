@@ -34,4 +34,31 @@ export const offerMobileStyles = {
   description: {
     fontSize: '25px',
   },
+  descriptionWrap: {
+    alignSelf: 'start',
+    fontFamily: 'Drum',
+    position: 'relative' as 'relative',
+  },
+  discount: {
+    position: 'absolute' as 'absolute',
+    fontFamily: 'Hey October',
+    fontSize: '38px',
+    color: '#900000',
+    top: '-31px',
+    right: '11%',
+    margin: '0px',
+  },
+  buyBtnWrap: {
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: 40,
+    alignSelf: 'start',
+    width: '100%',
+    justifyContent: 'space-between',
+  },
+  priceWrap: {
+    position: 'relative' as 'relative',
+    whiteSpace: 'nowrap' as 'nowrap',
+    width: 'calc(100% - 235px)',
+  },
 };

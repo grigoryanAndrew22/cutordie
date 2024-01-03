@@ -109,7 +109,13 @@ function App() {
           ></Route>
           <Route
             path='/courses/course'
-            element={<Course language={language} />}
+            element={
+              <Course
+                language={language}
+                loggedIn={loggedIn}
+                changeLogin={setLoggedIn}
+              />
+            }
           ></Route>
           <Route
             path='/policy'

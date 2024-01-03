@@ -277,7 +277,11 @@ export const Course = (props: any) => {
               padding: '65px 0px 70px 0px ',
             }}
           >
-            <button className='buy-btn' style={courseStyles.buyBtn}>
+            <button
+              className='buy-btn'
+              style={courseStyles.buyBtn}
+              onClick={props.loggedIn ? openPayment : switchCF}
+            >
               <img src={buyNowbtn} alt='btn' width={'95%'} height={'100%'} />
             </button>
             <p
