@@ -70,7 +70,14 @@ export const Footer = (props: any) => {
             <ul style={FooterStyles.footerInfo}>
               <li className='contacts' style={FooterStyles.infoItem}>
                 <p style={{ margin: 0 }}>{footerTranslated.contacts}</p>
-                <p style={{ margin: 0 }}>{footerTranslated.about}</p>
+                <p style={{ margin: 0 }}>
+                  <a
+                    href='/aboutme'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
+                    {footerTranslated.about}
+                  </a>
+                </p>
                 <p style={{ margin: 0 }}>FAQ</p>
               </li>
               <img src={vertical} alt='line' height={220} />
@@ -352,14 +359,44 @@ export const Footer = (props: any) => {
             <ul style={FooterMobileStyles.footerInfo}>
               <li className='contacts' style={FooterMobileStyles.infoItem}>
                 <p style={{ margin: 0 }}>{footerTranslated.contacts}</p>
-                <p style={{ margin: 0 }}>{footerTranslated.about}</p>
+
+                <p style={{ margin: 0 }}>
+                  <a
+                    href='/aboutme'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
+                    {footerTranslated.about}
+                  </a>
+                </p>
+
                 <p style={{ margin: 0 }}>FAQ</p>
               </li>
               <img src={vertical} alt='line' height={120} />
               <li className='policy' style={FooterMobileStyles.infoItem}>
-                <p style={{ margin: 0 }}>{footerTranslated.termsofUse}</p>
-                <p style={{ margin: 0 }}>{footerTranslated.refund}</p>
-                <p style={{ margin: 0 }}>{footerTranslated.privacy}</p>
+                <p style={{ margin: 0 }}>
+                  <a
+                    href='/policy'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
+                    {footerTranslated.termsofUse}
+                  </a>
+                </p>
+                <p style={{ margin: 0 }}>
+                  <a
+                    href='/policy'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
+                    {footerTranslated.refund}
+                  </a>
+                </p>
+                <p style={{ margin: 0 }}>
+                  <a
+                    href='/policy'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
+                    {footerTranslated.privacy}
+                  </a>
+                </p>
               </li>
               <img src={vertical} alt='line' height={120} />
               <li

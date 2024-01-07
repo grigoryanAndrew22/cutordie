@@ -74,6 +74,7 @@ export const MovieCard = (props: any) => {
             {props.course.price}$
           </p>
           <img
+            className='haircut-preview'
             alt=''
             src={require('../../assets/images/haircutCardPreview.png')}
             width={'360px'}

@@ -36,7 +36,7 @@ export const profileStyles = {
     marginTop: '25px',
   },
   input: {
-    width: '100%',
+    width: '590px',
     backgroundColor: 'transparent',
     border: 'none',
     height: '39px',

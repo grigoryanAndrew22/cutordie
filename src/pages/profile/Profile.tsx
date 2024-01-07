@@ -29,9 +29,9 @@ export const Profile = (props: any) => {
       <PaymentCard />
       <div
         className='prof-sett-wrapper'
-        style={{ height: '976px', boxShadow: 'black 0px 110px 120px' }}
+        style={{ boxShadow: 'black 0px 110px 120px' }}
       >
-        <div style={profileStyles.wrapperChild}>
+        <div className='wrapperChild' style={profileStyles.wrapperChild}>
           <div className='myprofile' style={{ width: '37%' }}>
             <p className='prof-title' style={profileStyles.profileTitle}>
               MY PROFILE
@@ -48,7 +48,7 @@ export const Profile = (props: any) => {
                   </div>
                 </div>
                 <input
-                  className='email-input'
+                  className='email-input profile-input'
                   value={props.user.userName}
                   type='email'
                   style={profileStyles.input}
@@ -67,7 +67,7 @@ export const Profile = (props: any) => {
                   </label>
                 </div>
                 <input
-                  className='email-input'
+                  className='email-input profile-input'
                   value={props.user.email}
                   type='email'
                   style={profileStyles.input}
@@ -85,7 +85,7 @@ export const Profile = (props: any) => {
                   </label>
                 </div>
                 <input
-                  className='password-input'
+                  className='password-input profile-input'
                   value={'password123'}
                   type='password'
                   style={profileStyles.input}
@@ -93,7 +93,7 @@ export const Profile = (props: any) => {
               </div>
             </div>
           </div>
-          <div className='settings'>
+          <div className='settings prof-setts'>
             <p className='sett-title' style={profileStyles.settTitle}>
               SETTINGS
             </p>
@@ -224,7 +224,7 @@ export const Profile = (props: any) => {
         <img
           alt=''
           src={require('../../assets/images/blot-profile.png')}
-          style={{ marginTop: '44px' }}
+          style={{ marginTop: '44px', marginBottom: '-6px', width: '100%' }}
         />
       </div>
 

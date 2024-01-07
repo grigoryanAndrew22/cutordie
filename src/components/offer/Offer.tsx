@@ -177,7 +177,7 @@ export const Offer = (props: any) => {
             </div>
           </div>
           <div
-            className='cards'
+            className='offer-cards'
             style={{ position: 'relative', margin: '54px 0px' }}
           >
             <Card
