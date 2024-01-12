@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { aboutmeStyles } from './Aboutme.styles';
+import './Aboutme.css';
 
 export const Aboutme = (props: any) => {
   const row = [1, 2, 3, 4, 5, 6, 7];
@@ -17,8 +18,9 @@ export const Aboutme = (props: any) => {
             <p style={aboutmeStyles.pStyle}>-MAMA SAID IM THЕ BEST,</p>
             <p style={aboutmeStyles.pStyle}>-BECAUSE.</p>
           </div>
-          <div className='pfp' style={{ height: '600px' }}>
+          <div className='pfp'>
             <img
+              className='barber-pfp'
               alt=''
               src={require('../../assets/images/barberpfp.webp')}
               height={600}
@@ -28,7 +30,7 @@ export const Aboutme = (props: any) => {
         </div>
       </div>
 
-      <div style={aboutmeStyles.inscription}>
+      <div className='underpfp' style={aboutmeStyles.inscription}>
         <p style={aboutmeStyles.inscrText}>
           Building a rapport with clients can be crucial. People often choose
           barbers they feel comfortable with and with whom they can have a

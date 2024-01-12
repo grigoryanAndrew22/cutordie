@@ -1,0 +1,18 @@
+@media (max-width: 1007px) {
+  .whyme {
+    display: none !important;
+  }
+  .barber-pfp {
+    height: 450px !important;
+    width: 400px !important;
+  }
+  .underpfp {
+    padding-top: 0px !important;
+  }
+}
+
+@media (min-width: 1007px) {
+  .pfp {
+    height: 600px;
+  }
+}

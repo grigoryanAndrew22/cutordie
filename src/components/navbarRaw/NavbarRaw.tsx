@@ -52,7 +52,10 @@ export const NavbarRaw = (props: any) => {
 
   const logout = () => {
     switchDropdown(false);
-    Cookies.remove('jwt');
+    Cookies.remove('jwt', {
+      path: '/',
+      domain: 'cut-or-die-api.onrender.com',
+    });
     window.location.reload();
   };
 
@@ -158,7 +161,7 @@ export const NavbarRaw = (props: any) => {
                     {navbarRawGenerated.settings}
                   </a>
                 </li>
-                <img src={hr} />
+                <img alt='' src={hr} />
                 <li style={navbarRawStyles.li}>
                   <img
                     src={logoutIcon}
