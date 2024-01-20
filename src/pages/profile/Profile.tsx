@@ -46,13 +46,24 @@ export const Profile = (props: any) => {
                       Name:
                     </label>
                   </div>
+
+                  <div className="name-input-bg">
+                    <input
+                      value={'Vasya'}
+                      type="text"
+                      className="name-input"
+                      style={{
+                        backgroundColor: 'transparent',
+                        border: 'none',
+                        height: '30px',
+                        fontFamily: 'Bitter',
+                        color: '#444444',
+                        fontSize: '16px',
+                        fontWeight: '600',
+                      }}
+                    />
+                  </div>
                 </div>
-                <input
-                  className='email-input profile-input'
-                  value={props.user.userName}
-                  type='email'
-                  style={profileStyles.input}
-                />
 
                 <div style={profileStyles.emailWrap}>
                   <img alt='' src={pencil} width={29} height={33} />
@@ -66,14 +77,34 @@ export const Profile = (props: any) => {
                     Email:
                   </label>
                 </div>
-                <input
-                  className='email-input profile-input'
-                  value={props.user.email}
-                  type='email'
-                  style={profileStyles.input}
-                />
-                <div style={profileStyles.emailWrap}>
-                  <img alt='' src={pencil} width={29} height={33} />
+
+                <div className="email-input-bg">
+                  <input
+                    className="email-input"
+                    value={'alexey10.arsentyev@gmail.com'}
+                    type="email"
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: 'none',
+
+                      fontFamily: 'Bitter',
+                      color: '#444444',
+                      fontSize: '16px',
+                      fontWeight: '600',
+                    }}
+                  />
+                </div>
+
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    paddingBottom: '7px',
+                    marginTop: '25px',
+                  }}
+                >
+                  <img src={pencil} width={29} height={33} />
+
                   <label
                     htmlFor='email'
                     style={{
@@ -84,12 +115,25 @@ export const Profile = (props: any) => {
                     Password:
                   </label>
                 </div>
-                <input
-                  className='password-input profile-input'
-                  value={'password123'}
-                  type='password'
-                  style={profileStyles.input}
-                />
+
+                <div className="password-input-bg">
+                  <input
+                    className="password-input"
+                    value={'password123'}
+                    type="password"
+                    style={{
+                      width: '100%',
+                      backgroundColor: 'transparent',
+                      border: 'none',
+
+                      fontFamily: 'Bitter',
+                      color: '#444444',
+                      fontSize: '16px',
+                      fontWeight: '600',
+                    }}
+                  />
+                </div>
+
               </div>
             </div>
           </div>

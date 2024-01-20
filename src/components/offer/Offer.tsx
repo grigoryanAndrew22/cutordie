@@ -8,8 +8,12 @@ import uahSymbolGray from '../../assets/images/uahSymbolGray.png';
 import { Fragment } from 'react';
 import { offerStyles } from './Offer.styles';
 import './Offer.css';
+
+import AnimatedButton from '../animated-button/AnimatedButton';
+
 import { offerMobileStyles } from './OfferMobile.styles';
 import './OfferMobile.css';
+
 
 const offerTextLangs = {
   en: {
@@ -180,6 +184,55 @@ export const Offer = (props: any) => {
             className='offer-cards'
             style={{ position: 'relative', margin: '54px 0px' }}
           >
+
+            -50%
+          </p>
+          <h3 style={offerStyles.title} className="title">
+            {offerGenerated.title}
+          </h3>
+          <ul style={offerStyles.description} className="description">
+            <li style={{ margin: 0, height: '56px', paddingLeft: '1rem' }}>
+              {' '}
+              {offerGenerated.features[0]}
+            </li>
+            <li style={{ margin: 0, height: '56px', paddingLeft: '1rem' }}>
+              {' '}
+              {offerGenerated.features[1]}
+            </li>
+            <li style={{ margin: 0, height: '56px', paddingLeft: '1rem' }}>
+              {' '}
+              {offerGenerated.features[2]}
+            </li>
+          </ul>
+          <div style={{ display: 'flex', alignItems: 'center', marginTop: 40 }}>
+            {/* <button className="buy-btn" style={offerStyles.buyBtn}>
+              <img src={offerGenerated.buynow} alt="btn" width={'100%'} height={'100%'} />
+            </button> */}
+            <AnimatedButton
+              url={'/cutordie'}
+              buttonType={'buynow'}
+              text={'Buy now'}
+              width={363}
+              height={142}
+              top={57}
+              left={49}
+              color={'363636'}
+              font={'Besom'}
+              fontSize={'60'}
+            />
+            <span style={offerStyles.price} className="price">
+              {currencyGenerated[0]}
+              {currencyGenerated === offerCurrencies.uah && (
+                <img width={72} src={uahSymbol} style={{ paddingLeft: '2px' }} />
+              )}
+            </span>
+            <span style={offerStyles.price} className="prev-price">
+              {currencyGenerated[1]}
+              {currencyGenerated === offerCurrencies.uah && (
+                <img width={43} src={uahSymbolGray} style={{ paddingLeft: '2px' }} />
+              )}
+            </span>
+
             <Card
               position={'absolute'}
               transform={'rotate(-25deg)'}
@@ -241,6 +294,7 @@ export const Offer = (props: any) => {
                 )}
               </span>
             </div>
+
           </div>
         </div>
         <div

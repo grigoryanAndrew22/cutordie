@@ -3,14 +3,37 @@
   background-size: contain;
 }
 
-.email-input,
-.password-input {
+.email-input-bg,
+.password-input-bg {
   background-image: url('../../assets/images/inputBorder.png');
-  background-position: right;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+
   outline: 0;
   padding-left: 10px;
   margin-left: -1px;
+
+  width: 100%;
+  height: 32px;
+}
+
+.email-input,
+.password-input {
+  position: relative;
+  width: 280px;
+  top: 5%;
+}
+
+.name-input-bg {
+  background-image: url('../../assets/images/nameInputBorder.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.name-input {
+  position: relative;
+
+  left: 0.5rem;
 }
 
 .submit-btn {
