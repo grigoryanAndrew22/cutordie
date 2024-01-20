@@ -2,3 +2,63 @@
   background-image: url('../../assets/images/bodyBG.webp');
   background-size: contain;
 }
+
+@media (max-width: 1120px) {
+  .email-input,
+  .password-input {
+    width: 540px !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  .email-input,
+  .password-input {
+    width: 500px !important;
+  }
+}
+
+@media (max-width: 1020px) {
+  .email-input,
+  .password-input {
+    width: 410px !important;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 910px) {
+  .email-input,
+  .password-input {
+    width: 390px !important;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 890px) {
+  .wrapperChild {
+    flex-direction: column;
+  }
+  .prof-setts {
+    width: 307px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    width: 85.5% !important;
+  }
+  .card {
+    width: 355px !important;
+  }
+  .haircut-preview {
+    width: 320px;
+    height: 223px;
+  }
+  .profile-input {
+    background-image: url(../../assets/images/profileInputMob.png);
+  }
+  .email-input,
+  .password-input {
+    width: 328px !important;
+    background-size: cover;
+  }
+}

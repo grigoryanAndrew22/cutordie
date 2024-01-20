@@ -36,4 +36,13 @@ export const offerStyles = {
     fontSize: '37px',
     listStyleType: `"-"`,
   },
+  discount: {
+    position: 'absolute' as 'absolute',
+    fontFamily: 'Hey October',
+    fontSize: '55px',
+    color: '#900000',
+    top: '-35px',
+    right: '20%',
+    margin: '0px',
+  },
 };

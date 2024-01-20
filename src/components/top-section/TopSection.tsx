@@ -11,20 +11,22 @@ import './TopSection.css';
 import { TopSectionStyles } from './TopSection.styles';
 
 const topSectionLangs = {
-  en: {
-    button1: button1EN,
-    button2: button2EN,
-    button3: button3EN,
-  },
-  ua: {
-    button1: button1UA,
-    button2: button2UA,
-    button3: button3UA,
-  },
+	en: {
+		button1: button1EN,
+		button2: button2EN,
+		button3: button3EN,
+	},
+	ua: {
+		button1: button1UA,
+		button2: button2UA,
+		button3: button3UA,
+	},
 };
 
 export const TopSection = (props: any) => {
-  const topSectionLangGenerated = props.language === 'en' ? topSectionLangs.en : topSectionLangs.ua;
+	const topSectionLangGenerated =
+		props.language === 'en' ? topSectionLangs.en : topSectionLangs.ua;
+
 
   return (
     <div className="top-section" style={TopSectionStyles.topSection}>
@@ -68,4 +70,5 @@ export const TopSection = (props: any) => {
       </div>
     </div>
   );
+
 };

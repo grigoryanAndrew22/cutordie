@@ -1,0 +1,51 @@
+export const MovieCardStyles = {
+  duration: {
+    color: '#444444',
+    fontFamily: 'Bitter',
+    fontWeight: '600',
+    fontSize: '16px',
+    paddingLeft: '9px',
+    marginRight: '1.5px',
+  },
+  diffDurWrap: {
+    display: 'flex',
+    width: '90%',
+    justifyContent: 'space-between',
+    margin: '0 auto',
+  },
+  courseTitle: {
+    position: 'absolute' as 'absolute',
+    bottom: 0,
+    color: '#fff',
+    left: '35px',
+    fontWeight: '600',
+    fontFamily: 'Bitter',
+    margin: '0px 0px 14px 0px',
+  },
+  price: {
+    position: 'absolute' as 'absolute',
+    top: '28px',
+    right: '34px',
+    color: '#fff',
+    fontSize: '40px',
+    margin: 0,
+    fontWeight: '600',
+  },
+  descrWrap: {
+    width: '90%',
+    margin: '10px auto',
+    paddingBottom: '30px',
+  },
+  description: {
+    display: 'flex',
+    width: '90%',
+    justifyContent: 'space-between',
+    margin: '0 auto',
+  },
+  previewWrap: {
+    display: 'flex',
+    position: 'relative' as 'relative',
+    justifyContent: 'center',
+  },
+  preview: { position: 'absolute' as 'absolute', left: '32px', top: '32px' },
+};

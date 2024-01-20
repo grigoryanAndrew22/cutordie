@@ -45,7 +45,9 @@ export const SignInFormMobile = (props: any) => {
   // };
 
   const signinBtn =
-    props.language === 'en' ? require('../../assets/images/signInBtn.png') : signInBtnUA;
+    props.language === 'en'
+      ? require('../../assets/images/signInBtn.png')
+      : signInBtnUA;
 
   const generatedForm = props.language === 'en' ? formLangs.en : formLangs.ua;
 
@@ -59,195 +61,89 @@ export const SignInFormMobile = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div className="signin-wrapper-mobile" style={signInFormMobileStyles.signinWrapper}>
-          <img
-            src={leftTopCorner}
-            style={{
-              position: 'absolute',
-              left: '-4px',
-              top: '-4px',
-              width: '42px',
-            }}
-          />
-          <img
-            src={rightTopCorner}
-            style={{
-              position: 'absolute',
-              right: '-4px',
-              top: '-4px',
-              width: '42px',
-            }}
-          />
-          <img
-            src={rightBotCorner}
-            style={{
-              position: 'absolute',
-              right: '-4px',
-              bottom: '-4px',
-              width: '42px',
-            }}
-          />
-          <img
-            src={leftBotCorner}
-            style={{
-              position: 'absolute',
-              left: '-4px',
-              bottom: '-4px',
-              width: '42px',
-            }}
-          />
-          <div className="signin-title" style={signInFormMobileStyles.signInTitle}>
-            <p style={{ display: 'inline', fontSize: '49px' }}>{generatedForm.title}</p>
+        <div
+          className='signin-wrapper-mobile'
+          style={signInFormMobileStyles.signinWrapper}
+        >
+          <img src={leftTopCorner} style={signInFormMobileStyles.leftTop} />
+          <img src={rightTopCorner} style={signInFormMobileStyles.rightTop} />
+          <img src={rightBotCorner} style={signInFormMobileStyles.rightBot} />
+          <img src={leftBotCorner} style={signInFormMobileStyles.leftBot} />
+          <div
+            className='signin-title'
+            style={signInFormMobileStyles.signInTitle}
+          >
+            <p style={{ display: 'inline', fontSize: '49px' }}>
+              {generatedForm.title}
+            </p>
             <button
-              className="close"
+              className='close'
               style={signInFormMobileStyles.closeButton}
               onClick={closeForm}
             >
               X
             </button>
           </div>
-          <form className="signin-form" style={{ width: '94%' }}>
+          <form className='signin-form' style={{ width: '94%' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <label
-                htmlFor="email"
-                style={{
-                  display: 'block',
-                  fontFamily: 'Bitter',
-                  fontSize: '19px',
-                  color: '#444444',
-                }}
-              >
+              <label htmlFor='email' style={signInFormMobileStyles.emailLabel}>
                 {generatedForm.email}:
               </label>
               <input
-                className="email-input-mobile"
+                className='email-input-mobile'
                 placeholder={generatedForm.email}
-                type="email"
-                style={{
-                  width: '100%',
-                  backgroundColor: 'transparent',
-                  border: 'none',
-                  height: '30px',
-                  fontFamily: 'Bitter',
-                  color: '#444444',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  marginLeft: '3px',
-                }}
+                type='email'
+                style={signInFormMobileStyles.emailInput}
               />
             </div>
 
             <div
-              className="password-label"
-              style={{
-                display: 'flex',
-                marginTop: '20px',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
+              className='password-label'
+              style={signInFormMobileStyles.passwordLabelWrap}
             >
               <label
-                htmlFor="password"
-                style={{
-                  fontFamily: 'Bitter',
-                  fontSize: '18px',
-                  color: '#444444',
-                }}
+                htmlFor='password'
+                style={signInFormMobileStyles.passwordLabel}
               >
                 {generatedForm.password}:
               </label>
               <input
-                className="password-input-mobile"
-                type="password"
+                className='password-input-mobile'
+                type='password'
                 placeholder={generatedForm.password}
-                style={{
-                  width: '100%',
-                  backgroundColor: 'transparent',
-                  border: 'none',
-                  fontFamily: 'Bitter',
-                  height: '30px',
-                  color: '#444444',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  marginLeft: '5px',
-                }}
+                style={signInFormMobileStyles.passwordInput}
               />
             </div>
-            <div
-              style={{
-                display: 'flex',
-                width: '100%',
-                justifyContent: 'center',
-                marginTop: '45px',
-              }}
-            >
+            <div style={signInFormMobileStyles.signinBtnWrap}>
               <button
-                className="submit-btn-mobile"
-                type="submit"
-                style={{
-                  border: 'none',
-                  background: 'transparent',
-                  cursor: 'pointer',
-                  padding: 0,
-                }}
+                className='submit-btn-mobile'
+                type='submit'
+                style={signInFormMobileStyles.signinBtn}
               >
-                <img src={require('../../assets/images/signInBtn.png')} width={125} />
+                <img
+                  alt=''
+                  src={require('../../assets/images/signInBtn.png')}
+                  width={125}
+                />
               </button>
             </div>
             <div
-              className="submit-section"
-              style={{
-                display: 'flex',
-                marginTop: '30px',
-                justifyContent: 'center',
-              }}
+              className='submit-section'
+              style={signInFormMobileStyles.submitSectionWrap}
             >
               <div
-                className="signup-offer"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  fontFamily: 'Bitter',
-                  marginLeft: '1px',
-                }}
+                className='signup-offer'
+                style={signInFormMobileStyles.signupOfferWrap}
               >
-                <p
-                  style={{
-                    margin: 0,
-                    fontFamily: 'Bitter',
-                    whiteSpace: 'nowrap',
-                    alignSelf: 'center',
-                    fontSize: '16px',
-                    paddingRight: '9px',
-                    color: '#6d6d6d',
-                  }}
-                >
+                <p style={signInFormMobileStyles.forgotPassword}>
                   {generatedForm.forgotPassword}
                 </p>
-                <p
-                  style={{
-                    margin: 0,
-                    paddingRight: '10px',
-                    whiteSpace: 'nowrap',
-                    fontSize: '11px',
-                    color: '#6d6d6d',
-                  }}
-                >
+                <p style={signInFormMobileStyles.donthaveAcc1}>
                   {generatedForm.dontHaveAcc[0]}
                 </p>
                 <button
                   onClick={props.switch2}
-                  style={{
-                    margin: 0,
-                    fontSize: '22px',
-                    fontWeight: 600,
-                    color: '#555555',
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                    fontFamily: 'inherit',
-                    padding: '0px',
-                  }}
+                  style={signInFormMobileStyles.donthaveAcc2}
                 >
                   {generatedForm.dontHaveAcc[1]}
                 </button>
@@ -255,57 +151,27 @@ export const SignInFormMobile = (props: any) => {
             </div>
           </form>
           <div
-            className="divider-bottom"
-            style={{ display: 'flex', width: '90%', margin: '0 auto' }}
+            className='divider-bottom'
+            style={signInFormMobileStyles.dividerBot}
           >
             <img src={orDivider} width={'43%'} />
-            <h3
-              style={{
-                fontFamily: 'Drum',
-                color: '#444444',
-                width: '14%',
-                textAlign: 'center',
-                fontSize: '25px',
-                margin: '0px',
-                paddingBottom: '13px',
-              }}
-            >
-              {generatedForm.or}
-            </h3>
+            <h3 style={signInFormMobileStyles.or}>{generatedForm.or}</h3>
             <img src={orDivider} width={'43%'} />
           </div>
           <div
-            className="signin-with"
-            style={{
-              display: 'flex',
-              width: '90%',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '25px',
-            }}
+            className='signin-with'
+            style={signInFormMobileStyles.signinWithWrap}
           >
-            <h4
-              style={{
-                fontFamily: 'Bitter',
-                fontSize: '19px',
-                color: '#444444',
-                fontWeight: 100,
-                margin: 0,
-                alignSelf: 'center',
-                width: '37%',
-              }}
-            >
+            <h4 style={signInFormMobileStyles.signinWith}>
               {generatedForm.signinWith}
             </h4>
-            <div
-              className="icons"
-              style={{
-                display: 'flex',
-                width: '63%',
-                justifyContent: 'space-around',
-              }}
-            >
-              <img src={googleIcon} width={100} height={50} style={{ paddingTop: '4px' }} />
+            <div className='icons' style={signInFormMobileStyles.icons}>
+              <img
+                src={googleIcon}
+                width={100}
+                height={50}
+                style={{ paddingTop: '4px' }}
+              />
               <img src={twitterIcon} width={40} style={{ margin: '0px 6px' }} />
               <img src={facebookIcon} width={40} />
             </div>

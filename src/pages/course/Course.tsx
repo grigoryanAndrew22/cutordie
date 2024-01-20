@@ -1,7 +1,4 @@
 import { Fragment, useState } from 'react';
-import { NavbarRaw } from '../../components/navbarRaw/NavbarRaw';
-import { Footer } from '../../components/footer/Footer';
-import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import buyNowbtn from '../../assets/images/buyNowbtn.svg';
 import { courseStyles } from './Course.styles';
 import '../course/Course.css';
@@ -24,24 +21,12 @@ export const Course = (props: any) => {
     switchCourseForm(false);
   };
 
-  const [currency, changeCurrency] = useState('usd');
-  const [language, changeLanguage] = useState('en');
-
   const openPayment = () => {
     switchCoursePay(true);
   };
 
-  const changeLang = (lang: string) => {
-    changeLanguage(lang);
-  };
-
   return (
     <Fragment>
-      <NavbarRaw
-        language={language}
-        changeLogin={props.changeLogin}
-        loggedIn={props.loggedIn}
-      />
       <SignInForm
         visible={courseForm}
         switch={closeForm}
@@ -69,6 +54,7 @@ export const Course = (props: any) => {
           <div className='course-description' style={{ display: 'flex' }}>
             <div className='course-preview'>
               <img
+                alt=''
                 src={require('../../assets/images/coursePrev.png')}
                 height={500}
               />
@@ -94,6 +80,7 @@ export const Course = (props: any) => {
                 }}
               >
                 <img
+                  alt=''
                   src={require('../../assets/images/scissorSm.png')}
                   width={36}
                 />
@@ -117,6 +104,7 @@ export const Course = (props: any) => {
                 }}
               >
                 <img
+                  alt=''
                   src={require('../../assets/images/clockSm.png')}
                   width={36}
                 />
@@ -208,6 +196,7 @@ export const Course = (props: any) => {
               take your haircutting abilities to new heights.
             </p>
             <img
+              alt=''
               src={require('../../assets/images/coursePrev.png')}
               height={300}
             />
@@ -243,6 +232,7 @@ export const Course = (props: any) => {
               take your haircutting abilities to new heights.
             </p>
             <img
+              alt=''
               src={require('../../assets/images/coursePrev.png')}
               height={300}
             />
@@ -272,6 +262,7 @@ export const Course = (props: any) => {
               take your haircutting abilities to new heights.
             </p>
             <img
+              alt=''
               src={require('../../assets/images/coursePrev.png')}
               height={300}
             />
@@ -286,7 +277,11 @@ export const Course = (props: any) => {
               padding: '65px 0px 70px 0px ',
             }}
           >
-            <button className='buy-btn' style={courseStyles.buyBtn}>
+            <button
+              className='buy-btn'
+              style={courseStyles.buyBtn}
+              onClick={props.loggedIn ? openPayment : switchCF}
+            >
               <img src={buyNowbtn} alt='btn' width={'95%'} height={'100%'} />
             </button>
             <p
@@ -321,20 +316,6 @@ export const Course = (props: any) => {
           />
         </div>
       </div>
-
-      <Footer
-        language={language}
-        changeLangHandler={changeLang}
-        currency={currency}
-        changeCurr={changeCurrency}
-        bottomShadow={false}
-      />
-      <FooterMobile
-        language={language}
-        changeLangHandler={changeLang}
-        currency={currency}
-        changeCurr={changeCurrency}
-      />
     </Fragment>
   );
 };
