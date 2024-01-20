@@ -4,7 +4,7 @@ import { Footer } from '../../components/footer/Footer';
 import { FooterMobile } from '../../components/footerMobile/FooterMobile';
 import './Courses.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
-import axios from 'axios';
+
 import { coursesStyles } from './Courses.styles';
 
 export const Courses = (props: any) => {
@@ -29,11 +29,7 @@ export const Courses = (props: any) => {
 
   return (
     <Fragment>
-      <NavbarRaw
-        language={language}
-        changeLogin={props.changeLogin}
-        loggedIn={props.loggedIn}
-      />
+      <NavbarRaw language={language} changeLogin={props.changeLogin} loggedIn={props.loggedIn} />
 
       <div className="haircuts-section" style={coursesStyles.haircutsSection}>
         <div className="title">

@@ -13,9 +13,10 @@ import './Profile.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
 import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 
-export const Profile = () => {
+export const Profile = (props: any) => {
   const [currency, changeCurrency] = useState('usd');
   const [language, changeLanguage] = useState('en');
+  console.log(props.user.userName);
 
   const changeLang = (lang: string) => {
     changeLanguage(lang);
@@ -23,7 +24,7 @@ export const Profile = () => {
 
   return (
     <Fragment>
-      <NavbarRaw language={language} />
+      <NavbarRaw language={language} loggedIn={props.loggedIn} />
       <PaymentCard />
       <div
         className="prof-sett-wrapper"
@@ -51,6 +52,7 @@ export const Profile = () => {
             >
               MY PROFILE
             </p>
+
             <div className="prof-info" style={{ marginTop: '45px' }}>
               <div
                 className="name_surname"
@@ -97,13 +99,13 @@ export const Profile = () => {
                     />
                   </div>
                 </div>
-              </div>
-              <div className="email_password">
+
                 <div
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     paddingBottom: '7px',
+                    marginTop: '25px',
                   }}
                 >
                   <img src={pencil} width={29} height={33} />

@@ -45,7 +45,7 @@ export const SignInForm = (props: any) => {
   const [signUpFormVisible, switchSignUp] = useState(false);
 
   document.addEventListener('keydown', (e: any) => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && props.switch !== undefined) {
       switchSignUp(false);
       props.switch(false);
     }
