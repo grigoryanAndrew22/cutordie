@@ -27,48 +27,37 @@ export const TopSection = (props: any) => {
 	const topSectionLangGenerated =
 		props.language === 'en' ? topSectionLangs.en : topSectionLangs.ua;
 
-
-  return (
-    <div className="top-section" style={TopSectionStyles.topSection}>
-      <div style={TopSectionStyles.buttonsWrapper}>
-        <AnimatedButton
-          url={'/cutordie/aboutme'}
-          buttonType={'aboutme'}
-          text={'About me'}
-          width={303}
-          height={113}
-          top={39}
-          left={48}
-          color={'e8e8e8'}
-          font={'Drum'}
-          fontSize={'50'}
-        />
-        <AnimatedButton
-          url={'/cutordie/courses'}
-          buttonType={'courses'}
-          text={'Courses'}
-          width={265}
-          height={105}
-          top={39}
-          left={48}
-          color={'e8e8e8'}
-          font={'Drum'}
-          fontSize={'50'}
-        />
-        <AnimatedButton
-          url={'/cutordie'}
-          buttonType={'signin'}
-          text={'Sign in'}
-          width={213}
-          height={103}
-          top={39}
-          left={50}
-          color={'e8e8e8'}
-          font={'Drum'}
-          fontSize={'50'}
-        />
-      </div>
-    </div>
-  );
-
+	return (
+		<div className='top-section' style={TopSectionStyles.topSection}>
+			<div style={TopSectionStyles.buttonsWrapper}>
+				<AnimatedButton
+					url={'/aboutme'}
+					buttonType={'aboutme'}
+					text={'About me'}
+					width={296}
+					height={113}
+					top={39}
+					left={48}
+				/>
+				<AnimatedButton
+					url={'/courses'}
+					buttonType={'courses'}
+					text={'Courses'}
+					width={265}
+					height={108}
+					top={39}
+					left={48}
+				/>
+				<AnimatedButton
+					url={'/'}
+					buttonType={'signin'}
+					text={'Sign in'}
+					width={213}
+					height={103}
+					top={39}
+					left={50}
+				/>
+			</div>
+		</div>
+	);
 };

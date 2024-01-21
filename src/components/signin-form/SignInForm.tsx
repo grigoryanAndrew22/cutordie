@@ -114,7 +114,9 @@ export const SignInForm = (props: any) => {
   };
 
   const signinBtn =
-    props.language === 'en' ? require('../../assets/images/signInBtn.png') : signInBtnUA;
+    props.language === 'en'
+      ? require('../../assets/images/signInBtn.png')
+      : signInBtnUA;
 
   const generatedForm = props.language === 'en' ? formLangs.en : formLangs.ua;
 
@@ -133,7 +135,7 @@ export const SignInForm = (props: any) => {
         language={props.language}
       />
       <div
-        className="overlay"
+        className='overlay'
         style={{
           width: '100%',
           height: '100%',
@@ -152,7 +154,7 @@ export const SignInForm = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div className="signin-wrapper" style={signInStyles.signinWrapper}>
+        <div className='signin-wrapper' style={signInStyles.signinWrapper}>
           <img
             src={leftTopCorner}
             style={{
@@ -189,15 +191,25 @@ export const SignInForm = (props: any) => {
               width: '42px',
             }}
           />
-          <div className="signin-title" style={signInStyles.signInTitle}>
-            <p style={{ display: 'inline', fontSize: '49px' }}>{generatedForm.title}</p>
-            <button className="close" style={signInStyles.closeButton} onClick={closeForm}>
+          <div className='signin-title' style={signInStyles.signInTitle}>
+            <p style={{ display: 'inline', fontSize: '49px' }}>
+              {generatedForm.title}
+            </p>
+            <button
+              className='close'
+              style={signInStyles.closeButton}
+              onClick={closeForm}
+            >
               X
             </button>
           </div>
-          <form className="signin-form" style={{ width: '90%' }} onSubmit={login}>
+          <form
+            className='signin-form'
+            style={{ width: '90%' }}
+            onSubmit={login}
+          >
             <label
-              htmlFor="email"
+              htmlFor='email'
               style={{
                 display: 'block',
                 fontFamily: 'Bitter',
@@ -208,8 +220,25 @@ export const SignInForm = (props: any) => {
               {generatedForm.email}
             </label>
 
+            <input
+              ref={emailField}
+              className='email-input'
+              placeholder={generatedForm.email}
+              type='email'
+              style={{
+                width: '100%',
+                backgroundColor: 'transparent',
+                border: 'none',
+                height: '30px',
+                fontFamily: 'Bitter',
+                color: '#444444',
+                fontSize: '16px',
+                fontWeight: '600',
+              }}
+            />
+
             <div
-              className="password-label"
+              className='password-label'
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -217,7 +246,7 @@ export const SignInForm = (props: any) => {
               }}
             >
               <label
-                htmlFor="password"
+                htmlFor='password'
                 style={{
                   fontFamily: 'Bitter',
                   fontSize: '22px',
@@ -238,8 +267,8 @@ export const SignInForm = (props: any) => {
             </div>
             <input
               ref={passwordField}
-              className="password-input"
-              type="password"
+              className='password-input'
+              type='password'
               placeholder={generatedForm.password}
               style={{
                 width: '100%',
@@ -268,7 +297,7 @@ export const SignInForm = (props: any) => {
               </p>
             </div>
             <div
-              className="submit-section"
+              className='submit-section'
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -276,8 +305,8 @@ export const SignInForm = (props: any) => {
               }}
             >
               <button
-                className="submit-btn"
-                type="submit"
+                className='submit-btn'
+                type='submit'
                 style={{
                   border: 'none',
                   background: 'transparent',
@@ -285,10 +314,13 @@ export const SignInForm = (props: any) => {
                   padding: 0,
                 }}
               >
-                <img src={require('../../assets/images/signInBtn.png')} width={125} />
+                <img
+                  src={require('../../assets/images/signInBtn.png')}
+                  width={125}
+                />
               </button>
               <div
-                className="signup-offer"
+                className='signup-offer'
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -296,7 +328,9 @@ export const SignInForm = (props: any) => {
                   gap: '15px',
                 }}
               >
-                <p style={{ margin: 0, paddingRight: '5px' }}>{generatedForm.dontHaveAcc[0]}</p>
+                <p style={{ margin: 0, paddingRight: '5px' }}>
+                  {generatedForm.dontHaveAcc[0]}
+                </p>
                 <button
                   onClick={switchToSignUp}
                   style={{
@@ -317,7 +351,7 @@ export const SignInForm = (props: any) => {
             </div>
           </form>
           <div
-            className="divider-bottom"
+            className='divider-bottom'
             style={{ display: 'flex', width: '90%', margin: '0 auto' }}
           >
             <img src={orDivider} width={'43%'} />
@@ -337,7 +371,7 @@ export const SignInForm = (props: any) => {
             <img src={orDivider} width={'43%'} />
           </div>
           <div
-            className="signin-with"
+            className='signin-with'
             style={{
               display: 'flex',
               width: '90%',
@@ -359,7 +393,11 @@ export const SignInForm = (props: any) => {
             >
               {generatedForm.signinWith}
             </h4>
-            <img src={googleIcon} height={50} style={{ marginRight: '20px', paddingTop: '4px' }} />
+            <img
+              src={googleIcon}
+              height={50}
+              style={{ marginRight: '20px', paddingTop: '4px' }}
+            />
           </div>
         </div>
       </div>

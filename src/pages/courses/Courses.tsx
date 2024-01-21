@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import './Courses.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
-
 import { coursesStyles } from './Courses.styles';
 
 export const Courses = (props: any) => {
@@ -19,12 +18,8 @@ export const Courses = (props: any) => {
 
   return (
     <Fragment>
-
-      <NavbarRaw language={language} changeLogin={props.changeLogin} loggedIn={props.loggedIn} />
-
-      <div className="haircuts-section" style={coursesStyles.haircutsSection}>
-        <div className="title">
-
+      <div className='haircuts-section' style={coursesStyles.haircutsSection}>
+        <div className='title'>
           <h1 style={coursesStyles.title}>HAIRCUTS FOR STARTER</h1>
         </div>
 
