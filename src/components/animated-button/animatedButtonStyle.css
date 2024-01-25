@@ -48,9 +48,9 @@
 .btnContainer:hover #r {
   transform: translateX(25px);
 }
-/* .btnContainer:hover .strokeBtnText {
+.btnContainer:hover .strokeBtnText {
   font-size: 55px;
 }
 .btnContainer:active .strokeBtnText {
   font-size: 50px;
-} */
+}

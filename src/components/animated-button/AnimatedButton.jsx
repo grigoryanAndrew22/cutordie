@@ -5,18 +5,16 @@ const ButtonContainer = styled.a`
  width: ${(props) => `${props.width}px`};
  height: ${(props) => `${props.height}px`}};
 
- &:hover {
-    .strokeBtnText {
-      font-size: 70px;
-    }
- }
+  /* &:hover .strokeBtnText {
+    font-size: '60px';
+  } */
 `;
 
 const StrokeBtnText = styled.div`
   position: absolute;
   top: ${(props) => `${props.top}%`};
   left: ${(props) => `${props.left}%`};
-  color: #${(props) => props.color};
+  color: ${(props) => `$#{props.color}`};
   font-family: ${(props) => props.font};
   font-size: ${(props) => `${props.fontSize}px`};
 `;
