@@ -16,7 +16,7 @@ export const Home = (props: any) => {
   const [showCookies, setShowCookies] = useState(storageEmpty);
 
   return (
-    <div className='home-wrapper'>
+    <div className="home-wrapper">
       <TopSection language={props.language} />
       <BlotSection language={props.language} />
       <Offer
@@ -57,10 +57,7 @@ export const Home = (props: any) => {
       /> */}
       <BottomSection language={props.language} />
       {showCookies && (
-        <CookiesNotification
-          language={props.language}
-          setShowCookies={setShowCookies}
-        />
+        <CookiesNotification language={props.language} setShowCookies={setShowCookies} />
       )}
     </div>
   );

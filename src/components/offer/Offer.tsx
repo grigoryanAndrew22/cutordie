@@ -14,11 +14,7 @@ import './OfferMobile.css';
 const offerTextLangs = {
   en: {
     title: '"All in" pack',
-    features: [
-      'basic haircutting course',
-      'precision cuts',
-      'creative haircutting workshop',
-    ],
+    features: ['basic haircutting course', 'precision cuts', 'creative haircutting workshop'],
     buynow: buyNowbtn,
   },
   ua: {
@@ -39,8 +35,7 @@ const offerCurrencies = {
 };
 
 export const Offer = (props: any) => {
-  const offerGenerated =
-    props.language === 'en' ? offerTextLangs.en : offerTextLangs.ua;
+  const offerGenerated = props.language === 'en' ? offerTextLangs.en : offerTextLangs.ua;
 
   let currencyGenerated;
   if (props.currency === 'usd') {
@@ -54,16 +49,14 @@ export const Offer = (props: any) => {
   return (
     <Fragment>
       <Fragment>
-        <div className='offer-wrapper' style={offerStyles.wrapper(props)}>
+        <div className="offer-wrapper" style={offerStyles.wrapper(props)}>
           <div
-            className='cards'
+            className="cards"
             style={{
               position: 'relative',
               marginTop: '-104px',
-              marginLeft:
-                props.flexDirection === 'row-reverse' ? '0px' : '40px',
-              marginRight:
-                props.flexDirection === 'row-reverse' ? '40px' : '0px',
+              marginLeft: props.flexDirection === 'row-reverse' ? '0px' : '40px',
+              marginRight: props.flexDirection === 'row-reverse' ? '40px' : '0px',
             }}
           >
             <Card
@@ -96,10 +89,10 @@ export const Offer = (props: any) => {
             style={{ position: 'relative', marginRight: '-100px' }}
           >
             <p style={offerStyles.discount}>-50%</p>
-            <h3 style={offerStyles.title} className='title'>
+            <h3 style={offerStyles.title} className="title">
               {offerGenerated.title}
             </h3>
-            <ul style={offerStyles.description} className='description'>
+            <ul style={offerStyles.description} className="description">
               <li style={{ margin: 0, height: '56px', paddingLeft: '1rem' }}>
                 {' '}
                 {offerGenerated.features[0]}
@@ -113,73 +106,47 @@ export const Offer = (props: any) => {
                 {offerGenerated.features[2]}
               </li>
             </ul>
-            <div
-              style={{ display: 'flex', alignItems: 'center', marginTop: 40 }}
-            >
-              <button className='buy-btn' style={offerStyles.buyBtn}>
-                <img
-                  src={offerGenerated.buynow}
-                  alt='btn'
-                  width={'100%'}
-                  height={'100%'}
-                />
+            <div style={{ display: 'flex', alignItems: 'center', marginTop: 40 }}>
+              <button className="buy-btn" style={offerStyles.buyBtn}>
+                <img src={offerGenerated.buynow} alt="btn" width={'100%'} height={'100%'} />
               </button>
-              <span style={offerStyles.price} className='price'>
+              <span style={offerStyles.price} className="price">
                 {currencyGenerated[0]}
                 {currencyGenerated === offerCurrencies.uah && (
-                  <img
-                    alt=''
-                    width={72}
-                    src={uahSymbol}
-                    style={{ paddingLeft: '2px' }}
-                  />
+                  <img alt="" width={72} src={uahSymbol} style={{ paddingLeft: '2px' }} />
                 )}
               </span>
-              <span style={offerStyles.price} className='prev-price'>
+              <span style={offerStyles.price} className="prev-price">
                 {currencyGenerated[1]}
                 {currencyGenerated === offerCurrencies.uah && (
-                  <img
-                    alt=''
-                    width={43}
-                    src={uahSymbolGray}
-                    style={{ paddingLeft: '2px' }}
-                  />
+                  <img alt="" width={43} src={uahSymbolGray} style={{ paddingLeft: '2px' }} />
                 )}
               </span>
             </div>
           </div>
         </div>
-        <div className='divider' style={{ margin: '60px 0px' }}>
+        <div className="divider" style={{ margin: '60px 0px' }}>
           <img
             src={props.flexDirection === 'row' ? dividerLeft : dividerRight}
-            alt='d'
+            alt="d"
             width={'100%'}
           />
         </div>
       </Fragment>
       <Fragment>
-        <div
-          className='offer-wrapper-mobile'
-          style={offerMobileStyles.wrapper()}
-        >
-          <div
-            className='description-wrapper-mob'
-            style={offerMobileStyles.descriptionWrap}
-          >
+        <div className="offer-wrapper-mobile" style={offerMobileStyles.wrapper()}>
+          <div className="description-wrapper-mob" style={offerMobileStyles.descriptionWrap}>
             <p style={offerMobileStyles.discount}>-50%</p>
-            <h3 style={offerMobileStyles.title} className='title'>
+            <h3 style={offerMobileStyles.title} className="title">
               {offerGenerated.title}
             </h3>
-            <div style={offerMobileStyles.description} className='description'>
+            <div style={offerMobileStyles.description} className="description">
               <p style={{ margin: 0 }}>- {offerGenerated.features[0]}</p>
               <p style={{ margin: 0 }}>- {offerGenerated.features[1]}</p>
               <p style={{ margin: 0 }}>- {offerGenerated.features[2]}</p>
             </div>
           </div>
-          <div
-            className='offer-cards'
-            style={{ position: 'relative', margin: '54px 0px' }}
-          >
+          <div className="offer-cards" style={{ position: 'relative', margin: '54px 0px' }}>
             <Card
               position={'absolute'}
               transform={'rotate(-25deg)'}
@@ -206,50 +173,29 @@ export const Offer = (props: any) => {
             />
           </div>
           <div style={offerMobileStyles.buyBtnWrap}>
-            <button className='buy-btn' style={offerMobileStyles.buyBtn}>
-              <img
-                src={offerGenerated.buynow}
-                alt='btn'
-                width={'97%'}
-                height={'100%'}
-              />
+            <button className="buy-btn" style={offerMobileStyles.buyBtn}>
+              <img src={offerGenerated.buynow} alt="btn" width={'97%'} height={'100%'} />
             </button>
             <div style={offerMobileStyles.priceWrap}>
-              <span style={offerMobileStyles.price} className='price'>
+              <span style={offerMobileStyles.price} className="price">
                 {currencyGenerated[0]}
                 {currencyGenerated === offerCurrencies.uah && (
-                  <img
-                    alt=''
-                    width={36}
-                    src={uahSymbol}
-                    style={{ paddingLeft: '3px' }}
-                  />
+                  <img alt="" width={36} src={uahSymbol} style={{ paddingLeft: '3px' }} />
                 )}
               </span>
-              <span
-                style={offerMobileStyles.price}
-                className='prev-price-mobile'
-              >
+              <span style={offerMobileStyles.price} className="prev-price-mobile">
                 {currencyGenerated[1]}
                 {currencyGenerated === offerCurrencies.uah && (
-                  <img
-                    alt=''
-                    width={33}
-                    src={uahSymbol}
-                    style={{ paddingLeft: '2px' }}
-                  />
+                  <img alt="" width={33} src={uahSymbol} style={{ paddingLeft: '2px' }} />
                 )}
               </span>
             </div>
           </div>
         </div>
-        <div
-          className='divider-mobile'
-          style={{ width: '100%', margin: '55px 0px' }}
-        >
+        <div className="divider-mobile" style={{ width: '100%', margin: '55px 0px' }}>
           <img
             src={props.divider}
-            alt='d'
+            alt="d"
             width={'100%'}
             // style={{ float: props.divider === dividerRight ? 'right' : 'left' }}
           />

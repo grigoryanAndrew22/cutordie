@@ -35,11 +35,9 @@
 
 .buttonTrigger {
   background: none;
-  border-style: none;
-}
-
-.buttonTrigger {
   position: relative;
+  border-style: none;
+  cursor: pointer;
 }
 
 #acceptText {
