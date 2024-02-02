@@ -10,7 +10,7 @@ import rightBotCorner from '../../assets/images/rightBotCorner.png';
 import signInBtnUA from '../../assets/images/button3UA.svg';
 import './SignInForm.css';
 import { Fragment, useRef, useState } from 'react';
-import { SignInFormMobile } from '../signin-formMobile/SignInFormMobile';
+import { SignInFormMobile } from './SignInFormMobile';
 import { SignUpForm } from '../signupForm/SignUpForm';
 import { SignUpFormMobile } from '../signupFormMobile/SignUpFormMobile';
 import axios from 'axios';
@@ -39,8 +39,10 @@ const formLangs = {
 
 export const SignInForm = (props: any) => {
   const [incorrect, setIncorrect] = useState(false);
-  const emailField: any = useRef(null);
-  const passwordField: any = useRef(null);
+  // const emailField: any = useRef(null);
+  // const passwordField: any = useRef(null);
+  const [emailField, setEmailField] = useState('');
+  const [passwordField, setPasswordField] = useState('');
 
   const [signUpFormVisible, switchSignUp] = useState(false);
 
@@ -51,6 +53,14 @@ export const SignInForm = (props: any) => {
     }
   });
 
+  const emailChange = (e: any) => {
+    setEmailField(e.target.value);
+  };
+
+  const passwordChange = (e: any) => {
+    setPasswordField(e.target.value);
+  };
+
   const login = (e: any) => {
     e.preventDefault();
 
@@ -60,8 +70,8 @@ export const SignInForm = (props: any) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: emailField.current.value,
-        password: passwordField.current.value,
+        email: emailField,
+        password: passwordField,
       }),
       credentials: 'include',
     })
@@ -70,8 +80,10 @@ export const SignInForm = (props: any) => {
         setIncorrect(false);
         Cookies.set('jwt', data.token, { secure: true });
         console.log(data);
-        emailField.current.value = '';
-        passwordField.current.value = '';
+        // emailField.current.value = '';
+        // passwordField.current.value = '';
+        setEmailField('');
+        setPasswordField('');
         props.setLogin(true);
         closeForm();
       })
@@ -127,6 +139,9 @@ export const SignInForm = (props: any) => {
         switch={props.switch}
         language={props.language}
         switch2={switchToSignUp}
+        changeEmail={setEmailField}
+        changePassword={setPasswordField}
+        login={login}
       />
       <SignUpForm
         visible={signUpFormVisible}
@@ -221,7 +236,8 @@ export const SignInForm = (props: any) => {
             </label>
 
             <input
-              ref={emailField}
+              // ref={emailField}
+              onChange={emailChange}
               className='email-input'
               placeholder={generatedForm.email}
               type='email'
@@ -235,6 +251,7 @@ export const SignInForm = (props: any) => {
                 fontSize: '16px',
                 fontWeight: '600',
               }}
+              value={emailField}
             />
 
             <div
@@ -266,7 +283,8 @@ export const SignInForm = (props: any) => {
               </p>
             </div>
             <input
-              ref={passwordField}
+              // ref={passwordField}
+              onChange={passwordChange}
               className='password-input'
               type='password'
               placeholder={generatedForm.password}
@@ -280,6 +298,7 @@ export const SignInForm = (props: any) => {
                 fontSize: '16px',
                 fontWeight: '600',
               }}
+              value={passwordField}
             />
             <div style={{ marginTop: '0.8em', height: '16.8px' }}>
               <p

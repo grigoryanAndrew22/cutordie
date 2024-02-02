@@ -32,6 +32,7 @@ const generateSignInBTNStyles = (loggedIn: boolean) => {
     fontFamily: 'inherit',
     textWrap: 'nowrap',
     display: loggedIn ? 'none' : 'inline',
+    paddingBottom: '2px',
   };
 };
 

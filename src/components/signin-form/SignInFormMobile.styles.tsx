@@ -23,7 +23,7 @@ export const signInFormMobileStyles = {
     color: '#444444',
     border: 'none',
     position: 'absolute' as 'absolute',
-    right: '-9px',
+    right: '19px',
     top: '7px',
     fontFamily: 'Drum',
     fontSize: '40px',

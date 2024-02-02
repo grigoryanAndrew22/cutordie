@@ -38,6 +38,14 @@ export const SignInFormMobile = (props: any) => {
     props.switch(false);
   };
 
+  const setEmailMob = (e: any) => {
+    props.changeEmail(e.target.value);
+  };
+
+  const setPasswordMob = (e: any) => {
+    props.changePassword(e.target.value);
+  };
+
   // const switchToSignUp = (e: any) => {
   //   e.preventDefault();
   //   props.switch(false);
@@ -84,12 +92,17 @@ export const SignInFormMobile = (props: any) => {
               X
             </button>
           </div>
-          <form className='signin-form' style={{ width: '94%' }}>
+          <form
+            className='signin-form'
+            style={{ width: '94%' }}
+            onSubmit={props.login}
+          >
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <label htmlFor='email' style={signInFormMobileStyles.emailLabel}>
                 {generatedForm.email}:
               </label>
               <input
+                onChange={setEmailMob}
                 className='email-input-mobile'
                 placeholder={generatedForm.email}
                 type='email'
@@ -108,6 +121,7 @@ export const SignInFormMobile = (props: any) => {
                 {generatedForm.password}:
               </label>
               <input
+                onChange={setPasswordMob}
                 className='password-input-mobile'
                 type='password'
                 placeholder={generatedForm.password}
@@ -168,12 +182,12 @@ export const SignInFormMobile = (props: any) => {
             <div className='icons' style={signInFormMobileStyles.icons}>
               <img
                 src={googleIcon}
-                width={100}
-                height={50}
+                width={125}
+                height={45}
                 style={{ paddingTop: '4px' }}
               />
-              <img src={twitterIcon} width={40} style={{ margin: '0px 6px' }} />
-              <img src={facebookIcon} width={40} />
+              {/* <img src={twitterIcon} width={40} style={{ margin: '0px 6px' }} />
+              <img src={facebookIcon} width={40} /> */}
             </div>
           </div>
         </div>

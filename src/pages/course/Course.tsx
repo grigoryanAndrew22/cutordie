@@ -51,15 +51,23 @@ export const Course = (props: any) => {
               MASTERING THЕ ART OF HAIRCUTTING
             </p>
           </div>
-          <div className='course-description' style={{ display: 'flex' }}>
-            <div className='course-preview'>
+          <div
+            className='course-description'
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              width: '83%',
+            }}
+          >
+            <div className='course-preview' style={{ display: 'flex' }}>
               <img
+                className='course-preview-main'
                 alt=''
                 src={require('../../assets/images/coursePrev.png')}
-                height={500}
               />
             </div>
-            <div className='course-about' style={{ marginLeft: '160px' }}>
+            <div className='course-about'>
               <p
                 style={{
                   margin: 0,
@@ -126,7 +134,7 @@ export const Course = (props: any) => {
                   color: '#363636',
                   fontSize: '24px',
                   fontFamily: 'Bitter',
-                  paddingBottom: '65px',
+                  paddingBottom: '100px',
                 }}
               >
                 Equipment: clipper and scissors
@@ -136,7 +144,7 @@ export const Course = (props: any) => {
                 style={{ display: 'flex', alignItems: 'center' }}
               >
                 <button
-                  className='buy-btn'
+                  className='buy-btn buy-btn-prev'
                   style={courseStyles.buyBtn}
                   onClick={props.loggedIn ? openPayment : switchCF}
                 >
@@ -172,7 +180,10 @@ export const Course = (props: any) => {
             </div>
           </div>
 
-          <div style={{ display: 'flex', marginTop: '100px' }}>
+          <div
+            className='course-descr-section'
+            style={{ display: 'flex', marginTop: '100px' }}
+          >
             <p
               style={{
                 margin: 0,
@@ -203,6 +214,7 @@ export const Course = (props: any) => {
           </div>
 
           <div
+            className='course-descr-section'
             style={{
               display: 'flex',
               marginTop: '120px',
@@ -238,7 +250,10 @@ export const Course = (props: any) => {
             />
           </div>
 
-          <div style={{ display: 'flex', marginTop: '120px' }}>
+          <div
+            className='course-descr-section'
+            style={{ display: 'flex', marginTop: '120px' }}
+          >
             <p
               style={{
                 margin: 0,
