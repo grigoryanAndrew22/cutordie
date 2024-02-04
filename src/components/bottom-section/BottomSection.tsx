@@ -17,10 +17,10 @@ export const BottomSection = (props: any) => {
           url={'/courses'}
           buttonType={'allcourses'}
           text={'View all courses'}
-          width={1126}
-          height={295}
-          top={39}
-          left={50}
+          width={661}
+          height={173}
+          top={40}
+          left={48.5}
           color={'171717'}
           font={'Drum'}
           textClass={'button3'}
