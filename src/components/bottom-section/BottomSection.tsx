@@ -25,18 +25,6 @@ export const BottomSection = (props: any) => {
           font={'Drum'}
           textClass={'button3'}
         />
-        <AnimatedButton
-          url={'/'}
-          buttonType={'allcourses'}
-          text={'Back to main'}
-          width={661}
-          height={173}
-          top={40}
-          left={48.5}
-          color={'171717'}
-          font={'Drum'}
-          textClass={'button3'}
-        />
       </div>
 
       <div className="blot" style={{ width: '100%', display: 'flex' }}>
