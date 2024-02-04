@@ -57,14 +57,14 @@
   font-size: 60px;
 }
 .button2 {
-  font-size: 50px;
+  font-size: 60px;
 }
 .btnContainer:hover .button2 {
-  font-size: 60px;
+  font-size: 70px;
 }
 .button3 {
-  font-size: 50px;
+  font-size: 100px;
 }
 .btnContainer:hover .button3 {
-  font-size: 60px;
+  font-size: 110px;
 }

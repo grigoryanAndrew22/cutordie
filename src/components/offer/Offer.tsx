@@ -10,6 +10,7 @@ import { offerStyles } from './Offer.styles';
 import './Offer.css';
 import { offerMobileStyles } from './OfferMobile.styles';
 import './OfferMobile.css';
+import AnimatedButton from '../animated-button/AnimatedButton';
 
 const offerTextLangs = {
   en: {
@@ -108,18 +109,29 @@ export const Offer = (props: any) => {
             </ul>
             <div style={{ display: 'flex', alignItems: 'center', marginTop: 40 }}>
               <button className="buy-btn" style={offerStyles.buyBtn}>
-                <img src={offerGenerated.buynow} alt="btn" width={'100%'} height={'100%'} />
+                <AnimatedButton
+                  url={'/cutordie'}
+                  buttonType={'buynow'}
+                  text={'Buy now'}
+                  width={363}
+                  height={142}
+                  top={57}
+                  left={49}
+                  color={'363636'}
+                  font={'Besom'}
+                  textClass={'button2'}
+                />
               </button>
               <span style={offerStyles.price} className="price">
                 {currencyGenerated[0]}
                 {currencyGenerated === offerCurrencies.uah && (
-                  <img alt="" width={72} src={uahSymbol} style={{ paddingLeft: '2px' }} />
+                  <img alt="" width={72} src={uahSymbol} />
                 )}
               </span>
               <span style={offerStyles.price} className="prev-price">
                 {currencyGenerated[1]}
                 {currencyGenerated === offerCurrencies.uah && (
-                  <img alt="" width={43} src={uahSymbolGray} style={{ paddingLeft: '2px' }} />
+                  <img alt="" width={43} src={uahSymbolGray} />
                 )}
               </span>
             </div>

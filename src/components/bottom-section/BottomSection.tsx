@@ -13,8 +13,8 @@ export const BottomSection = (props: any) => {
         {/* <button className="view-all-btn" style={bottomSectionStyles.viewAllBtn}>
           <img src={btnGenerated} alt="btn" width={'100%'} />
         </button> */}{' '}
-        {/* <AnimatedButton
-          url={'/cutordie/courses'}
+        <AnimatedButton
+          url={'/courses'}
           buttonType={'allcourses'}
           text={'View all courses'}
           width={1126}
@@ -23,8 +23,8 @@ export const BottomSection = (props: any) => {
           left={50}
           color={'171717'}
           font={'Drum'}
-          fontSize={'100'}
-        /> */}
+          textClass={'button3'}
+        />
       </div>
 
       <div className="blot" style={{ width: '100%', display: 'flex' }}>

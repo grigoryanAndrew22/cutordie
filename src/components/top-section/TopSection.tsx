@@ -39,7 +39,7 @@ export const TopSection = (props: any) => {
           left={48}
           color={'e8e8e8'}
           font={'Drum'}
-          fontSize={50}
+          textClass={'button1'}
         />
         <AnimatedButton
           url={'/cutordie/courses'}
@@ -51,7 +51,7 @@ export const TopSection = (props: any) => {
           left={48}
           color={'e8e8e8'}
           font={'Drum'}
-          fontSize={50}
+          textClass={'button1'}
         />
         <AnimatedButton
           url={'/cutordie'}
@@ -63,7 +63,7 @@ export const TopSection = (props: any) => {
           left={50}
           color={'e8e8e8'}
           font={'Drum'}
-          fontSize={50}
+          textClass={'button1'}
         />
       </div>
     </div>
