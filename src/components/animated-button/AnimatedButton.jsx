@@ -1,23 +1,4 @@
-import styled from 'styled-components';
-// import './animatedButtonStyle.css';
-
-const StrokeBtnText = styled.div`
-  position: absolute;
-  top: ${(props) => `${props.top}%`};
-  /* left: ${(props) => `${props.left}%`}; */
-  color: ${(props) => `#${props.color}`};
-  font-family: ${(props) => props.font};
-  font-size: ${(props) => `${props.fontSize}px`};
-`;
-const ButtonContainer = styled.a`
-  width: ${(props) => `${props.width}px`};
-  height: ${(props) => `${props.height}px`}};
-
-  &:hover ${StrokeBtnText} & {
-    font-size: 100px;
-    color: red;
-  }
-`;
+import './animatedButtonStyle.css';
 
 export const AnimatedButton = ({
   url,
@@ -129,12 +110,18 @@ export const AnimatedButton = ({
   };
 
   return (
-    <ButtonContainer width={width} height={height}>
-      {/* <div className="btnStrokes">{buttonTypes[buttonType]}</div> */}
-      <StrokeBtnText top={top} left={left} fontSize={fontSize} font={font} color={color}>
-        {text}
-      </StrokeBtnText>
-    </ButtonContainer>
+    <a className="btnContainer" href={url} style={{ width: `${width}px`, height: `${height}px` }}>
+      <div>
+        {' '}
+        <div
+          className="strokeBtnText button1"
+          style={{ top: `${top}%`, left: `${left}%`, color: `#${color}` }}
+        >
+          {text}
+        </div>
+      </div>
+      <div className="btnStrokes">{buttonTypes[buttonType]}</div>
+    </a>
   );
 };
 
