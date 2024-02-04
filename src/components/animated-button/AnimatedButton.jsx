@@ -1,22 +1,22 @@
 import styled from 'styled-components';
-import './animatedButtonStyle.css';
-
-const ButtonContainer = styled.a`
- width: ${(props) => `${props.width}px`};
- height: ${(props) => `${props.height}px`}};
-
-  /* &:hover .strokeBtnText {
-    font-size: '60px';
-  } */
-`;
+// import './animatedButtonStyle.css';
 
 const StrokeBtnText = styled.div`
   position: absolute;
   top: ${(props) => `${props.top}%`};
-  left: ${(props) => `${props.left}%`};
-  color: ${(props) => `$#{props.color}`};
+  /* left: ${(props) => `${props.left}%`}; */
+  color: ${(props) => `#${props.color}`};
   font-family: ${(props) => props.font};
   font-size: ${(props) => `${props.fontSize}px`};
+`;
+const ButtonContainer = styled.a`
+  width: ${(props) => `${props.width}px`};
+  height: ${(props) => `${props.height}px`}};
+
+  &:hover ${StrokeBtnText} & {
+    font-size: 100px;
+    color: red;
+  }
 `;
 
 export const AnimatedButton = ({
@@ -129,15 +129,9 @@ export const AnimatedButton = ({
   };
 
   return (
-    <ButtonContainer className="btnContainer" width={width} height={height}>
-      <div className="btnStrokes">{buttonTypes[buttonType]}</div>
-      <StrokeBtnText
-        className="strokeBtnText"
-        top={top}
-        left={left}
-        fontSize={fontSize}
-        font={font}
-      >
+    <ButtonContainer width={width} height={height}>
+      {/* <div className="btnStrokes">{buttonTypes[buttonType]}</div> */}
+      <StrokeBtnText top={top} left={left} fontSize={fontSize} font={font} color={color}>
         {text}
       </StrokeBtnText>
     </ButtonContainer>
