@@ -10,13 +10,14 @@
 .strokeBtnText {
   position: absolute;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  /* font-size: 50px; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
-  color: rgb(200, 200, 200);
+  /* color: rgb(200, 200, 200); */
   font-family: 'Drum';
+  transform-origin: center;
 }
 
 .btnStrokes {
@@ -48,9 +49,22 @@
 .btnContainer:hover #r {
   transform: translateX(25px);
 }
-.btnContainer:hover .strokeBtnText {
-  font-size: 55px;
-}
-.btnContainer:active .strokeBtnText {
+
+.button1 {
   font-size: 50px;
+}
+.btnContainer:hover .button1 {
+  font-size: 60px;
+}
+.button2 {
+  font-size: 60px;
+}
+.btnContainer:hover .button2 {
+  font-size: 70px;
+}
+.button3 {
+  font-size: 71px;
+}
+.btnContainer:hover .button3 {
+  font-size: 80px;
 }
