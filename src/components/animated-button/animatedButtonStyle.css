@@ -38,16 +38,16 @@
 }
 
 .btnContainer:hover #t {
-  transform: translateY(-12px);
+  transform: translateY(-10%);
 }
 .btnContainer:hover #b {
-  transform: translateY(12px);
+  transform: translateY(10%);
 }
 .btnContainer:hover #l {
-  transform: translateX(-25px);
+  transform: translateX(-10%);
 }
 .btnContainer:hover #r {
-  transform: translateX(25px);
+  transform: translateX(10%);
 }
 
 .button1 {
