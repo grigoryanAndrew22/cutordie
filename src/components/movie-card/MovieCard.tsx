@@ -9,6 +9,8 @@ import { MovieCardStyles } from './MovieCard.styles';
 export const MovieCard = (props: any) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const courseObj = props.language === 'en' ? props.course.en : props.course.ua;
+
   return (
     <div
       className='haircutWrap'
@@ -82,7 +84,7 @@ export const MovieCard = (props: any) => {
           />
 
           <h1 className='course-title' style={MovieCardStyles.courseTitle}>
-            {props.course.name}
+            {courseObj.name}
           </h1>
         </div>
         <div className='diff-duration' style={MovieCardStyles.diffDurWrap}>
@@ -113,7 +115,7 @@ export const MovieCard = (props: any) => {
           </div>
         </div>
         <div className='description' style={MovieCardStyles.descrWrap}>
-          <p style={MovieCardStyles.description}>{props.course.description}</p>
+          <p style={MovieCardStyles.description}>{courseObj.description}</p>
         </div>
       </a>
     </div>

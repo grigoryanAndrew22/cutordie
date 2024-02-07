@@ -25,7 +25,12 @@ export const Courses = (props: any) => {
 
         <div className='cards' style={coursesStyles.cards}>
           {coursesObj.map((course: any, i: any) => (
-            <MovieCard key={course._id} index={i} course={course} />
+            <MovieCard
+              key={course._id}
+              index={i}
+              course={course}
+              language={props.language}
+            />
           ))}
         </div>
       </div>

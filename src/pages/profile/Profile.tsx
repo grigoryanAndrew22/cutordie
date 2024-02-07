@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import pencil from '../../assets/images/pencil.png';
 import coinGray from '../../assets/images/coinGray.png';
 import hryvniaGray from '../../assets/images/hryvniaGray.png';
@@ -23,6 +23,18 @@ export const Profile = (props: any) => {
   };
 
   console.log(props.user.userName);
+
+  const [coursesObj, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
+      .then((response) => response.json())
+      .then((data) => {
+        setCourses(data.data.courses);
+        console.log(data.data.courses);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <Fragment>
@@ -234,17 +246,12 @@ export const Profile = (props: any) => {
         </div>
 
         <div className='cards' style={profileStyles.cardsWrap}>
-          {[0, 1, 2, 3, 4, 5].map((el: any, i: number) => (
+          {coursesObj.map((course: any, i: number) => (
             <MovieCard
               key={i}
               index={i}
-              course={{
-                price: '99',
-                name: 'Course 1',
-                duration: '3',
-                description:
-                  'Artistic Elements in Haircutting: Discover the artistic side of haircutting and learn how to integrate visual elements, such as line, shape, and form, into your designs...',
-              }}
+              course={course}
+              language={props.language}
             />
           ))}
         </div>
