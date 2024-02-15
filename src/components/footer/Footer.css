@@ -3,3 +3,14 @@
     display: none !important;
   }
 }
+
+.bottomLink {
+  margin: 0;
+  text-decoration: none;
+  color: #d2d2d2;
+  transition: color ease-in-out 0.1s;
+}
+
+.bottomLink:hover {
+  color: white;
+}
