@@ -5,6 +5,7 @@ import { coursesStyles } from './Courses.styles';
 
 export const Courses = (props: any) => {
   const [coursesObj, setCourses] = useState([]);
+  console.log(coursesObj);
 
   useEffect(() => {
     fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
@@ -30,6 +31,7 @@ export const Courses = (props: any) => {
               index={i}
               course={course}
               language={props.language}
+              currency={props.currency}
             />
           ))}
         </div>

@@ -232,6 +232,7 @@ export const SignUpForm = (props: any) => {
                     color: '#444444',
                     fontSize: '16px',
                     fontWeight: '600',
+                    width: '98%',
                   }}
                   onChange={handleName}
                   ref={nameField}

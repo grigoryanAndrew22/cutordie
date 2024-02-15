@@ -1,5 +1,6 @@
 .signup-wrapper-mobile {
   background-image: url('../../assets/images/bodyBG.webp');
+  background-size: contain;
 }
 
 .name-input-mobile {

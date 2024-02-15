@@ -9,6 +9,15 @@ import { MovieCardStyles } from './MovieCard.styles';
 export const MovieCard = (props: any) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  let priceObj;
+  if (props.currency === 'usd') {
+    priceObj = props.course.price.usd + '$';
+  } else if (props.currency === 'uah') {
+    priceObj = props.course.price.uah + '₴';
+  } else {
+    priceObj = props.course.price.eur + '€';
+  }
+
   const courseObj = props.language === 'en' ? props.course.en : props.course.ua;
 
   return (
@@ -73,7 +82,7 @@ export const MovieCard = (props: any) => {
             <img alt='' src={scissorsWhite} width={'30px'} />
           </div>
           <p className='price' style={MovieCardStyles.price}>
-            {props.course.price}$
+            {priceObj}
           </p>
           <img
             className='haircut-preview'

@@ -77,15 +77,18 @@ export const SignInForm = (props: any) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setIncorrect(false);
-        Cookies.set('jwt', data.token, { secure: true });
-        console.log(data);
-        // emailField.current.value = '';
-        // passwordField.current.value = '';
-        setEmailField('');
-        setPasswordField('');
-        props.setLogin(true);
-        closeForm();
+        if (data.status === 'fail') {
+          setIncorrect(true);
+          console.log(data);
+        } else if (data.status === 'success') {
+          setIncorrect(false);
+          Cookies.set('jwt', data.token, { secure: true });
+          console.log(data);
+          setEmailField('');
+          setPasswordField('');
+          props.setLogin(true);
+          closeForm();
+        }
       })
       .catch((error) => {
         setIncorrect(true);
@@ -134,7 +137,7 @@ export const SignInForm = (props: any) => {
 
   return (
     <Fragment>
-      <SignInFormMobile
+      {/* <SignInFormMobile
         visible={props.visible}
         switch={props.switch}
         language={props.language}
@@ -142,7 +145,7 @@ export const SignInForm = (props: any) => {
         changeEmail={setEmailField}
         changePassword={setPasswordField}
         login={login}
-      />
+      /> */}
       <SignUpForm
         visible={signUpFormVisible}
         switch={switchSignUp}
@@ -277,6 +280,7 @@ export const SignInForm = (props: any) => {
                   margin: 0,
                   fontFamily: 'Bitter',
                   alignSelf: 'center',
+                  fontWeight: 600,
                 }}
               >
                 {generatedForm.forgotPassword}
@@ -412,11 +416,7 @@ export const SignInForm = (props: any) => {
             >
               {generatedForm.signinWith}
             </h4>
-            <img
-              src={googleIcon}
-              height={50}
-              style={{ marginRight: '20px', paddingTop: '4px' }}
-            />
+            <img src={googleIcon} height={50} style={{ paddingTop: '4px' }} />
           </div>
         </div>
       </div>

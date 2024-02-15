@@ -6,7 +6,7 @@ export const PageNotFound = (props: any) => {
   return (
     <Fragment>
       {/* <NavbarRaw /> */}
-      <div className="wrapper404" style={{ height: '100vh' }}>
+      <div className='wrapper404' style={{ height: '100vh' }}>
         <div
           style={{
             width: '100%',
@@ -17,13 +17,15 @@ export const PageNotFound = (props: any) => {
             color: '#8D0000',
           }}
         >
-          <p style={{ fontFamily: 'Drum', fontSize: '190px', margin: 0 }}>404</p>
+          <p style={{ fontFamily: 'Drum', fontSize: '190px', margin: 0 }}>
+            404
+          </p>
           <p
             style={{
               fontFamily: 'Drum',
               fontSize: '70px',
               margin: 0,
-              paddingBottom: '300px',
+              paddingBottom: '120px',
             }}
           >
             PAGE NOT FOUND

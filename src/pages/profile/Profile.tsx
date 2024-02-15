@@ -252,6 +252,7 @@ export const Profile = (props: any) => {
               index={i}
               course={course}
               language={props.language}
+              currency={props.currency}
             />
           ))}
         </div>

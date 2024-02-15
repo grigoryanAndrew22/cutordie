@@ -130,7 +130,7 @@ export const signInFormMobileStyles = {
   signinWithWrap: {
     display: 'flex',
     width: '90%',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '25px',
   },
@@ -145,7 +145,6 @@ export const signInFormMobileStyles = {
   },
   icons: {
     display: 'flex',
-    width: '63%',
     justifyContent: 'space-around',
   },
   leftTop: {
