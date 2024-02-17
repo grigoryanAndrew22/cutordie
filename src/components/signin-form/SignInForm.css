@@ -4,7 +4,8 @@
 }
 
 .email-input,
-.password-input {
+.password-input,
+.name-input {
   background-image: url('../../assets/images/inputBorder.png');
   background-position: right;
   background-size: cover;
@@ -27,14 +28,18 @@
     /* display: none !important; */
     width: 90% !important;
   }
+  .signupwr {
+    display: none !important;
+  }
   .signup-offer {
     gap: 2px !important;
+    justify-content: center;
   }
-  .signup-offer p {
-    width: 70% !important;
+  .signinMob p {
+    /* width: 70% !important; */
     white-space: nowrap;
-    font-size: 11px;
-    padding-right: 0px !important;
+    /* font-size: 11px; */
+    padding-right: 10px !important;
   }
   .signup-offer button {
     font-size: 15px;
@@ -45,8 +50,12 @@
     background-image: url(../../assets/images/signinputmob.png);
     width: 98% !important;
   }
-
   .signin-with h4 {
     white-space: nowrap;
+    font-size: 19px !important;
+  }
+  .submit-section {
+    flex-direction: column;
+    justify-content: center !important;
   }
 }

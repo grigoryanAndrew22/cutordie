@@ -161,7 +161,7 @@ export const SignUpFormMobile = (props: any) => {
                   }}
                 />
               </div>
-              <div
+              {/* <div
                 className='surname'
                 style={{
                   display: 'flex',
@@ -194,7 +194,7 @@ export const SignUpFormMobile = (props: any) => {
                     width: '98%',
                   }}
                 />
-              </div>
+              </div> */}
             </div>
             <div
               style={{
@@ -269,7 +269,7 @@ export const SignUpFormMobile = (props: any) => {
               />
             </div>
             <div
-              className='submit-section'
+              className='submit-section submitMob'
               style={{
                 display: 'flex',
                 marginTop: '30px',
@@ -352,7 +352,7 @@ export const SignUpFormMobile = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'center',
+              justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: '25px',
             }}

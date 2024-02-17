@@ -343,7 +343,7 @@ export const SignInForm = (props: any) => {
                 />
               </button>
               <div
-                className='signup-offer'
+                className='signup-offer signinMob'
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -398,7 +398,7 @@ export const SignInForm = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'center',
+              justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: '25px',
               gap: '40px',
