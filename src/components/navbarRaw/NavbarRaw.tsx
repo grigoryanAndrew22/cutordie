@@ -12,6 +12,7 @@ import { SignInForm } from '../signin-form/SignInForm';
 import { SignInFormMobile } from '../signin-formMobile/SignInFormMobile';
 import { SignUpForm } from '../signupForm/SignUpForm';
 import Cookies from 'js-cookie';
+import { log } from 'console';
 
 const navbarRawLangs = {
   en: {
@@ -51,11 +52,23 @@ export const NavbarRaw = (props: any) => {
   };
 
   const logout = () => {
+    // fetch(`https://cut-or-die-api.onrender.com/api/v1/users/logout`, {
+    //   method: 'DELETE',
+    //   credentials: 'include',
+    // }).then((response) => {
+    //   console.log(response);
+    // });
+    Cookies.set('jwt', '');
     switchDropdown(false);
-    Cookies.remove('jwt');
 
     window.location.reload();
   };
+  // const logout = () => {
+  //   switchDropdown(false);
+  //   Cookies.remove('jwt');
+
+  //   window.location.reload();
+  // };
 
   const navbarRawLangGenerator = (lang: any) => {
     return lang === 'en' ? navbarRawLangs.en : navbarRawLangs.ua;
