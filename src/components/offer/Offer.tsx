@@ -108,31 +108,33 @@ export const Offer = (props: any) => {
               </li>
             </ul>
             <div style={{ display: 'flex', alignItems: 'center', marginTop: 40 }}>
-              <button className="buy-btn" style={offerStyles.buyBtn}>
-                <AnimatedButton
-                  url={'/cutordie'}
-                  buttonType={'buynow'}
-                  text={'Buy now'}
-                  width={363}
-                  height={142}
-                  top={57}
-                  left={49}
-                  color={'363636'}
-                  font={'Besom'}
-                  textClass={'button2'}
-                />
-              </button>
+              <AnimatedButton
+                url={'/cutordie'}
+                buttonType={'buynow'}
+                text={'Buy now'}
+                width={363}
+                height={142}
+                top={57}
+                left={49}
+                color={'363636'}
+                font={'Besom'}
+                textClass={'button2'}
+              />
               <span style={offerStyles.price} className="price">
                 {currencyGenerated[0]}
-                {currencyGenerated === offerCurrencies.uah && (
-                  <img alt="" width={72} src={uahSymbol} />
-                )}
+                <div>
+                  {currencyGenerated === offerCurrencies.uah && (
+                    <img alt="" width={72} height={64.8} src={uahSymbol} className="uah-img" />
+                  )}
+                </div>
               </span>
               <span style={offerStyles.price} className="prev-price">
                 {currencyGenerated[1]}
-                {currencyGenerated === offerCurrencies.uah && (
-                  <img alt="" width={43} src={uahSymbolGray} />
-                )}
+                <div>
+                  {currencyGenerated === offerCurrencies.uah && (
+                    <img alt="" width={43} height={40} src={uahSymbolGray} className="uah-img" />
+                  )}
+                </div>
               </span>
             </div>
           </div>
