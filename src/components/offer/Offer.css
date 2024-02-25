@@ -22,12 +22,18 @@
   src: url(../../assets/fonts/HeyOctober.ttf);
 }
 
+.uah-img {
+  position: relative;
+}
+
 .price {
   font-family: Hey October;
   text-decoration-thickness: 3px;
   position: absolute;
-  right: 34px;
-  bottom: -38px;
+  display: flex;
+
+  left: 377px;
+  bottom: -11px;
 }
 
 .prev-price {
@@ -36,8 +42,9 @@
   text-decoration-thickness: 3px;
   color: #979797 !important;
   position: absolute;
-  right: -30px;
-  bottom: 50px;
+  display: flex;
+  left: 450px;
+  bottom: 76px;
   font-size: 60px !important;
 }
 
