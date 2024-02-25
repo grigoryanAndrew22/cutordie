@@ -11,6 +11,27 @@ import { MovieCard } from '../../components/movie-card/MovieCard';
 import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 import { profileStyles } from './Profile.styles';
 
+const profLangs = {
+  en: {
+    title: 'MY PROFILE',
+    name: 'Name',
+    email: 'Email',
+    password: 'Password',
+    settings: 'SETTINGS',
+    logout: 'Log out',
+    purchased: 'PURCHASED COURSES',
+  },
+  ua: {
+    title: 'МІЙ ПРОФІЛЬ',
+    name: `Ім'я`,
+    email: 'Пошта',
+    password: 'Пароль',
+    settings: 'НАЛАШТУВАННЯ',
+    logout: 'Вийти',
+    purchased: 'ВАШІ КУРСИ',
+  },
+};
+
 export const Profile = (props: any) => {
   const changeCurrencyUAH = () => {
     props.changeCurr('uah');
@@ -23,6 +44,8 @@ export const Profile = (props: any) => {
   };
 
   console.log(props.user.userName);
+
+  const chosenLang = props.language === 'en' ? profLangs.en : profLangs.ua;
 
   const [coursesObj, setCourses] = useState([]);
 
@@ -38,7 +61,7 @@ export const Profile = (props: any) => {
 
   return (
     <Fragment>
-      <PaymentCard />
+      {/* <PaymentCard /> */}
       <div
         className='prof-sett-wrapper'
         style={{ boxShadow: 'black 0px 110px 120px' }}
@@ -46,7 +69,7 @@ export const Profile = (props: any) => {
         <div className='wrapperChild' style={profileStyles.wrapperChild}>
           <div className='myprofile' style={{ width: '37%' }}>
             <p className='prof-title' style={profileStyles.profileTitle}>
-              MY PROFILE
+              {chosenLang.title}
             </p>
 
             <div className='prof-info' style={{ marginTop: '45px' }}>
@@ -55,7 +78,7 @@ export const Profile = (props: any) => {
                   <div style={profileStyles.nameWrap}>
                     <img alt='' src={pencil} width={29} height={33} />
                     <label htmlFor='name' style={profileStyles.nameLabel}>
-                      Name:
+                      {chosenLang.name}:
                     </label>
                   </div>
                 </div>
@@ -75,7 +98,7 @@ export const Profile = (props: any) => {
                       fontSize: '22px',
                     }}
                   >
-                    Email:
+                    {chosenLang.email}:
                   </label>
                 </div>
                 <input
@@ -93,7 +116,7 @@ export const Profile = (props: any) => {
                       fontSize: '22px',
                     }}
                   >
-                    Password:
+                    {chosenLang.password}:
                   </label>
                 </div>
                 <input
@@ -105,7 +128,7 @@ export const Profile = (props: any) => {
               </div>
             </div>
           </div>
-          <div className='settings prof-setts'>
+          <div className='settings prof-setts' style={{ zIndex: 0 }}>
             <p className='sett-title' style={profileStyles.settTitle}>
               SETTINGS
             </p>
@@ -228,7 +251,9 @@ export const Profile = (props: any) => {
             >
               <img alt='' src={logoutGray} width={50} />
               <div style={{ paddingLeft: '70px' }}>
-                <button style={profileStyles.logoutBtn}>Log out</button>
+                <button style={profileStyles.logoutBtn}>
+                  {chosenLang.logout}
+                </button>
               </div>
             </div>
           </div>
@@ -242,7 +267,7 @@ export const Profile = (props: any) => {
 
       <div className='purchasedCourses' style={{ marginBottom: '100px' }}>
         <div>
-          <p style={profileStyles.purchCourses}>PURCHASED COURSES</p>
+          <p style={profileStyles.purchCourses}>{chosenLang.purchased}</p>
         </div>
 
         <div className='cards' style={profileStyles.cardsWrap}>

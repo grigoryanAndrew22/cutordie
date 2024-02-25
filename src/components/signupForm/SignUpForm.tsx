@@ -64,7 +64,6 @@ export const SignUpForm = (props: any) => {
     e.preventDefault();
     closeForm();
     nameField.current.value = '';
-    surnameField.current.value = '';
     emailField.current.value = '';
     passwordField.current.value = '';
 
@@ -84,7 +83,7 @@ export const SignUpForm = (props: any) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        userName: inputName + inputSurname,
+        userName: inputName,
         email: inputEmail,
         password: inputPassword,
         passwordConfirm: inputPassword,

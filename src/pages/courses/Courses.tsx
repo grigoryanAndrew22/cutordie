@@ -7,6 +7,9 @@ export const Courses = (props: any) => {
   const [coursesObj, setCourses] = useState([]);
   console.log(coursesObj);
 
+  const titleLang =
+    props.language === 'en' ? 'HAIRCUTS FOR STARTER' : 'СТРИЖКИ ДЛЯ НОВАЧКІВ';
+
   useEffect(() => {
     fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
       .then((response) => response.json())
@@ -21,7 +24,7 @@ export const Courses = (props: any) => {
     <Fragment>
       <div className='haircuts-section' style={coursesStyles.haircutsSection}>
         <div className='title'>
-          <h1 style={coursesStyles.title}>HAIRCUTS FOR STARTER</h1>
+          <h1 style={coursesStyles.title}>{titleLang}</h1>
         </div>
 
         <div className='cards' style={coursesStyles.cards}>
