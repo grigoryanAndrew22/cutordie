@@ -398,7 +398,7 @@ export const SignInForm = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'space-between',
+              justifyContent: 'space-evenly',
               alignItems: 'center',
               marginBottom: '25px',
               gap: '40px',
