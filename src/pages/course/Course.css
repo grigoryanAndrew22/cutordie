@@ -43,3 +43,9 @@
     width: 371px !important;
   }
 }
+
+@media (max-width: 1445px) {
+  .controlWr {
+    flex-wrap: wrap;
+  }
+}

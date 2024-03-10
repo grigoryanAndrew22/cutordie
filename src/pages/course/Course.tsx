@@ -52,12 +52,11 @@ export const Course = (props: any) => {
             </p>
           </div>
           <div
-            className='course-description'
+            className='course-description controlWr'
             style={{
               display: 'flex',
-              flexWrap: 'wrap',
               justifyContent: 'space-between',
-              width: '83%',
+              width: '91%',
             }}
           >
             <div className='course-preview' style={{ display: 'flex' }}>

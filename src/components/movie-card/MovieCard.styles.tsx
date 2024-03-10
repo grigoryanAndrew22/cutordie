@@ -25,7 +25,8 @@ export const MovieCardStyles = {
   price: {
     position: 'absolute' as 'absolute',
     top: '28px',
-    right: '34px',
+    // right: '34px',
+    left: '80%',
     color: '#fff',
     fontSize: '40px',
     margin: 0,
