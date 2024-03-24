@@ -25,11 +25,13 @@ export const MovieCardStyles = {
   price: {
     position: 'absolute' as 'absolute',
     top: '28px',
-    right: '34px',
+    // right: '34px',
+    left: '92%',
     color: '#fff',
     fontSize: '40px',
     margin: 0,
     fontWeight: '600',
+    transform: 'translateX(-100%)',
   },
   descrWrap: {
     width: '90%',

@@ -19,11 +19,11 @@
   }
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .account-btn {
     display: flex !important;
   }
   .signin-btn {
     display: none !important;
   }
-}
+} */

@@ -64,7 +64,6 @@ export const SignUpForm = (props: any) => {
     e.preventDefault();
     closeForm();
     nameField.current.value = '';
-    surnameField.current.value = '';
     emailField.current.value = '';
     passwordField.current.value = '';
 
@@ -84,7 +83,7 @@ export const SignUpForm = (props: any) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        userName: inputName + inputSurname,
+        userName: inputName,
         email: inputEmail,
         password: inputPassword,
         passwordConfirm: inputPassword,
@@ -142,7 +141,10 @@ export const SignUpForm = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div className='signin-wrapper' style={signUpFormStyles.signinWrapper}>
+        <div
+          className='signin-wrapper signupwr'
+          style={signUpFormStyles.signinWrapper}
+        >
           <img
             alt=''
             src={leftTopCorner}
@@ -209,7 +211,7 @@ export const SignUpForm = (props: any) => {
                 marginBottom: '15px',
               }}
             >
-              <div className='name' style={{ width: '46%' }}>
+              <div className='name' style={{ width: '100%' }}>
                 <label
                   htmlFor='name'
                   style={{
@@ -218,7 +220,7 @@ export const SignUpForm = (props: any) => {
                     paddingBottom: '9px',
                   }}
                 >
-                  {generatedForm.name}
+                  {generatedForm.name}:
                 </label>
                 <input
                   placeholder={generatedForm.name}
@@ -232,12 +234,14 @@ export const SignUpForm = (props: any) => {
                     color: '#444444',
                     fontSize: '16px',
                     fontWeight: '600',
+                    width: '100%',
+                    marginTop: '10px',
                   }}
                   onChange={handleName}
                   ref={nameField}
                 />
               </div>
-              <div className='surname' style={{ width: '46%' }}>
+              {/* <div className='surname' style={{ width: '46%' }}>
                 <label
                   htmlFor='surname'
                   style={{
@@ -265,7 +269,7 @@ export const SignUpForm = (props: any) => {
                   onChange={handleSurname}
                   ref={surnameField}
                 />
-              </div>
+              </div> */}
             </div>
             <label
               htmlFor='email'
@@ -276,7 +280,7 @@ export const SignUpForm = (props: any) => {
                 paddingBottom: '9px',
               }}
             >
-              {generatedForm.email}
+              {generatedForm.email}:
             </label>
 
             <input
@@ -313,7 +317,7 @@ export const SignUpForm = (props: any) => {
                   paddingBottom: '9px',
                 }}
               >
-                {generatedForm.password}
+                {generatedForm.password}:
               </label>
             </div>
             <input
@@ -414,7 +418,7 @@ export const SignUpForm = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'center',
+              justifyContent: 'space-evenly',
               alignItems: 'center',
               marginBottom: '25px',
               gap: '40px',
@@ -435,8 +439,8 @@ export const SignUpForm = (props: any) => {
             <img
               alt=''
               src={googleIcon}
-              height={50}
-              style={{ marginRight: '20px', paddingTop: '4px' }}
+              height={45}
+              style={{ paddingTop: '4px' }}
             />
           </div>
         </div>

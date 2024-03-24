@@ -9,6 +9,9 @@
   .offer-wrapper-mobile {
     display: flex;
   }
+  .price {
+    bottom: -51px;
+  }
 }
 
 @media (min-width: 901px) {
@@ -31,7 +34,7 @@
   color: #979797 !important;
   position: absolute;
   left: 51%;
-  top: -25px;
+  top: -77px;
   font-size: 35px !important;
 }
 
@@ -41,5 +44,11 @@
   }
   .card-3 {
     left: 53px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .offer-wrapper {
+    gap: 3% !important;
   }
 }

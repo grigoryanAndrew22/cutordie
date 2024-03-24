@@ -11,7 +11,7 @@ import { Course } from './pages/course/Course';
 import { Policy } from './pages/policy/Policy';
 import { PageNotFound } from './pages/pagenotFound/PageNotFound';
 import { Footer } from './components/footer/Footer';
-// import { Cookie } from '@mui/icons-material';
+
 import Cookies from 'js-cookie';
 
 // const ROUTES = [
@@ -31,10 +31,25 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
 
-  const [currency, changeCurrency] = useState('usd');
-  const [language, changeLanguage] = useState('en');
+  useEffect(() => {
+    Cookies.set('language', 'en', { secure: true });
+    Cookies.set('currency', 'usd', { secure: true });
+  }, []);
+
+  const currFromCookies: any = Cookies.get('currency');
+  const langFromCookies: any = Cookies.get('language');
+
+  const [currency, changeCurrency] = useState(currFromCookies);
+  const [language, changeLanguage] = useState(langFromCookies);
+  console.log(Cookies.get('language'));
+
+  useEffect(() => {
+    Cookies.set('language', language, { secure: true });
+    Cookies.set('currency', currency, { secure: true });
+  }, [language, currency]);
 
   const changeLang = (lang: string) => {
+    Cookies.set('language', lang, { secure: true });
     changeLanguage(lang);
   };
 

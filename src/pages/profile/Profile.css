@@ -4,30 +4,26 @@
 }
 
 @media (max-width: 1120px) {
-  .email-input,
-  .password-input {
+  .profile-input {
     width: 540px !important;
   }
 }
 
 @media (max-width: 1080px) {
-  .email-input,
-  .password-input {
+  .profile-input {
     width: 500px !important;
   }
 }
 
 @media (max-width: 1020px) {
-  .email-input,
-  .password-input {
+  .profile-input {
     width: 410px !important;
     background-size: contain;
   }
 }
 
 @media (max-width: 910px) {
-  .email-input,
-  .password-input {
+  .profile-input {
     width: 390px !important;
     background-size: contain;
   }
@@ -56,8 +52,7 @@
   .profile-input {
     background-image: url(../../assets/images/profileInputMob.png);
   }
-  .email-input,
-  .password-input {
+  .profile-input {
     width: 328px !important;
     background-size: cover;
   }

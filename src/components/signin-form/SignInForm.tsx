@@ -10,7 +10,7 @@ import rightBotCorner from '../../assets/images/rightBotCorner.png';
 import signInBtnUA from '../../assets/images/button3UA.svg';
 import './SignInForm.css';
 import { Fragment, useRef, useState } from 'react';
-import { SignInFormMobile } from '../signin-formMobile/SignInFormMobile';
+import { SignInFormMobile } from './SignInFormMobile';
 import { SignUpForm } from '../signupForm/SignUpForm';
 import { SignUpFormMobile } from '../signupFormMobile/SignUpFormMobile';
 import axios from 'axios';
@@ -39,8 +39,10 @@ const formLangs = {
 
 export const SignInForm = (props: any) => {
   const [incorrect, setIncorrect] = useState(false);
-  const emailField: any = useRef(null);
-  const passwordField: any = useRef(null);
+  // const emailField: any = useRef(null);
+  // const passwordField: any = useRef(null);
+  const [emailField, setEmailField] = useState('');
+  const [passwordField, setPasswordField] = useState('');
 
   const [signUpFormVisible, switchSignUp] = useState(false);
 
@@ -51,6 +53,14 @@ export const SignInForm = (props: any) => {
     }
   });
 
+  const emailChange = (e: any) => {
+    setEmailField(e.target.value);
+  };
+
+  const passwordChange = (e: any) => {
+    setPasswordField(e.target.value);
+  };
+
   const login = (e: any) => {
     e.preventDefault();
 
@@ -60,20 +70,25 @@ export const SignInForm = (props: any) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: emailField.current.value,
-        password: passwordField.current.value,
+        email: emailField,
+        password: passwordField,
       }),
       credentials: 'include',
     })
       .then((response) => response.json())
       .then((data) => {
-        setIncorrect(false);
-        Cookies.set('jwt', data.token, { secure: true });
-        console.log(data);
-        emailField.current.value = '';
-        passwordField.current.value = '';
-        props.setLogin(true);
-        closeForm();
+        if (data.status === 'fail') {
+          setIncorrect(true);
+          console.log(data);
+        } else if (data.status === 'success') {
+          setIncorrect(false);
+          Cookies.set('jwt', data.token, { secure: true });
+          console.log(data);
+          setEmailField('');
+          setPasswordField('');
+          props.setLogin(true);
+          closeForm();
+        }
       })
       .catch((error) => {
         setIncorrect(true);
@@ -120,12 +135,15 @@ export const SignInForm = (props: any) => {
 
   return (
     <Fragment>
-      <SignInFormMobile
+      {/* <SignInFormMobile
         visible={props.visible}
         switch={props.switch}
         language={props.language}
         switch2={switchToSignUp}
-      />
+        changeEmail={setEmailField}
+        changePassword={setPasswordField}
+        login={login}
+      /> */}
       <SignUpForm
         visible={signUpFormVisible}
         switch={switchSignUp}
@@ -209,8 +227,11 @@ export const SignInForm = (props: any) => {
             </label>
 
             <input
-              ref={emailField}
-              className="email-input"
+
+              // ref={emailField}
+              onChange={emailChange}
+              className='email-input'
+
               placeholder={generatedForm.email}
               type="email"
               style={{
@@ -223,6 +244,7 @@ export const SignInForm = (props: any) => {
                 fontSize: '16px',
                 fontWeight: '600',
               }}
+              value={emailField}
             />
 
             <div
@@ -248,15 +270,19 @@ export const SignInForm = (props: any) => {
                   margin: 0,
                   fontFamily: 'Bitter',
                   alignSelf: 'center',
+                  fontWeight: 600,
                 }}
               >
                 {generatedForm.forgotPassword}
               </p>
             </div>
             <input
-              ref={passwordField}
-              className="password-input"
-              type="password"
+
+              // ref={passwordField}
+              onChange={passwordChange}
+              className='password-input'
+              type='password'
+
               placeholder={generatedForm.password}
               style={{
                 width: '100%',
@@ -268,6 +294,7 @@ export const SignInForm = (props: any) => {
                 fontSize: '16px',
                 fontWeight: '600',
               }}
+              value={passwordField}
             />
             <div style={{ marginTop: '0.8em', height: '16.8px' }}>
               <p
@@ -305,7 +332,9 @@ export const SignInForm = (props: any) => {
                 <img src={require('../../assets/images/signInBtn.png')} width={125} />
               </button>
               <div
-                className="signup-offer"
+
+                className='signup-offer signinMob'
+
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -358,7 +387,7 @@ export const SignInForm = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'center',
+              justifyContent: 'space-evenly',
               alignItems: 'center',
               marginBottom: '25px',
               gap: '40px',
@@ -376,7 +405,9 @@ export const SignInForm = (props: any) => {
             >
               {generatedForm.signinWith}
             </h4>
-            <img src={googleIcon} height={50} style={{ marginRight: '20px', paddingTop: '4px' }} />
+
+            <img src={googleIcon} height={50} style={{ paddingTop: '4px' }} />
+
           </div>
         </div>
       </div>

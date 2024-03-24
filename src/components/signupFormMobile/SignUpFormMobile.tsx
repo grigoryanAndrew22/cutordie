@@ -1,8 +1,6 @@
 import { signUpFormStyles } from './SignUpFormMobile.styles';
 import orDivider from '../../assets/images/orDivider.svg';
 import googleIcon from '../../assets/images/googleIcon.png';
-import twitterIcon from '../../assets/images/twitterIcon.png';
-import facebookIcon from '../../assets/images/facebookIcon.png';
 import leftTopCorner from '../../assets/images/leftTopCorner.png';
 import leftBotCorner from '../../assets/images/leftBotCorner.png';
 import rightTopCorner from '../../assets/images/rightTopCorner.png';
@@ -159,11 +157,11 @@ export const SignUpFormMobile = (props: any) => {
                     color: '#444444',
                     fontSize: '16px',
                     fontWeight: '600',
-                    width: '100%',
+                    width: '98%',
                   }}
                 />
               </div>
-              <div
+              {/* <div
                 className='surname'
                 style={{
                   display: 'flex',
@@ -196,7 +194,7 @@ export const SignUpFormMobile = (props: any) => {
                     width: '98%',
                   }}
                 />
-              </div>
+              </div> */}
             </div>
             <div
               style={{
@@ -239,7 +237,7 @@ export const SignUpFormMobile = (props: any) => {
               className='password-label'
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
+                // justifyContent: 'space-between',
                 alignItems: 'center',
               }}
             >
@@ -266,12 +264,12 @@ export const SignUpFormMobile = (props: any) => {
                   color: '#444444',
                   fontSize: '16px',
                   fontWeight: '600',
-                  paddingLeft: '7px',
+                  paddingLeft: '12px',
                 }}
               />
             </div>
             <div
-              className='submit-section'
+              className='submit-section submitMob'
               style={{
                 display: 'flex',
                 marginTop: '30px',
@@ -354,7 +352,7 @@ export const SignUpFormMobile = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'space-between',
+              justifyContent: 'space-evenly',
               alignItems: 'center',
               marginBottom: '25px',
             }}
@@ -367,6 +365,7 @@ export const SignUpFormMobile = (props: any) => {
                 fontWeight: 100,
                 margin: 0,
                 alignSelf: 'center',
+                paddingRight: '35px',
               }}
             >
               {generatedForm.signupWith}
@@ -375,24 +374,16 @@ export const SignUpFormMobile = (props: any) => {
               className='icons'
               style={{
                 display: 'flex',
-                width: '60%',
                 justifyContent: 'space-between',
               }}
             >
               <img
                 alt=''
                 src={googleIcon}
-                width={100}
-                height={50}
-                style={{ marginRight: '20px', paddingTop: '4px' }}
+                width={135}
+                height={45}
+                style={{ paddingTop: '4px' }}
               />
-              <img
-                alt=''
-                src={twitterIcon}
-                width={35}
-                style={{ marginRight: '20px' }}
-              />
-              <img alt='' src={facebookIcon} width={35} />
             </div>
           </div>
         </div>
