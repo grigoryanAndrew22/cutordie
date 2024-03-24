@@ -11,6 +11,7 @@ import { Course } from './pages/course/Course';
 import { Policy } from './pages/policy/Policy';
 import { PageNotFound } from './pages/pagenotFound/PageNotFound';
 import { Footer } from './components/footer/Footer';
+
 import Cookies from 'js-cookie';
 
 // const ROUTES = [
@@ -65,6 +66,7 @@ function App() {
     fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
       method: 'GET', // or 'POST', 'PUT', etc.
       credentials: 'include', // this will include cookies
+      body: JSON.stringify({ jwt: Cookies.get('jwt') }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -82,12 +84,8 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-      <NavbarRaw
-        language={language}
-        loggedIn={loggedIn}
-        changeLogin={setLoggedIn}
-      />
+    <div className="App">
+      <NavbarRaw language={language} loggedIn={loggedIn} changeLogin={setLoggedIn} />
       <BrowserRouter>
         <Routes>
           {/* {ROUTES.map((route: any) => (
@@ -97,21 +95,15 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
+          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
           <Route
-            path='/'
-            element={<Home language={language} currency={currency} />}
-          ></Route>
-          <Route
-            path='/courses'
+            path="/courses"
             element={<Courses language={language} currency={currency} />}
           ></Route>
 
+          <Route path="/aboutme" element={<Aboutme language={language} />}></Route>
           <Route
-            path='/aboutme'
-            element={<Aboutme language={language} />}
-          ></Route>
-          <Route
-            path='/profile'
+            path="/profile"
             element={
               <Profile
                 changeLogin={setLoggedIn}
@@ -124,23 +116,11 @@ function App() {
             }
           ></Route>
           <Route
-            path='/courses/course'
-            element={
-              <Course
-                language={language}
-                loggedIn={loggedIn}
-                changeLogin={setLoggedIn}
-              />
-            }
+            path="/courses/course"
+            element={<Course language={language} loggedIn={loggedIn} changeLogin={setLoggedIn} />}
           ></Route>
-          <Route
-            path='/policy'
-            element={<Policy language={language} />}
-          ></Route>
-          <Route
-            path='/404'
-            element={<PageNotFound language={language} />}
-          ></Route>
+          <Route path="/policy" element={<Policy language={language} />}></Route>
+          <Route path="/404" element={<PageNotFound language={language} />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer
