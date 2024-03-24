@@ -81,9 +81,11 @@ export const MovieCard = (props: any) => {
             <img alt='' src={scissorsWhite} width={'30px'} />
             <img alt='' src={scissorsWhite} width={'30px'} />
           </div>
+
           <p className='price' style={MovieCardStyles.price}>
             {priceObj}
           </p>
+
           <img
             className='haircut-preview'
             alt=''

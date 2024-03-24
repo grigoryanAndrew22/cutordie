@@ -237,7 +237,7 @@ export const SignUpFormMobile = (props: any) => {
               className='password-label'
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
+                // justifyContent: 'space-between',
                 alignItems: 'center',
               }}
             >
@@ -264,7 +264,7 @@ export const SignUpFormMobile = (props: any) => {
                   color: '#444444',
                   fontSize: '16px',
                   fontWeight: '600',
-                  paddingLeft: '7px',
+                  paddingLeft: '12px',
                 }}
               />
             </div>
@@ -352,7 +352,7 @@ export const SignUpFormMobile = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'space-between',
+              justifyContent: 'space-evenly',
               alignItems: 'center',
               marginBottom: '25px',
             }}

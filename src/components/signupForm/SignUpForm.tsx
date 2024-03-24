@@ -418,7 +418,7 @@ export const SignUpForm = (props: any) => {
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'space-between',
+              justifyContent: 'space-evenly',
               alignItems: 'center',
               marginBottom: '25px',
               gap: '40px',
@@ -439,7 +439,7 @@ export const SignUpForm = (props: any) => {
             <img
               alt=''
               src={googleIcon}
-              height={50}
+              height={45}
               style={{ paddingTop: '4px' }}
             />
           </div>

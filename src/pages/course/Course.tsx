@@ -37,9 +37,10 @@ export const Course = (props: any) => {
       <PaymentCard visible={coursePayment} closePay={closePay} />
 
       <div className='course-wrapper'>
-        <div style={{ width: '95%', margin: 'auto' }}>
+        <div style={{ width: '91%', margin: 'auto' }}>
           <div style={{ paddingTop: '100px' }}>
             <p
+              className='course_heading'
               style={{
                 margin: 0,
                 color: '#373737',
@@ -59,18 +60,22 @@ export const Course = (props: any) => {
               width: '91%',
             }}
           >
-            <div className='course-preview' style={{ display: 'flex' }}>
+            <div
+              className='course-preview'
+              style={{ display: 'flex', width: '57%' }}
+            >
               <img
                 className='course-preview-main'
                 alt=''
                 src={require('../../assets/images/coursePrev.png')}
+                width={'100%'}
               />
             </div>
             <div className='course-about'>
               <p
                 style={{
                   margin: 0,
-                  fontSize: '39px',
+                  fontSize: '46px',
                   fontFamily: 'Bitter',
                   fontWeight: 600,
                   color: '#363636',
@@ -89,15 +94,16 @@ export const Course = (props: any) => {
                 <img
                   alt=''
                   src={require('../../assets/images/scissorSm.png')}
-                  width={36}
+                  width={45}
                 />
                 <p
                   style={{
                     margin: 0,
                     color: '#363636',
-                    fontSize: '24px',
+                    fontSize: '30px',
                     fontFamily: 'Bitter',
                     paddingLeft: '20px',
+                    fontWeight: 600,
                   }}
                 >
                   Difficulty: Very easy
@@ -113,15 +119,16 @@ export const Course = (props: any) => {
                 <img
                   alt=''
                   src={require('../../assets/images/clockSm.png')}
-                  width={36}
+                  width={45}
                 />
                 <p
                   style={{
                     margin: 0,
                     color: '#363636',
-                    fontSize: '24px',
+                    fontSize: '30px',
                     fontFamily: 'Bitter',
                     paddingLeft: '20px',
+                    fontWeight: 600,
                   }}
                 >
                   Duration: 1h 63m
@@ -131,9 +138,10 @@ export const Course = (props: any) => {
                 style={{
                   margin: 0,
                   color: '#363636',
-                  fontSize: '24px',
+                  fontSize: '30px',
                   fontFamily: 'Bitter',
                   paddingBottom: '100px',
+                  fontWeight: 600,
                 }}
               >
                 Equipment: clipper and scissors
@@ -161,6 +169,7 @@ export const Course = (props: any) => {
                     fontSize: '24px',
                     fontFamily: 'Bitter',
                     padding: '0px 30px',
+                    fontWeight: 600,
                   }}
                 >
                   for
@@ -190,6 +199,7 @@ export const Course = (props: any) => {
                 fontSize: '24px',
                 color: '#232323',
                 paddingRight: '60px',
+                fontWeight: 600,
               }}
             >
               Welcome to "Mastering the Art of Haircutting," a comprehensive
@@ -227,6 +237,7 @@ export const Course = (props: any) => {
                 fontSize: '24px',
                 color: '#232323',
                 paddingLeft: '60px',
+                fontWeight: 600,
               }}
             >
               Welcome to "Mastering the Art of Haircutting," a comprehensive
@@ -260,6 +271,7 @@ export const Course = (props: any) => {
                 fontSize: '24px',
                 color: '#232323',
                 paddingRight: '60px',
+                fontWeight: 600,
               }}
             >
               Welcome to "Mastering the Art of Haircutting," a comprehensive

@@ -8,12 +8,16 @@
 }
 
 .surname-input-mobile,
-.email-input-mobile,
+.email-input-mobile {
+  background-image: url('../../assets/images/nameinputMobile.png');
+}
+
 .password-input-mobile {
   background-image: url('../../assets/images/surnameinputMobile.png');
 }
 
-.surname-input-mobile,
+.email-input-mobile,
+.password-input-mobile,
 .name-input-mobile {
   background-size: cover;
   background-position: center;
