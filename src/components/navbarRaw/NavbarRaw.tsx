@@ -58,7 +58,7 @@ export const NavbarRaw = (props: any) => {
     // }).then((response) => {
     //   console.log(response);
     // });
-    document.cookie = 'jwt=something;max-age=-100';
+    document.cookie = 'jwt=something;max-age=-100;expires';
     switchDropdown(false);
 
     window.location.reload();
