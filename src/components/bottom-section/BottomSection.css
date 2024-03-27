@@ -12,3 +12,7 @@
     width: 700px;
   }
 }
+
+.view-all-courses {
+  transform: scale(calc(0.5));
+}
