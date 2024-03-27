@@ -35,9 +35,14 @@ export const Card = (props: {
           width={'100%'}
           height={'100%'}
         />
-        <p style={cardStyles.title}>{cardGenerated.title}</p>
+        <p className='card_heading' style={cardStyles.title}>
+          {cardGenerated.title}
+        </p>
       </div>
-      <div className='description' style={cardStyles.description}>
+      <div
+        className='description card_description'
+        style={cardStyles.description}
+      >
         <p>{cardGenerated.description}</p>
       </div>
     </div>

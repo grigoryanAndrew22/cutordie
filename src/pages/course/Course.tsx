@@ -103,7 +103,7 @@ export const Course = (props: any) => {
                     fontSize: '30px',
                     fontFamily: 'Bitter',
                     paddingLeft: '20px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
                   Difficulty: Very easy
@@ -128,7 +128,7 @@ export const Course = (props: any) => {
                     fontSize: '30px',
                     fontFamily: 'Bitter',
                     paddingLeft: '20px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
                   Duration: 1h 63m
@@ -141,7 +141,7 @@ export const Course = (props: any) => {
                   fontSize: '30px',
                   fontFamily: 'Bitter',
                   paddingBottom: '100px',
-                  fontWeight: 600,
+                  fontWeight: 700,
                 }}
               >
                 Equipment: clipper and scissors
