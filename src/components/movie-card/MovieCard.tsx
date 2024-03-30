@@ -13,7 +13,7 @@ export const MovieCard = (props: any) => {
   if (props.currency === 'usd') {
     priceObj = props.course.price.usd + '$';
   } else if (props.currency === 'uah') {
-    priceObj = props.course.price.uah + '₴';
+    priceObj = props.course.price.uah;
   } else {
     priceObj = props.course.price.eur + '€';
   }
@@ -84,6 +84,14 @@ export const MovieCard = (props: any) => {
 
           <p className='price' style={MovieCardStyles.price}>
             {priceObj}
+            {props.currency === 'uah' && (
+              <img
+                src={require('../../assets/images/hryvWhite.png')}
+                width={'21px'}
+                height={'30px'}
+                style={{ paddingTop: '10.3px' }}
+              />
+            )}
           </p>
 
           <img

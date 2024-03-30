@@ -108,7 +108,7 @@ export const Course = (props: any) => {
                     fontSize: '30px',
                     fontFamily: 'Bitter',
                     paddingLeft: '20px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
                   Very easy
@@ -141,7 +141,7 @@ export const Course = (props: any) => {
                     fontSize: '30px',
                     fontFamily: 'Bitter',
                     paddingLeft: '20px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
                   1h 56m
@@ -153,6 +153,7 @@ export const Course = (props: any) => {
                   color: '#363636',
                   fontSize: '30px',
                   fontFamily: 'Bitter',
+
                   fontWeight: 500,
                 }}
               >
@@ -166,6 +167,7 @@ export const Course = (props: any) => {
                   fontFamily: 'Bitter',
                   paddingLeft: '20px',
                   fontWeight: 600,
+
                 }}
               >
                 clipper and scissors

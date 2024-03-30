@@ -4,13 +4,23 @@
 
 @media (max-width: 900px) {
   .prev-price-mobile {
-    left: 50px !important;
+    left: -2px !important;
   }
   .offer-wrapper-mobile {
     display: flex;
   }
   .price {
-    bottom: -51px;
+    bottom: -40px;
+    left: -16px;
+  }
+}
+
+@media (460px < width < 900px) {
+  .card_pricewrap {
+    margin-top: 22px !important;
+  }
+  .prev-price-mobile {
+    left: 55px !important;
   }
 }
 
@@ -22,8 +32,21 @@
 
 @media (max-width: 460px) {
   .price {
-    margin-left: -13px !important;
-    font-size: 66px !important;
+    margin-left: -34px !important;
+    font-size: 48px !important;
+  }
+  .card_img {
+    height: 41px;
+    padding-top: 7.5px !important;
+  }
+  .prev-price-mobile {
+    top: -57px !important;
+  }
+  .card_btn {
+    width: 175px !important;
+  }
+  .description-wrapper-mob p {
+    right: 0% !important;
   }
 }
 
@@ -47,8 +70,8 @@
   }
 }
 
-@media (max-width: 1180px) {
+/* @media (max-width: 1180px) {
   .offer-wrapper {
     gap: 3% !important;
   }
-}
+} */
