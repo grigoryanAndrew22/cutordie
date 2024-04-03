@@ -236,7 +236,11 @@ export const AnimatedButton = ({
   };
 
   return (
-    <a className="btnContainer" style={{ width: `${width}px`, height: `${height}px` }}>
+    <a
+      className="btnContainer"
+      href={url === '' ? null : url}
+      style={{ width: `${width}px`, height: `${height}px` }}
+    >
       <div
         className={`strokeBtnText ${textClass}`}
         style={{ top: `${top}%`, left: `${left}%`, color: `#${color}`, fontFamily: font }}
