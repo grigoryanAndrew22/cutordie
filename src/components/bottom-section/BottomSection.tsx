@@ -10,9 +10,6 @@ export const BottomSection = (props: any) => {
   return (
     <div className="bottom-section-wrapper" style={{ marginBottom: '-2px' }}>
       <div className="view-all-courses" style={bottomSectionStyles.viewAllCourses}>
-        {/* <button className="view-all-btn" style={bottomSectionStyles.viewAllBtn}>
-          <img src={btnGenerated} alt="btn" width={'100%'} />
-        </button> */}{' '}
         <AnimatedButton
           url={'/courses'}
           buttonType={'allcourses'}

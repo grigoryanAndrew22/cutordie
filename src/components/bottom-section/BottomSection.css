@@ -1,18 +1,31 @@
-.view-all-btn {
-  transition: all 0.3s ease;
+.view-all-courses {
+  scale: 0.9;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
-.view-all-btn:hover {
-  transform: scale(1.04);
-  transition-duration: 300ms;
+.btnContainer {
+  flex-shrink: 0;
 }
 
-@media (max-width: 1006px) {
-  .view-all-btn {
-    width: 700px;
+@media screen and (max-width: 800px) {
+  .view-all-courses {
+    scale: 0.7;
   }
 }
-
-.view-all-courses {
-  transform: scale(calc(0.5));
+@media screen and (max-width: 650px) {
+  .view-all-courses {
+    scale: 0.6;
+  }
+}
+@media screen and (max-width: 550px) {
+  .view-all-courses {
+    scale: 0.5;
+  }
+}
+@media screen and (max-width: 350px) {
+  .view-all-courses {
+    scale: 0.4;
+  }
 }
