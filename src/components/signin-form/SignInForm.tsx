@@ -15,6 +15,7 @@ import { SignUpForm } from '../signupForm/SignUpForm';
 import { SignUpFormMobile } from '../signupFormMobile/SignUpFormMobile';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import AnimatedButton from '../animated-button/AnimatedButton';
 
 const formLangs = {
   en: {
@@ -227,11 +228,9 @@ export const SignInForm = (props: any) => {
             </label>
 
             <input
-
               // ref={emailField}
               onChange={emailChange}
-              className='email-input'
-
+              className="email-input"
               placeholder={generatedForm.email}
               type="email"
               style={{
@@ -277,12 +276,10 @@ export const SignInForm = (props: any) => {
               </p>
             </div>
             <input
-
               // ref={passwordField}
               onChange={passwordChange}
-              className='password-input'
-              type='password'
-
+              className="password-input"
+              type="password"
               placeholder={generatedForm.password}
               style={{
                 width: '100%',
@@ -329,12 +326,22 @@ export const SignInForm = (props: any) => {
                   padding: 0,
                 }}
               >
-                <img src={require('../../assets/images/signInBtn.png')} width={125} />
+                {/* <img src={require('../../assets/images/signInBtn.png')} width={125} /> */}
+                <AnimatedButton
+                  url={''}
+                  buttonType={'submitsignin'}
+                  text={'Sign in'}
+                  width={115}
+                  height={67}
+                  top={51}
+                  left={46}
+                  color={'363636'}
+                  font={'Besom'}
+                  textClass={'button4'}
+                />
               </button>
               <div
-
-                className='signup-offer signinMob'
-
+                className="signup-offer signinMob"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -407,7 +414,6 @@ export const SignInForm = (props: any) => {
             </h4>
 
             <img src={googleIcon} height={50} style={{ paddingTop: '4px' }} />
-
           </div>
         </div>
       </div>

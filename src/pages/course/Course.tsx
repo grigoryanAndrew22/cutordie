@@ -36,11 +36,11 @@ export const Course = (props: any) => {
       />
       <PaymentCard visible={coursePayment} closePay={closePay} />
 
-      <div className='course-wrapper'>
+      <div className="course-wrapper">
         <div style={{ width: '91%', margin: 'auto' }}>
           <div style={{ paddingTop: '100px' }}>
             <p
-              className='course_heading'
+              className="course_heading"
               style={{
                 margin: 0,
                 color: '#373737',
@@ -53,25 +53,22 @@ export const Course = (props: any) => {
             </p>
           </div>
           <div
-            className='course-description controlWr'
+            className="course-description controlWr"
             style={{
               display: 'flex',
               justifyContent: 'space-between',
-              width: '91%',
             }}
           >
-            <div
-              className='course-preview'
-              style={{ display: 'flex', width: '57%' }}
-            >
+            <div className="course-preview" style={{ display: 'flex' }}>
               <img
-                className='course-preview-main'
-                alt=''
+                className="course-preview-main"
+                alt=""
                 src={require('../../assets/images/coursePrev.png')}
-                width={'100%'}
+                width="1058"
+                height="596"
               />
             </div>
-            <div className='course-about'>
+            <div className="course-about">
               <p
                 style={{
                   margin: 0,
@@ -91,11 +88,19 @@ export const Course = (props: any) => {
                   paddingBottom: '28px',
                 }}
               >
-                <img
-                  alt=''
-                  src={require('../../assets/images/scissorSm.png')}
-                  width={45}
-                />
+                <img alt="" src={require('../../assets/images/scissorSm.png')} width={45} />
+                <p
+                  style={{
+                    margin: 0,
+                    color: '#363636',
+                    fontSize: '30px',
+                    fontFamily: 'Bitter',
+                    paddingLeft: '20px',
+                    fontWeight: 500,
+                  }}
+                >
+                  Difficulty:
+                </p>
                 <p
                   style={{
                     margin: 0,
@@ -106,7 +111,7 @@ export const Course = (props: any) => {
                     fontWeight: 700,
                   }}
                 >
-                  Difficulty: Very easy
+                  Very easy
                 </p>
               </div>
               <div
@@ -116,11 +121,19 @@ export const Course = (props: any) => {
                   paddingBottom: '28px',
                 }}
               >
-                <img
-                  alt=''
-                  src={require('../../assets/images/clockSm.png')}
-                  width={45}
-                />
+                <img alt="" src={require('../../assets/images/clockSm.png')} width={45} />
+                <p
+                  style={{
+                    margin: 0,
+                    color: '#363636',
+                    fontSize: '30px',
+                    fontFamily: 'Bitter',
+                    paddingLeft: '20px',
+                    fontWeight: 500,
+                  }}
+                >
+                  Duration:
+                </p>
                 <p
                   style={{
                     margin: 0,
@@ -131,36 +144,44 @@ export const Course = (props: any) => {
                     fontWeight: 700,
                   }}
                 >
-                  Duration: 1h 63m
+                  1h 56m
                 </p>
               </div>
-              <p
+              <span
                 style={{
                   margin: 0,
                   color: '#363636',
                   fontSize: '30px',
                   fontFamily: 'Bitter',
-                  paddingBottom: '100px',
-                  fontWeight: 700,
+
+                  fontWeight: 500,
                 }}
               >
-                Equipment: clipper and scissors
-              </p>
+                Equipment:
+              </span>
+              <span
+                style={{
+                  margin: 0,
+                  color: '#363636',
+                  fontSize: '30px',
+                  fontFamily: 'Bitter',
+                  paddingLeft: '20px',
+                  fontWeight: 600,
+
+                }}
+              >
+                clipper and scissors
+              </span>
               <div
-                className='buy-offer'
-                style={{ display: 'flex', alignItems: 'center' }}
+                className="buy-offer"
+                style={{ display: 'flex', alignItems: 'center', marginTop: '2rem' }}
               >
                 <button
-                  className='buy-btn buy-btn-prev'
+                  className="buy-btn buy-btn-prev"
                   style={courseStyles.buyBtn}
                   onClick={props.loggedIn ? openPayment : switchCF}
                 >
-                  <img
-                    src={buyNowbtn}
-                    alt='btn'
-                    width={'95%'}
-                    height={'100%'}
-                  />
+                  <img src={buyNowbtn} alt="btn" width={'95%'} height={'100%'} />
                 </button>
                 <p
                   style={{
@@ -188,10 +209,7 @@ export const Course = (props: any) => {
             </div>
           </div>
 
-          <div
-            className='course-descr-section'
-            style={{ display: 'flex', marginTop: '100px' }}
-          >
+          <div className="course-descr-section" style={{ display: 'flex', marginTop: '100px' }}>
             <p
               style={{
                 margin: 0,
@@ -202,28 +220,26 @@ export const Course = (props: any) => {
                 fontWeight: 600,
               }}
             >
-              Welcome to "Mastering the Art of Haircutting," a comprehensive
-              online course designed to transform your hairstyling skills and
-              unleash your creativity in the world of hairdressing. Whether
-              you're an aspiring hairstylist or a seasoned professional looking
-              to refine your techniques, this course is tailored to meet your
-              needs and take your haircutting abilities to new heights.Welcome
-              to "Mastering the Art of Haircutting," a comprehensive online
-              course designed to transform your hairstyling skills and unleash
-              your creativity in the world of hairdressing. Whether you're an
-              aspiring hairstylist or a seasoned professional looking to refine
-              your techniques, this course is tailored to meet your needs and
-              take your haircutting abilities to new heights.
+              Welcome to "Mastering the Art of Haircutting," a comprehensive online course designed
+              to transform your hairstyling skills and unleash your creativity in the world of
+              hairdressing. Whether you're an aspiring hairstylist or a seasoned professional
+              looking to refine your techniques, this course is tailored to meet your needs and take
+              your haircutting abilities to new heights.Welcome to "Mastering the Art of
+              Haircutting," a comprehensive online course designed to transform your hairstyling
+              skills and unleash your creativity in the world of hairdressing. Whether you're an
+              aspiring hairstylist or a seasoned professional looking to refine your techniques,
+              this course is tailored to meet your needs and take your haircutting abilities to new
+              heights.
             </p>
             <img
-              alt=''
+              alt=""
+              className="course-img"
               src={require('../../assets/images/coursePrev.png')}
-              height={300}
             />
           </div>
 
           <div
-            className='course-descr-section'
+            className="course-descr-section"
             style={{
               display: 'flex',
               marginTop: '120px',
@@ -240,30 +256,25 @@ export const Course = (props: any) => {
                 fontWeight: 600,
               }}
             >
-              Welcome to "Mastering the Art of Haircutting," a comprehensive
-              online course designed to transform your hairstyling skills and
-              unleash your creativity in the world of hairdressing. Whether
-              you're an aspiring hairstylist or a seasoned professional looking
-              to refine your techniques, this course is tailored to meet your
-              needs and take your haircutting abilities to new heights.Welcome
-              to "Mastering the Art of Haircutting," a comprehensive online
-              course designed to transform your hairstyling skills and unleash
-              your creativity in the world of hairdressing. Whether you're an
-              aspiring hairstylist or a seasoned professional looking to refine
-              your techniques, this course is tailored to meet your needs and
-              take your haircutting abilities to new heights.
+              Welcome to "Mastering the Art of Haircutting," a comprehensive online course designed
+              to transform your hairstyling skills and unleash your creativity in the world of
+              hairdressing. Whether you're an aspiring hairstylist or a seasoned professional
+              looking to refine your techniques, this course is tailored to meet your needs and take
+              your haircutting abilities to new heights.Welcome to "Mastering the Art of
+              Haircutting," a comprehensive online course designed to transform your hairstyling
+              skills and unleash your creativity in the world of hairdressing. Whether you're an
+              aspiring hairstylist or a seasoned professional looking to refine your techniques,
+              this course is tailored to meet your needs and take your haircutting abilities to new
+              heights.
             </p>
             <img
-              alt=''
+              className="course-img"
+              alt=""
               src={require('../../assets/images/coursePrev.png')}
-              height={300}
             />
           </div>
 
-          <div
-            className='course-descr-section'
-            style={{ display: 'flex', marginTop: '120px' }}
-          >
+          <div className="course-descr-section" style={{ display: 'flex', marginTop: '120px' }}>
             <p
               style={{
                 margin: 0,
@@ -274,28 +285,26 @@ export const Course = (props: any) => {
                 fontWeight: 600,
               }}
             >
-              Welcome to "Mastering the Art of Haircutting," a comprehensive
-              online course designed to transform your hairstyling skills and
-              unleash your creativity in the world of hairdressing. Whether
-              you're an aspiring hairstylist or a seasoned professional looking
-              to refine your techniques, this course is tailored to meet your
-              needs and take your haircutting abilities to new heights.Welcome
-              to "Mastering the Art of Haircutting," a comprehensive online
-              course designed to transform your hairstyling skills and unleash
-              your creativity in the world of hairdressing. Whether you're an
-              aspiring hairstylist or a seasoned professional looking to refine
-              your techniques, this course is tailored to meet your needs and
-              take your haircutting abilities to new heights.
+              Welcome to "Mastering the Art of Haircutting," a comprehensive online course designed
+              to transform your hairstyling skills and unleash your creativity in the world of
+              hairdressing. Whether you're an aspiring hairstylist or a seasoned professional
+              looking to refine your techniques, this course is tailored to meet your needs and take
+              your haircutting abilities to new heights.Welcome to "Mastering the Art of
+              Haircutting," a comprehensive online course designed to transform your hairstyling
+              skills and unleash your creativity in the world of hairdressing. Whether you're an
+              aspiring hairstylist or a seasoned professional looking to refine your techniques,
+              this course is tailored to meet your needs and take your haircutting abilities to new
+              heights.
             </p>
             <img
-              alt=''
+              alt=""
+              className="course-img"
               src={require('../../assets/images/coursePrev.png')}
-              height={300}
             />
           </div>
 
           <div
-            className='buy-foronly'
+            className="buy-foronly"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -304,11 +313,11 @@ export const Course = (props: any) => {
             }}
           >
             <button
-              className='buy-btn'
+              className="buy-btn"
               style={courseStyles.buyBtn}
               onClick={props.loggedIn ? openPayment : switchCF}
             >
-              <img src={buyNowbtn} alt='btn' width={'95%'} height={'100%'} />
+              <img src={buyNowbtn} alt="btn" width={'95%'} height={'100%'} />
             </button>
             <p
               style={{
@@ -334,10 +343,10 @@ export const Course = (props: any) => {
             </p>
           </div>
         </div>
-        <div className='blot' style={{ width: '100%', display: 'flex' }}>
+        <div className="blot" style={{ width: '100%', display: 'flex' }}>
           <img
             src={require('../../assets/images/blot2.webp')}
-            alt='blot'
+            alt="blot"
             style={{ width: '-webkit-fill-available' }}
           />
         </div>

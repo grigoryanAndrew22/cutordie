@@ -5,11 +5,11 @@
 }
 
 .btn {
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  transform: scale(1.1);
-  transition: all 0.3s ease;
-  /* transition-duration: 300ms; */
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }

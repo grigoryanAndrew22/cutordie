@@ -53,18 +53,20 @@ export const TopSection = (props: any) => {
           font={'Drum'}
           textClass={'button1'}
         />
-        <AnimatedButton
-          url={'/cutordie'}
-          buttonType={'signin'}
-          text={'Sign in'}
-          width={213}
-          height={103}
-          top={39}
-          left={50}
-          color={'e8e8e8'}
-          font={'Drum'}
-          textClass={'button1'}
-        />
+        <button className="btn">
+          <AnimatedButton
+            url={''}
+            buttonType={'signin'}
+            text={'Sign in'}
+            width={213}
+            height={103}
+            top={39}
+            left={50}
+            color={'e8e8e8'}
+            font={'Drum'}
+            textClass={'button1'}
+          />
+        </button>
       </div>
     </div>
   );
