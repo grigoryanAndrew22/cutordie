@@ -41,7 +41,6 @@ function App() {
 
   const [currency, changeCurrency] = useState(currFromCookies);
   const [language, changeLanguage] = useState(langFromCookies);
-  console.log(Cookies.get('language'));
 
   useEffect(() => {
     Cookies.set('language', language, { secure: true });
@@ -53,19 +52,13 @@ function App() {
     changeLanguage(lang);
   };
 
-  // useEffect(() => {
-  //   axios
-  //     .get('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
-  //       withCredentials: true,
-  //     })
-  //     .then((response) => console.log(response))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   useEffect(() => {
     fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
-      method: 'GET', // or 'POST', 'PUT', etc.
-      credentials: 'include', // this will include cookies
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ jwt: Cookies.get('jwt') }),
     })
       .then((response) => response.json())
@@ -75,7 +68,6 @@ function App() {
         } else {
           setLoggedIn(true);
         }
-        console.log(data);
         setUserData(data.data.user);
       })
       .catch((error) => {
