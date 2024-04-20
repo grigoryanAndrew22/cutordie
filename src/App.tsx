@@ -13,6 +13,7 @@ import { PageNotFound } from './pages/pagenotFound/PageNotFound';
 import { Footer } from './components/footer/Footer';
 
 import Cookies from 'js-cookie';
+import axios from 'axios';
 
 // const ROUTES = [
 //   {
@@ -52,6 +53,7 @@ function App() {
     changeLanguage(lang);
   };
 
+
   useEffect(() => {
     fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
       method: 'POST',
@@ -59,6 +61,7 @@ function App() {
       headers: {
         'Content-Type': 'application/json',
       },
+
       body: JSON.stringify({ jwt: Cookies.get('jwt') }),
     })
       .then((response) => response.json())
@@ -76,8 +79,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <NavbarRaw language={language} loggedIn={loggedIn} changeLogin={setLoggedIn} />
+    <div className='App'>
+      <NavbarRaw
+        language={language}
+        loggedIn={loggedIn}
+        changeLogin={setLoggedIn}
+      />
       <BrowserRouter>
         <Routes>
           {/* {ROUTES.map((route: any) => (
@@ -87,15 +94,21 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
-          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
           <Route
-            path="/courses"
+            path='/'
+            element={<Home language={language} currency={currency} />}
+          ></Route>
+          <Route
+            path='/courses'
             element={<Courses language={language} currency={currency} />}
           ></Route>
 
-          <Route path="/aboutme" element={<Aboutme language={language} />}></Route>
           <Route
-            path="/profile"
+            path='/aboutme'
+            element={<Aboutme language={language} />}
+          ></Route>
+          <Route
+            path='/profile'
             element={
               <Profile
                 changeLogin={setLoggedIn}
@@ -108,11 +121,23 @@ function App() {
             }
           ></Route>
           <Route
-            path="/courses/course"
-            element={<Course language={language} loggedIn={loggedIn} changeLogin={setLoggedIn} />}
+            path='/courses/course'
+            element={
+              <Course
+                language={language}
+                loggedIn={loggedIn}
+                changeLogin={setLoggedIn}
+              />
+            }
           ></Route>
-          <Route path="/policy" element={<Policy language={language} />}></Route>
-          <Route path="/404" element={<PageNotFound language={language} />}></Route>
+          <Route
+            path='/policy'
+            element={<Policy language={language} />}
+          ></Route>
+          <Route
+            path='/404'
+            element={<PageNotFound language={language} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
       <Footer

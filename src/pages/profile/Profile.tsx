@@ -10,6 +10,7 @@ import './Profile.css';
 import { MovieCard } from '../../components/movie-card/MovieCard';
 import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 import { profileStyles } from './Profile.styles';
+import { ChangePasswordForm } from '../../components/changePasswordForm/ChangePasswordForm';
 
 const profLangs = {
   en: {
@@ -43,6 +44,14 @@ export const Profile = (props: any) => {
     props.changeCurr('eur');
   };
 
+  const [changePassShown, setChangePassShown] = useState(false);
+  const setChangePassTrue = () => {
+    setChangePassShown(true);
+  };
+  const setChangePassFalse = () => {
+    setChangePassShown(false);
+  };
+
   console.log(props.user.userName);
 
   const chosenLang = props.language === 'en' ? profLangs.en : profLangs.ua;
@@ -62,6 +71,7 @@ export const Profile = (props: any) => {
   return (
     <Fragment>
       {/* <PaymentCard /> */}
+      <ChangePasswordForm shown={changePassShown} hide={setChangePassFalse} />
       <div
         className='prof-sett-wrapper'
         style={{ boxShadow: 'black 0px 110px 120px' }}
@@ -124,6 +134,7 @@ export const Profile = (props: any) => {
                   value={'password123'}
                   type='password'
                   style={profileStyles.input}
+                  onClick={setChangePassTrue}
                 />
               </div>
             </div>
