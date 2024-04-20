@@ -45,66 +45,89 @@ export const Footer = (props: any) => {
     props.changeCurr('eur');
   };
 
-  const footerTranslated = props.language === 'en' ? footerLangs.en : footerLangs.ua;
+  const footerTranslated =
+    props.language === 'en' ? footerLangs.en : footerLangs.ua;
 
   return (
     <Fragment>
-      <div className="footer-section" style={FooterStyles.wrapper(props.bottomShadow)}>
+      <div
+        className='footer-section'
+        style={FooterStyles.wrapper(props.bottomShadow)}
+      >
         <div style={FooterStyles.footerSection}>
-          <div className="logo_par" style={FooterStyles.logoPart}>
+          <div className='logo_par' style={FooterStyles.logoPart}>
             <img
               src={require('../../assets/images/footerLogo.png')}
-              alt="logo"
+              alt='logo'
               width={344}
               height={254}
             />
-            <p style={FooterStyles.copyright}>&copy; 2023 Cut or die. All rights reserved.</p>
+            <p style={FooterStyles.copyright}>
+              &copy; 2023 Cut or die. All rights reserved.
+            </p>
           </div>
-          <div className="info_part" style={{ width: '75%' }}>
+          <div className='info_part' style={{ width: '75%' }}>
             <ul style={FooterStyles.footerInfo}>
-              <li className="contacts" style={FooterStyles.infoItem}>
+              <li className='contacts' style={FooterStyles.infoItem}>
                 <a
-                  className="bottomLink"
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=cutordieofficial@gmail.com"
+                  className='bottomLink'
+                  href='https://mail.google.com/mail/?view=cm&fs=1&to=cutordieofficial@gmail.com'
                 >
                   Email
                 </a>
                 <p style={{ margin: 0 }}>
-                  <a href="/aboutme" className="bottomLink">
+                  <a href='/aboutme' className='bottomLink'>
                     {footerTranslated.about}
                   </a>
                 </p>
-                <a className="bottomLink" href="/FAQ">
+                <a className='bottomLink' href='/FAQ'>
                   FAQ
                 </a>
               </li>
-              <img src={vertical} alt="line" height={220} />
-              <li className="policy" style={FooterStyles.infoItem}>
+              <img src={vertical} alt='line' height={220} />
+              <li className='policy' style={FooterStyles.infoItem}>
                 <p style={{ margin: 0 }}>
-                  <a href="/policy" className="bottomLink">
+                  <a href='/policy' className='bottomLink'>
                     {footerTranslated.termsofUse}
                   </a>
                 </p>
                 <p style={{ margin: 0 }}>
-                  <a href="/policy" className="bottomLink">
+                  <a href='/policy' className='bottomLink'>
                     {footerTranslated.refund}
                   </a>
                 </p>
                 <p style={{ margin: 0 }}>
-                  <a href="/policy" className="bottomLink">
+                  <a href='/policy' className='bottomLink'>
                     {footerTranslated.privacy}
                   </a>
                 </p>
               </li>
-              <img src={vertical} alt="line" height={220} />
-              <li className="social_networks" style={FooterStyles.socialNetworks}>
-                <img alt="" src={instaIcon} style={{ alignSelf: 'center', width: '76px' }} />
-                <img alt="" src={tiktokIcon} style={{ alignSelf: 'center', width: '69px' }} />
+              <img src={vertical} alt='line' height={220} />
+              <li
+                className='social_networks'
+                style={FooterStyles.socialNetworks}
+              >
+                <img
+                  alt=''
+                  src={instaIcon}
+                  style={{ alignSelf: 'center', width: '76px' }}
+                />
+                <img
+                  alt=''
+                  src={tiktokIcon}
+                  style={{ alignSelf: 'center', width: '69px' }}
+                />
               </li>
-              <img src={vertical} alt="line" height={220} />
-              <li className="currency_language">
+              <img src={vertical} alt='line' height={220} />
+              <li className='currency_language'>
                 <div style={FooterStyles.currency}>
-                  <img src={coin} alt="coin" width={54} height={38} style={{}} />
+                  <img
+                    src={coin}
+                    alt='coin'
+                    width={54}
+                    height={38}
+                    style={{}}
+                  />
                   <div
                     style={{
                       display: 'flex',
@@ -122,9 +145,11 @@ export const Footer = (props: any) => {
                       }}
                     >
                       <img
-                        alt=""
+                        alt=''
                         width={32}
-                        src={props.currency === 'uah' ? hryvniaWhite : hryvniaGray}
+                        src={
+                          props.currency === 'uah' ? hryvniaWhite : hryvniaGray
+                        }
                       />
                     </button>
                     <button
@@ -138,7 +163,7 @@ export const Footer = (props: any) => {
                       }}
                     >
                       <img
-                        alt=""
+                        alt=''
                         width={44}
                         src={props.currency === 'eur' ? euroWhite : euroGray}
                       />
@@ -154,15 +179,17 @@ export const Footer = (props: any) => {
                       }}
                     >
                       <img
-                        alt=""
+                        alt=''
                         width={32}
-                        src={props.currency === 'usd' ? dollarWhite : dollarGray}
+                        src={
+                          props.currency === 'usd' ? dollarWhite : dollarGray
+                        }
                       />
                     </button>
                   </div>
                 </div>
                 <div style={FooterStyles.language}>
-                  <img alt="" src={langIcon} width={54} style={{}} />
+                  <img alt='' src={langIcon} width={54} style={{}} />
                   <div
                     style={{
                       display: 'flex',
@@ -207,21 +234,21 @@ export const Footer = (props: any) => {
         </div>
       </div>
       {/* FOOTER MOBILE */}
-      <div className="footer-section-mobile" style={FooterMobileStyles.wrapper}>
+      <div className='footer-section-mobile' style={FooterMobileStyles.wrapper}>
         <div style={FooterMobileStyles.footerSection}>
-          <div className="logo_part" style={FooterMobileStyles.logoPart}>
+          <div className='logo_part' style={FooterMobileStyles.logoPart}>
             <div style={{ width: '50%' }}>
               <img
                 src={require('../../assets/images/footerLogo.png')}
-                alt="logo"
+                alt='logo'
                 width={240}
                 height={183}
                 style={{ marginLeft: '-7px' }}
               />
             </div>
-            <div className="currency_language" style={{ marginTop: '45px' }}>
+            <div className='currency_language' style={{ marginTop: '45px' }}>
               <div style={FooterMobileStyles.currency}>
-                <img src={coin} alt="coin" width={35} />
+                <img src={coin} alt='coin' width={35} />
                 <button
                   onClick={changeCurrencyUAH}
                   style={{
@@ -235,7 +262,7 @@ export const Footer = (props: any) => {
                   }}
                 >
                   <img
-                    alt=""
+                    alt=''
                     width={15}
                     src={props.currency === 'uah' ? hryvniaWhite : hryvniaGray}
                   />
@@ -251,7 +278,11 @@ export const Footer = (props: any) => {
                     padding: '0px 5px',
                   }}
                 >
-                  <img alt="" width={21} src={props.currency === 'eur' ? euroWhite : euroGray} />
+                  <img
+                    alt=''
+                    width={21}
+                    src={props.currency === 'eur' ? euroWhite : euroGray}
+                  />
                 </button>
                 <button
                   onClick={changeCurrencyUSD}
@@ -266,7 +297,7 @@ export const Footer = (props: any) => {
                   }}
                 >
                   <img
-                    alt=""
+                    alt=''
                     width={15}
                     src={props.currency === 'usd' ? dollarWhite : dollarGray}
                   />
@@ -319,47 +350,72 @@ export const Footer = (props: any) => {
               </div>
             </div>
           </div>
-          <div className="info_part" style={{ width: '100%' }}>
+          <div className='info_part' style={{ width: '100%' }}>
             <ul style={FooterMobileStyles.footerInfo}>
-              <li className="contacts" style={FooterMobileStyles.infoItem}>
+              <li className='contacts' style={FooterMobileStyles.infoItem}>
                 <p style={{ margin: 0 }}>{footerTranslated.contacts}</p>
 
                 <p style={{ margin: 0 }}>
-                  <a href="/aboutme" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <a
+                    href='/aboutme'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
                     {footerTranslated.about}
                   </a>
                 </p>
 
-                <a className="bottomLink" href="/FAQ">
+                <a className='bottomLink' href='/FAQ'>
                   FAQ
                 </a>
               </li>
-              <img src={vertical} alt="line" height={120} />
-              <li className="policy" style={FooterMobileStyles.infoItem}>
+              <img src={vertical} alt='line' height={120} />
+              <li className='policy' style={FooterMobileStyles.infoItem}>
                 <p style={{ margin: 0 }}>
-                  <a href="/policy" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <a
+                    href='/policy'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
                     {footerTranslated.termsofUse}
                   </a>
                 </p>
                 <p style={{ margin: 0 }}>
-                  <a href="/policy" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <a
+                    href='/policy'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
                     {footerTranslated.refund}
                   </a>
                 </p>
                 <p style={{ margin: 0 }}>
-                  <a href="/policy" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <a
+                    href='/policy'
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
                     {footerTranslated.privacy}
                   </a>
                 </p>
               </li>
-              <img src={vertical} alt="line" height={120} />
-              <li className="social_networks" style={FooterMobileStyles.socialNetworks}>
-                <img alt="" src={instaIcon} style={{ alignSelf: 'center', width: '38px' }} />
-                <img alt="" src={tiktokIcon} style={{ alignSelf: 'center', width: '38px' }} />
+              <img src={vertical} alt='line' height={120} />
+              <li
+                className='social_networks'
+                style={FooterMobileStyles.socialNetworks}
+              >
+                <img
+                  alt=''
+                  src={instaIcon}
+                  style={{ alignSelf: 'center', width: '38px' }}
+                />
+                <img
+                  alt=''
+                  src={tiktokIcon}
+                  style={{ alignSelf: 'center', width: '38px' }}
+                />
               </li>
             </ul>
           </div>
-          <p style={FooterStyles.copyrightMob}>&copy; 2023 Cut or die. All rights reserved.</p>
+          <p style={FooterStyles.copyrightMob}>
+            &copy; 2023 Cut or die. All rights reserved.
+          </p>
         </div>
       </div>
     </Fragment>
