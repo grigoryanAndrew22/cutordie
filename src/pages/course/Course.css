@@ -13,6 +13,10 @@
   height: 400px;
 }
 
+.price-indicator {
+  transform: translateY(7px);
+}
+
 @media only screen and (max-device-width: 1350px) {
   .course-description {
     flex-direction: column;

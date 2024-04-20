@@ -4,6 +4,7 @@ import { courseStyles } from './Course.styles';
 import '../course/Course.css';
 import { SignInForm } from '../../components/signin-form/SignInForm';
 import { PaymentCard } from '../../components/paymentCard/PaymentCard';
+import AnimatedButton from '../../components/animated-button/AnimatedButton';
 
 export const Course = (props: any) => {
   const [courseForm, switchCourseForm] = useState(false);
@@ -167,7 +168,6 @@ export const Course = (props: any) => {
                   fontFamily: 'Bitter',
                   paddingLeft: '20px',
                   fontWeight: 600,
-
                 }}
               >
                 clipper and scissors
@@ -181,7 +181,19 @@ export const Course = (props: any) => {
                   style={courseStyles.buyBtn}
                   onClick={props.loggedIn ? openPayment : switchCF}
                 >
-                  <img src={buyNowbtn} alt="btn" width={'95%'} height={'100%'} />
+                  {/* <img src={buyNowbtn} alt="btn" width={'95%'} height={'100%'} /> */}
+                  <AnimatedButton
+                    url={''}
+                    buttonType={'buynow'}
+                    text={'Buy now'}
+                    width={363}
+                    height={142}
+                    top={57}
+                    left={49}
+                    color={'363636'}
+                    font={'Besom'}
+                    textClass={'button2'}
+                  />
                 </button>
                 <p
                   style={{
@@ -196,11 +208,13 @@ export const Course = (props: any) => {
                   for
                 </p>
                 <p
+                  className="price-indicator"
                   style={{
                     margin: 0,
                     fontFamily: 'Hey October',
                     fontSize: '70px',
                     color: '#363636',
+                    position: 'relative',
                   }}
                 >
                   5$
