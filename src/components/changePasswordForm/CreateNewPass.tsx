@@ -1,8 +1,39 @@
 import { Fragment } from 'react';
 import { ChangePasswordStyles } from './ChangePasswordForm.styles';
 import AnimatedButton from '../animated-button/AnimatedButton';
+import leftTopCorner from '../../assets/images/leftTopCorner.png';
+import leftBotCorner from '../../assets/images/leftBotCorner.png';
+import rightTopCorner from '../../assets/images/rightTopCorner.png';
+import rightBotCorner from '../../assets/images/rightBotCorner.png';
+
+// const url ='https://cut-or-die-api.onrender.com/api/v1/users/resetPassword';
+//  const requestOptions = {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({
+//       email: email,
+//       passwordResetToken: passwordResetToken,
+//       password: newPassword,
+//       passwordConfirm: passwordConfirm
+//     })
+//  };
+
+//  try {
+//     const response = await fetch(url, requestOptions);
+//     if (!response.ok) {
+//       throw new Error(HTTP error! status: ${response.status});
+//     }
+//     const data = await response.json();
+//     console.log('Success:', data);
+//  } catch (error) {
+//     console.error('Error:', error);
+//  }
 
 export const CreateNewPass = (props: any) => {
+  const changeDone = () => {
+    console.log('done');
+  };
+
   return (
     <Fragment>
       <div
@@ -29,6 +60,42 @@ export const CreateNewPass = (props: any) => {
           className='changePass-wrapper'
           style={ChangePasswordStyles.wrapper}
         >
+          <img
+            src={leftTopCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            src={rightTopCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            src={rightBotCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            src={leftBotCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
           <p
             style={{
               fontFamily: 'Drum',
@@ -44,7 +111,7 @@ export const CreateNewPass = (props: any) => {
           <form
             className='signin-form'
             style={{ width: '90%' }}
-            // onSubmit={login}
+            onSubmit={changeDone}
           >
             <label
               htmlFor='email'

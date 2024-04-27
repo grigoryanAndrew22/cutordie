@@ -2,6 +2,10 @@ import { Fragment, useState } from 'react';
 import { ChangePasswordStyles } from './ChangePasswordForm.styles';
 import './ChangePasswordForm.css';
 import { CreateNewPass } from './CreateNewPass';
+import leftTopCorner from '../../assets/images/leftTopCorner.png';
+import leftBotCorner from '../../assets/images/leftBotCorner.png';
+import rightTopCorner from '../../assets/images/rightTopCorner.png';
+import rightBotCorner from '../../assets/images/rightBotCorner.png';
 
 export const ChangePasswordForm = (props: any) => {
   const [createNewShown, setCreateNewShown] = useState(false);
@@ -39,6 +43,42 @@ export const ChangePasswordForm = (props: any) => {
           className='changePass-wrapper'
           style={ChangePasswordStyles.wrapper}
         >
+          <img
+            src={leftTopCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            src={rightTopCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            src={rightBotCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            src={leftBotCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
           <p
             style={{
               fontFamily: 'Drum',
@@ -47,7 +87,7 @@ export const ChangePasswordForm = (props: any) => {
               marginTop: '0.55em',
             }}
           >
-            FORGOT A PASSWORD?
+            CHANGE A PASSWORD?
           </p>
 
           <p style={{ fontFamily: 'Bitter', color: '#444444', marginTop: 0 }}>
@@ -116,7 +156,7 @@ export const ChangePasswordForm = (props: any) => {
                 height: '30px',
               }}
             >
-              To the previous step
+              Close
             </button>
           </div>
         </div>
