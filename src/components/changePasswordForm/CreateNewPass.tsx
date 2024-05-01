@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { ChangePasswordStyles } from './ChangePasswordForm.styles';
 import AnimatedButton from '../animated-button/AnimatedButton';
 import leftTopCorner from '../../assets/images/leftTopCorner.png';
@@ -30,8 +30,39 @@ import rightBotCorner from '../../assets/images/rightBotCorner.png';
 //  }
 
 export const CreateNewPass = (props: any) => {
-  const changeDone = () => {
-    console.log('done');
+  const [newPass, setNewPass] = useState('');
+  const [newPassConfirm, setNewPassConfirm] = useState('');
+
+  const passChangeDone = (e: any) => {
+    // e.preventDefault();
+
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/resetPassword', {
+      method: 'PATCH', // or 'POST', 'PUT', etc.
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: props.email,
+        passwordResetToken: props.code,
+        password: newPass,
+        passwordConfirm: newPassConfirm,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setNewPass('');
+        setNewPassConfirm('');
+        props.done();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handlePass = (e: any) => {
+    setNewPass(e.target.value);
+  };
+  const handlePassConfirm = (e: any) => {
+    setNewPassConfirm(e.target.value);
   };
 
   return (
@@ -61,6 +92,7 @@ export const CreateNewPass = (props: any) => {
           style={ChangePasswordStyles.wrapper}
         >
           <img
+            alt=''
             src={leftTopCorner}
             style={{
               position: 'absolute',
@@ -70,6 +102,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
+            alt=''
             src={rightTopCorner}
             style={{
               position: 'absolute',
@@ -79,6 +112,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
+            alt=''
             src={rightBotCorner}
             style={{
               position: 'absolute',
@@ -88,6 +122,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
+            alt=''
             src={leftBotCorner}
             style={{
               position: 'absolute',
@@ -96,6 +131,18 @@ export const CreateNewPass = (props: any) => {
               width: '42px',
             }}
           />
+          <button style={{ cursor: 'pointer' }} onClick={props.arrow}>
+            <img
+              alt=''
+              src={require('../../assets/images/arrowBack.png')}
+              style={{
+                position: 'absolute',
+                left: '14px',
+                top: '14px',
+                width: '25px',
+              }}
+            />
+          </button>
           <p
             style={{
               fontFamily: 'Drum',
@@ -111,7 +158,7 @@ export const CreateNewPass = (props: any) => {
           <form
             className='signin-form'
             style={{ width: '90%' }}
-            onSubmit={changeDone}
+            onSubmit={passChangeDone}
           >
             <label
               htmlFor='email'
@@ -127,7 +174,7 @@ export const CreateNewPass = (props: any) => {
 
             <input
               // ref={emailField}
-              // onChange={emailChange}
+              onChange={handlePass}
               className='email-input'
               // placeholder={generatedForm.email}
               type='password'
@@ -165,7 +212,7 @@ export const CreateNewPass = (props: any) => {
             </div>
             <input
               // ref={passwordField}
-              // onChange={passwordChange}
+              onChange={handlePassConfirm}
               className='password-input'
               type='password'
               // placeholder={generatedForm.password}
@@ -201,7 +248,6 @@ export const CreateNewPass = (props: any) => {
                   padding: 0,
                 }}
               >
-                {/* <img src={require('../../assets/images/signInBtn.png')} width={125} /> */}
                 <AnimatedButton
                   url={''}
                   buttonType={'submitsignin'}

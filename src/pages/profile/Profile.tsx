@@ -80,8 +80,12 @@ export const Profile = (props: any) => {
         console.error(error);
       });
   };
+
   const setChangePassFalse = () => {
     setChangePassShown(false);
+  };
+  const prevStep = () => {
+    setChangePassShown(true);
   };
 
   const chosenLang = props.language === 'en' ? profLangs.en : profLangs.ua;
@@ -101,7 +105,12 @@ export const Profile = (props: any) => {
   return (
     <Fragment>
       {/* <PaymentCard /> */}
-      <ChangePasswordForm shown={changePassShown} hide={setChangePassFalse} />
+      <ChangePasswordForm
+        shown={changePassShown}
+        hide={setChangePassFalse}
+        prevStep={prevStep}
+        email={props.user.email}
+      />
       <div
         className='prof-sett-wrapper'
         style={{ boxShadow: 'black 0px 110px 120px' }}

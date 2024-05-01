@@ -92,9 +92,35 @@ export const SignUpForm = (props: any) => {
       .then((response) => response.json())
       .then((data) => {
         Cookies.set('jwt', data.token, { secure: true });
+        props.setLoggedIn(true);
+        props.setUser(data.data.user);
         console.log(data);
       })
       .catch((error) => console.log(error));
+
+    ///////
+
+    // fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
+    //   method: 'POST',
+    //   credentials: 'include',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+
+    //   body: JSON.stringify({ jwt: Cookies.get('jwt') }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     if (data.status === 'fail') {
+    //       props.setLoggedIn(false);
+    //     } else {
+    //       props.setLoggedIn(true);
+    //     }
+    //     props.setUser(data.data.user);
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   };
 
   const closeForm = () => {
