@@ -18,8 +18,30 @@ export const ChangePasswordForm = (props: any) => {
 
   const nextStep = (e: any) => {
     e.preventDefault();
-    props.hide();
-    setCreateNewShown(true);
+
+    fetch(
+      'https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword/checkToken',
+      {
+        method: 'GET', // or 'POST', 'PUT', etc.
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: props.user.email,
+          passwordResetToken: emailCode,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        props.hide();
+        setCreateNewShown(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    // props.hide();
+    // setCreateNewShown(true);
   };
 
   const back = (e: any) => {
