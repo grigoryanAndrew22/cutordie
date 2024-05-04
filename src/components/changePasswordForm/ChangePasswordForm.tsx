@@ -19,17 +19,14 @@ export const ChangePasswordForm = (props: any) => {
   const nextStep = (e: any) => {
     e.preventDefault();
 
-    fetch(
-      'https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword/checkToken',
-      {
-        method: 'GET', // or 'POST', 'PUT', etc.
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: props.user.email,
-          passwordResetToken: emailCode,
-        }),
-      }
-    )
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword/checkToken', {
+      method: 'GET', // or 'POST', 'PUT', etc.
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: props.user.email,
+        passwordResetToken: emailCode,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -69,7 +66,7 @@ export const ChangePasswordForm = (props: any) => {
         done={hideSecondWindow}
       />
       <div
-        className='overlay'
+        className="overlay"
         style={{
           width: '100%',
           height: '100%',
@@ -88,12 +85,9 @@ export const ChangePasswordForm = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div
-          className='changePass-wrapper'
-          style={ChangePasswordStyles.wrapper}
-        >
+        <div className="changePass-wrapper" style={ChangePasswordStyles.wrapper}>
           <img
-            alt=''
+            alt=""
             src={leftTopCorner}
             style={{
               position: 'absolute',
@@ -103,7 +97,7 @@ export const ChangePasswordForm = (props: any) => {
             }}
           />
           <img
-            alt=''
+            alt=""
             src={rightTopCorner}
             style={{
               position: 'absolute',
@@ -113,7 +107,7 @@ export const ChangePasswordForm = (props: any) => {
             }}
           />
           <img
-            alt=''
+            alt=""
             src={rightBotCorner}
             style={{
               position: 'absolute',
@@ -123,7 +117,7 @@ export const ChangePasswordForm = (props: any) => {
             }}
           />
           <img
-            alt=''
+            alt=""
             src={leftBotCorner}
             style={{
               position: 'absolute',
@@ -134,7 +128,7 @@ export const ChangePasswordForm = (props: any) => {
           />
           <button style={{ cursor: 'pointer' }} onClick={back}>
             <img
-              alt=''
+              alt=""
               src={require('../../assets/images/arrowBack.png')}
               style={{
                 position: 'absolute',
@@ -161,8 +155,8 @@ export const ChangePasswordForm = (props: any) => {
           <form onSubmit={nextStep} style={{ marginBottom: '3.15em' }}>
             <input
               onChange={handleCode}
-              type='text'
-              className='emailCode-input'
+              type="text"
+              className="emailCode-input"
               style={{
                 backgroundColor: 'transparent',
                 border: 'none',
@@ -212,7 +206,7 @@ export const ChangePasswordForm = (props: any) => {
               Resend
             </button>
             <button
-              className='submit-btn'
+              className="submit-btn"
               // type='submit'
               onClick={nextStep}
               style={{
@@ -233,7 +227,7 @@ export const ChangePasswordForm = (props: any) => {
                 left={46}
                 color={'363636'}
                 font={'Besom'}
-                textClass={'button4'}
+                textClass={'button5'}
               />
             </button>
           </div>
