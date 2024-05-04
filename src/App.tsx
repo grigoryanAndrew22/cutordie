@@ -53,7 +53,6 @@ function App() {
     changeLanguage(lang);
   };
 
-
   useEffect(() => {
     fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
       method: 'POST',
@@ -84,6 +83,7 @@ function App() {
         language={language}
         loggedIn={loggedIn}
         changeLogin={setLoggedIn}
+        setUser={setUserData}
       />
       <BrowserRouter>
         <Routes>

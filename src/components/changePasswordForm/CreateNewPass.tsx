@@ -1,8 +1,70 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { ChangePasswordStyles } from './ChangePasswordForm.styles';
 import AnimatedButton from '../animated-button/AnimatedButton';
+import leftTopCorner from '../../assets/images/leftTopCorner.png';
+import leftBotCorner from '../../assets/images/leftBotCorner.png';
+import rightTopCorner from '../../assets/images/rightTopCorner.png';
+import rightBotCorner from '../../assets/images/rightBotCorner.png';
+
+// const url ='https://cut-or-die-api.onrender.com/api/v1/users/resetPassword';
+//  const requestOptions = {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({
+//       email: email,
+//       passwordResetToken: passwordResetToken,
+//       password: newPassword,
+//       passwordConfirm: passwordConfirm
+//     })
+//  };
+
+//  try {
+//     const response = await fetch(url, requestOptions);
+//     if (!response.ok) {
+//       throw new Error(HTTP error! status: ${response.status});
+//     }
+//     const data = await response.json();
+//     console.log('Success:', data);
+//  } catch (error) {
+//     console.error('Error:', error);
+//  }
 
 export const CreateNewPass = (props: any) => {
+  const [newPass, setNewPass] = useState('');
+  const [newPassConfirm, setNewPassConfirm] = useState('');
+
+  const passChangeDone = (e: any) => {
+    // e.preventDefault();
+
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/resetPassword', {
+      method: 'PATCH', // or 'POST', 'PUT', etc.
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: props.email,
+        passwordResetToken: props.code,
+        password: newPass,
+        passwordConfirm: newPassConfirm,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setNewPass('');
+        setNewPassConfirm('');
+        props.done();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handlePass = (e: any) => {
+    setNewPass(e.target.value);
+  };
+  const handlePassConfirm = (e: any) => {
+    setNewPassConfirm(e.target.value);
+  };
+
   return (
     <Fragment>
       <div
@@ -29,6 +91,58 @@ export const CreateNewPass = (props: any) => {
           className='changePass-wrapper'
           style={ChangePasswordStyles.wrapper}
         >
+          <img
+            alt=''
+            src={leftTopCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={rightTopCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={rightBotCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={leftBotCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
+          <button style={{ cursor: 'pointer' }} onClick={props.arrow}>
+            <img
+              alt=''
+              src={require('../../assets/images/arrowBack.png')}
+              style={{
+                position: 'absolute',
+                left: '14px',
+                top: '14px',
+                width: '25px',
+              }}
+            />
+          </button>
           <p
             style={{
               fontFamily: 'Drum',
@@ -44,7 +158,7 @@ export const CreateNewPass = (props: any) => {
           <form
             className='signin-form'
             style={{ width: '90%' }}
-            // onSubmit={login}
+            onSubmit={passChangeDone}
           >
             <label
               htmlFor='email'
@@ -60,7 +174,7 @@ export const CreateNewPass = (props: any) => {
 
             <input
               // ref={emailField}
-              // onChange={emailChange}
+              onChange={handlePass}
               className='email-input'
               // placeholder={generatedForm.email}
               type='password'
@@ -98,7 +212,7 @@ export const CreateNewPass = (props: any) => {
             </div>
             <input
               // ref={passwordField}
-              // onChange={passwordChange}
+              onChange={handlePassConfirm}
               className='password-input'
               type='password'
               // placeholder={generatedForm.password}
@@ -134,7 +248,6 @@ export const CreateNewPass = (props: any) => {
                   padding: 0,
                 }}
               >
-                {/* <img src={require('../../assets/images/signInBtn.png')} width={125} /> */}
                 <AnimatedButton
                   url={''}
                   buttonType={'submitsignin'}

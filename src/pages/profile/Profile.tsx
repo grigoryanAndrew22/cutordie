@@ -33,6 +33,23 @@ const profLangs = {
   },
 };
 
+// const url = 'https://cut-or-die-api.onrender.com/api/v1/users/resetPassword';
+//  const requestOptions = {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ email: email })
+//  };
+//  try {
+//   const response = await fetch(url, requestOptions);
+//   if (!response.ok) {
+//     throw new Error(HTTP error! status: ${response.status});
+//   }
+//   const data = await response.json();
+//   console.log('Success:', data);
+// } catch (error) {
+//   console.error('Error:', error);
+// }
+
 export const Profile = (props: any) => {
   const changeCurrencyUAH = () => {
     props.changeCurr('uah');
@@ -44,15 +61,32 @@ export const Profile = (props: any) => {
     props.changeCurr('eur');
   };
 
+  console.log(props.user);
+
   const [changePassShown, setChangePassShown] = useState(false);
   const setChangePassTrue = () => {
     setChangePassShown(true);
+
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword', {
+      method: 'POST', // or 'POST', 'PUT', etc.
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: props.user.email }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
+
   const setChangePassFalse = () => {
     setChangePassShown(false);
   };
-
-  console.log(props.user.userName);
+  const prevStep = () => {
+    setChangePassShown(true);
+  };
 
   const chosenLang = props.language === 'en' ? profLangs.en : profLangs.ua;
 
@@ -71,7 +105,12 @@ export const Profile = (props: any) => {
   return (
     <Fragment>
       {/* <PaymentCard /> */}
-      <ChangePasswordForm shown={changePassShown} hide={setChangePassFalse} />
+      <ChangePasswordForm
+        shown={changePassShown}
+        hide={setChangePassFalse}
+        prevStep={prevStep}
+        email={props.user.email}
+      />
       <div
         className='prof-sett-wrapper'
         style={{ boxShadow: 'black 0px 110px 120px' }}

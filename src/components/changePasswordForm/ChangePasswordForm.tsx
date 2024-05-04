@@ -2,19 +2,72 @@ import { Fragment, useState } from 'react';
 import { ChangePasswordStyles } from './ChangePasswordForm.styles';
 import './ChangePasswordForm.css';
 import { CreateNewPass } from './CreateNewPass';
+import leftTopCorner from '../../assets/images/leftTopCorner.png';
+import leftBotCorner from '../../assets/images/leftBotCorner.png';
+import rightTopCorner from '../../assets/images/rightTopCorner.png';
+import rightBotCorner from '../../assets/images/rightBotCorner.png';
+import AnimatedButton from '../animated-button/AnimatedButton';
 
 export const ChangePasswordForm = (props: any) => {
   const [createNewShown, setCreateNewShown] = useState(false);
+  const [emailCode, setEmailCode] = useState('');
+
+  const hideSecondWindow = () => {
+    setCreateNewShown(false);
+  };
 
   const nextStep = (e: any) => {
     e.preventDefault();
+
+    fetch(
+      'https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword/checkToken',
+      {
+        method: 'GET', // or 'POST', 'PUT', etc.
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: props.user.email,
+          passwordResetToken: emailCode,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        props.hide();
+        setCreateNewShown(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    // props.hide();
+    // setCreateNewShown(true);
+  };
+
+  const back = (e: any) => {
+    e.preventDefault();
     props.hide();
-    setCreateNewShown(true);
+  };
+
+  const prev = (e: any) => {
+    e.preventDefault();
+    props.prevStep();
+    setCreateNewShown(false);
+  };
+
+  const handleCode = (e: any) => {
+    setEmailCode(e.target.value);
   };
 
   return (
     <Fragment>
-      <CreateNewPass shown={createNewShown} />
+      <CreateNewPass
+        shown={createNewShown}
+        arrow={prev}
+        code={emailCode}
+        email={props.email}
+        done={hideSecondWindow}
+      />
       <div
         className='overlay'
         style={{
@@ -39,6 +92,58 @@ export const ChangePasswordForm = (props: any) => {
           className='changePass-wrapper'
           style={ChangePasswordStyles.wrapper}
         >
+          <img
+            alt=''
+            src={leftTopCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={rightTopCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={rightBotCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={leftBotCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
+          <button style={{ cursor: 'pointer' }} onClick={back}>
+            <img
+              alt=''
+              src={require('../../assets/images/arrowBack.png')}
+              style={{
+                position: 'absolute',
+                left: '22px',
+                top: '20px',
+                width: '25px',
+              }}
+            />
+          </button>
           <p
             style={{
               fontFamily: 'Drum',
@@ -47,14 +152,15 @@ export const ChangePasswordForm = (props: any) => {
               marginTop: '0.55em',
             }}
           >
-            FORGOT A PASSWORD?
+            CHANGE A PASSWORD?
           </p>
 
           <p style={{ fontFamily: 'Bitter', color: '#444444', marginTop: 0 }}>
             Enter a six-digit verification code you received on email
           </p>
-          <form onSubmit={nextStep}>
+          <form onSubmit={nextStep} style={{ marginBottom: '3.15em' }}>
             <input
+              onChange={handleCode}
               type='text'
               className='emailCode-input'
               style={{
@@ -71,7 +177,8 @@ export const ChangePasswordForm = (props: any) => {
               }}
             />
           </form>
-          <p
+
+          {/* <p
             style={{
               color: '#900000',
               fontWeight: '600',
@@ -79,7 +186,7 @@ export const ChangePasswordForm = (props: any) => {
             }}
           >
             Wrong code, try again
-          </p>
+          </p> */}
           <div
             style={{
               display: 'flex',
@@ -105,20 +212,32 @@ export const ChangePasswordForm = (props: any) => {
               Resend
             </button>
             <button
+              className='submit-btn'
+              // type='submit'
+              onClick={nextStep}
               style={{
-                fontFamily: 'Bitter',
-                color: '#555555',
-                fontSize: '20px',
                 border: 'none',
                 background: 'transparent',
                 cursor: 'pointer',
-                outline: 0,
-                height: '30px',
+                padding: 0,
               }}
             >
-              To the previous step
+              {/* <img src={require('../../assets/images/signInBtn.png')} width={125} /> */}
+              <AnimatedButton
+                url={''}
+                buttonType={'submitsignin'}
+                text={'CONTINUE'}
+                width={115}
+                height={67}
+                top={51}
+                left={46}
+                color={'363636'}
+                font={'Besom'}
+                textClass={'button4'}
+              />
             </button>
           </div>
+          {/* </form> */}
         </div>
       </div>
     </Fragment>
