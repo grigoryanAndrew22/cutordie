@@ -19,22 +19,21 @@ export const ChangePasswordForm = (props: any) => {
   const nextStep = (e: any) => {
     e.preventDefault();
 
-    fetch(
-      'https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword/checkToken',
-      {
-        method: 'GET', // or 'POST', 'PUT', etc.
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: props.user.email,
-          passwordResetToken: emailCode,
-        }),
-      }
-    )
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/checkToken', {
+      method: 'POST', // or 'POST', 'PUT', etc.
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: props.email,
+        passwordResetToken: emailCode,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        props.hide();
-        setCreateNewShown(true);
+        console.log(data.message);
+        if (!(data.message == 'Invalid code. Please try again.')) {
+          props.hide();
+          setCreateNewShown(true);
+        }
       })
       .catch((error) => {
         console.error(error);
