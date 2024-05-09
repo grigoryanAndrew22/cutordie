@@ -232,7 +232,7 @@ export const ChangePasswordForm = (props: any) => {
                 left={46}
                 color={'363636'}
                 font={'Besom'}
-                textClass={'button4'}
+                textClass={'button5'}
               />
             </button>
           </div>

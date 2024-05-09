@@ -68,7 +68,7 @@ export const CreateNewPass = (props: any) => {
   return (
     <Fragment>
       <div
-        className='overlay'
+        className="overlay"
         style={{
           width: '100%',
           height: '100%',
@@ -87,12 +87,9 @@ export const CreateNewPass = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div
-          className='changePass-wrapper'
-          style={ChangePasswordStyles.wrapper}
-        >
+        <div className="changePass-wrapper" style={ChangePasswordStyles.wrapper}>
           <img
-            alt=''
+            alt=""
             src={leftTopCorner}
             style={{
               position: 'absolute',
@@ -102,7 +99,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
-            alt=''
+            alt=""
             src={rightTopCorner}
             style={{
               position: 'absolute',
@@ -112,7 +109,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
-            alt=''
+            alt=""
             src={rightBotCorner}
             style={{
               position: 'absolute',
@@ -122,7 +119,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
-            alt=''
+            alt=""
             src={leftBotCorner}
             style={{
               position: 'absolute',
@@ -133,7 +130,7 @@ export const CreateNewPass = (props: any) => {
           />
           <button style={{ cursor: 'pointer' }} onClick={props.arrow}>
             <img
-              alt=''
+              alt=""
               src={require('../../assets/images/arrowBack.png')}
               style={{
                 position: 'absolute',
@@ -155,13 +152,9 @@ export const CreateNewPass = (props: any) => {
             CREATE A NEW PASSWORD
           </p>
 
-          <form
-            className='signin-form'
-            style={{ width: '90%' }}
-            onSubmit={passChangeDone}
-          >
+          <form className="signin-form" style={{ width: '90%' }} onSubmit={passChangeDone}>
             <label
-              htmlFor='email'
+              htmlFor="email"
               style={{
                 display: 'block',
                 fontFamily: 'Bitter',
@@ -175,9 +168,9 @@ export const CreateNewPass = (props: any) => {
             <input
               // ref={emailField}
               onChange={handlePass}
-              className='email-input'
+              className="email-input"
               // placeholder={generatedForm.email}
-              type='password'
+              type="password"
               style={{
                 width: '100%',
                 backgroundColor: 'transparent',
@@ -192,7 +185,7 @@ export const CreateNewPass = (props: any) => {
             />
 
             <div
-              className='password-label'
+              className="password-label"
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -200,7 +193,7 @@ export const CreateNewPass = (props: any) => {
               }}
             >
               <label
-                htmlFor='password'
+                htmlFor="password"
                 style={{
                   fontFamily: 'Bitter',
                   fontSize: '22px',
@@ -213,8 +206,8 @@ export const CreateNewPass = (props: any) => {
             <input
               // ref={passwordField}
               onChange={handlePassConfirm}
-              className='password-input'
-              type='password'
+              className="password-input"
+              type="password"
               // placeholder={generatedForm.password}
               style={{
                 width: '100%',
@@ -230,7 +223,7 @@ export const CreateNewPass = (props: any) => {
             />
 
             <div
-              className='submit-section'
+              className="submit-section"
               style={{
                 display: 'flex',
                 marginTop: '28px',
@@ -239,8 +232,8 @@ export const CreateNewPass = (props: any) => {
               }}
             >
               <button
-                className='submit-btn'
-                type='submit'
+                className="submit-btn"
+                type="submit"
                 style={{
                   border: 'none',
                   background: 'transparent',
@@ -258,7 +251,7 @@ export const CreateNewPass = (props: any) => {
                   left={46}
                   color={'363636'}
                   font={'Besom'}
-                  textClass={'button4'}
+                  textClass={'button5'}
                 />
               </button>
             </div>
