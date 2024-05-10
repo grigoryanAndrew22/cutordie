@@ -11,6 +11,7 @@
     "@mui/icons-material": "^5.13.7",
     "@mui/material": "^5.13.6",
     "@quickbaseoss/babel-plugin-styled-components-css-namespace": "^1.0.1",
+    "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
