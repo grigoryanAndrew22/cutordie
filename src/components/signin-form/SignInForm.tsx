@@ -16,6 +16,7 @@ import { SignUpFormMobile } from '../signupFormMobile/SignUpFormMobile';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import AnimatedButton from '../animated-button/AnimatedButton';
+import GoogleAuthBtn from '../google-auth-button/Google-auth-button';
 
 const formLangs = {
   en: {
@@ -130,9 +131,7 @@ export const SignInForm = (props: any) => {
   };
 
   const signinBtn =
-    props.language === 'en'
-      ? require('../../assets/images/signInBtn.png')
-      : signInBtnUA;
+    props.language === 'en' ? require('../../assets/images/signInBtn.png') : signInBtnUA;
 
   const generatedForm = props.language === 'en' ? formLangs.en : formLangs.ua;
 
@@ -156,7 +155,7 @@ export const SignInForm = (props: any) => {
         setUser={props.setUser}
       />
       <div
-        className='overlay'
+        className="overlay"
         style={{
           width: '100%',
           height: '100%',
@@ -175,7 +174,7 @@ export const SignInForm = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div className='signin-wrapper' style={signInStyles.signinWrapper}>
+        <div className="signin-wrapper" style={signInStyles.signinWrapper}>
           <img
             src={leftTopCorner}
             style={{
@@ -212,25 +211,15 @@ export const SignInForm = (props: any) => {
               width: '42px',
             }}
           />
-          <div className='signin-title' style={signInStyles.signInTitle}>
-            <p style={{ display: 'inline', fontSize: '49px' }}>
-              {generatedForm.title}
-            </p>
-            <button
-              className='close'
-              style={signInStyles.closeButton}
-              onClick={closeForm}
-            >
+          <div className="signin-title" style={signInStyles.signInTitle}>
+            <p style={{ display: 'inline', fontSize: '49px' }}>{generatedForm.title}</p>
+            <button className="close" style={signInStyles.closeButton} onClick={closeForm}>
               X
             </button>
           </div>
-          <form
-            className='signin-form'
-            style={{ width: '90%' }}
-            onSubmit={login}
-          >
+          <form className="signin-form" style={{ width: '90%' }} onSubmit={login}>
             <label
-              htmlFor='email'
+              htmlFor="email"
               style={{
                 display: 'block',
                 fontFamily: 'Bitter',
@@ -244,9 +233,9 @@ export const SignInForm = (props: any) => {
             <input
               // ref={emailField}
               onChange={emailChange}
-              className='email-input'
+              className="email-input"
               placeholder={generatedForm.email}
-              type='email'
+              type="email"
               style={{
                 width: '100%',
                 backgroundColor: 'transparent',
@@ -261,7 +250,7 @@ export const SignInForm = (props: any) => {
             />
 
             <div
-              className='password-label'
+              className="password-label"
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -269,7 +258,7 @@ export const SignInForm = (props: any) => {
               }}
             >
               <label
-                htmlFor='password'
+                htmlFor="password"
                 style={{
                   fontFamily: 'Bitter',
                   fontSize: '22px',
@@ -292,8 +281,8 @@ export const SignInForm = (props: any) => {
             <input
               // ref={passwordField}
               onChange={passwordChange}
-              className='password-input'
-              type='password'
+              className="password-input"
+              type="password"
               placeholder={generatedForm.password}
               style={{
                 width: '100%',
@@ -323,7 +312,7 @@ export const SignInForm = (props: any) => {
               </p>
             </div>
             <div
-              className='submit-section'
+              className="submit-section"
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -331,8 +320,8 @@ export const SignInForm = (props: any) => {
               }}
             >
               <button
-                className='submit-btn'
-                type='submit'
+                className="submit-btn"
+                type="submit"
                 style={{
                   border: 'none',
                   background: 'transparent',
@@ -355,7 +344,7 @@ export const SignInForm = (props: any) => {
                 />
               </button>
               <div
-                className='signup-offer signinMob'
+                className="signup-offer signinMob"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -363,9 +352,7 @@ export const SignInForm = (props: any) => {
                   gap: '15px',
                 }}
               >
-                <p style={{ margin: 0, paddingRight: '5px' }}>
-                  {generatedForm.dontHaveAcc[0]}
-                </p>
+                <p style={{ margin: 0, paddingRight: '5px' }}>{generatedForm.dontHaveAcc[0]}</p>
                 <button
                   onClick={switchToSignUp}
                   style={{
@@ -386,8 +373,8 @@ export const SignInForm = (props: any) => {
             </div>
           </form>
           <div
-            className='divider-bottom'
-            style={{ display: 'flex', width: '90%', margin: '0 auto' }}
+            className="divider-bottom"
+            style={{ display: 'flex', width: '90%', margin: '0 auto 10px auto' }}
           >
             <img src={orDivider} width={'43%'} />
             <h3
@@ -406,17 +393,17 @@ export const SignInForm = (props: any) => {
             <img src={orDivider} width={'43%'} />
           </div>
           <div
-            className='signin-with'
+            className="signin-with"
             style={{
               display: 'flex',
               width: '90%',
-              justifyContent: 'space-evenly',
+              justifyContent: 'center',
               alignItems: 'center',
               marginBottom: '25px',
               gap: '40px',
             }}
           >
-            <h4
+            {/* <h4
               style={{
                 fontFamily: 'Bitter',
                 fontSize: '25px',
@@ -428,8 +415,8 @@ export const SignInForm = (props: any) => {
             >
               {generatedForm.signinWith}
             </h4>
-
-            <img src={googleIcon} height={50} style={{ paddingTop: '4px' }} />
+            <img src={googleIcon} height={50} style={{ paddingTop: '4px' }} /> */}
+            <GoogleAuthBtn />
           </div>
         </div>
       </div>
