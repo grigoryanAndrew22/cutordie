@@ -38,21 +38,21 @@ const formLangs = {
 
 export const SignUpForm = (props: any) => {
   const [inputName, setInputName] = useState('');
-  const [inputSurname, setInputSurname] = useState('');
+  // const [inputSurname, setInputSurname] = useState('');
   const [inputEmail, setInputEmail] = useState('');
   const [inputPassword, setInputPassword] = useState('');
 
   const nameField: any = useRef(null);
-  const surnameField: any = useRef(null);
+  // const surnameField: any = useRef(null);
   const emailField: any = useRef(null);
   const passwordField: any = useRef(null);
 
   const handleName = (e: any) => {
     setInputName(e.target.value);
   };
-  const handleSurname = (e: any) => {
-    setInputSurname(e.target.value);
-  };
+  // const handleSurname = (e: any) => {
+  //   setInputSurname(e.target.value);
+  // };
   const handleEmail = (e: any) => {
     setInputEmail(e.target.value);
   };

@@ -11,6 +11,7 @@ import AnimatedButton from '../animated-button/AnimatedButton';
 export const ChangePasswordForm = (props: any) => {
   const [createNewShown, setCreateNewShown] = useState(false);
   const [emailCode, setEmailCode] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const hideSecondWindow = () => {
     setCreateNewShown(false);
@@ -29,10 +30,13 @@ export const ChangePasswordForm = (props: any) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.message);
-        if (!(data.message == 'Invalid code. Please try again.')) {
+        console.log(data.status);
+        if (data.status === 'success') {
           props.hide();
           setCreateNewShown(true);
+          setErrorMessage('');
+        } else {
+          setErrorMessage('Wrong code, try again');
         }
       })
       .catch((error) => {
@@ -45,6 +49,7 @@ export const ChangePasswordForm = (props: any) => {
 
   const back = (e: any) => {
     e.preventDefault();
+    setErrorMessage('');
     props.hide();
   };
 
@@ -177,15 +182,18 @@ export const ChangePasswordForm = (props: any) => {
             />
           </form>
 
-          {/* <p
+          <p
             style={{
+              marginTop: '-10px',
+              marginBottom: 0,
               color: '#900000',
               fontWeight: '600',
               fontFamily: 'Bitter',
             }}
           >
-            Wrong code, try again
-          </p> */}
+            {errorMessage}
+          </p>
+
           <div
             style={{
               display: 'flex',
