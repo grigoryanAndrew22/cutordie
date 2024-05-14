@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+import Cookies from 'js-cookie';
 
 const GoogleAuthBtn = () => {
   return (
