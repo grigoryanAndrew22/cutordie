@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import { ChangePasswordStyles } from './ChangePasswordForm.styles';
 import AnimatedButton from '../animated-button/AnimatedButton';
 import leftTopCorner from '../../assets/images/leftTopCorner.png';
@@ -30,32 +30,101 @@ import rightBotCorner from '../../assets/images/rightBotCorner.png';
 //  }
 
 export const CreateNewPass = (props: any) => {
+  const alphabet = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+  ];
+
   const [newPass, setNewPass] = useState('');
   const [newPassConfirm, setNewPassConfirm] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const passwordField: any = useRef(null);
+  const passwordConfirmField: any = useRef(null);
+
+  const password = passwordField?.current?.value;
+
+  const hasNumber = password
+    ?.split('')
+    .some((el: any) =>
+      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(el)
+    );
+
+  const hasLetter = password
+    ?.split('')
+    .some((el: any) => alphabet.includes(el));
 
   const passChangeDone = (e: any) => {
-    // e.preventDefault();
+    e.preventDefault();
 
-    fetch('https://cut-or-die-api.onrender.com/api/v1/users/resetPassword', {
-      method: 'PATCH', // or 'POST', 'PUT', etc.
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: props.email,
-        passwordResetToken: props.code,
-        password: newPass,
-        passwordConfirm: newPassConfirm,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setNewPass('');
-        setNewPassConfirm('');
-        props.done();
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    if (!(password === passwordConfirmField.current.value)) {
+      setErrorMessage('Your passwords are different');
+      return;
+    }
+
+    if (password === passwordConfirmField.current.value) {
+      if (password.length < 6 || password.length > 22) {
+        setErrorMessage('Your password must be 6-21 charecters long');
+        return;
+      } else if (!hasNumber) {
+        setErrorMessage('Your password must contain at least one number');
+        return;
+      } else if (!hasLetter) {
+        setErrorMessage('Your password must contain at least one letter');
+        return;
+      } else {
+        passwordField.current.value = '';
+        passwordConfirmField.current.value = '';
+        setErrorMessage('');
+        fetch(
+          'https://cut-or-die-api.onrender.com/api/v1/users/resetPassword',
+          {
+            method: 'PATCH', // or 'POST', 'PUT', etc.
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: props.email,
+              passwordResetToken: props.code,
+              password: newPass,
+              passwordConfirm: newPassConfirm,
+            }),
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            setNewPass('');
+            setNewPassConfirm('');
+            props.done();
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    }
   };
 
   const handlePass = (e: any) => {
@@ -68,7 +137,7 @@ export const CreateNewPass = (props: any) => {
   return (
     <Fragment>
       <div
-        className="overlay"
+        className='overlay'
         style={{
           width: '100%',
           height: '100%',
@@ -87,9 +156,12 @@ export const CreateNewPass = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div className="changePass-wrapper" style={ChangePasswordStyles.wrapper}>
+        <div
+          className='changePass-wrapper'
+          style={ChangePasswordStyles.wrapper}
+        >
           <img
-            alt=""
+            alt=''
             src={leftTopCorner}
             style={{
               position: 'absolute',
@@ -99,7 +171,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={rightTopCorner}
             style={{
               position: 'absolute',
@@ -109,7 +181,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={rightBotCorner}
             style={{
               position: 'absolute',
@@ -119,7 +191,7 @@ export const CreateNewPass = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={leftBotCorner}
             style={{
               position: 'absolute',
@@ -130,7 +202,7 @@ export const CreateNewPass = (props: any) => {
           />
           <button style={{ cursor: 'pointer' }} onClick={props.arrow}>
             <img
-              alt=""
+              alt=''
               src={require('../../assets/images/arrowBack.png')}
               style={{
                 position: 'absolute',
@@ -152,25 +224,43 @@ export const CreateNewPass = (props: any) => {
             CREATE A NEW PASSWORD
           </p>
 
-          <form className="signin-form" style={{ width: '90%' }} onSubmit={passChangeDone}>
-            <label
-              htmlFor="email"
-              style={{
-                display: 'block',
-                fontFamily: 'Bitter',
-                fontSize: '22px',
-                paddingBottom: '9px',
-              }}
-            >
-              Password:
-            </label>
+          <form
+            className='signin-form'
+            style={{ width: '90%' }}
+            onSubmit={passChangeDone}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <label
+                htmlFor='email'
+                style={{
+                  display: 'block',
+                  fontFamily: 'Bitter',
+                  fontSize: '22px',
+                  paddingBottom: '9px',
+                }}
+              >
+                Password:
+              </label>
+              <p
+                style={{
+                  paddingTop: '5px',
+                  margin: 0,
+                  color: '#900000',
+                  fontFamily: 'Bitter',
+                  fontWeight: 600,
+                  fontSize: '14.5px',
+                }}
+              >
+                {errorMessage}
+              </p>
+            </div>
 
             <input
-              // ref={emailField}
+              ref={passwordField}
               onChange={handlePass}
-              className="email-input"
+              className='email-input'
               // placeholder={generatedForm.email}
-              type="password"
+              type='password'
               style={{
                 width: '100%',
                 backgroundColor: 'transparent',
@@ -185,7 +275,7 @@ export const CreateNewPass = (props: any) => {
             />
 
             <div
-              className="password-label"
+              className='password-label'
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -193,7 +283,7 @@ export const CreateNewPass = (props: any) => {
               }}
             >
               <label
-                htmlFor="password"
+                htmlFor='password'
                 style={{
                   fontFamily: 'Bitter',
                   fontSize: '22px',
@@ -204,10 +294,10 @@ export const CreateNewPass = (props: any) => {
               </label>
             </div>
             <input
-              // ref={passwordField}
+              ref={passwordConfirmField}
               onChange={handlePassConfirm}
-              className="password-input"
-              type="password"
+              className='password-input'
+              type='password'
               // placeholder={generatedForm.password}
               style={{
                 width: '100%',
@@ -223,7 +313,7 @@ export const CreateNewPass = (props: any) => {
             />
 
             <div
-              className="submit-section"
+              className='submit-section'
               style={{
                 display: 'flex',
                 marginTop: '28px',
@@ -232,8 +322,8 @@ export const CreateNewPass = (props: any) => {
               }}
             >
               <button
-                className="submit-btn"
-                type="submit"
+                className='submit-btn'
+                type='submit'
                 style={{
                   border: 'none',
                   background: 'transparent',

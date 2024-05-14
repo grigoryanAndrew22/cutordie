@@ -6,11 +6,11 @@ const GoogleAuthBtn = () => {
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
       <GoogleLogin
-        type="standard"
-        theme="filled_black"
-        shape="pill"
-        size="large"
-        width="250"
+        type='standard'
+        theme='filled_black'
+        shape='pill'
+        size='large'
+        width='250'
         onSuccess={(credentialResponse) => {
           console.log(credentialResponse);
         }}
