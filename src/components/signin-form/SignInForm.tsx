@@ -17,6 +17,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import AnimatedButton from '../animated-button/AnimatedButton';
 import { ForgotPassEmail } from '../changePasswordForm/ForgotPassEmail';
+import GoogleAuthBtn from '../google-auth-button/Google-auth-button';
 
 // import GoogleAuthBtn from '../google-auth-button/Google-auth-button';
 
@@ -440,7 +441,7 @@ export const SignInForm = (props: any) => {
               {generatedForm.signinWith}
             </h4>
             <img src={googleIcon} height={50} style={{ paddingTop: '4px' }} /> */}
-            {/* <GoogleAuthBtn /> */}
+            <GoogleAuthBtn />
           </div>
         </div>
       </div>
