@@ -1,82 +1,86 @@
-import { Fragment, useState } from 'react';
-import { ChangePasswordStyles } from './ChangePasswordForm.styles';
+import { Fragment, useRef, useState } from 'react';
 import './ChangePasswordForm.css';
+import AnimatedButton from '../animated-button/AnimatedButton';
+import { ChangePasswordStyles } from './ChangePasswordForm.styles';
 import { CreateNewPass } from './CreateNewPass';
 import leftTopCorner from '../../assets/images/leftTopCorner.png';
 import leftBotCorner from '../../assets/images/leftBotCorner.png';
 import rightTopCorner from '../../assets/images/rightTopCorner.png';
 import rightBotCorner from '../../assets/images/rightBotCorner.png';
-import AnimatedButton from '../animated-button/AnimatedButton';
+import { ChangePasswordForm } from './ChangePasswordForm';
 
-export const ChangePasswordForm = (props: any) => {
-  const [createNewShown, setCreateNewShown] = useState(false);
+export const ForgotPassEmail = (props: any) => {
+  const [forgotPassShow, setForgotPassShown] = useState(false);
   const [emailCode, setEmailCode] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState('');
 
-  console.log(props.showFirstWindow);
+  const emailInput: any = useRef(null);
 
   const hideSecondWindow = () => {
-    setCreateNewShown(false);
-    if (!(props.showFirstWindow == undefined)) {
-      props.showFirstWindow();
-    }
+    setForgotPassShown(false);
   };
+
+  const showSecondWindow = () => {
+    setForgotPassShown(true);
+  };
+  console.log(email);
 
   const nextStep = (e: any) => {
     e.preventDefault();
 
-    fetch('https://cut-or-die-api.onrender.com/api/v1/users/checkToken', {
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword', {
       method: 'POST', // or 'POST', 'PUT', etc.
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: props.email,
-        passwordResetToken: emailCode,
-      }),
+      body: JSON.stringify({ email: email }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.status);
-        if (data.status === 'success') {
-          props.hide();
-          setCreateNewShown(true);
-          setErrorMessage('');
+        if (data.status === 'error') {
+          setErrorMessage('Incorrect email');
+          return;
         } else {
-          setErrorMessage('Wrong code, try again');
+          props.closeEmailForm();
+          emailInput.current.value = '';
+          setForgotPassShown(true);
+          setEmail('');
         }
+        console.log(data);
       })
       .catch((error) => {
         console.error(error);
       });
 
     // props.hide();
-    // setCreateNewShown(true);
   };
 
   const back = (e: any) => {
     e.preventDefault();
-    hideSecondWindow();
     setErrorMessage('');
-    props.hide();
+    props.closeEmailForm();
   };
 
   const prev = (e: any) => {
     e.preventDefault();
     props.prevStep();
-    setCreateNewShown(false);
+    setForgotPassShown(false);
   };
 
-  const handleCode = (e: any) => {
-    setEmailCode(e.target.value);
+  const handleEmail = (e: any) => {
+    setEmail(e.target.value);
   };
 
   return (
     <Fragment>
-      <CreateNewPass
-        shown={createNewShown}
+      <ChangePasswordForm
+        shown={forgotPassShow}
         arrow={prev}
         code={emailCode}
-        email={props.email}
+        email={email}
         done={hideSecondWindow}
+        hide={hideSecondWindow}
+        prevStep={showSecondWindow}
+        showFirstWindow={props.showEmailForm}
       />
       <div
         className='overlay'
@@ -159,46 +163,57 @@ export const ChangePasswordForm = (props: any) => {
               fontFamily: 'Drum',
               fontSize: '45px',
               color: '#444444',
-              marginTop: '0.55em',
+              marginTop: '0.35em',
+              marginBottom: '25px',
             }}
           >
-            CHANGE A PASSWORD?
+            FORGOT A PASSWORD?
           </p>
 
-          <p style={{ fontFamily: 'Bitter', color: '#444444', marginTop: 0 }}>
-            Enter a six-digit verification code you received on email
+          <p
+            style={{
+              fontFamily: 'Bitter',
+              color: '#444444',
+              marginTop: 0,
+              fontSize: '20px',
+            }}
+          >
+            Enter an email to receive a verification code
           </p>
           <form onSubmit={nextStep} style={{ marginBottom: '3.15em' }}>
+            <p
+              style={{
+                margin: 0,
+                color: '#900000',
+                fontFamily: 'Bitter',
+                fontSize: '15px',
+                fontWeight: '600',
+                paddingLeft: '5px',
+              }}
+            >
+              {errorMessage}
+            </p>
             <input
-              onChange={handleCode}
-              type='text'
-              className='emailCode-input'
+              ref={emailInput}
+              onChange={handleEmail}
+              type='email'
+              placeholder='Email'
+              className='passEmailInput'
               style={{
                 backgroundColor: 'transparent',
                 border: 'none',
-                height: '30px',
+                height: '40px',
                 fontFamily: 'Bitter',
                 color: '#444444',
                 fontSize: '16px',
                 fontWeight: '600',
-                width: '310px',
-                marginTop: '10px',
+                width: '430px',
+                marginTop: '3px',
                 paddingLeft: '7px',
+                marginRight: '-6px',
               }}
             />
           </form>
-
-          <p
-            style={{
-              marginTop: '-10px',
-              marginBottom: 0,
-              color: '#900000',
-              fontWeight: '600',
-              fontFamily: 'Bitter',
-            }}
-          >
-            {errorMessage}
-          </p>
 
           <div
             style={{
@@ -209,21 +224,6 @@ export const ChangePasswordForm = (props: any) => {
               alignItems: 'center',
             }}
           >
-            <button
-              style={{
-                fontFamily: 'Bitter',
-                color: '#555555',
-                fontSize: '21px',
-                fontWeight: '600',
-                border: 'none',
-                background: 'transparent',
-                cursor: 'pointer',
-                outline: 0,
-                height: '30px',
-              }}
-            >
-              Resend
-            </button>
             <button
               className='submit-btn'
               // type='submit'
@@ -248,6 +248,22 @@ export const ChangePasswordForm = (props: any) => {
                 font={'Besom'}
                 textClass={'button5'}
               />
+            </button>
+            <button
+              onClick={props.closeEmailForm}
+              style={{
+                fontFamily: 'Bitter',
+                color: '#4A4949',
+                fontSize: '21px',
+                fontWeight: '300',
+                border: 'none',
+                background: 'transparent',
+                cursor: 'pointer',
+                outline: 0,
+                height: '30px',
+              }}
+            >
+              To main page
             </button>
           </div>
           {/* </form> */}
