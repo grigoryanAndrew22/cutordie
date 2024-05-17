@@ -7,7 +7,7 @@ export const signInStyles = {
     zIndex: 10,
     alignItems: 'center',
     backgroundColor: '#fff',
-    top: 'calc(50% - 247.5px)',
+    top: '70px',
   },
   signInTitle: {
     position: 'relative' as 'relative',
