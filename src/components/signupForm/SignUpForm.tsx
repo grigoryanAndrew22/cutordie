@@ -20,6 +20,7 @@ const formLangs = {
     surname: 'Surname',
     email: 'Email',
     password: 'Password',
+    confirmPassword: 'Confirm password',
     forgotPassword: 'Forgot password?',
     dontHaveAcc: ['Have an account?', 'Sign in'],
     or: 'OR',
@@ -31,6 +32,7 @@ const formLangs = {
     surname: 'Прiзвище',
     email: 'Пошта',
     password: 'Пароль',
+    confirmPassword: 'Підтвердіть пароль',
     forgotPassword: 'Забули пароль?',
     dontHaveAcc: ['Маєте аккаунт?', 'Увiйти'],
     or: 'АБО',
@@ -38,92 +40,121 @@ const formLangs = {
   },
 };
 
+const alphabet = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+];
+
 export const SignUpForm = (props: any) => {
   const [inputName, setInputName] = useState('');
-  const [inputSurname, setInputSurname] = useState('');
   const [inputEmail, setInputEmail] = useState('');
   const [inputPassword, setInputPassword] = useState('');
+  const [inputConfirmPassword, setInputConfirmPass] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const nameField: any = useRef(null);
-  const surnameField: any = useRef(null);
   const emailField: any = useRef(null);
   const passwordField: any = useRef(null);
+  const confirmPasswordField: any = useRef(null);
+
+  const hasNumber = inputPassword
+    ?.split('')
+    .some((el: any) =>
+      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(el)
+    );
+
+  const hasLetter = inputPassword
+    ?.split('')
+    .some((el: any) => alphabet.includes(el));
 
   const handleName = (e: any) => {
     setInputName(e.target.value);
   };
-  const handleSurname = (e: any) => {
-    setInputSurname(e.target.value);
-  };
+
   const handleEmail = (e: any) => {
     setInputEmail(e.target.value);
   };
+
   const handlePassword = (e: any) => {
     setInputPassword(e.target.value);
   };
 
+  const handleConfirmPassword = (e: any) => {
+    setInputConfirmPass(e.target.value);
+  };
+
   const submitForm = (e: any) => {
     e.preventDefault();
-    closeForm();
-    nameField.current.value = '';
-    emailField.current.value = '';
-    passwordField.current.value = '';
+    console.log(inputPassword, inputConfirmPassword);
 
-    // axios
-    //   .post('https://cut-or-die-api.onrender.com/api/v1/users/signup', {
-    //     userName: inputName + inputSurname,
-    //     email: inputEmail,
-    //     password: inputPassword,
-    //     passwordConfirm: inputPassword,
-    //   })
-    //   .then((response) => console.log(response))
-    //   .catch((error) => console.log(error));
 
-    console.log('START FETCH');
-    fetch('https://cut-or-die-api.onrender.com/api/v1/users/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        userName: inputName,
-        email: inputEmail,
-        password: inputPassword,
-        passwordConfirm: inputPassword,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        Cookies.set('jwt', data.token, { secure: true });
-        props.setLoggedIn(true);
-        props.setUser(data.data.user);
-        console.log('DATA', data);
-      })
-      .catch((error) => console.log(error));
+    if (!(inputPassword === inputConfirmPassword)) {
+      setErrorMessage('Your passwords are different');
+      return;
+    }
 
-    ///////
-
-    // fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
-    //   method: 'POST',
-    //   credentials: 'include',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-
-    //   body: JSON.stringify({ jwt: Cookies.get('jwt') }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     if (data.status === 'fail') {
-    //       props.setLoggedIn(false);
-    //     } else {
-    //       props.setLoggedIn(true);
-    //     }
-    //     props.setUser(data.data.user);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
+    if (inputPassword === inputConfirmPassword) {
+      if (inputPassword.length < 6 || inputPassword.length > 22) {
+        setErrorMessage('Your password must be 6-21 charecters long');
+        return;
+      } else if (!hasNumber) {
+        setErrorMessage('Your password must contain at least one number');
+        return;
+      } else if (!hasLetter) {
+        setErrorMessage('Your password must contain at least one letter');
+        return;
+      } else {
+        fetch('https://cut-or-die-api.onrender.com/api/v1/users/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            userName: inputName,
+            email: inputEmail,
+            password: inputPassword,
+            passwordConfirm: inputPassword,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            Cookies.set('jwt', data.token, { secure: true });
+            props.setLoggedIn(true);
+            props.setUser(data.data.user);
+            nameField.current.value = '';
+            emailField.current.value = '';
+            passwordField.current.value = '';
+            confirmPasswordField.current.value = '';
+            closeForm();
+            console.log(data.status);
+          })
+          .catch((error) => console.log(error));
+      }
+    }
   };
 
   const closeForm = () => {
@@ -257,35 +288,6 @@ export const SignUpForm = (props: any) => {
                   ref={nameField}
                 />
               </div>
-              {/* <div className='surname' style={{ width: '46%' }}>
-                <label
-                  htmlFor='surname'
-                  style={{
-                    fontFamily: 'Bitter',
-                    fontSize: '22px',
-                    paddingBottom: '9px',
-                  }}
-                >
-                  {generatedForm.surname}
-                </label>
-                <input
-                  placeholder={generatedForm.surname}
-                  type='text'
-                  className='surname-input'
-                  style={{
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    height: '30px',
-                    fontFamily: 'Bitter',
-                    color: '#444444',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    width: '98%',
-                  }}
-                  onChange={handleSurname}
-                  ref={surnameField}
-                />
-              </div> */}
             </div>
             <label
               htmlFor="email"
@@ -317,6 +319,7 @@ export const SignUpForm = (props: any) => {
               ref={emailField}
             />
 
+            {/* password */}
             <div
               className="password-label"
               style={{
@@ -353,11 +356,65 @@ export const SignUpForm = (props: any) => {
               onChange={handlePassword}
               ref={passwordField}
             />
+
+            {/* confirm password */}
+            <div
+              className='password-label'
+              style={{
+                display: 'flex',
+                marginTop: '20px',
+                justifyContent: 'space-between',
+              }}
+            >
+              <label
+                htmlFor='password'
+                style={{
+                  fontFamily: 'Bitter',
+                  fontSize: '22px',
+                  paddingBottom: '9px',
+                }}
+              >
+                {generatedForm.confirmPassword}:
+              </label>
+            </div>
+            <input
+              className='password-input'
+              type='password'
+              placeholder={generatedForm.confirmPassword}
+              style={{
+                width: '100%',
+                backgroundColor: 'transparent',
+                border: 'none',
+                fontFamily: 'Bitter',
+                height: '30px',
+                color: '#444444',
+                fontSize: '16px',
+                fontWeight: '600',
+              }}
+              onChange={handleConfirmPassword}
+              ref={confirmPasswordField}
+            />
+            <div style={{ marginTop: '0.8em', height: '16.8px' }}>
+              <p
+                style={{
+                  fontFamily: 'Bitter',
+                  color: '#900000',
+                  fontWeight: '600',
+                  fontSize: '14px',
+                  paddingLeft: '0.29em',
+                  margin: 0,
+                  display: 'block',
+                }}
+              >
+                {errorMessage}
+              </p>
+            </div>
+
             <div
               className="submit-section"
               style={{
                 display: 'flex',
-                marginTop: '30px',
+                marginTop: '15px',
                 justifyContent: 'space-between',
               }}
             >

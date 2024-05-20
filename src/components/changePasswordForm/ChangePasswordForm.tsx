@@ -11,6 +11,7 @@ import AnimatedButton from '../animated-button/AnimatedButton';
 export const ChangePasswordForm = (props: any) => {
   const [createNewShown, setCreateNewShown] = useState(false);
   const [emailCode, setEmailCode] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const hideSecondWindow = () => {
     setCreateNewShown(false);
@@ -19,19 +20,24 @@ export const ChangePasswordForm = (props: any) => {
   const nextStep = (e: any) => {
     e.preventDefault();
 
-    fetch('https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword/checkToken', {
-      method: 'GET', // or 'POST', 'PUT', etc.
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/checkToken', {
+      method: 'POST', // or 'POST', 'PUT', etc.
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: props.user.email,
+        email: props.email,
         passwordResetToken: emailCode,
       }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        props.hide();
-        setCreateNewShown(true);
+        console.log(data.status);
+        if (data.status === 'success') {
+          props.hide();
+          setCreateNewShown(true);
+          setErrorMessage('');
+        } else {
+          setErrorMessage('Wrong code, try again');
+        }
       })
       .catch((error) => {
         console.error(error);
@@ -43,6 +49,7 @@ export const ChangePasswordForm = (props: any) => {
 
   const back = (e: any) => {
     e.preventDefault();
+    setErrorMessage('');
     props.hide();
   };
 
@@ -66,7 +73,7 @@ export const ChangePasswordForm = (props: any) => {
         done={hideSecondWindow}
       />
       <div
-        className="overlay"
+        className='overlay'
         style={{
           width: '100%',
           height: '100%',
@@ -85,9 +92,12 @@ export const ChangePasswordForm = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div className="changePass-wrapper" style={ChangePasswordStyles.wrapper}>
+        <div
+          className='changePass-wrapper'
+          style={ChangePasswordStyles.wrapper}
+        >
           <img
-            alt=""
+            alt=''
             src={leftTopCorner}
             style={{
               position: 'absolute',
@@ -97,7 +107,7 @@ export const ChangePasswordForm = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={rightTopCorner}
             style={{
               position: 'absolute',
@@ -107,7 +117,7 @@ export const ChangePasswordForm = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={rightBotCorner}
             style={{
               position: 'absolute',
@@ -117,7 +127,7 @@ export const ChangePasswordForm = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={leftBotCorner}
             style={{
               position: 'absolute',
@@ -128,7 +138,7 @@ export const ChangePasswordForm = (props: any) => {
           />
           <button style={{ cursor: 'pointer' }} onClick={back}>
             <img
-              alt=""
+              alt=''
               src={require('../../assets/images/arrowBack.png')}
               style={{
                 position: 'absolute',
@@ -155,8 +165,8 @@ export const ChangePasswordForm = (props: any) => {
           <form onSubmit={nextStep} style={{ marginBottom: '3.15em' }}>
             <input
               onChange={handleCode}
-              type="text"
-              className="emailCode-input"
+              type='text'
+              className='emailCode-input'
               style={{
                 backgroundColor: 'transparent',
                 border: 'none',
@@ -172,15 +182,18 @@ export const ChangePasswordForm = (props: any) => {
             />
           </form>
 
-          {/* <p
+          <p
             style={{
+              marginTop: '-10px',
+              marginBottom: 0,
               color: '#900000',
               fontWeight: '600',
               fontFamily: 'Bitter',
             }}
           >
-            Wrong code, try again
-          </p> */}
+            {errorMessage}
+          </p>
+
           <div
             style={{
               display: 'flex',
@@ -206,7 +219,7 @@ export const ChangePasswordForm = (props: any) => {
               Resend
             </button>
             <button
-              className="submit-btn"
+              className='submit-btn'
               // type='submit'
               onClick={nextStep}
               style={{

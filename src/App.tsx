@@ -43,6 +43,13 @@ function App() {
   const [currency, changeCurrency] = useState(currFromCookies);
   const [language, changeLanguage] = useState(langFromCookies);
 
+  if (currency === 'undefined') {
+    changeCurrency('usd');
+  }
+  if (language === 'undefined') {
+    changeLanguage('en');
+  }
+
   useEffect(() => {
     Cookies.set('language', language, { secure: true });
     Cookies.set('currency', currency, { secure: true });
@@ -145,7 +152,7 @@ function App() {
         changeLangHandler={changeLang}
         currency={currency}
         changeCurr={changeCurrency}
-        bottomShadow={false}
+        bottomShadow={true}
       />
     </div>
   );
