@@ -1,6 +1,7 @@
 import React from 'react';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import Cookies from 'js-cookie';
+import { jwtDecode } from 'jwt-decode';
 
 const GoogleAuthBtn = () => {
   console.log(process.env.REACT_APP_CLIENT_ID);
@@ -14,7 +15,8 @@ const GoogleAuthBtn = () => {
         width="250"
         onSuccess={(res) => {
           console.log('RES', res);
-          console.log('PROFILE', res.profileObj);
+          const decodedRes = jwtDecode(res.credential);
+          console.log('PROFILE', decodedRes);
         }}
         onError={(err) => {
           console.log('Login Failed', err);
