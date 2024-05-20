@@ -3,19 +3,21 @@ import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import Cookies from 'js-cookie';
 
 const GoogleAuthBtn = () => {
+  console.log(process.env.REACT_APP_CLIENT_ID);
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
       <GoogleLogin
-        type='standard'
-        theme='filled_black'
-        shape='pill'
-        size='large'
-        width='250'
-        onSuccess={(credentialResponse) => {
-          console.log(credentialResponse);
+        type="standard"
+        theme="filled_black"
+        shape="pill"
+        size="large"
+        width="250"
+        onSuccess={(res) => {
+          console.log('RES', res);
+          console.log('PROFILE', res.profileObj);
         }}
-        onError={() => {
-          console.log('Login Failed');
+        onError={(err) => {
+          console.log('Login Failed', err);
         }}
       />
     </GoogleOAuthProvider>
