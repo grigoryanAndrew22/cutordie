@@ -4,7 +4,6 @@ import Cookies from 'js-cookie';
 import { jwtDecode } from 'jwt-decode';
 
 const GoogleAuthBtn = () => {
-  console.log(process.env.REACT_APP_CLIENT_ID);
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
       <GoogleLogin
@@ -26,9 +25,10 @@ const GoogleAuthBtn = () => {
             }),
             credentials: 'include',
           })
-            .then((response) => {})
+            .then((response) => response.json())
             .then((data) => {
               console.log(data);
+              Cookies.set('jwt', data.token, { secure: true });
             })
             .catch((error) => {
               console.log(error);
