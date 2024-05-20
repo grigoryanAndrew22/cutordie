@@ -43,7 +43,7 @@ export const ForgotPassEmail = (props: any) => {
           props.closeEmailForm();
           emailInput.current.value = '';
           setForgotPassShown(true);
-          setEmail('');
+          // setEmail('');
         }
         console.log(data);
       })

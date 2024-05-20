@@ -19,8 +19,6 @@ import AnimatedButton from '../animated-button/AnimatedButton';
 import { ForgotPassEmail } from '../changePasswordForm/ForgotPassEmail';
 import GoogleAuthBtn from '../google-auth-button/Google-auth-button';
 
-// import GoogleAuthBtn from '../google-auth-button/Google-auth-button';
-
 const formLangs = {
   en: {
     title: 'SIGN IN',

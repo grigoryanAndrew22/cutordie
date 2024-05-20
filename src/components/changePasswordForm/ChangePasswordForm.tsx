@@ -14,6 +14,7 @@ export const ChangePasswordForm = (props: any) => {
   const [errorMessage, setErrorMessage] = useState('');
 
   console.log(props.showFirstWindow);
+  console.log(props.email);
 
   const hideSecondWindow = () => {
     setCreateNewShown(false);

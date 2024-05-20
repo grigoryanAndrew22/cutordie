@@ -111,7 +111,6 @@ export const SignUpForm = (props: any) => {
     e.preventDefault();
     console.log(inputPassword, inputConfirmPassword);
 
-
     if (!(inputPassword === inputConfirmPassword)) {
       setErrorMessage('Your passwords are different');
       return;
@@ -182,7 +181,7 @@ export const SignUpForm = (props: any) => {
         switchBack={switchBack}
       />
       <div
-        className="overlay"
+        className='overlay'
         style={{
           width: '100%',
           height: '100%',
@@ -201,9 +200,12 @@ export const SignUpForm = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <div className="signin-wrapper signupwr" style={signUpFormStyles.signinWrapper}>
+        <div
+          className='signin-wrapper signupwr'
+          style={signUpFormStyles.signinWrapper}
+        >
           <img
-            alt=""
+            alt=''
             src={leftTopCorner}
             style={{
               position: 'absolute',
@@ -213,7 +215,7 @@ export const SignUpForm = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={rightTopCorner}
             style={{
               position: 'absolute',
@@ -223,7 +225,7 @@ export const SignUpForm = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={rightBotCorner}
             style={{
               position: 'absolute',
@@ -233,7 +235,7 @@ export const SignUpForm = (props: any) => {
             }}
           />
           <img
-            alt=""
+            alt=''
             src={leftBotCorner}
             style={{
               position: 'absolute',
@@ -242,15 +244,25 @@ export const SignUpForm = (props: any) => {
               width: '42px',
             }}
           />
-          <div className="signin-title" style={signUpFormStyles.signInTitle}>
-            <p style={{ display: 'inline', fontSize: '49px' }}>{generatedForm.title}</p>
-            <button className="close" style={signUpFormStyles.closeButton} onClick={closeForm}>
+          <div className='signin-title' style={signUpFormStyles.signInTitle}>
+            <p style={{ display: 'inline', fontSize: '49px' }}>
+              {generatedForm.title}
+            </p>
+            <button
+              className='close'
+              style={signUpFormStyles.closeButton}
+              onClick={closeForm}
+            >
               X
             </button>
           </div>
-          <form className="signin-form" style={{ width: '90%' }} onSubmit={submitForm}>
+          <form
+            className='signin-form'
+            style={{ width: '90%' }}
+            onSubmit={submitForm}
+          >
             <div
-              className="name-surname-wrapper"
+              className='name-surname-wrapper'
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
@@ -258,9 +270,9 @@ export const SignUpForm = (props: any) => {
                 marginBottom: '15px',
               }}
             >
-              <div className="name" style={{ width: '100%' }}>
+              <div className='name' style={{ width: '100%' }}>
                 <label
-                  htmlFor="name"
+                  htmlFor='name'
                   style={{
                     fontFamily: 'Bitter',
                     fontSize: '22px',
@@ -271,8 +283,8 @@ export const SignUpForm = (props: any) => {
                 </label>
                 <input
                   placeholder={generatedForm.name}
-                  type="text"
-                  className="name-input"
+                  type='text'
+                  className='name-input'
                   style={{
                     backgroundColor: 'transparent',
                     border: 'none',
@@ -290,7 +302,7 @@ export const SignUpForm = (props: any) => {
               </div>
             </div>
             <label
-              htmlFor="email"
+              htmlFor='email'
               style={{
                 display: 'block',
                 fontFamily: 'Bitter',
@@ -302,9 +314,9 @@ export const SignUpForm = (props: any) => {
             </label>
 
             <input
-              className="email-input"
+              className='email-input'
               placeholder={generatedForm.email}
-              type="email"
+              type='email'
               style={{
                 width: '100%',
                 backgroundColor: 'transparent',
@@ -321,7 +333,7 @@ export const SignUpForm = (props: any) => {
 
             {/* password */}
             <div
-              className="password-label"
+              className='password-label'
               style={{
                 display: 'flex',
                 marginTop: '20px',
@@ -329,7 +341,7 @@ export const SignUpForm = (props: any) => {
               }}
             >
               <label
-                htmlFor="password"
+                htmlFor='password'
                 style={{
                   fontFamily: 'Bitter',
                   fontSize: '22px',
@@ -340,8 +352,8 @@ export const SignUpForm = (props: any) => {
               </label>
             </div>
             <input
-              className="password-input"
-              type="password"
+              className='password-input'
+              type='password'
               placeholder={generatedForm.password}
               style={{
                 width: '100%',
@@ -411,7 +423,7 @@ export const SignUpForm = (props: any) => {
             </div>
 
             <div
-              className="submit-section"
+              className='submit-section'
               style={{
                 display: 'flex',
                 marginTop: '15px',
@@ -419,8 +431,8 @@ export const SignUpForm = (props: any) => {
               }}
             >
               <button
-                className="submit-btn"
-                type="submit"
+                className='submit-btn'
+                type='submit'
                 style={{
                   border: 'none',
                   background: 'transparent',
@@ -428,10 +440,15 @@ export const SignUpForm = (props: any) => {
                   padding: 0,
                 }}
               >
-                <img alt="" src={signUpBtn} width={130} style={{ marginTop: '-18px' }} />
+                <img
+                  alt=''
+                  src={signUpBtn}
+                  width={130}
+                  style={{ marginTop: '-18px' }}
+                />
               </button>
               <div
-                className="signup-offer"
+                className='signup-offer'
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -439,7 +456,9 @@ export const SignUpForm = (props: any) => {
                   gap: '15px',
                 }}
               >
-                <p style={{ margin: 0, paddingRight: '6px' }}>{generatedForm.dontHaveAcc[0]}</p>
+                <p style={{ margin: 0, paddingRight: '6px' }}>
+                  {generatedForm.dontHaveAcc[0]}
+                </p>
                 <button
                   onClick={switchBack}
                   style={{
@@ -460,10 +479,10 @@ export const SignUpForm = (props: any) => {
             </div>
           </form>
           <div
-            className="divider-bottom"
+            className='divider-bottom'
             style={{ display: 'flex', width: '90%', margin: '0 auto' }}
           >
-            <img alt="" src={orDivider} width={'43%'} />
+            <img alt='' src={orDivider} width={'43%'} />
             <h3
               style={{
                 fontFamily: 'Drum',
@@ -477,10 +496,10 @@ export const SignUpForm = (props: any) => {
             >
               {generatedForm.or}
             </h3>
-            <img alt="" src={orDivider} width={'43%'} />
+            <img alt='' src={orDivider} width={'43%'} />
           </div>
           <div
-            className="signin-with"
+            className='signin-with'
             style={{
               display: 'flex',
               width: '90%',
