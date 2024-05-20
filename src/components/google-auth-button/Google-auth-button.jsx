@@ -14,9 +14,23 @@ const GoogleAuthBtn = () => {
         size="large"
         width="250"
         onSuccess={(res) => {
-          console.log('RES', res);
           const decodedRes = jwtDecode(res.credential);
-          console.log('PROFILE', decodedRes);
+          fetch('https://cut-or-die-api.onrender.com/api/v1/users/googleAuth', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: decodedRes.email,
+              name: decodedRes.name,
+            }),
+            credentials: 'include',
+          })
+            .then((response) => log(response.json())
+            .then((data) => {})
+            .catch((error) => {
+              console.log(error);
+            });
         }}
         onError={(err) => {
           console.log('Login Failed', err);
