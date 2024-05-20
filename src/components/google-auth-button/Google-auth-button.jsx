@@ -26,8 +26,10 @@ const GoogleAuthBtn = () => {
             }),
             credentials: 'include',
           })
-            .then((response) => log(response.json())
-            .then((data) => {})
+            .then((response) => {})
+            .then((data) => {
+              console.log(data);
+            })
             .catch((error) => {
               console.log(error);
             });
