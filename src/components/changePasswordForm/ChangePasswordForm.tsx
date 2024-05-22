@@ -12,6 +12,7 @@ export const ChangePasswordForm = (props: any) => {
   const [createNewShown, setCreateNewShown] = useState(false);
   const [emailCode, setEmailCode] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [mailSentMessage, setMailSentMessage] = useState('');
 
   console.log(props.showFirstWindow);
   console.log(props.email);
@@ -21,6 +22,33 @@ export const ChangePasswordForm = (props: any) => {
     if (!(props.showFirstWindow == undefined)) {
       props.showFirstWindow();
     }
+  };
+
+  const resend = (e: any) => {
+    e.preventDefault();
+
+    fetch('https://cut-or-die-api.onrender.com/api/v1/users/forgotPassword', {
+      method: 'POST', // or 'POST', 'PUT', etc.
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: props.email }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === 'error') {
+          setErrorMessage('Incorrect email');
+          return;
+        } else {
+          // props.closeEmailForm();
+          // setEmail('');
+          setMailSentMessage('Mail sent');
+        }
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    // props.hide();
   };
 
   const nextStep = (e: any) => {
@@ -206,11 +234,11 @@ export const ChangePasswordForm = (props: any) => {
               display: 'flex',
               justifyContent: 'space-between',
               width: '79%',
-              marginBottom: '40px',
               alignItems: 'center',
             }}
           >
             <button
+              onClick={resend}
               style={{
                 fontFamily: 'Bitter',
                 color: '#555555',
@@ -251,6 +279,16 @@ export const ChangePasswordForm = (props: any) => {
               />
             </button>
           </div>
+          <p
+            style={{
+              width: '79%',
+              margin: '0px auto 40px auto',
+              paddingTop: '-10px',
+              alignSelf: 'flex-start',
+            }}
+          >
+            {mailSentMessage}
+          </p>
           {/* </form> */}
         </div>
       </div>
