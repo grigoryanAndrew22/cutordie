@@ -12,17 +12,17 @@ export const Course = (props: any) => {
 
   const selectedCourse = props.courses.filter((course: any) => {
     return (
-      course._id == window.location.pathname.replace('/courses/course/', '')
+      course._id === window.location.pathname.replace('/courses/course/', '')
     );
   });
 
   const boughtCourse = props.user.purchasedCourses?.filter((course: any) => {
     return (
-      course._id == window.location.pathname.replace('/courses/course/', '')
+      course === window.location.pathname.replace('/courses/course/', '')
     );
   })
-  const courseIsBought = selectedCourse == boughtCourse;
-  console.log(courseIsBought)
+
+  const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
   const btnText = courseIsBought ? 'To course' : 'Buy now'
 
   const switchCF = () => {

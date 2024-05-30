@@ -24,7 +24,6 @@ export const ForgotPassEmail = (props: any) => {
   const showSecondWindow = () => {
     setForgotPassShown(true);
   };
-  console.log(email);
 
   const nextStep = (e: any) => {
     e.preventDefault();
