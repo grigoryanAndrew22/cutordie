@@ -63,6 +63,8 @@ export const Profile = (props: any) => {
 
   console.log(props.user);
 
+  const [coursePurchased, setCoursePurchased] = useState(false);
+
   const [changePassShown, setChangePassShown] = useState(false);
   const setChangePassTrue = () => {
     setChangePassShown(true);

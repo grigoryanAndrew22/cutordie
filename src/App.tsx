@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Home } from './pages/home/Home';
 import { Courses } from './pages/courses/Courses';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 // import axios from 'axios';
 import { Aboutme } from './pages/aboutme/Aboutme';
 import { NavbarRaw } from './components/navbarRaw/NavbarRaw';
@@ -29,6 +29,11 @@ import axios from 'axios';
 // ];
 
 function App() {
+  // const location = useLocation();
+  // console.log(location.hash);
+
+  const [coursesObj, setCourses] = useState([]);
+
   const [loggedIn, setLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
 
@@ -59,6 +64,16 @@ function App() {
     Cookies.set('language', lang, { secure: true });
     changeLanguage(lang);
   };
+
+  useEffect(() => {
+    fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
+      .then((response) => response.json())
+      .then((data) => {
+        setCourses(data.data.courses);
+        console.log(data.data.courses);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   useEffect(() => {
     fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
@@ -107,7 +122,13 @@ function App() {
           ></Route>
           <Route
             path='/courses'
-            element={<Courses language={language} currency={currency} />}
+            element={
+              <Courses
+                language={language}
+                currency={currency}
+                coursesObj={coursesObj}
+              />
+            }
           ></Route>
 
           <Route
@@ -128,9 +149,11 @@ function App() {
             }
           ></Route>
           <Route
-            path='/courses/course'
+            path='/courses/course/:id'
             element={
               <Course
+                user={userData}
+                courses={coursesObj}
                 language={language}
                 loggedIn={loggedIn}
                 changeLogin={setLoggedIn}
