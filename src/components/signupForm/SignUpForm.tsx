@@ -142,6 +142,7 @@ export const SignUpForm = (props: any) => {
         })
           .then((response) => response.json())
           .then((data) => {
+            console.log("DATA", data);
             Cookies.set('jwt', data.token, { secure: true });
             props.setLoggedIn(true);
             props.setUser(data.data.user);
@@ -150,7 +151,6 @@ export const SignUpForm = (props: any) => {
             passwordField.current.value = '';
             confirmPasswordField.current.value = '';
             closeForm();
-            console.log(data.status);
           })
           .catch((error) => console.log(error));
       }
