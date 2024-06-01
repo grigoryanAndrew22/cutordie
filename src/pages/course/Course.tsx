@@ -5,6 +5,8 @@ import '../course/Course.css';
 import { SignInForm } from '../../components/signin-form/SignInForm';
 import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 import AnimatedButton from '../../components/animated-button/AnimatedButton';
+import Cookies from 'js-cookie';
+import { log } from 'console';
 
 export const Course = (props: any) => {
   const [courseForm, switchCourseForm] = useState(false);
@@ -24,6 +26,9 @@ export const Course = (props: any) => {
 
   const openPayment = () => {
     // switchCoursePay(true);
+
+    const data = { jwt: Cookies.get('jwt') };
+    console.log(Cookies.get('jwt'));
     fetch(
       'https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e',
       {
@@ -31,6 +36,7 @@ export const Course = (props: any) => {
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify(data),
       }
     )
       .then((response) => {
