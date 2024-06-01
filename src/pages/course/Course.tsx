@@ -43,7 +43,7 @@ export const Course = (props: any) => {
     // switchCoursePay(true);
 
     const data = { jwt: Cookies.get('jwt') };
-    console.log(Cookies.get('jwt'));
+
     fetch(
       'https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e',
       {
@@ -55,13 +55,11 @@ export const Course = (props: any) => {
       }
     )
       .then((response) => {
-        if (response.redirected) {
-          window.location.href = response.url;
-        } else {
-          return response.json();
-        }
+        return response.json();
       })
+
       .then((data) => {
+        window.open(data.pageUrl, '_blank');
         console.log(data);
       })
       .catch((error) => {
