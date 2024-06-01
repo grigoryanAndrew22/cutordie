@@ -6,7 +6,7 @@ import { TopSection } from '../../components/top-section/TopSection';
 import dividerRight from '../../assets/images/dividerRight.png';
 import dividerLeft from '../../assets/images/dividerLeft.png';
 import './Home.css';
-import CookiesNotification from '../../components/cookies-notification/CookiesNotificationCookies';
+// import CookiesNotification from '../../components/cookies-notification/CookiesNotificationCookies';
 
 export const Home = (props: any) => {
   let storageEmpty = true;
@@ -56,9 +56,9 @@ export const Home = (props: any) => {
         currency={props.currency}
       /> */}
       <BottomSection language={props.language} />
-      {showCookies && (
+      {/* {showCookies && (
         <CookiesNotification language={props.language} setShowCookies={setShowCookies} />
-      )}
+      )} */}
     </div>
   );
 };
