@@ -29,8 +29,20 @@ import axios from 'axios';
 // ];
 
 function App() {
-  // const location = useLocation();
-  // console.log(location.hash);
+  console.log(window.location.pathname.includes('/courses/course'));
+
+  let footerShadow;
+  if (window.location.pathname.includes('/courses/course')) {
+    footerShadow = false;
+  } else if (
+    window.location.pathname.includes('/profile') ||
+    window.location.pathname.includes('/aboutme') ||
+    window.location.pathname.includes('/courses')
+  ) {
+    footerShadow = true;
+  } else {
+    footerShadow = false;
+  }
 
   const [coursesObj, setCourses] = useState([]);
 
@@ -175,7 +187,7 @@ function App() {
         changeLangHandler={changeLang}
         currency={currency}
         changeCurr={changeCurrency}
-        bottomShadow={true}
+        bottomShadow={footerShadow}
       />
     </div>
   );
