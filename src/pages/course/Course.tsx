@@ -27,7 +27,7 @@ export const Course = (props: any) => {
   const openPayment = () => {
     // switchCoursePay(true);
 
-    const data = { jwt: Cookies.get('jwt') };
+    const data = { jwt: localStorage.getItem('jwt') };
 
     fetch(
       'https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e',
