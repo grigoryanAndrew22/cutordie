@@ -44,7 +44,7 @@ export const Course = (props: any) => {
       })
 
       .then((data) => {
-        window.open(data.pageUrl, '_blank');
+        window.open(data.data.pageUrl, '_blank');
         console.log(data);
       })
       .catch((error) => {
