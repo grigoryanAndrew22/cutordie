@@ -39,9 +39,9 @@
 }
 
 @media (max-width: 500px) {
-  .cards {
+  /* .cards {
     width: 85.5% !important;
-  }
+  } */
   .card {
     width: 355px !important;
   }

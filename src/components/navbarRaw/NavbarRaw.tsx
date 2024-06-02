@@ -87,60 +87,47 @@ export const NavbarRaw = (props: any) => {
         setLoggedIn={props.changeLogin}
       />
 
-      <div className='navbar-wrapper' style={navbarRawStyles.navbarWrapper}>
-        <div className='navbar' style={navbarRawStyles.navbar}>
-          <div className='skull' style={{ width: '30%', display: 'flex' }}>
-            <a href='/' style={{ display: 'flex' }}>
-              <img src={skull_logo} alt='logo' height={60} width={110} />
-            </a>
-          </div>
+      <div className="navbar-wrapper" style={navbarRawStyles.navbarWrapper}>
+        <div className="navbar" style={navbarRawStyles.navbar}>
+          <a href="/" style={{ display: 'flex' }}>
+            <img src={skull_logo} alt="logo" height={60} width={110} />
+          </a>
+
           <div
-            className='title-logo'
+            className="title-logo"
             style={{ width: '40%', display: 'flex', justifyContent: 'center' }}
           >
-            <a href='/' style={{ display: 'flex' }}>
-              <img src={group} alt='logo' height={51} width={190} />
+            <a href="/" style={{ display: 'flex' }}>
+              <img src={group} alt="logo" height={51} width={190} />
             </a>
           </div>
-          <div className='tabs' style={navbarRawStyles.tabs}>
-            <div style={{ padding: '0px 20px' }} className='aboutme-wrapper'>
-              <a
-                href='/aboutme'
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                <p style={navbarRawStyles.aboutMe} className='aboutme'>
+          <div className="tabs" style={navbarRawStyles.tabs}>
+            <div style={{ padding: '0px 20px' }} className="aboutme-wrapper">
+              <a href="/aboutme" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p style={navbarRawStyles.aboutMe} className="aboutme">
                   {navbarRawGenerated.aboutMe}
                 </p>
               </a>
             </div>
-            <div style={{ padding: '0px 20px' }} className='courses-wrapper'>
-              <a
-                href='/courses'
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                <p
-                  style={{ fontSize: '17px', letterSpacing: '0.02857em' }}
-                  className='courses'
-                >
+            <div style={{ padding: '0px 20px' }} className="courses-wrapper">
+              <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p style={{ fontSize: '17px', letterSpacing: '0.02857em' }} className="courses">
                   {navbarRawGenerated.courses}
                 </p>
               </a>
             </div>
-            <div
-              style={{ padding: '0px 20px' }}
-              className='signin-navbar-wrapper'
-            >
+            <div style={{ padding: '0px 20px' }} className="signin-navbar-wrapper">
               <button
                 onClick={openForm}
                 style={navbarRawStyles.signinBTN(props.loggedIn)}
-                className='signin-btn'
+                className="signin-btn"
               >
                 {navbarRawGenerated.signIn}
               </button>
 
               <button
                 onClick={dropdownControl}
-                className='account-btn'
+                className="account-btn"
                 style={{
                   display: props.loggedIn ? 'inline' : 'none',
                   border: 'none',
@@ -149,39 +136,31 @@ export const NavbarRaw = (props: any) => {
                   cursor: 'pointer',
                 }}
               >
-                <img src={profileIcon} alt='profile' width={27} />
+                <img src={profileIcon} alt="profile" width={27} />
               </button>
 
-              <ul
-                className='dropdown'
-                style={navbarRawStyles.dropdown(dropdownActive)}
-              >
+              <ul className="dropdown" style={navbarRawStyles.dropdown(dropdownActive)}>
                 <li style={navbarRawStyles.li}>
-                  <img src={profileIcon} alt='profile' width={25} />
-                  <a href='/profile' style={navbarRawStyles.a}>
+                  <img src={profileIcon} alt="profile" width={25} />
+                  <a href="/profile" style={navbarRawStyles.a}>
                     {navbarRawGenerated.myprof}
                   </a>
                 </li>
                 <li style={navbarRawStyles.li}>
-                  <img src={libraryIcon} alt='profile' width={25} />
-                  <a href='/profile' style={navbarRawStyles.a}>
+                  <img src={libraryIcon} alt="profile" width={25} />
+                  <a href="/profile" style={navbarRawStyles.a}>
                     {navbarRawGenerated.lib}
                   </a>
                 </li>
                 <li style={navbarRawStyles.li}>
-                  <img src={settingsIcon} alt='profile' width={25} />
-                  <a href='/profile' style={navbarRawStyles.a}>
+                  <img src={settingsIcon} alt="profile" width={25} />
+                  <a href="/profile" style={navbarRawStyles.a}>
                     {navbarRawGenerated.settings}
                   </a>
                 </li>
-                <img alt='' src={hr} />
+                <img alt="" src={hr} />
                 <li style={navbarRawStyles.li}>
-                  <img
-                    src={logoutIcon}
-                    alt='profile'
-                    width={25}
-                    style={{ marginLeft: '-2px' }}
-                  />
+                  <img src={logoutIcon} alt="profile" width={25} style={{ marginLeft: '-2px' }} />
                   <button onClick={logout} style={navbarRawStyles.button}>
                     {navbarRawGenerated.logout}
                   </button>

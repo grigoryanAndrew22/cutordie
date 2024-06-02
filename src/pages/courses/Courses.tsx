@@ -4,9 +4,7 @@ import { MovieCard } from '../../components/movie-card/MovieCard';
 import { coursesStyles } from './Courses.styles';
 
 export const Courses = (props: any) => {
-
-  const titleLang =
-    props.language === 'en' ? 'HAIRCUTS FOR STARTER' : 'СТРИЖКИ ДЛЯ НОВАЧКІВ';
+  const titleLang = props.language === 'en' ? 'HAIRCUTS FOR STARTER' : 'СТРИЖКИ ДЛЯ НОВАЧКІВ';
 
   return (
     <Fragment>
@@ -15,10 +13,8 @@ export const Courses = (props: any) => {
           <h1>{titleLang}</h1>
         </div>
 
-
-        <div className='cards' style={coursesStyles.cards}>
+        <div className="cards">
           {props.coursesObj.map((course: any, i: any) => (
-
             <MovieCard
               key={course._id}
               id={course._id}

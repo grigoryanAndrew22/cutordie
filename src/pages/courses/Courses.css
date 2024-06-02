@@ -18,7 +18,7 @@
 }
 
 /* haircutsSection */
-.haircutsSection {
+.haircuts-section {
   padding-top: 140px;
   width: 90%;
   margin: 0 auto;
@@ -39,14 +39,24 @@
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
+
+  row-gap: 5rem;
 }
 
-@media (max-width: 800px) {
+h1 {
+  font-size: 70px;
+}
+
+@media (max-width: 900px) {
   .cards {
     justify-content: center;
-    gap: 0;
+    row-gap: 3rem;
   }
   h1 {
-    font-size: 70px;
+    font-size: 50px;
+    text-align: center;
+  }
+  .haircuts-section {
+    padding-top: 60px;
   }
 }
