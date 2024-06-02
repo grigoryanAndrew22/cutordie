@@ -1,7 +1,16 @@
-@media (max-width: 750px) {
-  .top-section {
-    background-position: top;
-  }
+.top-section {
+  background-position: top;
+  height: 950px;
+}
+
+.buttonsWrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  gap: 30px;
 }
 
 .btn {
@@ -12,4 +21,16 @@
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+@media (max-width: 750px) {
+  .top-section {
+    background-position: top;
+    height: 600px;
+  }
+  .buttonsWrapper {
+    scale: 0.7;
+    position: relative;
+    transform: translate(-50px, 100px);
+  }
 }

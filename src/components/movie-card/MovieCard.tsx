@@ -30,17 +30,15 @@ export const MovieCard = (props: any) => {
       }}
     >
       <a
-
         href={`/courses/course/${props.id}`}
-        className='card'
-
+        className="card"
         style={{
           backgroundImage: `url(${require('../../assets/images/haircutCardBG.webp')})`,
           display: 'flex',
           flexDirection: 'column',
           width: '400px',
           position: 'relative',
-          marginTop: '80px',
+
           textDecoration: 'none',
           color: 'inherit',
         }}

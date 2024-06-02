@@ -24,12 +24,11 @@ const topSectionLangs = {
 };
 
 export const TopSection = (props: any) => {
-  const topSectionLangGenerated =
-    props.language === 'en' ? topSectionLangs.en : topSectionLangs.ua;
+  const topSectionLangGenerated = props.language === 'en' ? topSectionLangs.en : topSectionLangs.ua;
 
   return (
-    <div className='top-section' style={TopSectionStyles.topSection}>
-      <div style={TopSectionStyles.buttonsWrapper}>
+    <div className="top-section" style={TopSectionStyles.topSection}>
+      <div className="buttonsWrapper">
         <AnimatedButton
           url={'/aboutme'}
           buttonType={'aboutme'}
@@ -54,7 +53,7 @@ export const TopSection = (props: any) => {
           font={'Drum'}
           textClass={'button1'}
         />
-        <button className='btn'>
+        <button className="btn">
           <AnimatedButton
             url={''}
             buttonType={'signin'}
