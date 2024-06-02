@@ -48,13 +48,12 @@ export const navbarRawStyles = {
   navbar: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '98%',
+    width: '100%',
     margin: '0 auto',
     alignItems: 'center',
     height: '100%',
   },
   tabs: {
-    width: '30%',
     display: 'flex',
     justifyContent: 'end',
     color: 'white',

@@ -1,6 +1,41 @@
+.logo {
+  background-image: url('../../assets/images/skull_logo.svg');
+  width: 110px;
+  height: 60px;
+  background-repeat: no-repeat;
+  margin-right: auto;
+}
+
+.title-logo {
+  margin: 0 auto;
+}
+
+.tabs {
+  margin-left: auto;
+}
+
+.navbar-equal-item {
+  flex: 1 1 0px;
+  display: flex;
+}
+
+.navbar-left {
+  justify-content: start;
+}
+.navbar-center {
+  justify-content: center;
+}
+.navbar-right {
+  justify-content: end;
+}
+
 @media (max-width: 910px) {
   .title-logo {
     display: none !important;
+  }
+  .logo {
+    width: 73px;
+    height: 40px;
   }
 }
 
