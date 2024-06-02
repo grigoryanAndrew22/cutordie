@@ -28,7 +28,7 @@ const GoogleAuthBtn = () => {
             .then((response) => response.json())
             .then((data) => {
               console.log(data);
-              Cookies.set('jwt', data.token, { secure: true });
+              localStorage.setItem('jwt', JSON.stringify(data.token));
             })
             .catch((error) => {
               console.log(error);

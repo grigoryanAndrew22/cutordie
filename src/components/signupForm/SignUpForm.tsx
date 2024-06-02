@@ -142,7 +142,7 @@ export const SignUpForm = (props: any) => {
           .then((response) => response.json())
           .then((data) => {
             console.log("DATA", data);
-            Cookies.set('jwt', data.token, { secure: true });
+            localStorage.setItem('jwt', JSON.stringify(data.token));
             props.setLoggedIn(true);
             props.setUser(data.data.user);
             nameField.current.value = '';

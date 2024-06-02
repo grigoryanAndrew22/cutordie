@@ -4,18 +4,21 @@ import { MovieCard } from '../../components/movie-card/MovieCard';
 import { coursesStyles } from './Courses.styles';
 
 export const Courses = (props: any) => {
+
   const titleLang =
     props.language === 'en' ? 'HAIRCUTS FOR STARTER' : 'СТРИЖКИ ДЛЯ НОВАЧКІВ';
 
   return (
     <Fragment>
-      <div className='haircuts-section' style={coursesStyles.haircutsSection}>
-        <div className='title'>
-          <h1 style={coursesStyles.title}>{titleLang}</h1>
+      <div className="haircuts-section">
+        <div className="title">
+          <h1>{titleLang}</h1>
         </div>
+
 
         <div className='cards' style={coursesStyles.cards}>
           {props.coursesObj.map((course: any, i: any) => (
+
             <MovieCard
               key={course._id}
               id={course._id}
@@ -30,3 +33,9 @@ export const Courses = (props: any) => {
     </Fragment>
   );
 };
+
+//  merge (from main) idk delete this or not
+//   const [coursesObj, setCourses] = useState([]);
+//   console.log(coursesObj);
+
+//   const titleLang = props.language === 'en' ? 'HAIRCUTS FOR STARTER' : 'СТРИЖКИ ДЛЯ НОВАЧКІВ';
