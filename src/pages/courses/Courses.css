@@ -16,3 +16,37 @@
 .title {
   font-family: Drum;
 }
+
+/* haircutsSection */
+.haircutsSection {
+  padding-top: 140px;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+/* title */
+.title {
+  margin: 0;
+  color: #fff;
+  font-weight: 100;
+  font-size: 70px;
+  margin-top: -24px;
+}
+
+/* cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+@media (max-width: 800px) {
+  .cards {
+    justify-content: center;
+    gap: 0;
+  }
+  h1 {
+    font-size: 70px;
+  }
+}
