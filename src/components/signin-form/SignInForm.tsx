@@ -16,6 +16,7 @@ import { SignUpFormMobile } from '../signupFormMobile/SignUpFormMobile';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import AnimatedButton from '../animated-button/AnimatedButton';
+import { ForgotPassEmail } from '../changePasswordForm/ForgotPassEmail';
 import GoogleAuthBtn from '../google-auth-button/Google-auth-button';
 
 const formLangs = {
@@ -45,6 +46,7 @@ export const SignInForm = (props: any) => {
   // const passwordField: any = useRef(null);
   const [emailField, setEmailField] = useState('');
   const [passwordField, setPasswordField] = useState('');
+  const [emailFormShown, setEmailForm] = useState(false);
 
   const [signUpFormVisible, switchSignUp] = useState(false);
 
@@ -54,6 +56,10 @@ export const SignInForm = (props: any) => {
       props.switch(false);
     }
   });
+
+  const showEmailForm = () => {
+    setEmailForm(true);
+  };
 
   const emailChange = (e: any) => {
     setEmailField(e.target.value);
@@ -96,24 +102,6 @@ export const SignInForm = (props: any) => {
         setIncorrect(true);
         console.log(error);
       });
-
-    // axios
-    //   .post('https://cut-or-die-api.onrender.com/api/v1/users/signin', {
-    //     email: emailField.current.value,
-    //     password: passwordField.current.value,
-    //   })
-    //   .then((response) => {
-    //     setIncorrect(false);
-    //     Cookies.set('token', response.data.token, { secure: true });
-    //     console.log(response);
-    //     emailField.current.value = '';
-    //     passwordField.current.value = '';
-    //     closeForm();
-    //   })
-    //   .catch((error) => {
-    //     setIncorrect(true);
-    //     console.log(error);
-    //   });
   };
 
   const closeForm = () => {
@@ -124,10 +112,19 @@ export const SignInForm = (props: any) => {
     }
   };
 
+  const forgotPassActivate = () => {
+    setEmailForm(true);
+    closeForm();
+  };
+
   const switchToSignUp = (e: any) => {
     e.preventDefault();
     props.switch(false);
     switchSignUp(true);
+  };
+
+  const closeEmailForm = () => {
+    setEmailForm(false);
   };
 
   const signinBtn =
@@ -153,6 +150,11 @@ export const SignInForm = (props: any) => {
         language={props.language}
         setLoggedIn={props.setLoggedIn}
         setUser={props.setUser}
+      />
+      <ForgotPassEmail
+        shown={emailFormShown}
+        closeEmailForm={closeEmailForm}
+        showEmailForm={showEmailForm}
       />
       <div
         className="overlay"
@@ -267,12 +269,15 @@ export const SignInForm = (props: any) => {
               >
                 {generatedForm.password}
               </label>
+
               <p
+                onClick={forgotPassActivate}
                 style={{
                   margin: 0,
                   fontFamily: 'Bitter',
                   alignSelf: 'center',
                   fontWeight: 600,
+                  cursor: 'pointer',
                 }}
               >
                 {generatedForm.forgotPassword}
