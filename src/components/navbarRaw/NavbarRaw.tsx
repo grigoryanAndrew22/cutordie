@@ -57,7 +57,7 @@ export const NavbarRaw = (props: any) => {
     // }).then((response) => {
     //   console.log(response);
     // });
-    document.cookie = 'jwt=something;max-age=-100;expires';
+    localStorage.removeItem('jwt');
     switchDropdown(false);
 
     window.location.reload();
@@ -98,73 +98,72 @@ export const NavbarRaw = (props: any) => {
               </a>
             </div>
           </div>
-          <div className="navbar-equal-item navbar-right ">
-            <div className="tabs" style={navbarRawStyles.tabs}>
-              <div style={{ padding: '0px 20px' }} className="aboutme-wrapper">
-                <a href="/aboutme" style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <p style={navbarRawStyles.aboutMe} className="aboutme">
-                    {navbarRawGenerated.aboutMe}
-                  </p>
-                </a>
-              </div>
-              <div style={{ padding: '0px 20px' }} className="courses-wrapper">
-                <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <p style={{ fontSize: '17px', letterSpacing: '0.02857em' }} className="courses">
-                    {navbarRawGenerated.courses}
-                  </p>
-                </a>
-              </div>
-              <div style={{ padding: '0px 20px' }} className="signin-navbar-wrapper">
-                <button
-                  onClick={openForm}
-                  style={navbarRawStyles.signinBTN(props.loggedIn)}
-                  className="signin-btn"
-                >
-                  {navbarRawGenerated.signIn}
-                </button>
 
-                <button
-                  onClick={dropdownControl}
-                  className="account-btn"
-                  style={{
-                    display: props.loggedIn ? 'inline' : 'none',
-                    border: 'none',
-                    background: 'transparent',
-                    color: 'inherit',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <img src={profileIcon} alt="profile" width={27} />
-                </button>
+          <div className="tabs navbar-equal-item" style={navbarRawStyles.tabs}>
+            <div style={{ padding: '0px 20px' }} className="aboutme-wrapper">
+              <a href="/aboutme" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p style={navbarRawStyles.aboutMe} className="aboutme">
+                  {navbarRawGenerated.aboutMe}
+                </p>
+              </a>
+            </div>
+            <div style={{ padding: '0px 20px' }} className="courses-wrapper">
+              <a href="/courses" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p style={{ fontSize: '17px', letterSpacing: '0.02857em' }} className="courses">
+                  {navbarRawGenerated.courses}
+                </p>
+              </a>
+            </div>
+            <div style={{ padding: '0px 20px' }} className="signin-navbar-wrapper">
+              <button
+                onClick={openForm}
+                style={navbarRawStyles.signinBTN(props.loggedIn)}
+                className="signin-btn"
+              >
+                {navbarRawGenerated.signIn}
+              </button>
 
-                <ul className="dropdown" style={navbarRawStyles.dropdown(dropdownActive)}>
-                  <li style={navbarRawStyles.li}>
-                    <img src={profileIcon} alt="profile" width={25} />
-                    <a href="/profile" style={navbarRawStyles.a}>
-                      {navbarRawGenerated.myprof}
-                    </a>
-                  </li>
-                  <li style={navbarRawStyles.li}>
-                    <img src={libraryIcon} alt="profile" width={25} />
-                    <a href="/profile" style={navbarRawStyles.a}>
-                      {navbarRawGenerated.lib}
-                    </a>
-                  </li>
-                  <li style={navbarRawStyles.li}>
-                    <img src={settingsIcon} alt="profile" width={25} />
-                    <a href="/profile" style={navbarRawStyles.a}>
-                      {navbarRawGenerated.settings}
-                    </a>
-                  </li>
-                  <img alt="" src={hr} />
-                  <li style={navbarRawStyles.li}>
-                    <img src={logoutIcon} alt="profile" width={25} style={{ marginLeft: '-2px' }} />
-                    <button onClick={logout} style={navbarRawStyles.button}>
-                      {navbarRawGenerated.logout}
-                    </button>
-                  </li>
-                </ul>
-              </div>
+              <button
+                onClick={dropdownControl}
+                className="account-btn"
+                style={{
+                  display: props.loggedIn ? 'inline' : 'none',
+                  border: 'none',
+                  background: 'transparent',
+                  color: 'inherit',
+                  cursor: 'pointer',
+                }}
+              >
+                <img src={profileIcon} alt="profile" width={27} />
+              </button>
+
+              <ul className="dropdown" style={navbarRawStyles.dropdown(dropdownActive)}>
+                <li style={navbarRawStyles.li}>
+                  <img src={profileIcon} alt="profile" width={25} />
+                  <a href="/profile" style={navbarRawStyles.a}>
+                    {navbarRawGenerated.myprof}
+                  </a>
+                </li>
+                <li style={navbarRawStyles.li}>
+                  <img src={libraryIcon} alt="profile" width={25} />
+                  <a href="/profile" style={navbarRawStyles.a}>
+                    {navbarRawGenerated.lib}
+                  </a>
+                </li>
+                <li style={navbarRawStyles.li}>
+                  <img src={settingsIcon} alt="profile" width={25} />
+                  <a href="/profile" style={navbarRawStyles.a}>
+                    {navbarRawGenerated.settings}
+                  </a>
+                </li>
+                <img alt="" src={hr} />
+                <li style={navbarRawStyles.li}>
+                  <img src={logoutIcon} alt="profile" width={25} style={{ marginLeft: '-2px' }} />
+                  <button onClick={logout} style={navbarRawStyles.button}>
+                    {navbarRawGenerated.logout}
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
