@@ -45,8 +45,6 @@ export const Footer = (props: any) => {
     props.changeCurr('eur');
   };
 
-  console.log(props.currency);
-
   const footerTranslated =
     props.language === 'en' ? footerLangs.en : footerLangs.ua;
 
