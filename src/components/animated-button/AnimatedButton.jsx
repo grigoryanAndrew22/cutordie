@@ -11,6 +11,7 @@ export const AnimatedButton = ({
   color,
   font,
   textClass,
+  
 }) => {
   const buttonTypes = {
     aboutme: (

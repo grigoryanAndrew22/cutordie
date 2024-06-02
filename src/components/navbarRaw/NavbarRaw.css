@@ -3,15 +3,6 @@
   width: 110px;
   height: 60px;
   background-repeat: no-repeat;
-  margin-right: auto;
-}
-
-.title-logo {
-  margin: 0 auto;
-}
-
-.tabs {
-  margin-left: auto;
 }
 
 .navbar-equal-item {
@@ -25,7 +16,7 @@
 .navbar-center {
   justify-content: center;
 }
-.navbar-right {
+.tabs {
   justify-content: end;
 }
 
