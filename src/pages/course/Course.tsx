@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import buyNowbtn from '../../assets/images/buyNowbtn.svg';
 import { courseStyles } from './Course.styles';
 import '../course/Course.css';
@@ -23,6 +23,10 @@ export const Course = (props: any) => {
       course === window.location.pathname.replace('/courses/course/', '')
     );
   })
+
+  console.log(selectedCourse)
+    
+  // const courseDuration = `${Math.trunc(selectedCourse[0].duration / 60)}h ${selectedCourse[0].duration % 60}m`
 
   const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
   const btnText = courseIsBought ? 'To course' : 'Buy now'
@@ -194,7 +198,7 @@ export const Course = (props: any) => {
                     fontWeight: 700,
                   }}
                 >
-                  1h 56m
+                  {/* {courseDuration} */}11
                 </p>
               </div>
               <span

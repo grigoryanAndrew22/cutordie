@@ -29,8 +29,6 @@ import axios from 'axios';
 // ];
 
 function App() {
-  console.log(window.location.pathname.includes('/courses/course'));
-
   let footerShadow;
   if (window.location.pathname.includes('/courses/course')) {
     footerShadow = false;
@@ -67,6 +65,8 @@ function App() {
     changeLanguage('en');
   }
 
+  console.log(JSON.stringify(JSON.stringify(JSON.stringify(11))));
+
   useEffect(() => {
     localStorage.setItem('language', JSON.stringify(language));
     localStorage.setItem('currency', JSON.stringify(currency));
@@ -82,7 +82,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setCourses(data.data.courses);
-        console.log(data.data.courses);
+        // console.log(data.data.courses);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -112,7 +112,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <NavbarRaw
         language={language}
         loggedIn={loggedIn}
@@ -128,9 +128,11 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
-          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
           <Route
-
+            path='/'
+            element={<Home language={language} currency={currency} />}
+          ></Route>
+          <Route
             path='/'
             element={<Home language={language} currency={currency} />}
           ></Route>
@@ -143,12 +145,14 @@ function App() {
                 coursesObj={coursesObj}
               />
             }
-
           ></Route>
 
-          <Route path="/aboutme" element={<Aboutme language={language} />}></Route>
           <Route
-            path="/profile"
+            path='/aboutme'
+            element={<Aboutme language={language} />}
+          ></Route>
+          <Route
+            path='/profile'
             element={
               <Profile
                 changeLogin={setLoggedIn}
@@ -161,7 +165,6 @@ function App() {
             }
           ></Route>
           <Route
-
             path='/courses/course/:id'
             element={
               <Course
@@ -180,10 +183,9 @@ function App() {
           <Route
             path='/404'
             element={<PageNotFound language={language} />}
-
           ></Route>
-          <Route path="/policy" element={<Policy language={language} />}></Route>
-          <Route path="/404" element={<PageNotFound language={language} />}></Route>
+          {/* <Route path="/policy" element={<Policy language={language} />}></Route>
+          <Route path="/404" element={<PageNotFound language={language} />}></Route> */}
         </Routes>
       </BrowserRouter>
       <Footer
@@ -191,9 +193,7 @@ function App() {
         changeLangHandler={changeLang}
         currency={currency}
         changeCurr={changeCurrency}
-
         bottomShadow={footerShadow}
-
       />
     </div>
   );

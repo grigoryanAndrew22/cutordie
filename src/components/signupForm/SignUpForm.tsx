@@ -141,7 +141,10 @@ export const SignUpForm = (props: any) => {
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log("DATA", data);
+            console.log("DATA", data.message);
+            if(data.status === 'fail') {
+              setErrorMessage(data.message)
+            }
             localStorage.setItem('jwt', JSON.stringify(data.token));
             props.setLoggedIn(true);
             props.setUser(data.data.user);
