@@ -171,6 +171,7 @@ function App() {
                 user={userData}
                 courses={coursesObj}
                 language={language}
+                currency={currency}
                 loggedIn={loggedIn}
                 changeLogin={setLoggedIn}
               />
