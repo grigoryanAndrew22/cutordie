@@ -29,8 +29,6 @@ import axios from 'axios';
 // ];
 
 function App() {
-  console.log(window.location.pathname.includes('/courses/course'));
-
   let footerShadow;
   if (window.location.pathname.includes('/courses/course')) {
     footerShadow = false;
@@ -67,8 +65,10 @@ function App() {
     changeLanguage('en');
   }
 
+
   // console.log('PURE', localStorage.getItem('jwt'));
   // console.log('JWT', { jwt: localStorage.getItem('jwt') });
+
 
   useEffect(() => {
     localStorage.setItem('language', language);
@@ -87,7 +87,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setCourses(data.data.courses);
-        console.log(data.data.courses);
+        // console.log(data.data.courses);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -117,7 +117,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <NavbarRaw
         language={language}
         loggedIn={loggedIn}
@@ -133,16 +133,33 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
-          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
-          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
+
           <Route
-            path="/courses"
-            element={<Courses language={language} currency={currency} coursesObj={coursesObj} />}
+            path='/'
+            element={<Home language={language} currency={currency} />}
+          ></Route>
+          <Route
+            path='/'
+            element={<Home language={language} currency={currency} />}
+          ></Route>
+          <Route
+            path='/courses'
+            element={
+              <Courses
+                language={language}
+                currency={currency}
+                coursesObj={coursesObj}
+              />
+            }
+
           ></Route>
 
-          <Route path="/aboutme" element={<Aboutme language={language} />}></Route>
           <Route
-            path="/profile"
+            path='/aboutme'
+            element={<Aboutme language={language} />}
+          ></Route>
+          <Route
+            path='/profile'
             element={
               <Profile
                 changeLogin={setLoggedIn}
@@ -155,21 +172,32 @@ function App() {
             }
           ></Route>
           <Route
+
             path="/courses/course/:id"
+
             element={
               <Course
                 user={userData}
                 courses={coursesObj}
                 language={language}
+                currency={currency}
                 loggedIn={loggedIn}
                 changeLogin={setLoggedIn}
               />
             }
           ></Route>
-          <Route path="/policy" element={<Policy language={language} />}></Route>
-          <Route path="/404" element={<PageNotFound language={language} />}></Route>
-          <Route path="/policy" element={<Policy language={language} />}></Route>
-          <Route path="/404" element={<PageNotFound language={language} />}></Route>
+
+          <Route
+            path='/policy'
+            element={<Policy language={language} />}
+          ></Route>
+          <Route
+            path='/404'
+            element={<PageNotFound language={language} />}
+          ></Route>
+          {/* <Route path="/policy" element={<Policy language={language} />}></Route>
+          <Route path="/404" element={<PageNotFound language={language} />}></Route> */}
+
         </Routes>
       </BrowserRouter>
       <Footer

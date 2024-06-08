@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import buyNowbtn from '../../assets/images/buyNowbtn.svg';
 import { courseStyles } from './Course.styles';
 import '../course/Course.css';
@@ -7,10 +7,20 @@ import { PaymentCard } from '../../components/paymentCard/PaymentCard';
 import AnimatedButton from '../../components/animated-button/AnimatedButton';
 import Cookies from 'js-cookie';
 import { log } from 'console';
+import { CourseParagraph } from '../../components/CourseParagraph/CourseParagraph';
 
 export const Course = (props: any) => {
+  const [courseName, setCourseName] = useState('')
+  const [courseDuration,setCourseDuration] = useState('1h');
+  const [courseDiff, setCourseDiff] = useState('0');
+  const [courseEquipment,setCourseEquipment] = useState('')
+  const [courseParagraphs, setCourseParagraphs] = useState([])
+  const [coursePrice, setCoursePrice] = useState('')
+
   const [courseForm, switchCourseForm] = useState(false);
   const [coursePayment, switchCoursePay] = useState(false);
+
+  console.log(props.language)
 
   const selectedCourse = props.courses.filter((course: any) => {
     return (
@@ -24,8 +34,39 @@ export const Course = (props: any) => {
     );
   })
 
+  console.log(props.courses)
+  // console.log(selectedCourse[0])
+
+  useEffect(() => {
+    if(selectedCourse !== undefined) {
+       setCourseDuration(`${Math.trunc(selectedCourse[0]?.duration / 60)}h ${selectedCourse[0]?.duration % 60}m`)
+       setCourseDiff(selectedCourse[0]?.difficulty)
+       setCourseEquipment(selectedCourse[0]?.equipment)
+       if(props.language === 'ua') {
+        setCourseParagraphs(selectedCourse[0]?.ua.paragraphs)
+        setCourseName(selectedCourse[0]?.ua.name)
+       } else {
+        setCourseParagraphs(selectedCourse[0]?.en.paragraphs)
+        setCourseName(selectedCourse[0]?.en.name)
+       }
+       if(props.currency === 'uah') {
+        setCoursePrice(selectedCourse[0]?.price.uah)
+       } else if(props.currency === 'eur') {
+        setCoursePrice(selectedCourse[0]?.price.eur + '€')
+       } else {
+        setCoursePrice(selectedCourse[0]?.price.usd + '$')
+       }
+    } 
+  }, [selectedCourse])
+
   const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
-  const btnText = courseIsBought ? 'To course' : 'Buy now'
+  
+  let btnText = ''
+  if(props.language === 'ua') {
+    btnText = courseIsBought ? 'До курсу' : 'Купити'
+  } else {
+    btnText = courseIsBought ? 'To course' : 'Buy now'
+  }
 
   const switchCF = () => {
     switchCourseForm(true);
@@ -121,7 +162,7 @@ export const Course = (props: any) => {
                   paddingBottom: '28px',
                 }}
               >
-                Haircutting basics
+                {courseName}
               </p>
               <div
                 style={{
@@ -157,7 +198,7 @@ export const Course = (props: any) => {
                     fontWeight: 700,
                   }}
                 >
-                  Very easy
+                  {courseDiff}
                 </p>
               </div>
               <div
@@ -194,7 +235,7 @@ export const Course = (props: any) => {
                     fontWeight: 700,
                   }}
                 >
-                  1h 56m
+                  {courseDuration}
                 </p>
               </div>
               <span
@@ -219,7 +260,7 @@ export const Course = (props: any) => {
                   fontWeight: 600,
                 }}
               >
-                clipper and scissors
+                {courseEquipment}
               </span>
               <div
                 className='buy-offer'
@@ -270,117 +311,14 @@ export const Course = (props: any) => {
                     position: 'relative',
                   }}
                 >
-                  5$
+                  {coursePrice} 
+                  {(props.currency === 'uah') && <img style={{width: '44px'}} src={require('../../assets/images/uahgray.png')}/>}
                 </p>
               </div>
             </div>
           </div>
 
-          <div
-            className='course-descr-section'
-            style={{ display: 'flex', marginTop: '100px' }}
-          >
-            <p
-              style={{
-                margin: 0,
-                fontFamily: 'Bitter',
-                fontSize: '24px',
-                color: '#232323',
-                paddingRight: '60px',
-                fontWeight: 600,
-              }}
-            >
-              Welcome to "Mastering the Art of Haircutting," a comprehensive
-              online course designed to transform your hairstyling skills and
-              unleash your creativity in the world of hairdressing. Whether
-              you're an aspiring hairstylist or a seasoned professional looking
-              to refine your techniques, this course is tailored to meet your
-              needs and take your haircutting abilities to new heights.Welcome
-              to "Mastering the Art of Haircutting," a comprehensive online
-              course designed to transform your hairstyling skills and unleash
-              your creativity in the world of hairdressing. Whether you're an
-              aspiring hairstylist or a seasoned professional looking to refine
-              your techniques, this course is tailored to meet your needs and
-              take your haircutting abilities to new heights.
-            </p>
-            <img
-              alt=''
-              className='course-img'
-              src={require('../../assets/images/coursePrev.png')}
-            />
-          </div>
-
-          <div
-            className='course-descr-section'
-            style={{
-              display: 'flex',
-              marginTop: '120px',
-              flexDirection: 'row-reverse',
-            }}
-          >
-            <p
-              style={{
-                margin: 0,
-                fontFamily: 'Bitter',
-                fontSize: '24px',
-                color: '#232323',
-                paddingLeft: '60px',
-                fontWeight: 600,
-              }}
-            >
-              Welcome to "Mastering the Art of Haircutting," a comprehensive
-              online course designed to transform your hairstyling skills and
-              unleash your creativity in the world of hairdressing. Whether
-              you're an aspiring hairstylist or a seasoned professional looking
-              to refine your techniques, this course is tailored to meet your
-              needs and take your haircutting abilities to new heights.Welcome
-              to "Mastering the Art of Haircutting," a comprehensive online
-              course designed to transform your hairstyling skills and unleash
-              your creativity in the world of hairdressing. Whether you're an
-              aspiring hairstylist or a seasoned professional looking to refine
-              your techniques, this course is tailored to meet your needs and
-              take your haircutting abilities to new heights.
-            </p>
-            <img
-              className='course-img'
-              alt=''
-              src={require('../../assets/images/coursePrev.png')}
-            />
-          </div>
-
-          <div
-            className='course-descr-section'
-            style={{ display: 'flex', marginTop: '120px' }}
-          >
-            <p
-              style={{
-                margin: 0,
-                fontFamily: 'Bitter',
-                fontSize: '24px',
-                color: '#232323',
-                paddingRight: '60px',
-                fontWeight: 600,
-              }}
-            >
-              Welcome to "Mastering the Art of Haircutting," a comprehensive
-              online course designed to transform your hairstyling skills and
-              unleash your creativity in the world of hairdressing. Whether
-              you're an aspiring hairstylist or a seasoned professional looking
-              to refine your techniques, this course is tailored to meet your
-              needs and take your haircutting abilities to new heights.Welcome
-              to "Mastering the Art of Haircutting," a comprehensive online
-              course designed to transform your hairstyling skills and unleash
-              your creativity in the world of hairdressing. Whether you're an
-              aspiring hairstylist or a seasoned professional looking to refine
-              your techniques, this course is tailored to meet your needs and
-              take your haircutting abilities to new heights.
-            </p>
-            <img
-              alt=''
-              className='course-img'
-              src={require('../../assets/images/coursePrev.png')}
-            />
-          </div>
+          {courseParagraphs?.map((text,i) => <CourseParagraph key={i} text={text} reverse={i % 2 === 0}/>)}
 
           <div
             className='buy-foronly'
@@ -400,7 +338,7 @@ export const Course = (props: any) => {
               <AnimatedButton
                 url={''}
                 buttonType={'buynow'}
-                text={'Buy now'}
+                text={btnText}
                 width={363}
                 height={142}
                 top={57}
@@ -431,7 +369,8 @@ export const Course = (props: any) => {
                 paddingTop: '7px',
               }}
             >
-              5$
+              {coursePrice}
+              {(props.currency === 'uah') && <img style={{width: '44px'}} src={require('../../assets/images/uahgray.png')}/>}
             </p>
           </div>
         </div>
