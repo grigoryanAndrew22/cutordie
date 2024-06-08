@@ -28,7 +28,7 @@ const GoogleAuthBtn = () => {
             .then((response) => response.json())
             .then((data) => {
               console.log(data);
-              localStorage.setItem('jwt', JSON.stringify(data.token));
+              localStorage.setItem('jwt', data.token);
             })
             .catch((error) => {
               console.log(error);

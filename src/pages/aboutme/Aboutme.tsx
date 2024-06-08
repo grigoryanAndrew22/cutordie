@@ -12,12 +12,7 @@ const langs = {
     portfolio: 'MY PORTFOLIO',
   },
   ua: {
-    whyme: [
-      'ЧОМУ Я?',
-      '-ТОМУ ЩО,',
-      '-МАТИ КАЗАЛА ЩО Я НАЙКРАЩИЙ,',
-      '-ОСЬ ЧОМУ.',
-    ],
+    whyme: ['ЧОМУ Я?', '-ТОМУ ЩО,', '-МАТИ КАЗАЛА ЩО Я НАЙКРАЩИЙ,', '-ОСЬ ЧОМУ.'],
     inscrText: `Налагодження взаєморозуміння з клієнтами може мати вирішальне значення. Люди часто обирають перукарів, з якими їм комфортно і з якими вони можуть бути
     дружні стосунки. Якщо ви милосердні і своїм клієнтам почуваєтеся невимушено, вони можуть віддати перевагу вам як перукаря.`,
     portfolio: 'МОЄ ПОРТФОЛІО',
@@ -31,39 +26,32 @@ export const Aboutme = (props: any) => {
 
   return (
     <Fragment>
-      <div
-        className='barber-profile-wrapper'
-        style={aboutmeStyles.barderProfileWrapper}
-      >
+      <div className="barber-profile-wrapper" style={aboutmeStyles.barderProfileWrapper}>
         <div style={aboutmeStyles.firstSection}>
-          <div className='whyme' style={aboutmeStyles.whyme}>
+          <div className="whyme" style={aboutmeStyles.whyme}>
             <p style={aboutmeStyles.whymeP}>{generatedLang.whyme[0]}</p>
             <p style={aboutmeStyles.pStyle}>{generatedLang.whyme[1]}</p>
             <p style={aboutmeStyles.pStyle}>{generatedLang.whyme[2]}</p>
             <p style={aboutmeStyles.pStyle}>{generatedLang.whyme[3]}</p>
           </div>
-          <div className='pfp'>
-            <img
-              className='barber-pfp'
-              alt=''
-              src={require('../../assets/images/barberpfp.webp')}
-              height={600}
-              width={550}
-            />
-          </div>
+          <img
+            className="barber-pfp"
+            alt="barber pfp"
+            src={require('../../assets/images/barberpfp.webp')}
+          />
         </div>
       </div>
 
-      <div className='underpfp' style={aboutmeStyles.inscription}>
+      <div className="underpfp" style={aboutmeStyles.inscription}>
         <p style={aboutmeStyles.inscrText}>{generatedLang.inscrText}</p>
       </div>
 
-      <div className='portfolio' style={aboutmeStyles.portfolioWrap}>
+      <div className="portfolio" style={aboutmeStyles.portfolioWrap}>
         <p style={aboutmeStyles.portfolioTitle}>{generatedLang.portfolio}</p>
-        <div className='photos_row1' style={aboutmeStyles.photosRow}>
+        <div className="photos_row1" style={aboutmeStyles.photosRow}>
           {row.map((i: any) => (
             <img
-              alt=''
+              alt=""
               src={require(`../../assets/images/haircutpic${i}.png`)}
               style={{ marginBottom: '100px' }}
             />

@@ -65,12 +65,17 @@ function App() {
     changeLanguage('en');
   }
 
-  console.log(JSON.stringify(JSON.stringify(JSON.stringify(11))));
+
+  // console.log('PURE', localStorage.getItem('jwt'));
+  // console.log('JWT', { jwt: localStorage.getItem('jwt') });
+
 
   useEffect(() => {
-    localStorage.setItem('language', JSON.stringify(language));
-    localStorage.setItem('currency', JSON.stringify(currency));
+    localStorage.setItem('language', language);
+    localStorage.setItem('currency', currency);
   }, [language, currency]);
+
+  // console.log('Currency', localStorage.getItem('currency'));
 
   const changeLang = (lang: string) => {
     localStorage.setItem('language', lang);
@@ -104,10 +109,10 @@ function App() {
         } else {
           setLoggedIn(true);
         }
-        setUserData(data.data.user);
+        setUserData(data.user);
       })
       .catch((error) => {
-        console.error(error);
+        console.error('CURRENT USER FAILED', error);
       });
   }, []);
 
@@ -128,6 +133,7 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
+
           <Route
             path='/'
             element={<Home language={language} currency={currency} />}
@@ -145,6 +151,7 @@ function App() {
                 coursesObj={coursesObj}
               />
             }
+
           ></Route>
 
           <Route
@@ -165,7 +172,9 @@ function App() {
             }
           ></Route>
           <Route
-            path='/courses/course/:id'
+
+            path="/courses/course/:id"
+
             element={
               <Course
                 user={userData}
@@ -177,6 +186,7 @@ function App() {
               />
             }
           ></Route>
+
           <Route
             path='/policy'
             element={<Policy language={language} />}
@@ -187,6 +197,7 @@ function App() {
           ></Route>
           {/* <Route path="/policy" element={<Policy language={language} />}></Route>
           <Route path="/404" element={<PageNotFound language={language} />}></Route> */}
+
         </Routes>
       </BrowserRouter>
       <Footer
