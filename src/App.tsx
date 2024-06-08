@@ -67,10 +67,15 @@ function App() {
     changeLanguage('en');
   }
 
+  // console.log('PURE', localStorage.getItem('jwt'));
+  // console.log('JWT', { jwt: localStorage.getItem('jwt') });
+
   useEffect(() => {
-    localStorage.setItem('language', JSON.stringify(language));
-    localStorage.setItem('currency', JSON.stringify(currency));
+    localStorage.setItem('language', language);
+    localStorage.setItem('currency', currency);
   }, [language, currency]);
+
+  // console.log('Currency', localStorage.getItem('currency'));
 
   const changeLang = (lang: string) => {
     localStorage.setItem('language', lang);
@@ -104,10 +109,10 @@ function App() {
         } else {
           setLoggedIn(true);
         }
-        setUserData(data.data.user);
+        setUserData(data.user);
       })
       .catch((error) => {
-        console.error(error);
+        console.error('CURRENT USER FAILED', error);
       });
   }, []);
 
@@ -129,21 +134,10 @@ function App() {
             ></Route>
           ))} */}
           <Route path="/" element={<Home language={language} currency={currency} />}></Route>
+          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
           <Route
-
-            path='/'
-            element={<Home language={language} currency={currency} />}
-          ></Route>
-          <Route
-            path='/courses'
-            element={
-              <Courses
-                language={language}
-                currency={currency}
-                coursesObj={coursesObj}
-              />
-            }
-
+            path="/courses"
+            element={<Courses language={language} currency={currency} coursesObj={coursesObj} />}
           ></Route>
 
           <Route path="/aboutme" element={<Aboutme language={language} />}></Route>
@@ -161,8 +155,7 @@ function App() {
             }
           ></Route>
           <Route
-
-            path='/courses/course/:id'
+            path="/courses/course/:id"
             element={
               <Course
                 user={userData}
@@ -173,15 +166,8 @@ function App() {
               />
             }
           ></Route>
-          <Route
-            path='/policy'
-            element={<Policy language={language} />}
-          ></Route>
-          <Route
-            path='/404'
-            element={<PageNotFound language={language} />}
-
-          ></Route>
+          <Route path="/policy" element={<Policy language={language} />}></Route>
+          <Route path="/404" element={<PageNotFound language={language} />}></Route>
           <Route path="/policy" element={<Policy language={language} />}></Route>
           <Route path="/404" element={<PageNotFound language={language} />}></Route>
         </Routes>
@@ -191,9 +177,7 @@ function App() {
         changeLangHandler={changeLang}
         currency={currency}
         changeCurr={changeCurrency}
-
         bottomShadow={footerShadow}
-
       />
     </div>
   );

@@ -5,7 +5,7 @@ export const aboutmeStyles = {
   },
   firstSection: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     width: '88%',
     margin: 'auto',
     paddingTop: '173px',
