@@ -28,7 +28,7 @@ export const Course = (props: any) => {
     );
   });
 
-  const boughtCourse = props.user.purchasedCourses?.filter((course: any) => {
+  const boughtCourse = props.user?.purchasedCourses?.filter((course: any) => {
     return (
       course === window.location.pathname.replace('/courses/course/', '')
     );
