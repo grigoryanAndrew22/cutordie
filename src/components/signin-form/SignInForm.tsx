@@ -90,7 +90,7 @@ export const SignInForm = (props: any) => {
           console.log(data);
         } else if (data.status === 'success') {
           setIncorrect(false);
-          localStorage.setItem('jwt', JSON.stringify(data.token));
+          localStorage.setItem('jwt', data.token);
           console.log(data);
           setEmailField('');
           setPasswordField('');
