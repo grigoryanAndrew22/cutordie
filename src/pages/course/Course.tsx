@@ -62,6 +62,7 @@ export const Course = (props: any) => {
     } 
   }, [selectedCourse])
 
+
   const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
   
   let btnText = ''
@@ -89,7 +90,7 @@ export const Course = (props: any) => {
     const data = { jwt: localStorage.getItem('jwt') };
 
     fetch(
-      'https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e',
+      `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/${selectedCourse[0]?._id}`,
       {
         method: 'POST',
         headers: {
