@@ -1,11 +1,9 @@
-import viewAllBtn from '../../assets/images/viewAllBtn.png';
-import viewAllBtnUA from '../../assets/images/viewAllBtnUA.svg';
 import AnimatedButton from '../animated-button/AnimatedButton';
 import './BottomSection.css';
 import { bottomSectionStyles } from './BottomSection.styles';
 
 export const BottomSection = (props: any) => {
-  const btnGenerated = props.language === 'en' ? viewAllBtn : viewAllBtnUA;
+  const allCoursesGenerated = props.language === 'en' ? 'View all courses' : 'До усіх курсів';
 
   return (
     <div className="bottom-section-wrapper" style={{ marginBottom: '-2px' }}>
@@ -16,7 +14,7 @@ export const BottomSection = (props: any) => {
         <AnimatedButton
           url={'/courses'}
           buttonType={'allcourses'}
-          text={'View all courses'}
+          text={allCoursesGenerated}
           width={661}
           height={173}
           top={40}

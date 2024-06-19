@@ -95,10 +95,10 @@ export const Profile = (props: any) => {
   const [coursesObj, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
+    fetch('https://cut-or-die-api.onrender.com/api/v1/currentUser')
       .then((response) => response.json())
       .then((data) => {
-        setCourses(data.data.courses);
+        setCourses(data.data.user.purchasedCourses);
         console.log(data.data.courses);
       })
       .catch((error) => console.log(error));
@@ -113,37 +113,34 @@ export const Profile = (props: any) => {
         prevStep={prevStep}
         email={props.user.email}
       />
-      <div
-        className='prof-sett-wrapper'
-        style={{ boxShadow: 'black 0px 110px 120px' }}
-      >
-        <div className='wrapperChild' style={profileStyles.wrapperChild}>
-          <div className='myprofile' style={{ width: '37%' }}>
-            <p className='prof-title' style={profileStyles.profileTitle}>
+      <div className="prof-sett-wrapper" style={{ boxShadow: 'black 0px 110px 120px' }}>
+        <div className="wrapperChild" style={profileStyles.wrapperChild}>
+          <div className="myprofile" style={{ width: '37%' }}>
+            <p className="prof-title" style={profileStyles.profileTitle}>
               {chosenLang.title}
             </p>
 
-            <div className='prof-info' style={{ marginTop: '45px' }}>
-              <div className='name_surname' style={profileStyles.nameSurname}>
-                <div className='name'>
+            <div className="prof-info" style={{ marginTop: '45px' }}>
+              <div className="name_surname" style={profileStyles.nameSurname}>
+                <div className="name">
                   <div style={profileStyles.nameWrap}>
-                    <img alt='' src={pencil} width={29} height={33} />
-                    <label htmlFor='name' style={profileStyles.nameLabel}>
+                    <img alt="" src={pencil} width={29} height={33} />
+                    <label htmlFor="name" style={profileStyles.nameLabel}>
                       {chosenLang.name}:
                     </label>
                   </div>
                 </div>
                 <input
-                  className='email-input profile-input'
+                  className="email-input profile-input"
                   value={props.user.userName}
-                  type='email'
+                  type="email"
                   style={profileStyles.input}
                 />
 
                 <div style={profileStyles.emailWrap}>
-                  <img alt='' src={pencil} width={29} height={33} />
+                  <img alt="" src={pencil} width={29} height={33} />
                   <label
-                    htmlFor='email'
+                    htmlFor="email"
                     style={{
                       fontFamily: 'Bitter',
                       fontSize: '22px',
@@ -153,15 +150,15 @@ export const Profile = (props: any) => {
                   </label>
                 </div>
                 <input
-                  className='email-input profile-input'
+                  className="email-input profile-input"
                   value={props.user.email}
-                  type='email'
+                  type="email"
                   style={profileStyles.input}
                 />
                 <div style={profileStyles.emailWrap}>
-                  <img alt='' src={pencil} width={29} height={33} />
+                  <img alt="" src={pencil} width={29} height={33} />
                   <label
-                    htmlFor='email'
+                    htmlFor="email"
                     style={{
                       fontFamily: 'Bitter',
                       fontSize: '22px',
@@ -171,29 +168,26 @@ export const Profile = (props: any) => {
                   </label>
                 </div>
                 <input
-                  className='password-input profile-input'
+                  className="password-input profile-input"
                   value={'password123'}
-                  type='password'
+                  type="password"
                   style={profileStyles.input}
                   onClick={setChangePassTrue}
                 />
               </div>
             </div>
           </div>
-          <div className='settings prof-setts' style={{ zIndex: 0 }}>
-            <p className='sett-title' style={profileStyles.settTitle}>
+          <div className="settings prof-setts" style={{ zIndex: 0 }}>
+            <p className="sett-title" style={profileStyles.settTitle}>
               SETTINGS
             </p>
-            <div
-              className='currency-section'
-              style={{ display: 'flex', marginTop: '83px' }}
-            >
+            <div className="currency-section" style={{ display: 'flex', marginTop: '83px' }}>
               <div style={profileStyles.coinWrap}>
-                <img alt='' src={coinGray} width={55} />
+                <img alt="" src={coinGray} width={55} />
               </div>
               <div style={profileStyles.currencyWrap}>
                 <img
-                  alt=''
+                  alt=""
                   src={require('../../assets/images/circle1.png')}
                   style={{
                     position: 'absolute',
@@ -204,7 +198,7 @@ export const Profile = (props: any) => {
                   }}
                 />
                 <img
-                  alt=''
+                  alt=""
                   src={require('../../assets/images/circle1.png')}
                   style={{
                     position: 'absolute',
@@ -215,7 +209,7 @@ export const Profile = (props: any) => {
                   }}
                 />
                 <img
-                  alt=''
+                  alt=""
                   src={require('../../assets/images/circle1.png')}
                   style={{
                     position: 'absolute',
@@ -225,36 +219,27 @@ export const Profile = (props: any) => {
                     display: props.currency === 'usd' ? 'inline-block' : 'none',
                   }}
                 />
-                <button
-                  onClick={changeCurrencyUAH}
-                  style={profileStyles.currBtn}
-                >
-                  <img alt='' width={32} src={hryvniaGray} />
+                <button onClick={changeCurrencyUAH} style={profileStyles.currBtn}>
+                  <img alt="" width={32} src={hryvniaGray} />
                 </button>
-                <button
-                  onClick={changeCurrencyEUR}
-                  style={profileStyles.currBtn}
-                >
-                  <img alt='' width={44} src={euroGray} />
+                <button onClick={changeCurrencyEUR} style={profileStyles.currBtn}>
+                  <img alt="" width={44} src={euroGray} />
                 </button>
-                <button
-                  onClick={changeCurrencyUSD}
-                  style={profileStyles.currBtn}
-                >
-                  <img alt='' width={32} src={dollarGray} />
+                <button onClick={changeCurrencyUSD} style={profileStyles.currBtn}>
+                  <img alt="" width={32} src={dollarGray} />
                 </button>
               </div>
             </div>
             <div
-              className='language-section'
+              className="language-section"
               style={{ display: 'flex', width: '98%', marginTop: '30px' }}
             >
               <div style={{ width: '39%', display: 'flex' }}>
-                <img alt='' src={langIconGray} width={53} height={53} />
+                <img alt="" src={langIconGray} width={53} height={53} />
               </div>
               <div style={profileStyles.langBtnsWrap}>
                 <img
-                  alt=''
+                  alt=""
                   src={require('../../assets/images/circle2.png')}
                   style={{
                     position: 'absolute',
@@ -265,7 +250,7 @@ export const Profile = (props: any) => {
                   }}
                 />
                 <img
-                  alt=''
+                  alt=""
                   src={require('../../assets/images/circle2.png')}
                   style={{
                     position: 'absolute',
@@ -294,35 +279,33 @@ export const Profile = (props: any) => {
               </div>
             </div>
             <div
-              className='logout-section'
+              className="logout-section"
               style={{
                 marginTop: '32px',
                 display: 'flex',
                 alignItems: 'center',
               }}
             >
-              <img alt='' src={logoutGray} width={50} />
+              <img alt="" src={logoutGray} width={50} />
               <div style={{ paddingLeft: '70px' }}>
-                <button style={profileStyles.logoutBtn}>
-                  {chosenLang.logout}
-                </button>
+                <button style={profileStyles.logoutBtn}>{chosenLang.logout}</button>
               </div>
             </div>
           </div>
         </div>
         <img
-          alt=''
+          alt=""
           src={require('../../assets/images/blot-profile.png')}
           style={{ marginTop: '44px', marginBottom: '-6px', width: '100%' }}
         />
       </div>
 
-      <div className='purchasedCourses' style={{ marginBottom: '100px' }}>
+      <div className="purchasedCourses" style={{ marginBottom: '100px' }}>
         <div>
           <p style={profileStyles.purchCourses}>{chosenLang.purchased}</p>
         </div>
 
-        <div className='cards' style={profileStyles.cardsWrap}>
+        <div className="cards" style={profileStyles.cardsWrap}>
           {coursesObj.map((course: any, i: number) => (
             <MovieCard
               key={i}
