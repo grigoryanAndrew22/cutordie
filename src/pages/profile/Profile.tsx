@@ -185,6 +185,7 @@ export const Profile = (props: any) => {
               <div style={profileStyles.coinWrap}>
                 <img alt="" src={coinGray} width={55} />
               </div>
+
               <div style={profileStyles.currencyWrap}>
                 <img
                   alt=""
@@ -203,7 +204,7 @@ export const Profile = (props: any) => {
                   style={{
                     position: 'absolute',
                     top: -13,
-                    left: 64,
+                    left: 60,
                     width: 62,
                     display: props.currency === 'eur' ? 'inline-block' : 'none',
                   }}
@@ -214,7 +215,7 @@ export const Profile = (props: any) => {
                   style={{
                     position: 'absolute',
                     top: -13,
-                    right: -15,
+                    left: 120,
                     width: 62,
                     display: props.currency === 'usd' ? 'inline-block' : 'none',
                   }}
@@ -234,7 +235,7 @@ export const Profile = (props: any) => {
               className="language-section"
               style={{ display: 'flex', width: '98%', marginTop: '30px' }}
             >
-              <div style={{ width: '39%', display: 'flex' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginRight: '55px' }}>
                 <img alt="" src={langIconGray} width={53} height={53} />
               </div>
               <div style={profileStyles.langBtnsWrap}>

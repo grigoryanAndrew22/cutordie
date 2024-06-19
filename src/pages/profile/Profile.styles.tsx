@@ -48,12 +48,12 @@ export const profileStyles = {
   currencyWrap: {
     width: '61%',
     display: 'flex',
+    gap: '30px',
     alignItems: 'center',
-    justifyContent: 'space-between',
     position: 'relative' as 'relative',
   },
   coinWrap: {
-    width: '39%',
+    margin: '0 50px 0 0',
     display: 'flex',
     alignItems: 'center',
   },
@@ -97,10 +97,8 @@ export const profileStyles = {
     paddingTop: '40px',
   },
   langBtnsWrap: {
-    width: '61%',
     display: 'flex',
-    justifyContent: 'space-between',
-    position: 'relative' as 'relative',
+    gap: '20px',
   },
   cardsWrap: {
     display: 'flex',
