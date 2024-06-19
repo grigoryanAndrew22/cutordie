@@ -93,13 +93,21 @@ export const Profile = (props: any) => {
   const chosenLang = props.language === 'en' ? profLangs.en : profLangs.ua;
 
   const [coursesObj, setCourses] = useState([]);
-
+  console.log('BEFORE USEEFFECT');
   useEffect(() => {
-    fetch('https://cut-or-die-api.onrender.com/api/v1/currentUser')
+    fetch('https://cut-or-die-api.onrender.com/api/v1/currentUser', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify({ jwt: localStorage.getItem('jwt') }),
+    })
       .then((response) => response.json())
       .then((data) => {
         setCourses(data.data.user.purchasedCourses);
-        console.log(data.data.courses);
+        console.log('COURSES PURCHASED', data.data.courses);
       })
       .catch((error) => console.log(error));
   }, []);
