@@ -29,6 +29,8 @@ import axios from 'axios';
 // ];
 
 function App() {
+  console.log(window.location.pathname.includes('/courses/course'));
+
   let footerShadow;
   if (window.location.pathname.includes('/courses/course')) {
     footerShadow = false;
@@ -68,8 +70,6 @@ function App() {
   // console.log('PURE', localStorage.getItem('jwt'));
   console.log('JWT', localStorage.getItem('jwt'));
 
-  console.log(111, userData);
-
   useEffect(() => {
     localStorage.setItem('language', language);
     localStorage.setItem('currency', currency);
@@ -87,7 +87,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setCourses(data.data.courses);
-        // console.log(data.data.courses);
+        console.log(data.data.courses);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -110,7 +110,8 @@ function App() {
         } else {
           setLoggedIn(true);
         }
-        setUserData(data.user);
+        setUserData(data.data.user);
+        console.log('USERDATA', data.data.user);
       })
       .catch((error) => {
         console.error('CURRENT USER FAILED', error);
@@ -134,7 +135,6 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
-
           <Route
             path='/'
             element={<Home language={language} currency={currency} />}
@@ -178,7 +178,6 @@ function App() {
                 user={userData}
                 courses={coursesObj}
                 language={language}
-                currency={currency}
                 loggedIn={loggedIn}
                 changeLogin={setLoggedIn}
               />

@@ -5,13 +5,14 @@ import leftTopCorner from '../../assets/images/leftTopCorner.png';
 import leftBotCorner from '../../assets/images/leftBotCorner.png';
 import rightTopCorner from '../../assets/images/rightTopCorner.png';
 import rightBotCorner from '../../assets/images/rightBotCorner.png';
-import signUpBtn from '../../assets/images/signUpBtn.svg';
+
 import './SignUpForm.css';
 import { Fragment, useRef, useState } from 'react';
 import { SignUpFormMobile } from '../signupFormMobile/SignUpFormMobile';
 import Cookies from 'js-cookie';
 import { log } from 'console';
 import GoogleAuthBtn from '../google-auth-button/Google-auth-button';
+import AnimatedButton from '../animated-button/AnimatedButton';
 
 const formLangs = {
   en: {
@@ -25,6 +26,7 @@ const formLangs = {
     dontHaveAcc: ['Have an account?', 'Sign in'],
     or: 'OR',
     signupWith: 'Register with:',
+    signup: "Sign up"
   },
   ua: {
     title: 'РЕЄСТРАЦІЯ',
@@ -37,6 +39,7 @@ const formLangs = {
     dontHaveAcc: ['Маєте аккаунт?', 'Увiйти'],
     or: 'АБО',
     signupWith: 'Увійти через:',
+    signup: "Створити"
   },
 };
 
@@ -445,11 +448,17 @@ export const SignUpForm = (props: any) => {
                   padding: 0,
                 }}
               >
-                <img
-                  alt=''
-                  src={signUpBtn}
-                  width={130}
-                  style={{ marginTop: '-18px' }}
+                 <AnimatedButton
+                  url={''}
+                  buttonType={'submitsignin'}
+                  text={generatedForm.signup}
+                  width={115}
+                  height={67}
+                  top={51}
+                  left={46}
+                  color={'363636'}
+                  font={'Besom'}
+                  textClass={'button4'}
                 />
               </button>
               <div

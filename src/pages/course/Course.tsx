@@ -11,6 +11,7 @@ import { CourseParagraph } from '../../components/CourseParagraph/CourseParagrap
 
 export const Course = (props: any) => {
   const [courseName, setCourseName] = useState('')
+  const [courseSubHeader, setCourseSubHeader] = useState('')
   const [courseDuration,setCourseDuration] = useState('1h');
   const [courseDiff, setCourseDiff] = useState('0');
   const [courseEquipment,setCourseEquipment] = useState('')
@@ -45,9 +46,11 @@ export const Course = (props: any) => {
        if(props.language === 'ua') {
         setCourseParagraphs(selectedCourse[0]?.ua.paragraphs)
         setCourseName(selectedCourse[0]?.ua.name)
+        setCourseSubHeader(selectedCourse[0]?.ua.subheader)
        } else {
         setCourseParagraphs(selectedCourse[0]?.en.paragraphs)
         setCourseName(selectedCourse[0]?.en.name)
+        setCourseSubHeader(selectedCourse[0]?.en.subheader)
        }
        if(props.currency === 'uah') {
         setCoursePrice(selectedCourse[0]?.price.uah)
@@ -58,6 +61,7 @@ export const Course = (props: any) => {
        }
     } 
   }, [selectedCourse])
+
 
   const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
   
@@ -86,7 +90,7 @@ export const Course = (props: any) => {
     const data = { jwt: localStorage.getItem('jwt') };
 
     fetch(
-      'https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e',
+      `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/${selectedCourse[0]?._id}`,
       {
         method: 'POST',
         headers: {
@@ -132,7 +136,7 @@ export const Course = (props: any) => {
                 paddingBottom: '70px',
               }}
             >
-              MASTERING THЕ ART OF HAIRCUTTING
+             {courseName}
             </p>
           </div>
           <div
@@ -162,7 +166,7 @@ export const Course = (props: any) => {
                   paddingBottom: '28px',
                 }}
               >
-                {courseName}
+                {courseSubHeader}
               </p>
               <div
                 style={{

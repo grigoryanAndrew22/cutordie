@@ -12,14 +12,14 @@ import { TopSectionStyles } from './TopSection.styles';
 
 const topSectionLangs = {
   en: {
-    button1: button1EN,
-    button2: button2EN,
-    button3: button3EN,
+    button1: 'About me',
+    button2: 'Courses',
+    button3: 'Sign in',
   },
   ua: {
-    button1: button1UA,
-    button2: button2UA,
-    button3: button3UA,
+    button1: 'Про мене',
+    button2: 'Курси',
+    button3: 'Увійти',
   },
 };
 
@@ -32,7 +32,7 @@ export const TopSection = (props: any) => {
         <AnimatedButton
           url={'/aboutme'}
           buttonType={'aboutme'}
-          text={'About me'}
+          text={topSectionLangGenerated.button1}
           width={303}
           height={113}
           top={39}
@@ -44,7 +44,7 @@ export const TopSection = (props: any) => {
         <AnimatedButton
           url={'/courses'}
           buttonType={'courses'}
-          text={'Courses'}
+          text={topSectionLangGenerated.button2}
           width={265}
           height={105}
           top={39}
@@ -57,7 +57,7 @@ export const TopSection = (props: any) => {
           <AnimatedButton
             url={''}
             buttonType={'signin'}
-            text={'Sign in'}
+            text={topSectionLangGenerated.button3}
             width={213}
             height={103}
             top={39}

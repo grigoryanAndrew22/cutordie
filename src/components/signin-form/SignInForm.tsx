@@ -28,6 +28,7 @@ const formLangs = {
     dontHaveAcc: ['Don`t have an account?', 'Sign up'],
     or: 'OR',
     signinWith: 'Sign in with:',
+    signin: 'Sign in',
   },
   ua: {
     title: 'УВІЙТИ',
@@ -37,6 +38,7 @@ const formLangs = {
     dontHaveAcc: ['Не маєте аккаунту?', 'Реєстрація'],
     or: 'АБО',
     signinWith: 'Увійти через:',
+    signin: 'Увійти',
   },
 };
 
@@ -90,7 +92,7 @@ export const SignInForm = (props: any) => {
           console.log(data);
         } else if (data.status === 'success') {
           setIncorrect(false);
-          localStorage.setItem('jwt', JSON.stringify(data.token));
+          localStorage.setItem('jwt', data.token);
           console.log(data);
           setEmailField('');
           setPasswordField('');
@@ -338,7 +340,7 @@ export const SignInForm = (props: any) => {
                 <AnimatedButton
                   url={''}
                   buttonType={'submitsignin'}
-                  text={'Sign in'}
+                  text={generatedForm.signin}
                   width={115}
                   height={67}
                   top={51}
