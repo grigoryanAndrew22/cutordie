@@ -97,7 +97,7 @@ export const Profile = (props: any) => {
   useEffect(() => {
     fetch('https://cut-or-die-api.onrender.com/api/v1/currentUser', {
       method: 'POST',
-      credentials: 'include',
+
       headers: {
         'Content-Type': 'application/json',
       },
