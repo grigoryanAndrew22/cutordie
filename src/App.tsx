@@ -65,10 +65,10 @@ function App() {
     changeLanguage('en');
   }
 
-
   // console.log('PURE', localStorage.getItem('jwt'));
-  // console.log('JWT', { jwt: localStorage.getItem('jwt') });
+  console.log('JWT', localStorage.getItem('jwt'));
 
+  console.log(111, userData);
 
   useEffect(() => {
     localStorage.setItem('language', language);
@@ -104,6 +104,7 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (data.status === 'fail') {
           setLoggedIn(false);
         } else {
@@ -151,7 +152,6 @@ function App() {
                 coursesObj={coursesObj}
               />
             }
-
           ></Route>
 
           <Route
@@ -172,9 +172,7 @@ function App() {
             }
           ></Route>
           <Route
-
-            path="/courses/course/:id"
-
+            path='/courses/course/:id'
             element={
               <Course
                 user={userData}
@@ -197,7 +195,6 @@ function App() {
           ></Route>
           {/* <Route path="/policy" element={<Policy language={language} />}></Route>
           <Route path="/404" element={<PageNotFound language={language} />}></Route> */}
-
         </Routes>
       </BrowserRouter>
       <Footer
