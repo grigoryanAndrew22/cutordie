@@ -35,6 +35,8 @@ export const Course = (props: any) => {
     );
   })
 
+  console.log(coursePrice, props.currency)
+
   console.log(props.courses)
   // console.log(selectedCourse[0])
 
@@ -310,7 +312,7 @@ export const Course = (props: any) => {
                   style={{
                     margin: 0,
                     fontFamily: 'Hey October',
-                    fontSize: '70px',
+                    fontSize: '65px',
                     color: '#363636',
                     position: 'relative',
                   }}

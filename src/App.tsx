@@ -139,10 +139,10 @@ function App() {
             path='/'
             element={<Home language={language} currency={currency} />}
           ></Route>
-          <Route
+          {/* <Route
             path='/'
             element={<Home language={language} currency={currency} />}
-          ></Route>
+          ></Route> */}
           <Route
             path='/courses'
             element={
@@ -178,6 +178,7 @@ function App() {
                 user={userData}
                 courses={coursesObj}
                 language={language}
+                currency={currency}
                 loggedIn={loggedIn}
                 changeLogin={setLoggedIn}
               />
