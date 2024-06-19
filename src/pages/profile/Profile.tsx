@@ -179,7 +179,7 @@ export const Profile = (props: any) => {
           </div>
           <div className="settings prof-setts" style={{ zIndex: 0 }}>
             <p className="sett-title" style={profileStyles.settTitle}>
-              SETTINGS
+              {chosenLang.settings}
             </p>
             <div className="currency-section" style={{ display: 'flex', marginTop: '83px' }}>
               <div style={profileStyles.coinWrap}>
