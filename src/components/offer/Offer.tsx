@@ -16,7 +16,7 @@ const offerTextLangs = {
   en: {
     title: '"All in" pack',
     features: ['basic haircutting course', 'precision cuts', 'creative haircutting workshop'],
-    buynow: buyNowbtn,
+    buynow: 'Buy now',
   },
   ua: {
     title: 'ВСЕ В ОДНОМУ',
@@ -25,7 +25,7 @@ const offerTextLangs = {
       'акуратні стрижки',
       'майстерня креативних стрижок',
     ],
-    buynow: buyNowbtnUA,
+    buynow: 'Купити',
   },
 };
 
@@ -111,7 +111,7 @@ export const Offer = (props: any) => {
               <AnimatedButton
                 url={'/cutordie'}
                 buttonType={'buynow'}
-                text={'Buy now'}
+                text={offerGenerated.buynow}
                 width={363}
                 height={142}
                 top={57}
