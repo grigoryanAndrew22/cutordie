@@ -29,13 +29,12 @@ export const Course = (props: any) => {
     );
   });
 
-  const boughtCourse = props.user.purchasedCourses?.filter((course: any) => {
+  const boughtCourse = props.user?.purchasedCourses?.filter((course: any) => {
     return (
       course._id === window.location.pathname.replace('/courses/course/', '')
     );
   })
 
-  // console.log(props.courses)
   // console.log(selectedCourse[0])
 
   useEffect(() => {
@@ -310,7 +309,7 @@ export const Course = (props: any) => {
                   style={{
                     margin: 0,
                     fontFamily: 'Hey October',
-                    fontSize: '70px',
+                    fontSize: '65px',
                     color: '#363636',
                     position: 'relative',
                   }}
