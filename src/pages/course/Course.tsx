@@ -31,13 +31,10 @@ export const Course = (props: any) => {
 
   const boughtCourse = props.user?.purchasedCourses?.filter((course: any) => {
     return (
-      course === window.location.pathname.replace('/courses/course/', '')
+      course._id === window.location.pathname.replace('/courses/course/', '')
     );
   })
 
-  console.log(coursePrice, props.currency)
-
-  console.log(props.courses)
   // console.log(selectedCourse[0])
 
   useEffect(() => {

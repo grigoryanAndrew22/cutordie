@@ -66,6 +66,12 @@ export const Profile = (props: any) => {
   const [coursePurchased, setCoursePurchased] = useState(false);
 
   const [changePassShown, setChangePassShown] = useState(false);
+
+  let purchasedCourses = props.user.purchasedCourses;
+  if (!purchasedCourses) {
+    purchasedCourses = [];
+  }
+
   const setChangePassTrue = () => {
     setChangePassShown(true);
 
@@ -92,25 +98,7 @@ export const Profile = (props: any) => {
 
   const chosenLang = props.language === 'en' ? profLangs.en : profLangs.ua;
 
-  const [coursesObj, setCourses] = useState([]);
-  console.log('BEFORE USEEFFECT');
-  useEffect(() => {
-    fetch('https://cut-or-die-api.onrender.com/api/v1/currentUser', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-
-      body: JSON.stringify({ jwt: localStorage.getItem('jwt') }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setCourses(data.data.user.purchasedCourses);
-        console.log('COURSES PURCHASED', data.data.courses);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  // const [coursesObj, setCourses] = useState([]);
 
   return (
     <Fragment>
@@ -315,7 +303,7 @@ export const Profile = (props: any) => {
         </div>
 
         <div className="cards" style={profileStyles.cardsWrap}>
-          {coursesObj.map((course: any, i: number) => (
+          {purchasedCourses.map((course: any, i: number) => (
             <MovieCard
               key={i}
               index={i}
