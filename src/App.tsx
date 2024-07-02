@@ -68,7 +68,7 @@ function App() {
   }
 
   // console.log('PURE', localStorage.getItem('jwt'));
-  // console.log('JWT', { jwt: localStorage.getItem('jwt') });
+  console.log('JWT', localStorage.getItem('jwt'));
 
   useEffect(() => {
     localStorage.setItem('language', language);
@@ -104,6 +104,7 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (data.status === 'fail') {
           setLoggedIn(false);
         } else {
@@ -118,7 +119,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <NavbarRaw
         language={language}
         loggedIn={loggedIn}
@@ -134,16 +135,31 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
-          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
-          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
           <Route
-            path="/courses"
-            element={<Courses language={language} currency={currency} coursesObj={coursesObj} />}
+            path='/'
+            element={<Home language={language} currency={currency} />}
+          ></Route>
+          {/* <Route
+            path='/'
+            element={<Home language={language} currency={currency} />}
+          ></Route> */}
+          <Route
+            path='/courses'
+            element={
+              <Courses
+                language={language}
+                currency={currency}
+                coursesObj={coursesObj}
+              />
+            }
           ></Route>
 
-          <Route path="/aboutme" element={<Aboutme language={language} />}></Route>
           <Route
-            path="/profile"
+            path='/aboutme'
+            element={<Aboutme language={language} />}
+          ></Route>
+          <Route
+            path='/profile'
             element={
               <Profile
                 changeLogin={setLoggedIn}
@@ -156,21 +172,29 @@ function App() {
             }
           ></Route>
           <Route
-            path="/courses/course/:id"
+            path='/courses/course/:id'
             element={
               <Course
                 user={userData}
                 courses={coursesObj}
                 language={language}
+                currency={currency}
                 loggedIn={loggedIn}
                 changeLogin={setLoggedIn}
               />
             }
           ></Route>
-          <Route path="/policy" element={<Policy language={language} />}></Route>
-          <Route path="/404" element={<PageNotFound language={language} />}></Route>
-          <Route path="/policy" element={<Policy language={language} />}></Route>
-          <Route path="/404" element={<PageNotFound language={language} />}></Route>
+
+          <Route
+            path='/policy'
+            element={<Policy language={language} />}
+          ></Route>
+          <Route
+            path='/404'
+            element={<PageNotFound language={language} />}
+          ></Route>
+          {/* <Route path="/policy" element={<Policy language={language} />}></Route>
+          <Route path="/404" element={<PageNotFound language={language} />}></Route> */}
         </Routes>
       </BrowserRouter>
       <Footer
