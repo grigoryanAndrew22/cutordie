@@ -21,8 +21,6 @@ export const Course = (props: any) => {
   const [courseForm, switchCourseForm] = useState(false);
   const [coursePayment, switchCoursePay] = useState(false);
 
-  console.log(props.language)
-
   const selectedCourse = props.courses.filter((course: any) => {
     return (
       course._id === window.location.pathname.replace('/courses/course/', '')

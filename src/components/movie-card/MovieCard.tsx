@@ -20,6 +20,8 @@ export const MovieCard = (props: any) => {
 
   const courseObj = props.language === 'en' ? props.course.en : props.course.ua;
 
+  const preview = require(`../../assets/images/courseCovers/${props.course.coverImage}.png`);
+
   return (
     <div
       className="haircutWrap"
@@ -97,7 +99,7 @@ export const MovieCard = (props: any) => {
           <img
             className="haircut-preview"
             alt=""
-            src={require('../../assets/images/haircutCardPreview.png')}
+            src={preview}
             width={'360px'}
             style={{ paddingTop: '20px' }}
           />
