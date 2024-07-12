@@ -22,50 +22,18 @@
     },
     "difficulty": 2,
     "price": {
-      "usd": 199,
+      "usd": 20,
       "uah": 5500,
       "eur": 180
     },
-    "duration": 20,
+    "duration": 1,
     "equipment": "Scissors, clippers, comb, razor",
     "fileId": "classic_mens_cut_001",
-    "coverImage": "classic_mens_cut_cover.jpg",
+    "coverImage": "1.png",
     "images": ["classic_mens_cut_1.jpg", "classic_mens_cut_2.jpg", "classic_mens_cut_3.jpg"],
     "createdAt": "2024-07-12T10:00:00.000Z"
   },
-  {
-    "en": {
-      "name": "Modern Pixie Cut",
-      "subHeader": "Chic and Edgy Short Hairstyles",
-      "description": "Dive into the world of short, edgy hairstyles with our Modern Pixie Cut course. Perfect your skills in creating bold, feminine looks that are both low-maintenance and high-impact.",
-      "paragraphs": [
-        "This course focuses on the techniques required to create stunning pixie cuts. You'll learn how to assess face shapes and hair textures to customize the perfect pixie for each client.",
-        "We'll cover advanced cutting techniques including point cutting, slide cutting, and texturizing. You'll also learn how to create various pixie styles, from classic and neat to edgy and textured.",
-        "The course includes lessons on styling short hair, product recommendations, and tips for helping clients maintain their pixie cuts at home. By the end, you'll be able to offer this popular, versatile style with confidence."
-      ]
-    },
-    "ua": {
-      "name": "Сучасна стрижка 'Піксі'",
-      "description": "Зануртеся у світ коротких, стильних зачісок з нашим курсом Сучасної стрижки 'Піксі'. Вдосконалюйте свої навички у створенні сміливих, жіночних образів, які є одночасно простими у догляді та ефектними.",
-      "paragraphs": [
-        "Цей курс зосереджений на техніках, необхідних для створення приголомшливих стрижок 'піксі'. Ви навчитеся оцінювати форми обличчя та текстуру волосся, щоб створити ідеальну 'піксі' для кожного клієнта.",
-        "Ми розглянемо передові техніки стрижки, включаючи точкове зрізання, ковзаюче зрізання та текстурування. Ви також навчитеся створювати різні стилі 'піксі', від класичних і акуратних до сміливих і текстурованих.",
-        "Курс включає уроки з укладання короткого волосся, рекомендації щодо продуктів та поради щодо допомоги клієнтам у підтримці їхніх стрижок 'піксі' вдома. До кінця курсу ви зможете впевнено пропонувати цей популярний, універсальний стиль."
-      ]
-    },
-    "difficulty": 3,
-    "price": {
-      "usd": 249,
-      "uah": 6900,
-      "eur": 225
-    },
-    "duration": 25,
-    "equipment": "Scissors, thinning shears, razor, texturizing tools",
-    "fileId": "modern_pixie_cut_002",
-    "coverImage": "modern_pixie_cut_cover.jpg",
-    "images": ["modern_pixie_cut_1.jpg", "modern_pixie_cut_2.jpg", "modern_pixie_cut_3.jpg"],
-    "createdAt": "2024-07-12T11:30:00.000Z"
-  },
+
   {
     "_id": 2,
     "en": {
@@ -89,14 +57,14 @@
     },
     "difficulty": 4,
     "price": {
-      "usd": 299,
+      "usd": 30,
       "uah": 8300,
       "eur": 270
     },
-    "duration": 30,
+    "duration": 2,
     "equipment": "Professional scissors set, texturizing shears, razor, thinning shears",
     "fileId": "advanced_layering_003",
-    "coverImage": "advanced_layering_cover.jpg",
+    "coverImage": "2.jpg",
     "images": ["advanced_layering_1.jpg", "advanced_layering_2.jpg", "advanced_layering_3.jpg"],
     "createdAt": "2024-07-12T13:00:00.000Z"
   },
@@ -123,14 +91,14 @@
     },
     "difficulty": 3,
     "price": {
-      "usd": 249,
+      "usd": 40,
       "uah": 6900,
       "eur": 225
     },
     "duration": 25,
     "equipment": "Professional clippers, trimmers, razor, comb set",
     "fileId": "precision_fade_004",
-    "coverImage": "precision_fade_cover.jpg",
+    "coverImage": "3.png",
     "images": ["precision_fade_1.jpg", "precision_fade_2.jpg", "precision_fade_3.jpg"],
     "createdAt": "2024-07-12T14:30:00.000Z"
   },
@@ -157,14 +125,14 @@
     },
     "difficulty": 4,
     "price": {
-      "usd": 279,
+      "usd": 30,
       "uah": 7700,
       "eur": 250
     },
-    "duration": 28,
+    "duration": 3,
     "equipment": "Specialized scissors, wide-tooth comb, diffuser, curl-specific products",
     "fileId": "curly_hair_cutting_005",
-    "coverImage": "curly_hair_cutting_cover.jpg",
+    "coverImage": "4.jpg",
     "images": ["curly_hair_cutting_1.jpg", "curly_hair_cutting_2.jpg", "curly_hair_cutting_3.jpg"],
     "createdAt": "2024-07-12T16:00:00.000Z"
   },
@@ -181,7 +149,7 @@
       ]
     },
     "ua": {
-      "name": "Інтеграція творчого кольору та стрижки",
+      "name": "Інтеграція творчого кольору",
       "description": "Підвищіть свої навички, навчившись безперешкодно інтегрувати техніки стрижки та фарбування. Цей просунутий курс навчить вас створювати цілісні, приголомшливі образи, які гармонійно поєднують форму та колір.",
       "paragraphs": [
         "У цьому курсі ви навчитеся планувати та виконувати стрижки, які доповнюють розміщення кольору. Ми розглянемо техніки створення форм, які підкреслюють мелірування, балаяж та яскраві колірні дизайни.",
@@ -191,14 +159,14 @@
     },
     "difficulty": 5,
     "price": {
-      "usd": 349,
+      "usd": 25,
       "uah": 9700,
       "eur": 315
     },
-    "duration": 35,
+    "duration": 2,
     "equipment": "Professional scissors set, color application tools, lightener, various hair dyes",
     "fileId": "color_cut_integration_006",
-    "coverImage": "color_cut_integration_cover.jpg",
+    "coverImage": "5.jpg",
     "images": [
       "color_cut_integration_1.jpg",
       "color_cut_integration_2.jpg",
@@ -229,14 +197,14 @@
     },
     "difficulty": 3,
     "price": {
-      "usd": 249,
+      "usd": 35,
       "uah": 6900,
       "eur": 225
     },
-    "duration": 25,
+    "duration": 3,
     "equipment": "Professional clippers, trimmers, razor, comb set",
     "fileId": "precision_fade_004",
-    "coverImage": "precision_fade_cover.jpg",
+    "coverImage": "6.webp",
     "images": ["precision_fade_1.jpg", "precision_fade_2.jpg", "precision_fade_3.jpg"],
     "createdAt": "2024-07-12T14:30:00.000Z"
   },
@@ -263,14 +231,14 @@
     },
     "difficulty": 4,
     "price": {
-      "usd": 279,
+      "usd": 10,
       "uah": 7700,
       "eur": 250
     },
-    "duration": 28,
+    "duration": 3,
     "equipment": "Specialized scissors, wide-tooth comb, diffuser, curl-specific products",
     "fileId": "curly_hair_cutting_005",
-    "coverImage": "curly_hair_cutting_cover.jpg",
+    "coverImage": "7.jpg",
     "images": ["curly_hair_cutting_1.jpg", "curly_hair_cutting_2.jpg", "curly_hair_cutting_3.jpg"],
     "createdAt": "2024-07-12T16:00:00.000Z"
   },
@@ -297,14 +265,14 @@
     },
     "difficulty": 5,
     "price": {
-      "usd": 349,
+      "usd": 25,
       "uah": 9700,
       "eur": 315
     },
-    "duration": 35,
+    "duration": 1,
     "equipment": "Professional scissors set, color application tools, lightener, various hair dyes",
     "fileId": "color_cut_integration_006",
-    "coverImage": "color_cut_integration_cover.jpg",
+    "coverImage": "8.webp",
     "images": [
       "color_cut_integration_1.jpg",
       "color_cut_integration_2.jpg",
@@ -335,57 +303,19 @@
     },
     "difficulty": 5,
     "price": {
-      "usd": 399,
+      "usd": 30,
       "uah": 11000,
       "eur": 360
     },
     "duration": 40,
     "equipment": "Advanced cutting tools, styling products, non-hair materials for sculpture",
     "fileId": "avant_garde_sculpture_007",
-    "coverImage": "avant_garde_sculpture_cover.jpg",
+    "coverImage": "9.jpg",
     "images": [
       "avant_garde_sculpture_1.jpg",
       "avant_garde_sculpture_2.jpg",
       "avant_garde_sculpture_3.jpg"
     ],
     "createdAt": "2024-07-12T19:00:00.000Z"
-  },
-  {
-    "_id": 10,
-    "en": {
-      "name": "Precision Barbering and Beard Sculpting",
-      "subHeader": "Master the Art of Men's Grooming",
-      "description": "Elevate your barbering skills with our comprehensive Precision Barbering and Beard Sculpting course. Learn to create sharp, clean lines and perfectly sculpted beards for the modern gentleman.",
-      "paragraphs": [
-        "This course focuses on advanced barbering techniques, including precision clipper work, razor fading, and intricate line-ups. You'll learn how to create a variety of popular men's hairstyles with absolute precision.",
-        "We'll also delve deep into the art of beard sculpting. You'll master techniques for trimming, shaping, and styling beards of all lengths and textures. Learn how to create perfect symmetry and advise clients on beard care and maintenance.",
-        "By the end of the course, you'll be equipped to offer top-tier barbering services, including both hair and beard styling. We'll also cover business aspects such as client communication and building a loyal customer base in the competitive world of men's grooming."
-      ]
-    },
-    "ua": {
-      "name": "Точне барберство та скульптурування бороди",
-      "description": "Підніміть свої навички барберства на новий рівень з нашим всеохоплюючим курсом Точного барберства та скульптурування бороди. Навчіться створювати чіткі, охайні лінії та ідеально виліплені бороди для сучасного джентльмена.",
-      "paragraphs": [
-        "Цей курс зосереджений на просунутих техніках барберства, включаючи точну роботу машинкою, створення градієнтів бритвою та складні окантовки. Ви навчитеся створювати різноманітні популярні чоловічі зачіски з абсолютною точністю.",
-        "Ми також глибоко зануримося в мистецтво скульптурування бороди. Ви опануєте техніки підстригання, формування та стилізації бород усіх довжин і текстур. Навчіться створювати ідеальну симетрію та консультувати клієнтів щодо догляду за бородою та її підтримки.",
-        "До кінця курсу ви будете готові надавати барберські послуги найвищого рівня, включаючи як стрижку волосся, так і стилізацію бороди. Ми також розглянемо бізнес-аспекти, такі як спілкування з клієнтами та побудова лояльної клієнтської бази в конкурентному світі чоловічого грумінгу."
-      ]
-    },
-    "difficulty": 4,
-    "price": {
-      "usd": 329,
-      "uah": 9100,
-      "eur": 295
-    },
-    "duration": 32,
-    "equipment": "Professional clippers, trimmers, straight razor, beard care products",
-    "fileId": "precision_barbering_008",
-    "coverImage": "precision_barbering_cover.jpg",
-    "images": [
-      "precision_barbering_1.jpg",
-      "precision_barbering_2.jpg",
-      "precision_barbering_3.jpg"
-    ],
-    "createdAt": "2024-07-12T20:30:00.000Z"
   }
 ]

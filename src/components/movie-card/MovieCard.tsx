@@ -20,7 +20,7 @@ export const MovieCard = (props: any) => {
 
   const courseObj = props.language === 'en' ? props.course.en : props.course.ua;
 
-  const preview = require(`../../assets/images/courseCovers/${props.course.coverImage}.png`);
+  const preview = require(`../../assets/images/courseCovers/${props.course.coverImage}`);
 
   return (
     <div
