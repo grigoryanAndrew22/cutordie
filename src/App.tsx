@@ -93,31 +93,31 @@ function App() {
   //     .catch((error) => console.log(error));
   // }, []);
 
-  useEffect(() => {
-    fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+  // useEffect(() => {
+  //   fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
+  //     method: 'POST',
+  //     credentials: 'include',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
 
-      body: JSON.stringify({ jwt: localStorage.getItem('jwt') }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.status === 'fail') {
-          setLoggedIn(false);
-        } else {
-          setLoggedIn(true);
-        }
-        setUserData(data.data.user);
-        console.log('USERDATA', data.data.user);
-      })
-      .catch((error) => {
-        console.error('CURRENT USER FAILED', error);
-      });
-  }, []);
+  //     body: JSON.stringify({ jwt: localStorage.getItem('jwt') }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.status === 'fail') {
+  //         setLoggedIn(false);
+  //       } else {
+  //         setLoggedIn(true);
+  //       }
+  //       setUserData(data.data.user);
+  //       console.log('USERDATA', data.data.user);
+  //     })
+  //     .catch((error) => {
+  //       console.error('CURRENT USER FAILED', error);
+  //     });
+  // }, []);
 
   return (
     <div className="App">

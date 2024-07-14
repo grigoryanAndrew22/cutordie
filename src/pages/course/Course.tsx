@@ -21,17 +21,21 @@ export const Course = (props: any) => {
   const [courseForm, switchCourseForm] = useState(false);
   const [coursePayment, switchCoursePay] = useState(false);
 
+  const id =  window.location.pathname.replace('/courses/course/', '');
+
   const selectedCourse = props.courses.filter((course: any) => {
     return (
-      course._id === window.location.pathname.replace('/courses/course/', '')
+      course._id == id
     );
   });
 
-  const boughtCourse = props.user?.purchasedCourses?.filter((course: any) => {
-    return (
-      course._id === window.location.pathname.replace('/courses/course/', '')
-    );
-  })
+
+  // const boughtCourse = props.user?.purchasedCourses?.filter((course: any) => {
+  //   return (
+  //     course._id === window.location.pathname.replace('/courses/course/', '')
+  //   );
+  // })
+  
 
   // console.log(selectedCourse[0])
 
@@ -60,7 +64,9 @@ export const Course = (props: any) => {
   }, [selectedCourse])
 
 
-  const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
+  // const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
+
+  const courseIsBought = false;
   
   let btnText = ''
   if(props.language === 'ua') {
