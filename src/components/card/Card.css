@@ -1,3 +1,7 @@
+.offer-preview-card {
+  object-fit: cover;
+}
+
 @media (max-width: 1335px) {
   .card-wrapper {
     height: 300px !important;

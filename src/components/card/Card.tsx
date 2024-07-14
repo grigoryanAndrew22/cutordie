@@ -21,28 +21,25 @@ export const Card = (props: {
   left: any;
   language: any;
   index: any;
+  cover: any;
 }) => {
   const cardGenerated = props.language === 'en' ? cardLangs.en : cardLangs.ua;
 
   return (
-    <div
-      className={`card-wrapper card-${props.index}`}
-      style={cardStyles.cardWrapper(props)}
-    >
-      <div className='img' style={cardStyles.image}>
+    <div className={`card-wrapper card-${props.index}`} style={cardStyles.cardWrapper(props)}>
+      <div className="img" style={cardStyles.image}>
         <img
-          src={require('../../assets/images/haircut.png')}
-          width={'100%'}
-          height={'100%'}
+          className="offer-preview-card"
+          src={require(`../../assets/images/courseCovers/${props.cover}`)}
+          width="100%"
+          height="40%"
+          alt="course"
         />
-        <p className='card_heading' style={cardStyles.title}>
+        <p className="card_heading" style={cardStyles.title}>
           {cardGenerated.title}
         </p>
       </div>
-      <div
-        className='description card_description'
-        style={cardStyles.description}
-      >
+      <div className="description card_description" style={cardStyles.description}>
         <p>{cardGenerated.description}</p>
       </div>
     </div>

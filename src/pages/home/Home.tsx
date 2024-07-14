@@ -25,6 +25,7 @@ export const Home = (props: any) => {
         currency={props.currency}
         index={1}
         divider={dividerLeft}
+        covers={['1.png', '2.png', '3.png']}
       />
       <Offer
         flexDirection={'row-reverse'}
@@ -32,6 +33,7 @@ export const Home = (props: any) => {
         currency={props.currency}
         index={2}
         divider={dividerRight}
+        covers={['4.png', '5.png', '6.png']}
       />
       <Offer
         flexDirection={'row'}
@@ -39,6 +41,7 @@ export const Home = (props: any) => {
         currency={props.currency}
         index={3}
         divider={dividerLeft}
+        covers={['7.png', '8.png', '9.png']}
       />
       {/* <OfferMobile
         divider={dividerLeft}

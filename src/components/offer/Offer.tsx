@@ -47,6 +47,34 @@ export const Offer = (props: any) => {
     currencyGenerated = offerCurrencies.eur;
   }
 
+  const openPayment = () => {
+    // switchCoursePay(true);
+
+    const data = { jwt: localStorage.getItem('jwt') };
+
+    fetch(
+      `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    )
+      .then((response) => {
+        return response.json();
+      })
+
+      .then((data) => {
+        window.open(data.data.pageUrl, '_blank');
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
   return (
     <Fragment>
       <Fragment>
@@ -67,22 +95,25 @@ export const Offer = (props: any) => {
               left={-160}
               language={props.language}
               index={1}
+              cover={props.covers[0]}
             />
             <Card
               position={'relative'}
               transform={'none'}
               top={0}
               left={0}
-              language={props.language}
+              language={props.covers[1]}
               index={2}
+              cover={props.covers[1]}
             />
             <Card
               position={'absolute'}
               transform={'rotate(21deg)'}
               top={41}
               left={167}
-              language={props.language}
+              language={props.covers[2]}
               index={3}
+              cover={props.covers[2]}
             />
           </div>
           <div
@@ -108,18 +139,21 @@ export const Offer = (props: any) => {
               </li>
             </ul>
             <div style={{ display: 'flex', alignItems: 'center', marginTop: 40 }}>
-              <AnimatedButton
-                url={'/cutordie'}
-                buttonType={'buynow'}
-                text={offerGenerated.buynow}
-                width={363}
-                height={142}
-                top={57}
-                left={49}
-                color={'363636'}
-                font={'Besom'}
-                textClass={'button2'}
-              />
+              <button onClick={openPayment}>
+                <AnimatedButton
+                  url={''}
+                  buttonType={'buynow'}
+                  text={offerGenerated.buynow}
+                  width={363}
+                  height={142}
+                  top={57}
+                  left={49}
+                  color={'363636'}
+                  font={'Besom'}
+                  textClass={'button2'}
+                />
+              </button>
+
               <span style={offerStyles.price} className="price">
                 {currencyGenerated[0]}
                 <div>
@@ -168,6 +202,7 @@ export const Offer = (props: any) => {
               left={-100}
               language={props.language}
               index={1}
+              cover={props.covers[0]}
             />
             <Card
               position={'relative'}
@@ -176,6 +211,7 @@ export const Offer = (props: any) => {
               left={0}
               language={props.language}
               index={2}
+              cover={props.covers[1]}
             />
             <Card
               position={'absolute'}
@@ -184,11 +220,26 @@ export const Offer = (props: any) => {
               left={100}
               language={props.language}
               index={3}
+              cover={props.covers[2]}
             />
           </div>
           <div style={offerMobileStyles.buyBtnWrap}>
-            <button className="buy-btn card_btn" style={offerMobileStyles.buyBtn}>
+            {/* <button className="buy-btn card_btn" style={offerMobileStyles.buyBtn}>
               <img src={offerGenerated.buynow} alt="btn" width={'97%'} height={'100%'} />
+            </button> */}
+            <button className="mini-btn" onClick={openPayment}>
+              <AnimatedButton
+                url={''}
+                buttonType={'buynow'}
+                text={offerGenerated.buynow}
+                width={363}
+                height={142}
+                top={57}
+                left={49}
+                color={'363636'}
+                font={'Besom'}
+                textClass={'button2'}
+              />
             </button>
             {/* <AnimatedButton
               url={'/cutordie'}

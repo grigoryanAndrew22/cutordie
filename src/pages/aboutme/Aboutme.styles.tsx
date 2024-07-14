@@ -29,6 +29,7 @@ export const aboutmeStyles = {
   pStyle: {
     margin: 0,
     fontFamily: 'Drum',
+    fontSize: '50px',
   },
   inscription: {
     width: '88%',

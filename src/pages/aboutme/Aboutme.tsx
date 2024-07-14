@@ -4,7 +4,12 @@ import './Aboutme.css';
 
 const langs = {
   en: {
-    whyme: ['WHY ME?', '-BECAUSE,', '-MAMA SAID IM THЕ BEST,', '-BECAUSE.'],
+    whyme: [
+      'WHY ME?',
+      '-Expert Styling, Tailored to You',
+      '-Transform Your Look with Our Skilled Hands',
+      '-Where Skill Meets Style and Satisfaction',
+    ],
     inscrText: `Building a rapport with clients can be crucial. People often choose
     barbers they feel comfortable with and with whom they can have a
     friendly relationship. If you're personable and make your clients feel
@@ -12,7 +17,12 @@ const langs = {
     portfolio: 'MY PORTFOLIO',
   },
   ua: {
-    whyme: ['ЧОМУ Я?', '-ТОМУ ЩО,', '-МАТИ КАЗАЛА ЩО Я НАЙКРАЩИЙ,', '-ОСЬ ЧОМУ.'],
+    whyme: [
+      'ЧОМУ Я?',
+      '-Експертна укладка, розроблена спеціально для вас',
+      '-Перетворіть свій образ за допомогою наших умілих рук',
+      '-Майстерність поєднується зі стилем та задоволенням',
+    ],
     inscrText: `Налагодження взаєморозуміння з клієнтами може мати вирішальне значення. Люди часто обирають перукарів, з якими їм комфортно і з якими вони можуть бути
     дружні стосунки. Якщо ви милосердні і своїм клієнтам почуваєтеся невимушено, вони можуть віддати перевагу вам як перукаря.`,
     portfolio: 'МОЄ ПОРТФОЛІО',

@@ -30,6 +30,7 @@ export const cardStyles = {
     paddingTop: 20,
     fontFamily: 'Bitter',
     color: '#1D1D1D',
+    fontSize: '12px',
   },
   image: {
     width: '90%',

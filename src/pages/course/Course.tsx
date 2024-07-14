@@ -90,7 +90,7 @@ export const Course = (props: any) => {
     const data = { jwt: localStorage.getItem('jwt') };
 
     fetch(
-      `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/${selectedCourse[0]?._id}`,
+      `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e`,
       {
         method: 'POST',
         headers: {
@@ -110,6 +110,27 @@ export const Course = (props: any) => {
       .catch((error) => {
         console.error('Error:', error);
       });
+    // fetch(
+    //   `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/${selectedCourse[0]?._id}`,
+    //   {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //   }
+    // )
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+
+    //   .then((data) => {
+    //     window.open(data.data.pageUrl, '_blank');
+    //     console.log(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //   });
   };
 
   return (
@@ -163,7 +184,7 @@ export const Course = (props: any) => {
                   fontFamily: 'Bitter',
                   fontWeight: 600,
                   color: '#363636',
-                  paddingBottom: '28px',
+                  
                 }}
               >
                 {courseSubHeader}
