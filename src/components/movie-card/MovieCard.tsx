@@ -101,6 +101,7 @@ export const MovieCard = (props: any) => {
             alt=""
             src={preview}
             width={'360px'}
+            height={'203px'}
             style={{ paddingTop: '20px' }}
           />
 

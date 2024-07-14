@@ -37,7 +37,7 @@
   {
     "_id": 2,
     "en": {
-      "name": "Advanced Layering Techniques",
+      "name": "Advanced Layering",
       "subHeader": "Create Dimension and Movement",
       "description": "Elevate your haircutting skills with our Advanced Layering Techniques course. Learn to create stunning, multi-dimensional looks that bring life and movement to any hair type.",
       "paragraphs": [
@@ -64,7 +64,7 @@
     "duration": 2,
     "equipment": "Professional scissors set, texturizing shears, razor, thinning shears",
     "fileId": "advanced_layering_003",
-    "coverImage": "2.jpg",
+    "coverImage": "2.png",
     "images": ["advanced_layering_1.jpg", "advanced_layering_2.jpg", "advanced_layering_3.jpg"],
     "createdAt": "2024-07-12T13:00:00.000Z"
   },
@@ -132,7 +132,7 @@
     "duration": 3,
     "equipment": "Specialized scissors, wide-tooth comb, diffuser, curl-specific products",
     "fileId": "curly_hair_cutting_005",
-    "coverImage": "4.jpg",
+    "coverImage": "4.png",
     "images": ["curly_hair_cutting_1.jpg", "curly_hair_cutting_2.jpg", "curly_hair_cutting_3.jpg"],
     "createdAt": "2024-07-12T16:00:00.000Z"
   },
@@ -166,7 +166,7 @@
     "duration": 2,
     "equipment": "Professional scissors set, color application tools, lightener, various hair dyes",
     "fileId": "color_cut_integration_006",
-    "coverImage": "5.jpg",
+    "coverImage": "5.png",
     "images": [
       "color_cut_integration_1.jpg",
       "color_cut_integration_2.jpg",
@@ -204,7 +204,7 @@
     "duration": 3,
     "equipment": "Professional clippers, trimmers, razor, comb set",
     "fileId": "precision_fade_004",
-    "coverImage": "6.webp",
+    "coverImage": "6.png",
     "images": ["precision_fade_1.jpg", "precision_fade_2.jpg", "precision_fade_3.jpg"],
     "createdAt": "2024-07-12T14:30:00.000Z"
   },
@@ -238,7 +238,7 @@
     "duration": 3,
     "equipment": "Specialized scissors, wide-tooth comb, diffuser, curl-specific products",
     "fileId": "curly_hair_cutting_005",
-    "coverImage": "7.jpg",
+    "coverImage": "7.png",
     "images": ["curly_hair_cutting_1.jpg", "curly_hair_cutting_2.jpg", "curly_hair_cutting_3.jpg"],
     "createdAt": "2024-07-12T16:00:00.000Z"
   },
@@ -272,7 +272,7 @@
     "duration": 1,
     "equipment": "Professional scissors set, color application tools, lightener, various hair dyes",
     "fileId": "color_cut_integration_006",
-    "coverImage": "8.webp",
+    "coverImage": "8.png",
     "images": [
       "color_cut_integration_1.jpg",
       "color_cut_integration_2.jpg",
@@ -310,7 +310,7 @@
     "duration": 40,
     "equipment": "Advanced cutting tools, styling products, non-hair materials for sculpture",
     "fileId": "avant_garde_sculpture_007",
-    "coverImage": "9.jpg",
+    "coverImage": "9.png",
     "images": [
       "avant_garde_sculpture_1.jpg",
       "avant_garde_sculpture_2.jpg",

@@ -29,15 +29,12 @@ export const Course = (props: any) => {
     );
   });
 
-
   // const boughtCourse = props.user?.purchasedCourses?.filter((course: any) => {
   //   return (
   //     course._id === window.location.pathname.replace('/courses/course/', '')
   //   );
   // })
   
-
-  // console.log(selectedCourse[0])
 
   useEffect(() => {
     if(selectedCourse !== undefined) {
@@ -152,8 +149,8 @@ export const Course = (props: any) => {
             <div className='course-preview' style={{ display: 'flex' }}>
               <img
                 className='course-preview-main'
-                alt=''
-                src={require('../../assets/images/coursePrev.png')}
+                alt='preview'
+                src={require(`../../assets/images/courseCovers/${selectedCourse[0].coverImage}`)}
                 width='1058'
                 height='596'
               />
@@ -325,7 +322,8 @@ export const Course = (props: any) => {
             </div>
           </div>
 
-          {courseParagraphs?.map((text,i) => <CourseParagraph key={i} text={text} reverse={i % 2 === 0}/>)}
+          {/* {courseParagraphs?.map((text,i) => <CourseParagraph key={i} text={text} reverse={i % 2 === 0}/>)} */}
+          {courseParagraphs?.map((text,i) => <CourseParagraph key={i} text={text} reverse={0}/>)}
 
           <div
             className='buy-foronly'
