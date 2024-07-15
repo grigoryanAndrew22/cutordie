@@ -26,6 +26,27 @@ export const Home = (props: any) => {
         index={1}
         divider={dividerLeft}
         covers={['1.png', '2.png', '3.png']}
+        courseIds={[1, 2, 3]}
+        offerTextLangs={{
+          en: {
+            title: '"All in" pack',
+            features: [
+              'basic haircutting course',
+              'precision cuts',
+              'creative haircutting workshop',
+            ],
+            buynow: 'Buy now',
+          },
+          ua: {
+            title: 'ВСЕ В ОДНОМУ',
+            features: [
+              'курс по стрижці для початківців',
+              'акуратні стрижки',
+              'майстерня креативних стрижок',
+            ],
+            buynow: 'Купити',
+          },
+        }}
       />
       <Offer
         flexDirection={'row-reverse'}
@@ -34,6 +55,27 @@ export const Home = (props: any) => {
         index={2}
         divider={dividerRight}
         covers={['4.png', '5.png', '6.png']}
+        courseIds={[4, 5, 6]}
+        offerTextLangs={{
+          en: {
+            title: '"All in" pack',
+            features: [
+              'basic haircutting course',
+              'precision cuts',
+              'creative haircutting workshop',
+            ],
+            buynow: 'Buy now',
+          },
+          ua: {
+            title: 'ВСЕ В ОДНОМУ',
+            features: [
+              'курс по стрижці для початківців',
+              'акуратні стрижки',
+              'майстерня креативних стрижок',
+            ],
+            buynow: 'Купити',
+          },
+        }}
       />
       <Offer
         flexDirection={'row'}
@@ -42,6 +84,27 @@ export const Home = (props: any) => {
         index={3}
         divider={dividerLeft}
         covers={['7.png', '8.png', '9.png']}
+        courseIds={[7, 8, 9]}
+        offerTextLangs={{
+          en: {
+            title: '"All in" pack',
+            features: [
+              'basic haircutting course',
+              'precision cuts',
+              'creative haircutting workshop',
+            ],
+            buynow: 'Buy now',
+          },
+          ua: {
+            title: 'ВСЕ В ОДНОМУ',
+            features: [
+              'курс по стрижці для початківців',
+              'акуратні стрижки',
+              'майстерня креативних стрижок',
+            ],
+            buynow: 'Купити',
+          },
+        }}
       />
       {/* <OfferMobile
         divider={dividerLeft}

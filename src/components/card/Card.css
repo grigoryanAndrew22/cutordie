@@ -1,5 +1,6 @@
 .offer-preview-card {
   object-fit: cover;
+  height: 200px;
 }
 
 @media (max-width: 1335px) {
@@ -46,8 +47,11 @@
 }
 
 @media (max-width: 580px) {
+  .offer-preview-card {
+    height: 140px;
+  }
   .card_heading {
-    margin: -28px 0px 0px !important;
+    margin: 10px 0px 0px !important;
     padding-left: 5px !important;
     font-size: 15px !important;
   }

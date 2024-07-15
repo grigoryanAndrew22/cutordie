@@ -18,11 +18,12 @@ export const cardStyles = {
   cardWrapper: createStyleObj,
   title: {
     margin: 0,
-    marginTop: '-37px',
+    marginTop: '16px',
     paddingLeft: '10px',
-    color: 'white',
+    color: 'black',
     fontFamily: 'Bitter',
-    fontSize: '20px',
+    fontSize: '22px',
+    fontWeight: '600',
   },
   description: {
     width: '90%',

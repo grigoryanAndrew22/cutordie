@@ -12,23 +12,6 @@ import { offerMobileStyles } from './OfferMobile.styles';
 import './OfferMobile.css';
 import AnimatedButton from '../animated-button/AnimatedButton';
 
-const offerTextLangs = {
-  en: {
-    title: '"All in" pack',
-    features: ['basic haircutting course', 'precision cuts', 'creative haircutting workshop'],
-    buynow: 'Buy now',
-  },
-  ua: {
-    title: 'ВСЕ В ОДНОМУ',
-    features: [
-      'курс по стрижці для початківців',
-      'акуратні стрижки',
-      'майстерня креативних стрижок',
-    ],
-    buynow: 'Купити',
-  },
-};
-
 const offerCurrencies = {
   usd: ['30$', '60$'],
   uah: [`1099`, `2199`],
@@ -36,6 +19,7 @@ const offerCurrencies = {
 };
 
 export const Offer = (props: any) => {
+  const offerTextLangs = props.offerTextLangs;
   const offerGenerated = props.language === 'en' ? offerTextLangs.en : offerTextLangs.ua;
 
   let currencyGenerated;
@@ -46,6 +30,8 @@ export const Offer = (props: any) => {
   } else {
     currencyGenerated = offerCurrencies.eur;
   }
+
+  const courseIds = props.courseIds;
 
   const openPayment = () => {
     // switchCoursePay(true);
@@ -96,24 +82,27 @@ export const Offer = (props: any) => {
               language={props.language}
               index={1}
               cover={props.covers[0]}
+              courseId={courseIds[0]}
             />
             <Card
               position={'relative'}
               transform={'none'}
               top={0}
               left={0}
-              language={props.covers[1]}
+              language={props.language}
               index={2}
               cover={props.covers[1]}
+              courseId={courseIds[1]}
             />
             <Card
               position={'absolute'}
               transform={'rotate(21deg)'}
               top={41}
               left={167}
-              language={props.covers[2]}
+              language={props.language}
               index={3}
               cover={props.covers[2]}
+              courseId={courseIds[2]}
             />
           </div>
           <div
@@ -203,6 +192,7 @@ export const Offer = (props: any) => {
               language={props.language}
               index={1}
               cover={props.covers[0]}
+              courseId={courseIds[0]}
             />
             <Card
               position={'relative'}
@@ -212,6 +202,7 @@ export const Offer = (props: any) => {
               language={props.language}
               index={2}
               cover={props.covers[1]}
+              courseId={courseIds[1]}
             />
             <Card
               position={'absolute'}
@@ -221,6 +212,7 @@ export const Offer = (props: any) => {
               language={props.language}
               index={3}
               cover={props.covers[2]}
+              courseId={courseIds[2]}
             />
           </div>
           <div style={offerMobileStyles.buyBtnWrap}>
