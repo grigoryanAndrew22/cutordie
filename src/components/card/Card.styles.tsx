@@ -23,7 +23,6 @@ export const cardStyles = {
     color: 'black',
     fontFamily: 'Bitter',
     fontSize: '22px',
-    fontWeight: '600',
   },
   description: {
     width: '90%',

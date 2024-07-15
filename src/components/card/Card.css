@@ -2,6 +2,9 @@
   object-fit: cover;
   height: 200px;
 }
+.card_heading {
+  font-weight: 600;
+}
 
 @media (max-width: 1335px) {
   .card-wrapper {
@@ -54,6 +57,7 @@
     margin: 10px 0px 0px !important;
     padding-left: 5px !important;
     font-size: 15px !important;
+    font-weight: 500;
   }
   .card_description {
     font-size: 14px;

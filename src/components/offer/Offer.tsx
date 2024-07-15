@@ -12,13 +12,8 @@ import { offerMobileStyles } from './OfferMobile.styles';
 import './OfferMobile.css';
 import AnimatedButton from '../animated-button/AnimatedButton';
 
-const offerCurrencies = {
-  usd: ['30$', '60$'],
-  uah: [`1099`, `2199`],
-  eur: ['27€', '54€'],
-};
-
 export const Offer = (props: any) => {
+  const offerCurrencies = props.offerCurrencies;
   const offerTextLangs = props.offerTextLangs;
   const offerGenerated = props.language === 'en' ? offerTextLangs.en : offerTextLangs.ua;
 
@@ -109,7 +104,7 @@ export const Offer = (props: any) => {
             className={`description-wrapper descr-${props.index}`}
             style={{ position: 'relative', marginRight: '-100px' }}
           >
-            <p style={offerStyles.discount}>-50%</p>
+            {/* <p style={offerStyles.discount}>-50%</p> */}
             <h3 style={offerStyles.title} className="title">
               {offerGenerated.title}
             </h3>
@@ -173,7 +168,7 @@ export const Offer = (props: any) => {
       <Fragment>
         <div className="offer-wrapper-mobile" style={offerMobileStyles.wrapper()}>
           <div className="description-wrapper-mob" style={offerMobileStyles.descriptionWrap}>
-            <p style={offerMobileStyles.discount}>-50%</p>
+            {/* <p style={offerMobileStyles.discount}>-50%</p> */}
             <h3 style={offerMobileStyles.title} className="title">
               {offerGenerated.title}
             </h3>

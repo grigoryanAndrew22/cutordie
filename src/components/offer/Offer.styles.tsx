@@ -25,7 +25,7 @@ export const offerStyles = {
     padding: 0,
   },
   title: {
-    fontSize: '65px',
+    fontSize: '50px',
     fontWeight: 100,
     color: '#383838',
     margin: 0,

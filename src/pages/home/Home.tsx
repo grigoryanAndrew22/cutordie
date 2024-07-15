@@ -29,23 +29,28 @@ export const Home = (props: any) => {
         courseIds={[1, 2, 3]}
         offerTextLangs={{
           en: {
-            title: '"All in" pack',
+            title: 'Modern Barbering Essentials',
             features: [
-              'basic haircutting course',
-              'precision cuts',
-              'creative haircutting workshop',
+              'Timeless to trending styles covered',
+              'Hands-on practice with diverse techniques',
+              'Professional-grade precision skill development',
             ],
             buynow: 'Buy now',
           },
           ua: {
-            title: 'ВСЕ В ОДНОМУ',
+            title: 'Основи сучасної перукарської справи',
             features: [
-              'курс по стрижці для початківців',
-              'акуратні стрижки',
-              'майстерня креативних стрижок',
+              'Охоплено класичні та трендові стилі',
+              'Практичні заняття з різноманітними техніками',
+              'Розвиток навичок професійної точності',
             ],
             buynow: 'Купити',
           },
+        }}
+        offerCurrencies={{
+          usd: ['20$', '40$'],
+          uah: [`850`, `1000`],
+          eur: ['20€', '40€'],
         }}
       />
       <Offer
@@ -58,11 +63,45 @@ export const Home = (props: any) => {
         courseIds={[4, 5, 6]}
         offerTextLangs={{
           en: {
-            title: '"All in" pack',
+            title: 'Versatile Stylist Pro',
             features: [
-              'basic haircutting course',
-              'precision cuts',
-              'creative haircutting workshop',
+              'Specialized texture-handling skills',
+              'Artistic color-cut synergy technique',
+              'Mastery of precise fading methods',
+            ],
+            buynow: 'Buy now',
+          },
+          ua: {
+            title: 'Універсальний стиліст-професіонал',
+            features: [
+              'Робота з текстурою',
+              'Синергія кольору та стрижки',
+              'Майстерність точних методів градуювання',
+            ],
+            buynow: 'Купити',
+          },
+        }}
+        offerCurrencies={{
+          usd: ['30$', '60$'],
+          uah: [`1099`, `2199`],
+          eur: ['27€', '54€'],
+        }}
+      />
+      <Offer
+        flexDirection={'row'}
+        language={props.language}
+        currency={props.currency}
+        index={3}
+        divider={dividerLeft}
+        covers={['7.png', '8.png', '9.png']}
+        courseIds={[7, 8, 9]}
+        offerTextLangs={{
+          en: {
+            title: 'Artistic Hair Innovation Masterclass',
+            features: [
+              'Texture-specific cutting expertise',
+              'Color-cut fusion for unique styles',
+              'Cutting-edge sculptural hair design techniques',
             ],
             buynow: 'Buy now',
           },
@@ -76,34 +115,10 @@ export const Home = (props: any) => {
             buynow: 'Купити',
           },
         }}
-      />
-      <Offer
-        flexDirection={'row'}
-        language={props.language}
-        currency={props.currency}
-        index={3}
-        divider={dividerLeft}
-        covers={['7.png', '8.png', '9.png']}
-        courseIds={[7, 8, 9]}
-        offerTextLangs={{
-          en: {
-            title: '"All in" pack',
-            features: [
-              'basic haircutting course',
-              'precision cuts',
-              'creative haircutting workshop',
-            ],
-            buynow: 'Buy now',
-          },
-          ua: {
-            title: 'ВСЕ В ОДНОМУ',
-            features: [
-              'курс по стрижці для початківців',
-              'акуратні стрижки',
-              'майстерня креативних стрижок',
-            ],
-            buynow: 'Купити',
-          },
+        offerCurrencies={{
+          usd: ['40$', '70$'],
+          uah: [`1200`, `2400`],
+          eur: ['40€', '70€'],
         }}
       />
       {/* <OfferMobile
