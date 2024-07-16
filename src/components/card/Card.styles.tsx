@@ -22,7 +22,7 @@ export const cardStyles = {
     paddingLeft: '10px',
     color: 'black',
     fontFamily: 'Bitter',
-    fontSize: '22px',
+    fontSize: '25px',
   },
   description: {
     width: '90%',

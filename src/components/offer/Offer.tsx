@@ -5,12 +5,13 @@ import dividerLeft from '../../assets/images/dividerLeft.png';
 import dividerRight from '../../assets/images/dividerRight.png';
 import uahSymbol from '../../assets/images/uahSymbol.png';
 import uahSymbolGray from '../../assets/images/uahSymbolGray.png';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { offerStyles } from './Offer.styles';
 import './Offer.css';
 import { offerMobileStyles } from './OfferMobile.styles';
 import './OfferMobile.css';
 import AnimatedButton from '../animated-button/AnimatedButton';
+import { SignInForm } from '../signin-form/SignInForm';
 
 export const Offer = (props: any) => {
   const offerCurrencies = props.offerCurrencies;
@@ -56,8 +57,30 @@ export const Offer = (props: any) => {
       });
   };
 
+  const [courseForm, switchCourseForm] = useState(false);
+  const [coursePayment, switchCoursePay] = useState(false);
+
+  const switchCF = () => {
+    switchCourseForm(true);
+  };
+
+  const closePay = () => {
+    switchCoursePay(false);
+  };
+
+  const closeForm = () => {
+    switchCourseForm(false);
+  };
+
   return (
     <Fragment>
+      {/* <SignInForm
+        visible={courseForm}
+        switch={closeForm}
+        language={props.language}
+        setLogin={false}
+        closeForm={switchCourseForm}
+      /> */}
       <Fragment>
         <div className="offer-wrapper" style={offerStyles.wrapper(props)}>
           <div

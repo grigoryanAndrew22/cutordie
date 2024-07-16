@@ -1,18 +1,43 @@
 .barber-pfp {
-  height: 450px;
   width: 400px;
 }
 .pfp {
   display: flex;
   justify-content: center;
 }
-@media (max-width: 1007px) {
+
+.whymeP {
+  margin: 40px 0 0 0;
+  font-family: 'Drum';
+  font-size: 110px;
+  padding-bottom: 20px;
+}
+
+.pStyle {
+  margin: 15px 0;
+  font-family: 'Drum';
+  font-size: 50px;
+}
+
+.pStyle::before {
+  content: '-';
+  position: absolute;
+  margin-left: -40px;
+}
+@media (max-width: 1000px) {
+  .whymeP {
+    font-size: 60px;
+  }
+  .pStyle {
+    font-size: 30px;
+  }
+}
+@media (max-width: 500px) {
   .whyme {
     display: none !important;
   }
   .barber-pfp {
-    height: 300px;
-    width: 266px;
+    width: 80%;
   }
   .underpfp {
     padding-top: 0px !important;

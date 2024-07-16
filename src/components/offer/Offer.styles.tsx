@@ -29,7 +29,8 @@ export const offerStyles = {
     fontWeight: 100,
     color: '#383838',
     margin: 0,
-    paddingBottom: 10,
+
+    paddingLeft: '20px',
   },
   wrapper: generateStylesObj,
   description: {

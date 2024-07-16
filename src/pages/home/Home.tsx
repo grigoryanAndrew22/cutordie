@@ -6,6 +6,7 @@ import { TopSection } from '../../components/top-section/TopSection';
 import dividerRight from '../../assets/images/dividerRight.png';
 import dividerLeft from '../../assets/images/dividerLeft.png';
 import './Home.css';
+import { SignInForm } from '../../components/signin-form/SignInForm';
 // import CookiesNotification from '../../components/cookies-notification/CookiesNotificationCookies';
 
 export const Home = (props: any) => {
@@ -15,8 +16,26 @@ export const Home = (props: any) => {
   }
   const [showCookies, setShowCookies] = useState(storageEmpty);
 
+  const [courseForm, switchCourseForm] = useState(false);
+  const [coursePayment, switchCoursePay] = useState(false);
+
+  const switchCF = () => {
+    switchCourseForm(true);
+  };
+
+  const closeForm = () => {
+    switchCourseForm(false);
+  };
+
   return (
     <div className="home-wrapper">
+      <SignInForm
+        visible={courseForm}
+        switch={closeForm}
+        language={props.language}
+        setLogin={props.changeLogin}
+        closeForm={switchCourseForm}
+      />
       <TopSection language={props.language} />
       <BlotSection language={props.language} />
       <Offer
@@ -38,10 +57,10 @@ export const Home = (props: any) => {
             buynow: 'Buy now',
           },
           ua: {
-            title: 'Основи сучасної перукарської справи',
+            title: 'Сучасна перукарська справа',
             features: [
               'Охоплено класичні та трендові стилі',
-              'Практичні заняття з різноманітними техніками',
+              'Різноманітні техніки',
               'Розвиток навичок професійної точності',
             ],
             buynow: 'Купити',
@@ -72,7 +91,7 @@ export const Home = (props: any) => {
             buynow: 'Buy now',
           },
           ua: {
-            title: 'Універсальний стиліст-професіонал',
+            title: 'Стиліст-професіонал',
             features: [
               'Робота з текстурою',
               'Синергія кольору та стрижки',
@@ -106,7 +125,7 @@ export const Home = (props: any) => {
             buynow: 'Buy now',
           },
           ua: {
-            title: 'ВСЕ В ОДНОМУ',
+            title: 'Базові курси',
             features: [
               'курс по стрижці для початківців',
               'акуратні стрижки',
