@@ -11,6 +11,7 @@ import { Course } from './pages/course/Course';
 import { Policy } from './pages/policy/Policy';
 import { PageNotFound } from './pages/pagenotFound/PageNotFound';
 import { Footer } from './components/footer/Footer';
+import coursesJson from './assets/courses.json';
 
 import Cookies from 'js-cookie';
 import axios from 'axios';
@@ -44,7 +45,7 @@ function App() {
     footerShadow = false;
   }
 
-  const [coursesObj, setCourses] = useState([]);
+  const [coursesObj, setCourses] = useState(coursesJson);
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
@@ -82,44 +83,44 @@ function App() {
     changeLanguage(lang);
   };
 
-  useEffect(() => {
-    fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
-      .then((response) => response.json())
-      .then((data) => {
-        setCourses(data.data.courses);
-        console.log(data.data.courses);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   fetch('https://cut-or-die-api.onrender.com/api/v1/courses/')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setCourses(data.data.courses);
+  //       console.log(data.data.courses);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
 
-  useEffect(() => {
-    fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+  // useEffect(() => {
+  //   fetch('https://cut-or-die-api.onrender.com/api/v1/users/currentUser', {
+  //     method: 'POST',
+  //     credentials: 'include',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
 
-      body: JSON.stringify({ jwt: localStorage.getItem('jwt') }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.status === 'fail') {
-          setLoggedIn(false);
-        } else {
-          setLoggedIn(true);
-        }
-        setUserData(data.data.user);
-        console.log('USERDATA', data.data.user);
-      })
-      .catch((error) => {
-        console.error('CURRENT USER FAILED', error);
-      });
-  }, []);
+  //     body: JSON.stringify({ jwt: localStorage.getItem('jwt') }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.status === 'fail') {
+  //         setLoggedIn(false);
+  //       } else {
+  //         setLoggedIn(true);
+  //       }
+  //       setUserData(data.data.user);
+  //       console.log('USERDATA', data.data.user);
+  //     })
+  //     .catch((error) => {
+  //       console.error('CURRENT USER FAILED', error);
+  //     });
+  // }, []);
 
   return (
-    <div className='App'>
+    <div className="App">
       <NavbarRaw
         language={language}
         loggedIn={loggedIn}
@@ -135,31 +136,19 @@ function App() {
               element={<route.component />}
             ></Route>
           ))} */}
-          <Route
-            path='/'
-            element={<Home language={language} currency={currency} />}
-          ></Route>
+          <Route path="/" element={<Home language={language} currency={currency} />}></Route>
           {/* <Route
             path='/'
             element={<Home language={language} currency={currency} />}
           ></Route> */}
           <Route
-            path='/courses'
-            element={
-              <Courses
-                language={language}
-                currency={currency}
-                coursesObj={coursesObj}
-              />
-            }
+            path="/courses"
+            element={<Courses language={language} currency={currency} coursesObj={coursesObj} />}
           ></Route>
 
+          <Route path="/aboutme" element={<Aboutme language={language} />}></Route>
           <Route
-            path='/aboutme'
-            element={<Aboutme language={language} />}
-          ></Route>
-          <Route
-            path='/profile'
+            path="/profile"
             element={
               <Profile
                 changeLogin={setLoggedIn}
@@ -172,7 +161,7 @@ function App() {
             }
           ></Route>
           <Route
-            path='/courses/course/:id'
+            path="/courses/course/:id"
             element={
               <Course
                 user={userData}
@@ -185,14 +174,8 @@ function App() {
             }
           ></Route>
 
-          <Route
-            path='/policy'
-            element={<Policy language={language} />}
-          ></Route>
-          <Route
-            path='/404'
-            element={<PageNotFound language={language} />}
-          ></Route>
+          <Route path="/policy" element={<Policy language={language} />}></Route>
+          <Route path="/404" element={<PageNotFound language={language} />}></Route>
           {/* <Route path="/policy" element={<Policy language={language} />}></Route>
           <Route path="/404" element={<PageNotFound language={language} />}></Route> */}
         </Routes>

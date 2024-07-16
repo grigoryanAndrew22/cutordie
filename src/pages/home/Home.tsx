@@ -6,6 +6,7 @@ import { TopSection } from '../../components/top-section/TopSection';
 import dividerRight from '../../assets/images/dividerRight.png';
 import dividerLeft from '../../assets/images/dividerLeft.png';
 import './Home.css';
+import { SignInForm } from '../../components/signin-form/SignInForm';
 // import CookiesNotification from '../../components/cookies-notification/CookiesNotificationCookies';
 
 export const Home = (props: any) => {
@@ -15,8 +16,26 @@ export const Home = (props: any) => {
   }
   const [showCookies, setShowCookies] = useState(storageEmpty);
 
+  const [courseForm, switchCourseForm] = useState(false);
+  const [coursePayment, switchCoursePay] = useState(false);
+
+  const switchCF = () => {
+    switchCourseForm(true);
+  };
+
+  const closeForm = () => {
+    switchCourseForm(false);
+  };
+
   return (
     <div className="home-wrapper">
+      <SignInForm
+        visible={courseForm}
+        switch={closeForm}
+        language={props.language}
+        setLogin={props.changeLogin}
+        closeForm={switchCourseForm}
+      />
       <TopSection language={props.language} />
       <BlotSection language={props.language} />
       <Offer
@@ -25,6 +44,33 @@ export const Home = (props: any) => {
         currency={props.currency}
         index={1}
         divider={dividerLeft}
+        covers={['1.png', '2.png', '3.png']}
+        courseIds={[1, 2, 3]}
+        offerTextLangs={{
+          en: {
+            title: 'Modern Barbering Essentials',
+            features: [
+              'Timeless to trending styles covered',
+              'Hands-on practice with diverse techniques',
+              'Professional-grade precision skill development',
+            ],
+            buynow: 'Buy now',
+          },
+          ua: {
+            title: 'Сучасна перукарська справа',
+            features: [
+              'Охоплено класичні та трендові стилі',
+              'Різноманітні техніки',
+              'Розвиток навичок професійної точності',
+            ],
+            buynow: 'Купити',
+          },
+        }}
+        offerCurrencies={{
+          usd: ['20$', '40$'],
+          uah: [`850`, `1000`],
+          eur: ['20€', '40€'],
+        }}
       />
       <Offer
         flexDirection={'row-reverse'}
@@ -32,6 +78,33 @@ export const Home = (props: any) => {
         currency={props.currency}
         index={2}
         divider={dividerRight}
+        covers={['4.png', '5.png', '6.png']}
+        courseIds={[4, 5, 6]}
+        offerTextLangs={{
+          en: {
+            title: 'Versatile Stylist Pro',
+            features: [
+              'Specialized texture-handling skills',
+              'Artistic color-cut synergy technique',
+              'Mastery of precise fading methods',
+            ],
+            buynow: 'Buy now',
+          },
+          ua: {
+            title: 'Стиліст-професіонал',
+            features: [
+              'Робота з текстурою',
+              'Синергія кольору та стрижки',
+              'Майстерність точних методів градуювання',
+            ],
+            buynow: 'Купити',
+          },
+        }}
+        offerCurrencies={{
+          usd: ['30$', '60$'],
+          uah: [`1099`, `2199`],
+          eur: ['27€', '54€'],
+        }}
       />
       <Offer
         flexDirection={'row'}
@@ -39,6 +112,33 @@ export const Home = (props: any) => {
         currency={props.currency}
         index={3}
         divider={dividerLeft}
+        covers={['7.png', '8.png', '9.png']}
+        courseIds={[7, 8, 9]}
+        offerTextLangs={{
+          en: {
+            title: 'Artistic Hair Innovation Masterclass',
+            features: [
+              'Texture-specific cutting expertise',
+              'Color-cut fusion for unique styles',
+              'Cutting-edge sculptural hair design techniques',
+            ],
+            buynow: 'Buy now',
+          },
+          ua: {
+            title: 'Базові курси',
+            features: [
+              'курс по стрижці для початківців',
+              'акуратні стрижки',
+              'майстерня креативних стрижок',
+            ],
+            buynow: 'Купити',
+          },
+        }}
+        offerCurrencies={{
+          usd: ['40$', '70$'],
+          uah: [`1200`, `2400`],
+          eur: ['40€', '70€'],
+        }}
       />
       {/* <OfferMobile
         divider={dividerLeft}

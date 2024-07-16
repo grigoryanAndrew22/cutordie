@@ -5,37 +5,17 @@ import dividerLeft from '../../assets/images/dividerLeft.png';
 import dividerRight from '../../assets/images/dividerRight.png';
 import uahSymbol from '../../assets/images/uahSymbol.png';
 import uahSymbolGray from '../../assets/images/uahSymbolGray.png';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { offerStyles } from './Offer.styles';
 import './Offer.css';
 import { offerMobileStyles } from './OfferMobile.styles';
 import './OfferMobile.css';
 import AnimatedButton from '../animated-button/AnimatedButton';
-
-const offerTextLangs = {
-  en: {
-    title: '"All in" pack',
-    features: ['basic haircutting course', 'precision cuts', 'creative haircutting workshop'],
-    buynow: 'Buy now',
-  },
-  ua: {
-    title: 'ВСЕ В ОДНОМУ',
-    features: [
-      'курс по стрижці для початківців',
-      'акуратні стрижки',
-      'майстерня креативних стрижок',
-    ],
-    buynow: 'Купити',
-  },
-};
-
-const offerCurrencies = {
-  usd: ['30$', '60$'],
-  uah: [`1099`, `2199`],
-  eur: ['27€', '54€'],
-};
+import { SignInForm } from '../signin-form/SignInForm';
 
 export const Offer = (props: any) => {
+  const offerCurrencies = props.offerCurrencies;
+  const offerTextLangs = props.offerTextLangs;
   const offerGenerated = props.language === 'en' ? offerTextLangs.en : offerTextLangs.ua;
 
   let currencyGenerated;
@@ -47,8 +27,60 @@ export const Offer = (props: any) => {
     currencyGenerated = offerCurrencies.eur;
   }
 
+  const courseIds = props.courseIds;
+
+  const openPayment = () => {
+    // switchCoursePay(true);
+
+    const data = { jwt: localStorage.getItem('jwt') };
+
+    fetch(
+      `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    )
+      .then((response) => {
+        return response.json();
+      })
+
+      .then((data) => {
+        window.open(data.data.pageUrl, '_blank');
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
+  const [courseForm, switchCourseForm] = useState(false);
+  const [coursePayment, switchCoursePay] = useState(false);
+
+  const switchCF = () => {
+    switchCourseForm(true);
+  };
+
+  const closePay = () => {
+    switchCoursePay(false);
+  };
+
+  const closeForm = () => {
+    switchCourseForm(false);
+  };
+
   return (
     <Fragment>
+      {/* <SignInForm
+        visible={courseForm}
+        switch={closeForm}
+        language={props.language}
+        setLogin={false}
+        closeForm={switchCourseForm}
+      /> */}
       <Fragment>
         <div className="offer-wrapper" style={offerStyles.wrapper(props)}>
           <div
@@ -67,6 +99,8 @@ export const Offer = (props: any) => {
               left={-160}
               language={props.language}
               index={1}
+              cover={props.covers[0]}
+              courseId={courseIds[0]}
             />
             <Card
               position={'relative'}
@@ -75,6 +109,8 @@ export const Offer = (props: any) => {
               left={0}
               language={props.language}
               index={2}
+              cover={props.covers[1]}
+              courseId={courseIds[1]}
             />
             <Card
               position={'absolute'}
@@ -83,13 +119,15 @@ export const Offer = (props: any) => {
               left={167}
               language={props.language}
               index={3}
+              cover={props.covers[2]}
+              courseId={courseIds[2]}
             />
           </div>
           <div
             className={`description-wrapper descr-${props.index}`}
             style={{ position: 'relative', marginRight: '-100px' }}
           >
-            <p style={offerStyles.discount}>-50%</p>
+            {/* <p style={offerStyles.discount}>-50%</p> */}
             <h3 style={offerStyles.title} className="title">
               {offerGenerated.title}
             </h3>
@@ -108,18 +146,21 @@ export const Offer = (props: any) => {
               </li>
             </ul>
             <div style={{ display: 'flex', alignItems: 'center', marginTop: 40 }}>
-              <AnimatedButton
-                url={'/cutordie'}
-                buttonType={'buynow'}
-                text={offerGenerated.buynow}
-                width={363}
-                height={142}
-                top={57}
-                left={49}
-                color={'363636'}
-                font={'Besom'}
-                textClass={'button2'}
-              />
+              <button onClick={openPayment}>
+                <AnimatedButton
+                  url={''}
+                  buttonType={'buynow'}
+                  text={offerGenerated.buynow}
+                  width={363}
+                  height={142}
+                  top={57}
+                  left={49}
+                  color={'363636'}
+                  font={'Besom'}
+                  textClass={'button2'}
+                />
+              </button>
+
               <span style={offerStyles.price} className="price">
                 {currencyGenerated[0]}
                 <div>
@@ -150,7 +191,7 @@ export const Offer = (props: any) => {
       <Fragment>
         <div className="offer-wrapper-mobile" style={offerMobileStyles.wrapper()}>
           <div className="description-wrapper-mob" style={offerMobileStyles.descriptionWrap}>
-            <p style={offerMobileStyles.discount}>-50%</p>
+            {/* <p style={offerMobileStyles.discount}>-50%</p> */}
             <h3 style={offerMobileStyles.title} className="title">
               {offerGenerated.title}
             </h3>
@@ -168,6 +209,8 @@ export const Offer = (props: any) => {
               left={-100}
               language={props.language}
               index={1}
+              cover={props.covers[0]}
+              courseId={courseIds[0]}
             />
             <Card
               position={'relative'}
@@ -176,6 +219,8 @@ export const Offer = (props: any) => {
               left={0}
               language={props.language}
               index={2}
+              cover={props.covers[1]}
+              courseId={courseIds[1]}
             />
             <Card
               position={'absolute'}
@@ -184,11 +229,27 @@ export const Offer = (props: any) => {
               left={100}
               language={props.language}
               index={3}
+              cover={props.covers[2]}
+              courseId={courseIds[2]}
             />
           </div>
           <div style={offerMobileStyles.buyBtnWrap}>
-            <button className="buy-btn card_btn" style={offerMobileStyles.buyBtn}>
+            {/* <button className="buy-btn card_btn" style={offerMobileStyles.buyBtn}>
               <img src={offerGenerated.buynow} alt="btn" width={'97%'} height={'100%'} />
+            </button> */}
+            <button className="mini-btn" onClick={openPayment}>
+              <AnimatedButton
+                url={''}
+                buttonType={'buynow'}
+                text={offerGenerated.buynow}
+                width={363}
+                height={142}
+                top={57}
+                left={49}
+                color={'363636'}
+                font={'Besom'}
+                textClass={'button2'}
+              />
             </button>
             {/* <AnimatedButton
               url={'/cutordie'}

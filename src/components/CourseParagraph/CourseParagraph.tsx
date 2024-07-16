@@ -1,10 +1,10 @@
 export const CourseParagraph = (props: any) => {
   return (
     <div
-      className='course-descr-section'
+      className="course-descr-section"
       style={{
         display: 'flex',
-        marginTop: '100px',
+        marginTop: '30px',
         flexDirection: props.reverse ? 'row-reverse' : 'row',
         justifyContent: 'space-between',
       }}
@@ -23,11 +23,7 @@ export const CourseParagraph = (props: any) => {
       >
         {props.text}
       </p>
-      <img
-        alt=''
-        className='course-img'
-        src={require('../../assets/images/coursePrev.png')}
-      />
+      {/* <img alt="" className="course-img" src={require('../../assets/images/coursePrev.png')} /> */}
     </div>
   );
 };

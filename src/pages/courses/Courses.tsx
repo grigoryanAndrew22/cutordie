@@ -10,7 +10,7 @@ export const Courses = (props: any) => {
     <Fragment>
       <div className="haircuts-section">
         <div className="title">
-          <h1>{titleLang}</h1>
+          <h1 className="courses-header">{titleLang}</h1>
         </div>
 
         <div className="cards">

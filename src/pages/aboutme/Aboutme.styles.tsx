@@ -8,33 +8,25 @@ export const aboutmeStyles = {
     justifyContent: 'center',
     width: '88%',
     margin: 'auto',
-    paddingTop: '173px',
+    paddingTop: '120px',
   },
   whyme: {
     fontSize: '65px',
     color: 'white',
     height: '550px',
     display: 'flex',
+
     flexDirection: 'column' as 'column',
-    justifyContent: 'space-between',
+
     paddingTop: '20px',
     zIndex: 1,
   },
-  whymeP: {
-    margin: 0,
-    fontFamily: 'Drum',
-    fontSize: '115px',
-    paddingBottom: '20px',
-  },
-  pStyle: {
-    margin: 0,
-    fontFamily: 'Drum',
-  },
+
   inscription: {
     width: '88%',
     margin: 'auto',
     opacity: '0.85',
-    paddingTop: '130px',
+
     paddingBottom: '50px',
     boxShadow: 'black 0px -125px 90px',
   },

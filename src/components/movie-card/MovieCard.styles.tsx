@@ -27,10 +27,10 @@ export const MovieCardStyles = {
     top: '28px',
     // right: '34px',
     left: '92%',
-    color: '#fff',
+    color: '#d7d7d7',
     fontSize: '40px',
     margin: 0,
-    fontWeight: '600',
+    fontWeight: '500',
     transform: 'translateX(-100%)',
   },
   descrWrap: {

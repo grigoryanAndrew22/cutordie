@@ -3,6 +3,10 @@
   background-size: contain;
 }
 
+.course-preview-main {
+  object-fit: cover;
+}
+
 .course-img {
   width: 532px;
   height: 300px;
@@ -15,6 +19,10 @@
 
 .price-indicator {
   transform: translateY(7px);
+}
+
+.course-description {
+  gap: 2rem;
 }
 
 @media only screen and (max-device-width: 1350px) {

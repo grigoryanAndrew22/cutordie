@@ -21,19 +21,20 @@ export const Course = (props: any) => {
   const [courseForm, switchCourseForm] = useState(false);
   const [coursePayment, switchCoursePay] = useState(false);
 
+  const id =  window.location.pathname.replace('/courses/course/', '');
+
   const selectedCourse = props.courses.filter((course: any) => {
     return (
-      course._id === window.location.pathname.replace('/courses/course/', '')
+      course._id == id
     );
   });
 
-  const boughtCourse = props.user?.purchasedCourses?.filter((course: any) => {
-    return (
-      course._id === window.location.pathname.replace('/courses/course/', '')
-    );
-  })
-
-  // console.log(selectedCourse[0])
+  // const boughtCourse = props.user?.purchasedCourses?.filter((course: any) => {
+  //   return (
+  //     course._id === window.location.pathname.replace('/courses/course/', '')
+  //   );
+  // })
+  
 
   useEffect(() => {
     if(selectedCourse !== undefined) {
@@ -60,7 +61,9 @@ export const Course = (props: any) => {
   }, [selectedCourse])
 
 
-  const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
+  // const courseIsBought = (selectedCourse && boughtCourse) ? (selectedCourse[0]?._id === boughtCourse[0]) : false;
+
+  const courseIsBought = false;
   
   let btnText = ''
   if(props.language === 'ua') {
@@ -87,7 +90,7 @@ export const Course = (props: any) => {
     const data = { jwt: localStorage.getItem('jwt') };
 
     fetch(
-      `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/${selectedCourse[0]?._id}`,
+      `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/66580a7214488740bcdca62e`,
       {
         method: 'POST',
         headers: {
@@ -107,6 +110,27 @@ export const Course = (props: any) => {
       .catch((error) => {
         console.error('Error:', error);
       });
+    // fetch(
+    //   `https://cut-or-die-api.onrender.com/api/v1/courses/createInvoice/${selectedCourse[0]?._id}`,
+    //   {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //   }
+    // )
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+
+    //   .then((data) => {
+    //     window.open(data.data.pageUrl, '_blank');
+    //     console.log(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //   });
   };
 
   return (
@@ -146,8 +170,8 @@ export const Course = (props: any) => {
             <div className='course-preview' style={{ display: 'flex' }}>
               <img
                 className='course-preview-main'
-                alt=''
-                src={require('../../assets/images/coursePrev.png')}
+                alt='preview'
+                src={require(`../../assets/images/courseCovers/${selectedCourse[0].coverImage}`)}
                 width='1058'
                 height='596'
               />
@@ -160,7 +184,7 @@ export const Course = (props: any) => {
                   fontFamily: 'Bitter',
                   fontWeight: 600,
                   color: '#363636',
-                  paddingBottom: '28px',
+                  
                 }}
               >
                 {courseSubHeader}
@@ -319,7 +343,8 @@ export const Course = (props: any) => {
             </div>
           </div>
 
-          {courseParagraphs?.map((text,i) => <CourseParagraph key={i} text={text} reverse={i % 2 === 0}/>)}
+          {/* {courseParagraphs?.map((text,i) => <CourseParagraph key={i} text={text} reverse={i % 2 === 0}/>)} */}
+          {courseParagraphs?.map((text,i) => <CourseParagraph key={i} text={text} reverse={0}/>)}
 
           <div
             className='buy-foronly'

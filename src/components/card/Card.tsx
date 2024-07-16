@@ -1,18 +1,6 @@
 import { cardStyles } from './Card.styles';
 import '../card/Card.css';
-
-const cardLangs = {
-  en: {
-    title: 'Precision Cuts',
-    description:
-      'Discover the artistic side of haircutting and learn how to integrate visual elements, such as line, shape, and form, into your designs',
-  },
-  ua: {
-    title: 'Акуратні Стрижки',
-    description:
-      'Відкрийте для себе художню сторону стрижки та навчіться інтегрувати візуальні елементи, такі як лінія та форма, у свій дизайн',
-  },
-};
+import coursesJson from '../../assets/courses.json';
 
 export const Card = (props: {
   position: any;
@@ -21,30 +9,31 @@ export const Card = (props: {
   left: any;
   language: any;
   index: any;
+  cover: any;
+  courseId: any;
 }) => {
-  const cardGenerated = props.language === 'en' ? cardLangs.en : cardLangs.ua;
+  // const cardGenerated = props.language === 'en' ? cardLangs.en : cardLangs.ua;
+
+  const course = coursesJson.find((course: any) => {
+    return course._id == props.courseId;
+  });
 
   return (
-    <div
-      className={`card-wrapper card-${props.index}`}
-      style={cardStyles.cardWrapper(props)}
-    >
-      <div className='img' style={cardStyles.image}>
+    <div className={`card-wrapper card-${props.index}`} style={cardStyles.cardWrapper(props)}>
+      <div className="img" style={cardStyles.image}>
         <img
-          src={require('../../assets/images/haircut.png')}
-          width={'100%'}
-          height={'100%'}
+          className="offer-preview-card"
+          src={require(`../../assets/images/courseCovers/${props.cover}`)}
+          width="100%"
+          alt="course"
         />
-        <p className='card_heading' style={cardStyles.title}>
-          {cardGenerated.title}
+        <p className="card_heading" style={cardStyles.title}>
+          {props.language === 'en' ? course.en.name : course.ua.name}
         </p>
       </div>
-      <div
-        className='description card_description'
-        style={cardStyles.description}
-      >
-        <p>{cardGenerated.description}</p>
-      </div>
+      {/* <div className="description card_description" style={cardStyles.description}>
+        <p> {props.language === 'en' ? course.en.description : course.ua.description}</p>
+      </div> */}
     </div>
   );
 };

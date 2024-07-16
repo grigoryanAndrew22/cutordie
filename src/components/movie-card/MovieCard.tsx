@@ -20,7 +20,7 @@ export const MovieCard = (props: any) => {
 
   const courseObj = props.language === 'en' ? props.course.en : props.course.ua;
 
-  const preview = require(`../../assets/images/courseCovers/${props.course.coverImage}.png`);
+  const preview = require(`../../assets/images/courseCovers/${props.course.coverImage}`);
 
   return (
     <div
@@ -101,6 +101,7 @@ export const MovieCard = (props: any) => {
             alt=""
             src={preview}
             width={'360px'}
+            height={'203px'}
             style={{ paddingTop: '20px' }}
           />
 

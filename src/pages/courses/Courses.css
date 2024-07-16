@@ -43,8 +43,9 @@
   row-gap: 5rem;
 }
 
-h1 {
+.courses-header {
   font-size: 70px;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {

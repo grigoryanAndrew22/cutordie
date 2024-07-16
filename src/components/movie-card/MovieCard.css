@@ -4,6 +4,10 @@
   }
 } */
 
+.haircut-preview {
+  object-fit: cover;
+}
+
 .card {
   color: rgb(18, 18, 18);
 }
