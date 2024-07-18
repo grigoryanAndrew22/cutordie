@@ -103,7 +103,7 @@ button {
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1400px) {
   .offer-wrapper {
     display: none !important;
   }
