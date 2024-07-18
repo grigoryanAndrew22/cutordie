@@ -168,14 +168,14 @@ export const Offer = (props: any) => {
                     <img alt="" width={72} height={64.8} src={uahSymbol} className="uah-img" />
                   )}
                 </div>
-              </span>
-              <span style={offerStyles.price} className="prev-price">
-                {currencyGenerated[1]}
-                <div>
-                  {currencyGenerated === offerCurrencies.uah && (
-                    <img alt="" width={43} height={44} src={uahSymbolGray} className="uah-img" />
-                  )}
-                </div>
+                <span style={offerStyles.price} className="prev-price">
+                  {currencyGenerated[1]}
+                  <div>
+                    {currencyGenerated === offerCurrencies.uah && (
+                      <img alt="" width={43} height={44} src={uahSymbolGray} className="uah-img" />
+                    )}
+                  </div>
+                </span>
               </span>
             </div>
           </div>
@@ -276,12 +276,12 @@ export const Offer = (props: any) => {
                     style={{ paddingLeft: '3px', paddingTop: '13.5px' }}
                   />
                 )}
-              </span>
-              <span style={offerMobileStyles.price} className="prev-price-mobile">
-                {currencyGenerated[1]}
-                {currencyGenerated === offerCurrencies.uah && (
-                  <img alt="" width={29} src={uahSymbolGray} style={{ paddingLeft: '2px' }} />
-                )}
+                <span style={offerMobileStyles.price} className="prev-price-mobile">
+                  {currencyGenerated[1]}
+                  {currencyGenerated === offerCurrencies.uah && (
+                    <img alt="" width={29} src={uahSymbolGray} style={{ paddingLeft: '2px' }} />
+                  )}
+                </span>
               </span>
             </div>
           </div>

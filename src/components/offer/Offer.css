@@ -58,8 +58,8 @@ button {
   color: #979797 !important;
   position: absolute;
   display: flex;
-  left: 450px;
-  bottom: 76px;
+  right: -30px;
+  top: -40px;
   font-size: 60px !important;
 }
 
@@ -103,7 +103,7 @@ button {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1500px) {
   .offer-wrapper {
     display: none !important;
   }
