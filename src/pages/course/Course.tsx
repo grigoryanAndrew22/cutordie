@@ -9,6 +9,11 @@ import Cookies from 'js-cookie';
 import { log } from 'console';
 import { CourseParagraph } from '../../components/CourseParagraph/CourseParagraph';
 
+import leftTopCorner from '../../assets/images/leftTopCorner.png';
+import leftBotCorner from '../../assets/images/leftBotCorner.png';
+import rightTopCorner from '../../assets/images/rightTopCorner.png';
+import rightBotCorner from '../../assets/images/rightBotCorner.png';
+
 export const Course = (props: any) => {
   const [courseName, setCourseName] = useState('')
   const [courseSubHeader, setCourseSubHeader] = useState('')
@@ -161,13 +166,14 @@ export const Course = (props: any) => {
             </p>
           </div>
           <div
-            className='course-description controlWr'
+            className='course-description'
             style={{
               display: 'flex',
               justifyContent: 'space-between',
             }}
           >
-            <div className='course-preview' style={{ display: 'flex' }}>
+            <div className='course-preview' style={{ display: 'flex', position: 'relative' , width: '710px', height: '400px'}}>
+          
               <img
                 className='course-preview-main'
                 alt='preview'
@@ -175,6 +181,46 @@ export const Course = (props: any) => {
                 width='1058'
                 height='596'
               />
+          <img
+            alt=''
+            src={leftTopCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={rightTopCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              top: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={rightBotCorner}
+            style={{
+              position: 'absolute',
+              right: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
+          <img
+            alt=''
+            src={leftBotCorner}
+            style={{
+              position: 'absolute',
+              left: '-4px',
+              bottom: '-4px',
+              width: '42px',
+            }}
+          />
             </div>
             <div className='course-about'>
               <p
@@ -194,6 +240,7 @@ export const Course = (props: any) => {
                   display: 'flex',
                   alignItems: 'center',
                   paddingBottom: '28px',
+                  marginTop: "20px"
                 }}
               >
                 <img
@@ -211,7 +258,7 @@ export const Course = (props: any) => {
                     fontWeight: 500,
                   }}
                 >
-                  Difficulty:
+                  {props.language === 'en' ? "Difficulty:" : "Складність:"}
                 </p>
                 <p
                   style={{
@@ -248,7 +295,7 @@ export const Course = (props: any) => {
                     fontWeight: 500,
                   }}
                 >
-                  Duration:
+                   {props.language === 'en' ? "Duration:" : "Довжина:"}
                 </p>
                 <p
                   style={{
@@ -263,23 +310,35 @@ export const Course = (props: any) => {
                   {courseDuration}
                 </p>
               </div>
-              <span
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  paddingBottom: '28px',
+                }}
+              >
+                <img
+                  alt=''
+                  src={require('../../assets/images/maintenance.png')}
+                  width={45}
+                />
+                 <span
                 style={{
                   margin: 0,
                   color: '#363636',
                   fontSize: '30px',
                   fontFamily: 'Bitter',
-
+                  paddingLeft: '20px',
                   fontWeight: 500,
                 }}
               >
-                Equipment:
+                {props.language === 'en' ? "Equipment:" : "Інструменти:"}
               </span>
               <span
                 style={{
                   margin: 0,
                   color: '#363636',
-                  fontSize: '30px',
+                  fontSize: '20px',
                   fontFamily: 'Bitter',
                   paddingLeft: '20px',
                   fontWeight: 600,
@@ -287,12 +346,14 @@ export const Course = (props: any) => {
               >
                 {courseEquipment}
               </span>
+              </div>
+             
               <div
                 className='buy-offer'
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  marginTop: '2rem',
+                  marginTop: '1rem',
                 }}
               >
                 <button

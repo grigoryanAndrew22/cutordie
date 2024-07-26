@@ -22,7 +22,12 @@
 }
 
 .course-description {
-  gap: 2rem;
+  gap: 3rem;
+  margin-bottom: 100px;
+}
+
+.buy-btn {
+  scale: 0.85;
 }
 
 @media only screen and (max-device-width: 1350px) {
