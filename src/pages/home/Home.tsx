@@ -52,7 +52,7 @@ export const Home = (props: any) => {
             features: [
               'Timeless to trending styles covered',
               'Hands-on practice with diverse techniques',
-              'Professional-grade precision skill development',
+              'Professional-grade precision skill',
             ],
             buynow: 'Buy now',
           },
@@ -116,11 +116,11 @@ export const Home = (props: any) => {
         courseIds={[7, 8, 9]}
         offerTextLangs={{
           en: {
-            title: 'Artistic Hair Innovation Masterclass',
+            title: 'Artistic Hair Innovation',
             features: [
               'Texture-specific cutting expertise',
               'Color-cut fusion for unique styles',
-              'Cutting-edge sculptural hair design techniques',
+              'Cutting-edge sculptural hair design',
             ],
             buynow: 'Buy now',
           },
