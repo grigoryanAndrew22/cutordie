@@ -20,7 +20,9 @@ export const MovieCardStyles = {
     left: '35px',
     fontWeight: '600',
     fontFamily: 'Bitter',
+    width: '340px',
     margin: '0px 0px 14px 0px',
+    fontSize: '20px',
   },
   price: {
     position: 'absolute' as 'absolute',
